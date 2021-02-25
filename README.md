@@ -45,10 +45,10 @@ How to run
       library(PIONEER)
 
       connectionDetails <-  DatabaseConnector::createConnectionDetails(
-        dbms = "",					### Name of dialect (Type ?DatabaseConnector::createConnectionDetails to see how your dialect should be written)
-        server = "",					### Server URL or IP
-        user = "",					### Username
-        password = "",				### Password
+        dbms = "",				### Name of dialect (Type ?DatabaseConnector::createConnectionDetails to see how your dialect should be written)
+        server = "",				### Server URL or IP
+        user = "",				### Username
+        password = "",			### Password
         port = 5439)
 
       cdmDatabaseSchema <- ""          ### Name of the schema where the CDM data are located
@@ -56,7 +56,7 @@ How to run
       cohortTable <- "pioneer"         ### Name of the table where the cohort data will be saved
       oracleTempSchema <- NULL         ### (Only for Oracle users)Name of temp schema
       outputFolder <- ""               ### Name of the folder the output will be saved (it should named after the database)
-      days_offset <- 180				       ### Days added to the index event start date
+      days_offset <- 180				   ### Days added to the index event start date
 
       con <- DatabaseConnector::connect(connectionDetails)
 
