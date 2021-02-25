@@ -1,0 +1,13 @@
+"","atlasId","atlasName","name","cohortId","cohortType"
+"1",4049,"[PIONEER] 1_All PCa broad","[PIONEER] 1_All PCa broad",1,0
+"2",4050,"[PIONEER] 2_PCa Treated Right Away broad","[PIONEER] 2_PCa Treated Right Away broad",2,1
+"3",4051,"[PIONEER] 3_PCa Trt Delayed broad","[PIONEER] 3_PCa Trt Delayed broad",3,1
+"4",4052,"[PIONEER] 3a_High-risk PCa Trt Delayed broad","[PIONEER] 3a_High-risk PCa Trt Delayed broad",4,1
+"5",4053,"[PIONEER] 3b_Low-risk PCa Trt Delayed broad","[PIONEER] 3b_Low-risk PCa Trt Delayed broad",5,1
+"6",4054,"[PIONEER] 3c_Intermediate-Risk PCa Trt Delayed broad","[PIONEER] 3c_Intermediate-Risk PCa Trt Delayed broad",6,1
+"7",4055,"[PIONEER] 4_PCa Trt Delayed Treated broad","[PIONEER] 4_PCa Trt Delayed Treated broad",7,1
+"8",4056,"[PIONEER] 4a_High-Risk PCa Trt Delayed Treated broad","[PIONEER] 4a_High-Risk PCa Trt Delayed Treated broad",8,1
+"9",4057,"[PIONEER] 4b_Low-Risk PCa Trt Delayed Treated broad","[PIONEER] 4b_Low-Risk PCa Trt Delayed Treated broad",9,1
+"10",4058,"[PIONEER] 4c_Intermediate-Risk PCa Trt Delayed Treated broad","[PIONEER] 4c_Intermediate-Risk PCa Trt Delayed Treated broad",10,1
+"11",4059,"[PIONEER] 4d_PCa Trt Delayed Treated Palliative broad","[PIONEER] 4d_PCa Trt Delayed Treated Palliative broad",11,1
+"12",4060,"[PIONEER] 4e_PCa Trt Delayed Treated Curative broad","[PIONEER] 4e_PCa Trt Delayed Treated Curative broad",12,1
