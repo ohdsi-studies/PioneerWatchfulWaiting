@@ -1,0 +1,35 @@
+Package: PIONEERCharacterization
+Type: Package
+Title: Characterizing patients with PCa
+Version: 1.4.0
+Author: Anthony G. Sena, Artem Gorbachev
+Maintainer: Artem Gorbachev <artem.gorbachev@odysseusinc.com>
+Description: Describe the baseline demographic, clinical characteristics, treatments and outcomes of interest among individuals with PCa.
+Depends:
+  DatabaseConnector (>= 2.2.0)
+Imports:
+  CohortDiagnostics (>= 1.2.2),
+  FeatureExtraction,
+  ParallelLogger,
+  OhdsiSharing (>= 0.2.1),
+  SqlRender,
+  ff,
+  digest,
+  readr,
+  dplyr,
+  ggplot2 (<= 3.2.1),
+  tibble
+Suggests:
+  knitr,
+  rmarkdown
+Remotes:
+  OHDSI/CohortDiagnostics,
+  OHDSI/FeatureExtraction,
+  OHDSI/ParallelLogger,
+  OHDSI/SqlRender,
+  OHDSI/OhdsiSharing
+License: Apache License 2.0
+VignetteBuilder: knitr
+Encoding: UTF-8
+LazyData: TRUE
+RoxygenNote: 7.1.1
