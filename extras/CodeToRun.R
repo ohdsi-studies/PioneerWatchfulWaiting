@@ -92,7 +92,7 @@ oracleTempSchema <- NULL
 databaseId <- "SP"
 databaseName <- "Synpuf"
 databaseDescription <- "Testing"
-outputFolderPath <- "ResultsFolder"
+outputFolderPath <- "C:/Users/Artem/PIONEER/Runs"
 
 # Details for connecting to the CDM and storing the results
 outputFolder <- file.path(outputFolderPath, databaseId)
@@ -101,7 +101,7 @@ cohortDatabaseSchema <- Sys.getenv("COHORT_SCHEMA")
 cohortTable <- paste0("PIONEER_", databaseId)
 cohortStagingTable <- paste0(cohortTable, "_stg")
 featureSummaryTable <- paste0(cohortTable, "_smry")
-minCellCount <- 5
+minCellCount <- 1
 useBulkCharacterization <- TRUE
 cohortIdsToExcludeFromExecution <- c()
 cohortIdsToExcludeFromResultsExport <- NULL
@@ -124,7 +124,7 @@ runCohortDiagnostics(connectionDetails = connectionDetails,
 
 # preMerge the data for shiny App. Replace "target" with
 # one of these options: "target", "outcome", "strata"
-# preMergeDiagnosticsFiles(file.path(outputFolder, "diagnostics", "target"))
+# preMergeDiagnosticsFiles(file.path(outputFolder, "diagnostics", "strata"))
 # Use the next command to review cohort diagnostics and replace "target" with
 # one of these options: "target", "outcome", "strata"
 # CohortDiagnostics::launchDiagnosticsExplorer(file.path(outputFolder, "diagnostics", "target"))
@@ -132,4 +132,28 @@ runCohortDiagnostics(connectionDetails = connectionDetails,
 
 
 
-
+# # Use this to run the study. The results will be stored in a zip file called
+# # 'Results_<databaseId>.zip in the outputFolder.
+# runStudy(connectionDetails = connectionDetails,
+#          cdmDatabaseSchema = cdmDatabaseSchema,
+#          cohortDatabaseSchema = cohortDatabaseSchema,
+#          cohortStagingTable = cohortStagingTable,
+#          cohortTable = cohortTable,
+#          featureSummaryTable = featureSummaryTable,
+#          oracleTempSchema = cohortDatabaseSchema,
+#          exportFolder = outputFolder,
+#          databaseId = databaseId,
+#          databaseName = databaseName,
+#          databaseDescription = databaseDescription,
+#          #cohortGroups = c("target"), # Optional - will use all groups by default
+#          cohortIdsToExcludeFromExecution = cohortIdsToExcludeFromExecution,
+#          cohortIdsToExcludeFromResultsExport = cohortIdsToExcludeFromResultsExport,
+#          incremental = TRUE,
+#          useBulkCharacterization = useBulkCharacterization,
+#          minCellCount = minCellCount)
+# 
+# 
+# # Use the next set of commands to compress results
+# # and view the output.
+# preMergeResultsFiles(outputFolder)
+# launchShinyApp(outputFolder)

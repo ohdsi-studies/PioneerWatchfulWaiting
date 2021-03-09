@@ -7,16 +7,16 @@
         "items": [
           {
             "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "399068003",
               "CONCEPT_ID": 4163261,
               "CONCEPT_NAME": "Malignant tumor of prostate",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "399068003",
-              "DOMAIN_ID": "Condition",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Clinical Finding"
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
             },
             "includeDescendants": true
           }
@@ -25,189 +25,146 @@
     },
     {
       "id": 1,
-      "name": "[PIONEER] PSA",
+      "name": "[PIONEER]  Biopsy",
       "expression": {
         "items": [
           {
             "concept": {
-              "CONCEPT_ID": 2617206,
-              "CONCEPT_NAME": "Prostate cancer screening; prostate specific antigen test (psa)",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "G0103",
-              "DOMAIN_ID": "Measurement",
-              "VOCABULARY_ID": "HCPCS",
-              "CONCEPT_CLASS_ID": "HCPCS"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 45889041,
-              "CONCEPT_NAME": "Prostate specific antigen (PSA)",
-              "STANDARD_CONCEPT": "C",
-              "STANDARD_CONCEPT_CAPTION": "Classification",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "1011648",
-              "DOMAIN_ID": "Measurement",
-              "VOCABULARY_ID": "CPT4",
-              "CONCEPT_CLASS_ID": "CPT4 Hierarchy"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 44793131,
-              "CONCEPT_NAME": "Total PSA level",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "377981000000102",
-              "DOMAIN_ID": "Measurement",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Procedure"
-            },
-            "includeDescendants": true
-          }
-        ]
-      }
-    },
-    {
-      "id": 3,
-      "name": "[PIONEER] cT1 - 2a",
-      "expression": {
-        "items": [
-          {
-            "concept": {
-              "CONCEPT_ID": 1538812,
-              "CONCEPT_NAME": "Prostate Cancer cT1 TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "cT1-58-8",
-              "DOMAIN_ID": "Measurement",
-              "VOCABULARY_ID": "NCIt",
-              "CONCEPT_CLASS_ID": "AJCC Category"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 1538366,
-              "CONCEPT_NAME": "Prostate Cancer cT1a TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "cT1a-58-8",
-              "DOMAIN_ID": "Measurement",
-              "VOCABULARY_ID": "NCIt",
-              "CONCEPT_CLASS_ID": "AJCC Category"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 1538219,
-              "CONCEPT_NAME": "Prostate Cancer cT1b TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "cT1b-58-8",
-              "DOMAIN_ID": "Measurement",
-              "VOCABULARY_ID": "NCIt",
-              "CONCEPT_CLASS_ID": "AJCC Category"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 1538775,
-              "CONCEPT_NAME": "Prostate Cancer cT1c TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "cT1c-58-8",
-              "DOMAIN_ID": "Measurement",
-              "VOCABULARY_ID": "NCIt",
-              "CONCEPT_CLASS_ID": "AJCC Category"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 1538375,
-              "CONCEPT_NAME": "Prostate Cancer cT2 TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "cT2-58-8",
-              "DOMAIN_ID": "Measurement",
-              "VOCABULARY_ID": "NCIt",
-              "CONCEPT_CLASS_ID": "AJCC Category"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 1539231,
-              "CONCEPT_NAME": "Prostate Cancer cT2a TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "cT2a-58-8",
-              "DOMAIN_ID": "Measurement",
-              "VOCABULARY_ID": "NCIt",
-              "CONCEPT_CLASS_ID": "AJCC Category"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": 9,
-      "name": "[PIONEER] Gleason Score 6",
-      "expression": {
-        "items": [
-          {
-            "concept": {
-              "CONCEPT_ID": 36770582,
-              "CONCEPT_NAME": "Gleason Grade group 1 (Gleason Score 3 + 3 = 6)",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "OMOP5000262",
-              "DOMAIN_ID": "Measurement",
-              "VOCABULARY_ID": "Cancer Modifier",
-              "CONCEPT_CLASS_ID": "Staging/Grading"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": 13,
-      "name": "[PIONEER] Biopsy",
-      "expression": {
-        "items": [
-          {
-            "concept": {
+              "CONCEPT_CLASS_ID": "Procedure",
+              "CONCEPT_CODE": "65575008",
               "CONCEPT_ID": 4278515,
               "CONCEPT_NAME": "Biopsy of prostate",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "DOMAIN_ID": "Procedure",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "65575008",
-              "DOMAIN_ID": "Procedure",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Procedure"
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "name": "[PIONEER] Prior Prostate Ca related obs/condition",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "445068007",
+              "CONCEPT_ID": 40482030,
+              "CONCEPT_NAME": "Dysplasia of prostate",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
             }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Context-dependent",
+              "CONCEPT_CODE": "428262008",
+              "CONCEPT_ID": 4180749,
+              "CONCEPT_NAME": "History of malignant neoplasm of prostate",
+              "DOMAIN_ID": "Observation",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": "[PIONEER] Other Malignancies",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "254701007",
+              "CONCEPT_ID": 4112752,
+              "CONCEPT_NAME": "Basal cell carcinoma of skin",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "254651007",
+              "CONCEPT_ID": 4111921,
+              "CONCEPT_NAME": "Squamous cell carcinoma of skin",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "399068003",
+              "CONCEPT_ID": 4163261,
+              "CONCEPT_NAME": "Malignant tumor of prostate",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "363346000",
+              "CONCEPT_ID": 443392,
+              "CONCEPT_NAME": "Malignant neoplastic disease",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "128462008",
+              "CONCEPT_ID": 432851,
+              "CONCEPT_NAME": "Secondary malignant neoplastic disease",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
           }
         ]
       }
@@ -218,11 +175,7 @@
       {
         "ConditionOccurrence": {
           "CodesetId": 0,
-          "First": true,
-          "Age": {
-            "Value": 18,
-            "Op": "gte"
-          }
+          "First": true
         }
       }
     ],
@@ -234,110 +187,93 @@
       "Type": "First"
     }
   },
-  "AdditionalCriteria": {
-    "Type": "ALL",
-    "CriteriaList": [
-      {
-        "Criteria": {
-          "ProcedureOccurrence": {
-            "CodesetId": 13
-          }
-        },
-        "StartWindow": {
-          "Start": {
-            "Days": 30,
-            "Coeff": -1
-          },
-          "End": {
-            "Days": 30,
-            "Coeff": 1
-          },
-          "UseEventEnd": false
-        },
-        "Occurrence": {
-          "Type": 2,
-          "Count": 1
-        }
-      }
-    ],
-    "DemographicCriteriaList": [],
-    "Groups": []
-  },
   "QualifiedLimit": {
     "Type": "First"
   },
   "ExpressionLimit": {
-    "Type": "First"
+    "Type": "All"
   },
   "InclusionRules": [
     {
-      "name": "Low grade attributes",
+      "name": "Age >= 18",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [],
+        "DemographicCriteriaList": [
+          {
+            "Age": {
+              "Value": 18,
+              "Op": "gte"
+            }
+          }
+        ],
+        "Groups": []
+      }
+    },
+    {
+      "name": "No history of PCa",
       "expression": {
         "Type": "ALL",
         "CriteriaList": [
           {
             "Criteria": {
-              "Measurement": {
-                "CodesetId": 1,
-                "ValueAsNumber": {
-                  "Value": 10,
-                  "Op": "lt"
-                },
-                "Unit": [
-                  {
-                    "CONCEPT_CODE": "ng/mL",
-                    "CONCEPT_ID": 8842,
-                    "CONCEPT_NAME": "nanogram per milliliter",
-                    "DOMAIN_ID": "Unit",
-                    "INVALID_REASON_CAPTION": "Unknown",
-                    "STANDARD_CONCEPT_CAPTION": "Unknown",
-                    "VOCABULARY_ID": "UCUM"
-                  }
-                ]
+              "ConditionOccurrence": {
+                "CodesetId": 4
               }
             },
             "StartWindow": {
               "Start": {
-                "Days": 30,
+                "Days": 365,
                 "Coeff": -1
               },
               "End": {
-                "Days": 7,
-                "Coeff": 1
+                "Days": 0,
+                "Coeff": -1
               },
               "UseEventEnd": false
             },
             "Occurrence": {
-              "Type": 2,
-              "Count": 1
+              "Type": 0,
+              "Count": 0
             }
           },
           {
             "Criteria": {
-              "Measurement": {
-                "CodesetId": 3
+              "Observation": {
+                "CodesetId": 4
               }
             },
             "StartWindow": {
               "Start": {
-                "Days": 30,
+                "Days": 365,
                 "Coeff": -1
               },
               "End": {
-                "Days": 7,
-                "Coeff": 1
+                "Days": 0,
+                "Coeff": -1
               },
               "UseEventEnd": false
             },
             "Occurrence": {
-              "Type": 2,
-              "Count": 1
+              "Type": 0,
+              "Count": 0
             }
-          },
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    },
+    {
+      "name": "PCa biopsy",
+      "expression": {
+        "Type": "AT_LEAST",
+        "Count": 1,
+        "CriteriaList": [
           {
             "Criteria": {
-              "Measurement": {
-                "CodesetId": 9
+              "ProcedureOccurrence": {
+                "CodesetId": 1
               }
             },
             "StartWindow": {
@@ -346,7 +282,7 @@
                 "Coeff": -1
               },
               "End": {
-                "Days": 7,
+                "Days": 30,
                 "Coeff": 1
               },
               "UseEventEnd": false
@@ -362,7 +298,16 @@
       }
     }
   ],
-  "CensoringCriteria": [],
+  "CensoringCriteria": [
+    {
+      "Death": {}
+    },
+    {
+      "ConditionOccurrence": {
+        "CodesetId": 6
+      }
+    }
+  ],
   "CollapseSettings": {
     "CollapseType": "ERA",
     "EraPad": 0

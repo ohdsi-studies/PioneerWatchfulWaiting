@@ -1,111 +1,111 @@
 targetId,strataId,cohortId,cohortType,name
-1,1,111000011,TwS,1_All PCa with Full 30-day follow up
-2,1,112000011,TwS,1_All PCa Censored with Full 30-day follow up
-3,1,113000011,TwS,2_PCa Treated Right Away broad with Full 30-day follow up
-4,1,114000011,TwS,3_PCa Conservative Management with Full 30-day follow up
-5,1,115000011,TwS,4_PCa Treated Post Conservative Management with Full 30-day follow up
-1,2,111000021,TwS,1_All PCa with < 30-day follow up
-2,2,112000021,TwS,1_All PCa Censored with < 30-day follow up
-3,2,113000021,TwS,2_PCa Treated Right Away broad with < 30-day follow up
-4,2,114000021,TwS,3_PCa Conservative Management with < 30-day follow up
-5,2,115000021,TwS,4_PCa Treated Post Conservative Management with < 30-day follow up
-1,3,111000031,TwS,1_All PCa with Sex = Female
-2,3,112000031,TwS,1_All PCa Censored with Sex = Female
-3,3,113000031,TwS,2_PCa Treated Right Away broad with Sex = Female
-4,3,114000031,TwS,3_PCa Conservative Management with Sex = Female
-5,3,115000031,TwS,4_PCa Treated Post Conservative Management with Sex = Female
-1,4,111000041,TwS,1_All PCa with Sex = Male
-2,4,112000041,TwS,1_All PCa Censored with Sex = Male
-3,4,113000041,TwS,2_PCa Treated Right Away broad with Sex = Male
-4,4,114000041,TwS,3_PCa Conservative Management with Sex = Male
-5,4,115000041,TwS,4_PCa Treated Post Conservative Management with Sex = Male
-1,5,111000051,TwS,1_All PCa with Age >= 18
-2,5,112000051,TwS,1_All PCa Censored with Age >= 18
-3,5,113000051,TwS,2_PCa Treated Right Away broad with Age >= 18
-4,5,114000051,TwS,3_PCa Conservative Management with Age >= 18
-5,5,115000051,TwS,4_PCa Treated Post Conservative Management with Age >= 18
-1,6,111000061,TwS,1_All PCa with Age < 18
-2,6,112000061,TwS,1_All PCa Censored with Age < 18
-3,6,113000061,TwS,2_PCa Treated Right Away broad with Age < 18
-4,6,114000061,TwS,3_PCa Conservative Management with Age < 18
-5,6,115000061,TwS,4_PCa Treated Post Conservative Management with Age < 18
-1,7,111000071,TwS,1_All PCa with Age >= 65
-2,7,112000071,TwS,1_All PCa Censored with Age >= 65
-3,7,113000071,TwS,2_PCa Treated Right Away broad with Age >= 65
-4,7,114000071,TwS,3_PCa Conservative Management with Age >= 65
-5,7,115000071,TwS,4_PCa Treated Post Conservative Management with Age >= 65
-1,8,111000081,TwS,1_All PCa with Age < 65
-2,8,112000081,TwS,1_All PCa Censored with Age < 65
-3,8,113000081,TwS,2_PCa Treated Right Away broad with Age < 65
-4,8,114000081,TwS,3_PCa Conservative Management with Age < 65
-5,8,115000081,TwS,4_PCa Treated Post Conservative Management with Age < 65
-1,9,111000091,TwS,1_All PCa with Black or African American
-2,9,112000091,TwS,1_All PCa Censored with Black or African American
-3,9,113000091,TwS,2_PCa Treated Right Away broad with Black or African American
-4,9,114000091,TwS,3_PCa Conservative Management with Black or African American
-5,9,115000091,TwS,4_PCa Treated Post Conservative Management with Black or African American
-1,10,111000101,TwS,1_All PCa with White
-2,10,112000101,TwS,1_All PCa Censored with White
-3,10,113000101,TwS,2_PCa Treated Right Away broad with White
-4,10,114000101,TwS,3_PCa Conservative Management with White
-5,10,115000101,TwS,4_PCa Treated Post Conservative Management with White
-1,100,111001001,TwS,1_All PCa with High-Risk
-2,100,112001001,TwS,1_All PCa Censored with High-Risk
-3,100,113001001,TwS,2_PCa Treated Right Away broad with High-Risk
-4,100,114001001,TwS,3_PCa Conservative Management with High-Risk
-5,100,115001001,TwS,4_PCa Treated Post Conservative Management with High-Risk
-1,101,111001011,TwS,1_All PCa with Low-Risk
-2,101,112001011,TwS,1_All PCa Censored with Low-Risk
-3,101,113001011,TwS,2_PCa Treated Right Away broad with Low-Risk
-4,101,114001011,TwS,3_PCa Conservative Management with Low-Risk
-5,101,115001011,TwS,4_PCa Treated Post Conservative Management with Low-Risk
-1,102,111001021,TwS,1_All PCa with Intermediate-Risk
-2,102,112001021,TwS,1_All PCa Censored with Intermediate-Risk
-3,102,113001021,TwS,2_PCa Treated Right Away broad with Intermediate-Risk
-4,102,114001021,TwS,3_PCa Conservative Management with Intermediate-Risk
-5,102,115001021,TwS,4_PCa Treated Post Conservative Management with Intermediate-Risk
-1,103,111001031,TwS,1_All PCa with Advanced PCa
-2,103,112001031,TwS,1_All PCa Censored with Advanced PCa
-3,103,113001031,TwS,2_PCa Treated Right Away broad with Advanced PCa
-4,103,114001031,TwS,3_PCa Conservative Management with Advanced PCa
-5,103,115001031,TwS,4_PCa Treated Post Conservative Management with Advanced PCa
-1,104,111001041,TwS,1_All PCa with Locally advanced PCa
-2,104,112001041,TwS,1_All PCa Censored with Locally advanced PCa
-3,104,113001041,TwS,2_PCa Treated Right Away broad with Locally advanced PCa
-4,104,114001041,TwS,3_PCa Conservative Management with Locally advanced PCa
-5,104,115001041,TwS,4_PCa Treated Post Conservative Management with Advanced PCa
-1,105,111001051,TwS,1_All PCa with Localized PCa
-2,105,112001051,TwS,1_All PCa Censored with Localized PCa
-3,105,113001051,TwS,2_PCa Treated Right Away broad with Localized PCa
-4,105,114001051,TwS,3_PCa Conservative Management with Localized PCa
-5,105,115001051,TwS,4_PCa Treated Post Conservative Management with Localized PCa
-1,100,111001002,TwoS,1_All PCa without High-Risk
-2,100,112001002,TwoS,1_All PCa Censored without High-Risk
-3,100,113001002,TwoS,2_PCa Treated Right Away broad without High-Risk
-4,100,114001002,TwoS,3_PCa Conservative Management without High-Risk
-5,100,115001002,TwoS,4_PCa Treated Post Conservative Management without High-Risk
-1,101,111001012,TwoS,1_All PCa without Low-Risk
-2,101,112001012,TwoS,1_All PCa Censored without Low-Risk
-3,101,113001012,TwoS,2_PCa Treated Right Away broad without Low-Risk
-4,101,114001012,TwoS,3_PCa Conservative Management without Low-Risk
-5,101,115001012,TwoS,4_PCa Treated Post Conservative Management without Low-Risk
-1,102,111001022,TwoS,1_All PCa without Intermediate-Risk
-2,102,112001022,TwoS,1_All PCa Censored without Intermediate-Risk
-3,102,113001022,TwoS,2_PCa Treated Right Away broad without Intermediate-Risk
-4,102,114001022,TwoS,3_PCa Conservative Management without Intermediate-Risk
-5,102,115001022,TwoS,4_PCa Treated Post Conservative Management without Intermediate-Risk
-1,103,111001032,TwoS,1_All PCa without Advanced PCa
-2,103,112001032,TwoS,1_All PCa Censored without Advanced PCa
-3,103,113001032,TwoS,2_PCa Treated Right Away broad without Advanced PCa
-4,103,114001032,TwoS,3_PCa Conservative Management without Advanced PCa
-5,103,115001032,TwoS,4_PCa Treated Post Conservative Management without Advanced PCa
-1,104,111001042,TwoS,1_All PCa without Locally advanced PCa
-2,104,112001042,TwoS,1_All PCa Censored without Locally advanced PCa
-3,104,113001042,TwoS,2_PCa Treated Right Away broad without Locally advanced PCa
-4,104,114001042,TwoS,3_PCa Conservative Management without Locally advanced PCa
-5,104,115001042,TwoS,4_PCa Treated Post Conservative Management without Advanced PCa
-1,105,111001052,TwoS,1_All PCa without Localized PCa
-2,105,112001052,TwoS,1_All PCa Censored without Localized PCa
-3,105,113001052,TwoS,2_PCa Treated Right Away broad without Localized PCa
-4,105,114001052,TwoS,3_PCa Conservative Management without Localized PCa
-5,105,115001052,TwoS,4_PCa Treated Post Conservative Management without Localized PCa
+101,1,101000011,TwS,1_All PCa  with Full 30-day follow up
+102,1,102000011,TwS,1_All PCa Censored with Full 30-day follow up
+103,1,103000011,TwS,2_PCa Treated Right Away broad with Full 30-day follow up
+104,1,104000011,TwS,3_PCa Conservative Management with Full 30-day follow up
+105,1,105000011,TwS,4_PCa Treated Post Conservative Management with Full 30-day follow up
+101,2,101000021,TwS,1_All PCa  with < 30-day follow up
+102,2,102000021,TwS,1_All PCa Censored with < 30-day follow up
+103,2,103000021,TwS,2_PCa Treated Right Away broad with < 30-day follow up
+104,2,104000021,TwS,3_PCa Conservative Management with < 30-day follow up
+105,2,105000021,TwS,4_PCa Treated Post Conservative Management with < 30-day follow up
+101,3,101000031,TwS,1_All PCa  with Sex = Female
+102,3,102000031,TwS,1_All PCa Censored with Sex = Female
+103,3,103000031,TwS,2_PCa Treated Right Away broad with Sex = Female
+104,3,104000031,TwS,3_PCa Conservative Management with Sex = Female
+105,3,105000031,TwS,4_PCa Treated Post Conservative Management with Sex = Female
+101,4,101000041,TwS,1_All PCa  with Sex = Male
+102,4,102000041,TwS,1_All PCa Censored with Sex = Male
+103,4,103000041,TwS,2_PCa Treated Right Away broad with Sex = Male
+104,4,104000041,TwS,3_PCa Conservative Management with Sex = Male
+105,4,105000041,TwS,4_PCa Treated Post Conservative Management with Sex = Male
+101,5,101000051,TwS,1_All PCa  with Age >= 18
+102,5,102000051,TwS,1_All PCa Censored with Age >= 18
+103,5,103000051,TwS,2_PCa Treated Right Away broad with Age >= 18
+104,5,104000051,TwS,3_PCa Conservative Management with Age >= 18
+105,5,105000051,TwS,4_PCa Treated Post Conservative Management with Age >= 18
+101,6,101000061,TwS,1_All PCa  with Age < 18
+102,6,102000061,TwS,1_All PCa Censored with Age < 18
+103,6,103000061,TwS,2_PCa Treated Right Away broad with Age < 18
+104,6,104000061,TwS,3_PCa Conservative Management with Age < 18
+105,6,105000061,TwS,4_PCa Treated Post Conservative Management with Age < 18
+101,7,101000071,TwS,1_All PCa  with Age >= 65
+102,7,102000071,TwS,1_All PCa Censored with Age >= 65
+103,7,103000071,TwS,2_PCa Treated Right Away broad with Age >= 65
+104,7,104000071,TwS,3_PCa Conservative Management with Age >= 65
+105,7,105000071,TwS,4_PCa Treated Post Conservative Management with Age >= 65
+101,8,101000081,TwS,1_All PCa  with Age < 65
+102,8,102000081,TwS,1_All PCa Censored with Age < 65
+103,8,103000081,TwS,2_PCa Treated Right Away broad with Age < 65
+104,8,104000081,TwS,3_PCa Conservative Management with Age < 65
+105,8,105000081,TwS,4_PCa Treated Post Conservative Management with Age < 65
+101,9,101000091,TwS,1_All PCa  with Black or African American
+102,9,102000091,TwS,1_All PCa Censored with Black or African American
+103,9,103000091,TwS,2_PCa Treated Right Away broad with Black or African American
+104,9,104000091,TwS,3_PCa Conservative Management with Black or African American
+105,9,105000091,TwS,4_PCa Treated Post Conservative Management with Black or African American
+101,10,101000101,TwS,1_All PCa  with White
+102,10,102000101,TwS,1_All PCa Censored with White
+103,10,103000101,TwS,2_PCa Treated Right Away broad with White
+104,10,104000101,TwS,3_PCa Conservative Management with White
+105,10,105000101,TwS,4_PCa Treated Post Conservative Management with White
+101,301,101003011,TwS,1_All PCa  with High-Risk
+102,301,102003011,TwS,1_All PCa Censored with High-Risk
+103,301,103003011,TwS,2_PCa Treated Right Away broad with High-Risk
+104,301,104003011,TwS,3_PCa Conservative Management with High-Risk
+105,301,105003011,TwS,4_PCa Treated Post Conservative Management with High-Risk
+101,302,101003021,TwS,1_All PCa  with Low-Risk
+102,302,102003021,TwS,1_All PCa Censored with Low-Risk
+103,302,103003021,TwS,2_PCa Treated Right Away broad with Low-Risk
+104,302,104003021,TwS,3_PCa Conservative Management with Low-Risk
+105,302,105003021,TwS,4_PCa Treated Post Conservative Management with Low-Risk
+101,303,101003031,TwS,1_All PCa  with Intermediate-Risk
+102,303,102003031,TwS,1_All PCa Censored with Intermediate-Risk
+103,303,103003031,TwS,2_PCa Treated Right Away broad with Intermediate-Risk
+104,303,104003031,TwS,3_PCa Conservative Management with Intermediate-Risk
+105,303,105003031,TwS,4_PCa Treated Post Conservative Management with Intermediate-Risk
+101,304,101003041,TwS,1_All PCa  with Advanced PCa
+102,304,102003041,TwS,1_All PCa Censored with Advanced PCa
+103,304,103003041,TwS,2_PCa Treated Right Away broad with Advanced PCa
+104,304,104003041,TwS,3_PCa Conservative Management with Advanced PCa
+105,304,105003041,TwS,4_PCa Treated Post Conservative Management with Advanced PCa
+101,305,101003051,TwS,1_All PCa  with Locally advanced PCa
+102,305,102003051,TwS,1_All PCa Censored with Locally advanced PCa
+103,305,103003051,TwS,2_PCa Treated Right Away broad with Locally advanced PCa
+104,305,104003051,TwS,3_PCa Conservative Management with Locally advanced PCa
+105,305,105003051,TwS,4_PCa Treated Post Conservative Management with Locally advanced PCa
+101,306,101003061,TwS,1_All PCa  with Localized PCa
+102,306,102003061,TwS,1_All PCa Censored with Localized PCa
+103,306,103003061,TwS,2_PCa Treated Right Away broad with Localized PCa
+104,306,104003061,TwS,3_PCa Conservative Management with Localized PCa
+105,306,105003061,TwS,4_PCa Treated Post Conservative Management with Localized PCa
+101,301,101003012,TwoS,1_All PCa  without High-Risk
+102,301,102003012,TwoS,1_All PCa Censored without High-Risk
+103,301,103003012,TwoS,2_PCa Treated Right Away broad without High-Risk
+104,301,104003012,TwoS,3_PCa Conservative Management without High-Risk
+105,301,105003012,TwoS,4_PCa Treated Post Conservative Management without High-Risk
+101,302,101003022,TwoS,1_All PCa  without Low-Risk
+102,302,102003022,TwoS,1_All PCa Censored without Low-Risk
+103,302,103003022,TwoS,2_PCa Treated Right Away broad without Low-Risk
+104,302,104003022,TwoS,3_PCa Conservative Management without Low-Risk
+105,302,105003022,TwoS,4_PCa Treated Post Conservative Management without Low-Risk
+101,303,101003032,TwoS,1_All PCa  without Intermediate-Risk
+102,303,102003032,TwoS,1_All PCa Censored without Intermediate-Risk
+103,303,103003032,TwoS,2_PCa Treated Right Away broad without Intermediate-Risk
+104,303,104003032,TwoS,3_PCa Conservative Management without Intermediate-Risk
+105,303,105003032,TwoS,4_PCa Treated Post Conservative Management without Intermediate-Risk
+101,304,101003042,TwoS,1_All PCa  without Advanced PCa
+102,304,102003042,TwoS,1_All PCa Censored without Advanced PCa
+103,304,103003042,TwoS,2_PCa Treated Right Away broad without Advanced PCa
+104,304,104003042,TwoS,3_PCa Conservative Management without Advanced PCa
+105,304,105003042,TwoS,4_PCa Treated Post Conservative Management without Advanced PCa
+101,305,101003052,TwoS,1_All PCa  without Locally advanced PCa
+102,305,102003052,TwoS,1_All PCa Censored without Locally advanced PCa
+103,305,103003052,TwoS,2_PCa Treated Right Away broad without Locally advanced PCa
+104,305,104003052,TwoS,3_PCa Conservative Management without Locally advanced PCa
+105,305,105003052,TwoS,4_PCa Treated Post Conservative Management without Locally advanced PCa
+101,306,101003062,TwoS,1_All PCa  without Localized PCa
+102,306,102003062,TwoS,1_All PCa Censored without Localized PCa
+103,306,103003062,TwoS,2_PCa Treated Right Away broad without Localized PCa
+104,306,104003062,TwoS,3_PCa Conservative Management without Localized PCa
+105,306,105003062,TwoS,4_PCa Treated Post Conservative Management without Localized PCa

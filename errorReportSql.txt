@@ -1,0 +1,28 @@
+DBMS:
+postgresql
+
+Error:
+org.postgresql.util.PSQLException: ERROR: syntax error at or near "NULL"
+  Position: 1
+
+SQL:
+NULL
+
+R version:
+R version 4.0.4 (2021-02-15)
+
+Platform:
+x86_64-w64-mingw32
+
+Attached base packages:
+- stats
+- graphics
+- grDevices
+- datasets
+- utils
+- methods
+- base
+
+Other attached packages:
+- PIONEERCharacterization (1.4.0)
+- DatabaseConnector (4.0.0)

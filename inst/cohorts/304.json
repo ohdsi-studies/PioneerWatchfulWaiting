@@ -1,0 +1,252 @@
+{
+  "ConceptSets": [
+    {
+      "id": 0,
+      "name": "[PIONEER] PCa",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_ID": 4163261,
+              "CONCEPT_NAME": "Malignant tumor of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "399068003",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "includeDescendants": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "name": "[PIONEER] Any T, Any N, M1",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_ID": 1538290,
+              "CONCEPT_NAME": "Prostate Cancer cM1 TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "cM1-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 1539119,
+              "CONCEPT_NAME": "Prostate Cancer cM1a TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "cM1a-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 1538995,
+              "CONCEPT_NAME": "Prostate Cancer cM1b TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "cM1b-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 1538321,
+              "CONCEPT_NAME": "Prostate Cancer cM1c TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "cM1c-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 1538990,
+              "CONCEPT_NAME": "Prostate Cancer pM1a TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "pM1a-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 1539243,
+              "CONCEPT_NAME": "Prostate Cancer pM1b TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "pM1b-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 1538754,
+              "CONCEPT_NAME": "Prostate Cancer pM1c TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "pM1c-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "name": "[PIONEER] Biopsy",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_ID": 4278515,
+              "CONCEPT_NAME": "Biopsy of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "65575008",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "PrimaryCriteria": {
+    "CriteriaList": [
+      {
+        "ConditionOccurrence": {
+          "CodesetId": 0,
+          "First": true,
+          "Age": {
+            "Value": 18,
+            "Op": "gte"
+          }
+        }
+      }
+    ],
+    "ObservationWindow": {
+      "PriorDays": 365,
+      "PostDays": 0
+    },
+    "PrimaryCriteriaLimit": {
+      "Type": "First"
+    }
+  },
+  "AdditionalCriteria": {
+    "Type": "ALL",
+    "CriteriaList": [
+      {
+        "Criteria": {
+          "ProcedureOccurrence": {
+            "CodesetId": 11
+          }
+        },
+        "StartWindow": {
+          "Start": {
+            "Days": 30,
+            "Coeff": -1
+          },
+          "End": {
+            "Days": 30,
+            "Coeff": 1
+          },
+          "UseEventEnd": false
+        },
+        "Occurrence": {
+          "Type": 2,
+          "Count": 1
+        }
+      }
+    ],
+    "DemographicCriteriaList": [],
+    "Groups": []
+  },
+  "QualifiedLimit": {
+    "Type": "First"
+  },
+  "ExpressionLimit": {
+    "Type": "First"
+  },
+  "InclusionRules": [
+    {
+      "name": "M1",
+      "expression": {
+        "Type": "ANY",
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "Measurement": {
+                "CodesetId": 7
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 30,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    }
+  ],
+  "CensoringCriteria": [],
+  "CollapseSettings": {
+    "CollapseType": "ERA",
+    "EraPad": 0
+  },
+  "CensorWindow": {},
+  "cdmVersionRange": ">=5.0.0"
+}

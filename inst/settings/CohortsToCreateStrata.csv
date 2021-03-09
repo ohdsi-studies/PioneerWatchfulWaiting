@@ -1,7 +1,7 @@
 name,atlasName,atlasId,cohortId
-High-Risk,[PIONEER S1] High-Risk,100,100
-Low-Risk,[PIONEER S2] Low-Risk,101,101
-Intermediate-Risk,[PIONEER S3] Intermediate-Risk,102,102
-Advanced PCa,[PIONEER S4] Advanced PCa,103,103
-Locally advanced PCa,[PIONEER S5] Locally advanced PCa,104,104
-Localized PCa,[PIONEER S6] Localized PCa,105,105
+High-Risk,[PIONEER S1] High-Risk,301,301
+Low-Risk,[PIONEER S2] Low-Risk,302,302
+Intermediate-Risk ,[PIONEER S3] Intermediate-Risk ,303,303
+Advanced PCa,[PIONEER S4] Advanced PCa,304,304
+Locally advanced PCa,[PIONEER S5] Locally advanced PCa,305,305
+Localized PCa,[PIONEER S6] Localized PCa,306,306

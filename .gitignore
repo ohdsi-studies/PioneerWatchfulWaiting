@@ -41,3 +41,7 @@ vignettes/*.pdf
 
 # Results data
 inst/shiny/PIONEERResultsExplorer/data
+
+#stage directories
+inst_demo
+inst_real
