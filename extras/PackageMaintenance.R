@@ -45,7 +45,7 @@
 #   checkmate::assertScalar(packageName, add = errorMessage)
 #   checkmate::assertCharacter(packageName, add = errorMessage)
 #   checkmate::reportAssertions(errorMessage)
-#   
+# 
 #   if (insertCohortCreationR && !insertTableSql)
 #     stop("Need to insert table SQL in order to generate R code")
 #   if (insertCohortCreationR && generateStats && jsonFolder != "inst/cohorts")
@@ -54,10 +54,10 @@
 #     stop("When generating R code, the sqlFolder must be 'inst/sql/sql_server'")
 #   if (insertCohortCreationR && !grepl("inst", fileName))
 #     stop("When generating R code, the input CSV file must be in the inst folder.")
-#   
+# 
 #   cohortsToCreate <- readr::read_csv(fileName, col_types = readr::cols())
 #   cohortsToCreate <- cohortsToCreate[cohortsToCreate$atlasId > 0, ]
-#   
+# 
 #   # Inserting cohort JSON and SQL
 #   for (i in 1:nrow(cohortsToCreate)) {
 #     writeLines(paste("Inserting cohort:", cohortsToCreate$name[i]))
@@ -69,13 +69,13 @@
 #                                     sqlFolder = sqlFolder,
 #                                     generateStats = generateStats)
 #   }
-#   
+# 
 #   # Insert SQL to create empty cohort table
 #   if (insertTableSql) {
 #     writeLines("Creating SQL to create empty cohort table")
 #     .insertSqlForCohortTableInPackage(statsTables = generateStats, sqlFolder = sqlFolder)
 #   }
-#   
+# 
 #   # Store information on inclusion rules
 #   if (generateStats) {
 #     writeLines("Storing information on inclusion rules")
@@ -86,7 +86,7 @@
 #     write.csv(rules, csvFileName, row.names = FALSE)
 #     writeLines(paste("- Created CSV file:", csvFileName))
 #   }
-#   
+# 
 #   # Generate R code to create cohorts
 #   if (insertCohortCreationR) {
 #     writeLines("Generating R code to create cohorts")
@@ -121,8 +121,8 @@
 #   checkmate::assertInt(cohortId, add = errorMessage)
 #   checkmate::assertLogical(generateStats, add = errorMessage)
 #   checkmate::reportAssertions(errorMessage)
-#   
-#   object <- ROhdsiWebApi::getCohortDefinition(cohortId = cohortId, 
+# 
+#   object <- ROhdsiWebApi::getCohortDefinition(cohortId = cohortId,
 #                                               baseUrl = baseUrl)
 #   if (is.null(name)) {
 #     name <- object$name
@@ -134,7 +134,7 @@
 #   json <- RJSONIO::toJSON(object$expression, pretty = TRUE)
 #   SqlRender::writeSql(sql = json, targetFile = jsonFileName)
 #   writeLines(paste("- Created JSON file:", jsonFileName))
-#   
+# 
 #   # Fetch SQL
 #   sql <- ROhdsiWebApi::getCohortSql(baseUrl = baseUrl, cohortDefinition = object, generateStats = generateStats)
 #   if (!file.exists(sqlFolder)) {
@@ -147,16 +147,17 @@
 
 
 # get json cohort from local files, create CohortsToCreate files
-nameToIdMapping <- list('target' = 100, 'outcome' = 200, 'strata' = 300)
+groupNames <- list('target', 'outcome', 'strata')
 # source_cohorts_path <- 'inst_demo/real_cohorts'
 source_cohorts_path <- ''
 json_cohorts_path <- 'inst/cohorts'
 settingsPath <- "inst/settings"
 
 
+nameToAtlasId <- read.csv(file.path(source_cohorts_path, 'AtlasIds.csv'))
+
 for (i in 1:length(nameToIdMapping)){
-  group_name <- names(nameToIdMapping)[i]
-  offset_num <- nameToIdMapping[[group_name]]
+  group_name <- groupNames[i]
 
   ParallelLogger::logInfo("Importing ", group_name, " cohorts")
   
@@ -180,8 +181,6 @@ for (i in 1:length(nameToIdMapping)){
   readr::write_csv(cohortsToCreate, 
                    file.path(settingsPath, paste0('CohortsToCreate', stringr::str_to_title(group_name), '.csv')))
 }
-
-
 
 
 

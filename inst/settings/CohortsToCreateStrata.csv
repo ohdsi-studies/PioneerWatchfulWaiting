@@ -1,7 +1,20 @@
 name,atlasName,atlasId,cohortId
-High-Risk,[PIONEER S1] High-Risk,301,301
-Low-Risk,[PIONEER S2] Low-Risk,302,302
-Intermediate-Risk ,[PIONEER S3] Intermediate-Risk ,303,303
-Advanced PCa,[PIONEER S4] Advanced PCa,304,304
-Locally advanced PCa,[PIONEER S5] Locally advanced PCa,305,305
-Localized PCa,[PIONEER S6] Localized PCa,306,306
+High-Risk,[PIONEER S1] High-Risk,52,52
+Low-Risk,[PIONEER S2] Low-Risk,53,53
+Intermediate-Risk,[PIONEER S3] Intermediate-Risk,54,54
+Metastatic Dx Extent,[PIONEER S4] Metastatic Dx Extent,55,55
+Locally advanced Dx Extent,[PIONEER S5] Locally advanced Dx Extent,56,56
+Localized Dx Extent,[PIONEER S6] Localized Dx Extent,57,57
+PSA > 20,[PIONEER S7] PSA > 20,58,58
+PSA < 10,[PIONEER S8] PSA < 10,59,59
+PSA 10-20,[PIONEER S9] PSA 10-20,60,60
+Stage T1,[PIONEER S10] Stage T1,63,63
+Stage T2,[PIONEER S11] Stage T2,64,64
+Stage T3,[PIONEER S12] Stage T3,65,65
+Stage T4,[PIONEER S13] Stage T4,66,66
+Grade 1 (GS 2-6),[PIONEER S14] Grade 1 (GS 2-6),67,67
+Grade 2 (GS 7 (3+4)),[PIONEER S15] Grade 2 (GS 7 (3+4)),68,68
+Grade 3 (GS 7 (4+3)),[PIONEER S16] Grade 3 (GS 7 (4+3)),69,69
+Grade 4 (GS 8),[PIONEER S17] Grade 4 (GS 8),70,70
+Grade 5 (GS 9-10),[PIONEER S18] Grade 5 (GS 9-10),71,71
+Family History of Pca,[PIONEER S19] Family History of Pca,72,72

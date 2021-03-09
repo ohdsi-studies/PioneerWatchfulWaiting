@@ -1,116 +1,246 @@
 cohortId,targetId,targetName,strataId,strataName,cohortType
-101,101,1_All PCa ,0,All,Target
-102,102,1_All PCa Censored,0,All,Target
-103,103,2_PCa Treated Right Away broad,0,All,Target
-104,104,3_PCa Conservative Management,0,All,Target
-105,105,4_PCa Treated Post Conservative Management,0,All,Target
-101003012,101,1_All PCa ,301,without High-Risk,TwoS
-102003012,102,1_All PCa Censored,301,without High-Risk,TwoS
-103003012,103,2_PCa Treated Right Away broad,301,without High-Risk,TwoS
-104003012,104,3_PCa Conservative Management,301,without High-Risk,TwoS
-105003012,105,4_PCa Treated Post Conservative Management,301,without High-Risk,TwoS
-101003022,101,1_All PCa ,302,without Low-Risk,TwoS
-102003022,102,1_All PCa Censored,302,without Low-Risk,TwoS
-103003022,103,2_PCa Treated Right Away broad,302,without Low-Risk,TwoS
-104003022,104,3_PCa Conservative Management,302,without Low-Risk,TwoS
-105003022,105,4_PCa Treated Post Conservative Management,302,without Low-Risk,TwoS
-101003032,101,1_All PCa ,303,without Intermediate-Risk,TwoS
-102003032,102,1_All PCa Censored,303,without Intermediate-Risk,TwoS
-103003032,103,2_PCa Treated Right Away broad,303,without Intermediate-Risk,TwoS
-104003032,104,3_PCa Conservative Management,303,without Intermediate-Risk,TwoS
-105003032,105,4_PCa Treated Post Conservative Management,303,without Intermediate-Risk,TwoS
-101003042,101,1_All PCa ,304,without Advanced PCa,TwoS
-102003042,102,1_All PCa Censored,304,without Advanced PCa,TwoS
-103003042,103,2_PCa Treated Right Away broad,304,without Advanced PCa,TwoS
-104003042,104,3_PCa Conservative Management,304,without Advanced PCa,TwoS
-105003042,105,4_PCa Treated Post Conservative Management,304,without Advanced PCa,TwoS
-101003052,101,1_All PCa ,305,without Locally advanced PCa,TwoS
-102003052,102,1_All PCa Censored,305,without Locally advanced PCa,TwoS
-103003052,103,2_PCa Treated Right Away broad,305,without Locally advanced PCa,TwoS
-104003052,104,3_PCa Conservative Management,305,without Locally advanced PCa,TwoS
-105003052,105,4_PCa Treated Post Conservative Management,305,without Locally advanced PCa,TwoS
-101003062,101,1_All PCa ,306,without Localized PCa,TwoS
-102003062,102,1_All PCa Censored,306,without Localized PCa,TwoS
-103003062,103,2_PCa Treated Right Away broad,306,without Localized PCa,TwoS
-104003062,104,3_PCa Conservative Management,306,without Localized PCa,TwoS
-105003062,105,4_PCa Treated Post Conservative Management,306,without Localized PCa,TwoS
-101000011,101,1_All PCa ,1,with Full 30-day follow up,TwS
-102000011,102,1_All PCa Censored,1,with Full 30-day follow up,TwS
-103000011,103,2_PCa Treated Right Away broad,1,with Full 30-day follow up,TwS
-104000011,104,3_PCa Conservative Management,1,with Full 30-day follow up,TwS
-105000011,105,4_PCa Treated Post Conservative Management,1,with Full 30-day follow up,TwS
-101000021,101,1_All PCa ,2,with < 30-day follow up,TwS
-102000021,102,1_All PCa Censored,2,with < 30-day follow up,TwS
-103000021,103,2_PCa Treated Right Away broad,2,with < 30-day follow up,TwS
-104000021,104,3_PCa Conservative Management,2,with < 30-day follow up,TwS
-105000021,105,4_PCa Treated Post Conservative Management,2,with < 30-day follow up,TwS
-101000031,101,1_All PCa ,3,with Sex = Female,TwS
-102000031,102,1_All PCa Censored,3,with Sex = Female,TwS
-103000031,103,2_PCa Treated Right Away broad,3,with Sex = Female,TwS
-104000031,104,3_PCa Conservative Management,3,with Sex = Female,TwS
-105000031,105,4_PCa Treated Post Conservative Management,3,with Sex = Female,TwS
-101000041,101,1_All PCa ,4,with Sex = Male,TwS
-102000041,102,1_All PCa Censored,4,with Sex = Male,TwS
-103000041,103,2_PCa Treated Right Away broad,4,with Sex = Male,TwS
-104000041,104,3_PCa Conservative Management,4,with Sex = Male,TwS
-105000041,105,4_PCa Treated Post Conservative Management,4,with Sex = Male,TwS
-101000051,101,1_All PCa ,5,with Age >= 18,TwS
-102000051,102,1_All PCa Censored,5,with Age >= 18,TwS
-103000051,103,2_PCa Treated Right Away broad,5,with Age >= 18,TwS
-104000051,104,3_PCa Conservative Management,5,with Age >= 18,TwS
-105000051,105,4_PCa Treated Post Conservative Management,5,with Age >= 18,TwS
-101000061,101,1_All PCa ,6,with Age < 18,TwS
-102000061,102,1_All PCa Censored,6,with Age < 18,TwS
-103000061,103,2_PCa Treated Right Away broad,6,with Age < 18,TwS
-104000061,104,3_PCa Conservative Management,6,with Age < 18,TwS
-105000061,105,4_PCa Treated Post Conservative Management,6,with Age < 18,TwS
-101000071,101,1_All PCa ,7,with Age >= 65,TwS
-102000071,102,1_All PCa Censored,7,with Age >= 65,TwS
-103000071,103,2_PCa Treated Right Away broad,7,with Age >= 65,TwS
-104000071,104,3_PCa Conservative Management,7,with Age >= 65,TwS
-105000071,105,4_PCa Treated Post Conservative Management,7,with Age >= 65,TwS
-101000081,101,1_All PCa ,8,with Age < 65,TwS
-102000081,102,1_All PCa Censored,8,with Age < 65,TwS
-103000081,103,2_PCa Treated Right Away broad,8,with Age < 65,TwS
-104000081,104,3_PCa Conservative Management,8,with Age < 65,TwS
-105000081,105,4_PCa Treated Post Conservative Management,8,with Age < 65,TwS
-101000091,101,1_All PCa ,9,with Black or African American,TwS
-102000091,102,1_All PCa Censored,9,with Black or African American,TwS
-103000091,103,2_PCa Treated Right Away broad,9,with Black or African American,TwS
-104000091,104,3_PCa Conservative Management,9,with Black or African American,TwS
-105000091,105,4_PCa Treated Post Conservative Management,9,with Black or African American,TwS
-101000101,101,1_All PCa ,10,with White,TwS
-102000101,102,1_All PCa Censored,10,with White,TwS
-103000101,103,2_PCa Treated Right Away broad,10,with White,TwS
-104000101,104,3_PCa Conservative Management,10,with White,TwS
-105000101,105,4_PCa Treated Post Conservative Management,10,with White,TwS
-101003011,101,1_All PCa ,301,with High-Risk,TwS
-102003011,102,1_All PCa Censored,301,with High-Risk,TwS
-103003011,103,2_PCa Treated Right Away broad,301,with High-Risk,TwS
-104003011,104,3_PCa Conservative Management,301,with High-Risk,TwS
-105003011,105,4_PCa Treated Post Conservative Management,301,with High-Risk,TwS
-101003021,101,1_All PCa ,302,with Low-Risk,TwS
-102003021,102,1_All PCa Censored,302,with Low-Risk,TwS
-103003021,103,2_PCa Treated Right Away broad,302,with Low-Risk,TwS
-104003021,104,3_PCa Conservative Management,302,with Low-Risk,TwS
-105003021,105,4_PCa Treated Post Conservative Management,302,with Low-Risk,TwS
-101003031,101,1_All PCa ,303,with Intermediate-Risk,TwS
-102003031,102,1_All PCa Censored,303,with Intermediate-Risk,TwS
-103003031,103,2_PCa Treated Right Away broad,303,with Intermediate-Risk,TwS
-104003031,104,3_PCa Conservative Management,303,with Intermediate-Risk,TwS
-105003031,105,4_PCa Treated Post Conservative Management,303,with Intermediate-Risk,TwS
-101003041,101,1_All PCa ,304,with Advanced PCa,TwS
-102003041,102,1_All PCa Censored,304,with Advanced PCa,TwS
-103003041,103,2_PCa Treated Right Away broad,304,with Advanced PCa,TwS
-104003041,104,3_PCa Conservative Management,304,with Advanced PCa,TwS
-105003041,105,4_PCa Treated Post Conservative Management,304,with Advanced PCa,TwS
-101003051,101,1_All PCa ,305,with Locally advanced PCa,TwS
-102003051,102,1_All PCa Censored,305,with Locally advanced PCa,TwS
-103003051,103,2_PCa Treated Right Away broad,305,with Locally advanced PCa,TwS
-104003051,104,3_PCa Conservative Management,305,with Locally advanced PCa,TwS
-105003051,105,4_PCa Treated Post Conservative Management,305,with Locally advanced PCa,TwS
-101003061,101,1_All PCa ,306,with Localized PCa,TwS
-102003061,102,1_All PCa Censored,306,with Localized PCa,TwS
-103003061,103,2_PCa Treated Right Away broad,306,with Localized PCa,TwS
-104003061,104,3_PCa Conservative Management,306,with Localized PCa,TwS
-105003061,105,4_PCa Treated Post Conservative Management,306,with Localized PCa,TwS
+47,47,new Pca,0,All,Target
+48,48,new PCa censored,0,All,Target
+49,49,new PCa actively treated,0,All,Target
+50,50,new PCa conservative management,0,All,Target
+51,51,new PCa treatment post conservative management,0,All,Target
+47000522,47,new Pca,52,without High-Risk,TwoS
+48000522,48,new PCa censored,52,without High-Risk,TwoS
+49000522,49,new PCa actively treated,52,without High-Risk,TwoS
+50000522,50,new PCa conservative management,52,without High-Risk,TwoS
+51000522,51,new PCa treatment post conservative management,52,without High-Risk,TwoS
+47000532,47,new Pca,53,without Low-Risk,TwoS
+48000532,48,new PCa censored,53,without Low-Risk,TwoS
+49000532,49,new PCa actively treated,53,without Low-Risk,TwoS
+50000532,50,new PCa conservative management,53,without Low-Risk,TwoS
+51000532,51,new PCa treatment post conservative management,53,without Low-Risk,TwoS
+47000542,47,new Pca,54,without Intermediate-Risk,TwoS
+48000542,48,new PCa censored,54,without Intermediate-Risk,TwoS
+49000542,49,new PCa actively treated,54,without Intermediate-Risk,TwoS
+50000542,50,new PCa conservative management,54,without Intermediate-Risk,TwoS
+51000542,51,new PCa treatment post conservative management,54,without Intermediate-Risk,TwoS
+47000552,47,new Pca,55,without Metastatic Dx Extent,TwoS
+48000552,48,new PCa censored,55,without Metastatic Dx Extent,TwoS
+49000552,49,new PCa actively treated,55,without Metastatic Dx Extent,TwoS
+50000552,50,new PCa conservative management,55,without Metastatic Dx Extent,TwoS
+51000552,51,new PCa treatment post conservative management,55,without Metastatic Dx Extent,TwoS
+47000562,47,new Pca,56,without Locally advanced Dx Extent,TwoS
+48000562,48,new PCa censored,56,without Locally advanced Dx Extent,TwoS
+49000562,49,new PCa actively treated,56,without Locally advanced Dx Extent,TwoS
+50000562,50,new PCa conservative management,56,without Locally advanced Dx Extent,TwoS
+51000562,51,new PCa treatment post conservative management,56,without Locally advanced Dx Extent,TwoS
+47000572,47,new Pca,57,without Localized Dx Extent,TwoS
+48000572,48,new PCa censored,57,without Localized Dx Extent,TwoS
+49000572,49,new PCa actively treated,57,without Localized Dx Extent,TwoS
+50000572,50,new PCa conservative management,57,without Localized Dx Extent,TwoS
+51000572,51,new PCa treatment post conservative management,57,without Localized Dx Extent,TwoS
+47000582,47,new Pca,58,without PSA > 20,TwoS
+48000582,48,new PCa censored,58,without PSA > 20,TwoS
+49000582,49,new PCa actively treated,58,without PSA > 20,TwoS
+50000582,50,new PCa conservative management,58,without PSA > 20,TwoS
+51000582,51,new PCa treatment post conservative management,58,without PSA > 20,TwoS
+47000592,47,new Pca,59,without PSA < 10,TwoS
+48000592,48,new PCa censored,59,without PSA < 10,TwoS
+49000592,49,new PCa actively treated,59,without PSA < 10,TwoS
+50000592,50,new PCa conservative management,59,without PSA < 10,TwoS
+51000592,51,new PCa treatment post conservative management,59,without PSA < 10,TwoS
+47000602,47,new Pca,60,without PSA 10-20,TwoS
+48000602,48,new PCa censored,60,without PSA 10-20,TwoS
+49000602,49,new PCa actively treated,60,without PSA 10-20,TwoS
+50000602,50,new PCa conservative management,60,without PSA 10-20,TwoS
+51000602,51,new PCa treatment post conservative management,60,without PSA 10-20,TwoS
+47000632,47,new Pca,63,without Stage T1,TwoS
+48000632,48,new PCa censored,63,without Stage T1,TwoS
+49000632,49,new PCa actively treated,63,without Stage T1,TwoS
+50000632,50,new PCa conservative management,63,without Stage T1,TwoS
+51000632,51,new PCa treatment post conservative management,63,without Stage T1,TwoS
+47000642,47,new Pca,64,without Stage T2,TwoS
+48000642,48,new PCa censored,64,without Stage T2,TwoS
+49000642,49,new PCa actively treated,64,without Stage T2,TwoS
+50000642,50,new PCa conservative management,64,without Stage T2,TwoS
+51000642,51,new PCa treatment post conservative management,64,without Stage T2,TwoS
+47000652,47,new Pca,65,without Stage T3,TwoS
+48000652,48,new PCa censored,65,without Stage T3,TwoS
+49000652,49,new PCa actively treated,65,without Stage T3,TwoS
+50000652,50,new PCa conservative management,65,without Stage T3,TwoS
+51000652,51,new PCa treatment post conservative management,65,without Stage T3,TwoS
+47000662,47,new Pca,66,without Stage T4,TwoS
+48000662,48,new PCa censored,66,without Stage T4,TwoS
+49000662,49,new PCa actively treated,66,without Stage T4,TwoS
+50000662,50,new PCa conservative management,66,without Stage T4,TwoS
+51000662,51,new PCa treatment post conservative management,66,without Stage T4,TwoS
+47000672,47,new Pca,67,without Grade 1 (GS 2-6),TwoS
+48000672,48,new PCa censored,67,without Grade 1 (GS 2-6),TwoS
+49000672,49,new PCa actively treated,67,without Grade 1 (GS 2-6),TwoS
+50000672,50,new PCa conservative management,67,without Grade 1 (GS 2-6),TwoS
+51000672,51,new PCa treatment post conservative management,67,without Grade 1 (GS 2-6),TwoS
+47000682,47,new Pca,68,without Grade 2 (GS 7 (3+4)),TwoS
+48000682,48,new PCa censored,68,without Grade 2 (GS 7 (3+4)),TwoS
+49000682,49,new PCa actively treated,68,without Grade 2 (GS 7 (3+4)),TwoS
+50000682,50,new PCa conservative management,68,without Grade 2 (GS 7 (3+4)),TwoS
+51000682,51,new PCa treatment post conservative management,68,without Grade 2 (GS 7 (3+4)),TwoS
+47000692,47,new Pca,69,without Grade 3 (GS 7 (4+3)),TwoS
+48000692,48,new PCa censored,69,without Grade 3 (GS 7 (4+3)),TwoS
+49000692,49,new PCa actively treated,69,without Grade 3 (GS 7 (4+3)),TwoS
+50000692,50,new PCa conservative management,69,without Grade 3 (GS 7 (4+3)),TwoS
+51000692,51,new PCa treatment post conservative management,69,without Grade 3 (GS 7 (4+3)),TwoS
+47000702,47,new Pca,70,without Grade 4 (GS 8),TwoS
+48000702,48,new PCa censored,70,without Grade 4 (GS 8),TwoS
+49000702,49,new PCa actively treated,70,without Grade 4 (GS 8),TwoS
+50000702,50,new PCa conservative management,70,without Grade 4 (GS 8),TwoS
+51000702,51,new PCa treatment post conservative management,70,without Grade 4 (GS 8),TwoS
+47000712,47,new Pca,71,without Grade 5 (GS 9-10),TwoS
+48000712,48,new PCa censored,71,without Grade 5 (GS 9-10),TwoS
+49000712,49,new PCa actively treated,71,without Grade 5 (GS 9-10),TwoS
+50000712,50,new PCa conservative management,71,without Grade 5 (GS 9-10),TwoS
+51000712,51,new PCa treatment post conservative management,71,without Grade 5 (GS 9-10),TwoS
+47000722,47,new Pca,72,without Family History of Pca,TwoS
+48000722,48,new PCa censored,72,without Family History of Pca,TwoS
+49000722,49,new PCa actively treated,72,without Family History of Pca,TwoS
+50000722,50,new PCa conservative management,72,without Family History of Pca,TwoS
+51000722,51,new PCa treatment post conservative management,72,without Family History of Pca,TwoS
+47000011,47,new Pca,1,with Full 30-day follow up,TwS
+48000011,48,new PCa censored,1,with Full 30-day follow up,TwS
+49000011,49,new PCa actively treated,1,with Full 30-day follow up,TwS
+50000011,50,new PCa conservative management,1,with Full 30-day follow up,TwS
+51000011,51,new PCa treatment post conservative management,1,with Full 30-day follow up,TwS
+47000021,47,new Pca,2,with < 30-day follow up,TwS
+48000021,48,new PCa censored,2,with < 30-day follow up,TwS
+49000021,49,new PCa actively treated,2,with < 30-day follow up,TwS
+50000021,50,new PCa conservative management,2,with < 30-day follow up,TwS
+51000021,51,new PCa treatment post conservative management,2,with < 30-day follow up,TwS
+47000031,47,new Pca,3,with Sex = Female,TwS
+48000031,48,new PCa censored,3,with Sex = Female,TwS
+49000031,49,new PCa actively treated,3,with Sex = Female,TwS
+50000031,50,new PCa conservative management,3,with Sex = Female,TwS
+51000031,51,new PCa treatment post conservative management,3,with Sex = Female,TwS
+47000041,47,new Pca,4,with Sex = Male,TwS
+48000041,48,new PCa censored,4,with Sex = Male,TwS
+49000041,49,new PCa actively treated,4,with Sex = Male,TwS
+50000041,50,new PCa conservative management,4,with Sex = Male,TwS
+51000041,51,new PCa treatment post conservative management,4,with Sex = Male,TwS
+47000051,47,new Pca,5,with Age >= 18,TwS
+48000051,48,new PCa censored,5,with Age >= 18,TwS
+49000051,49,new PCa actively treated,5,with Age >= 18,TwS
+50000051,50,new PCa conservative management,5,with Age >= 18,TwS
+51000051,51,new PCa treatment post conservative management,5,with Age >= 18,TwS
+47000061,47,new Pca,6,with Age < 18,TwS
+48000061,48,new PCa censored,6,with Age < 18,TwS
+49000061,49,new PCa actively treated,6,with Age < 18,TwS
+50000061,50,new PCa conservative management,6,with Age < 18,TwS
+51000061,51,new PCa treatment post conservative management,6,with Age < 18,TwS
+47000071,47,new Pca,7,with Age >= 65,TwS
+48000071,48,new PCa censored,7,with Age >= 65,TwS
+49000071,49,new PCa actively treated,7,with Age >= 65,TwS
+50000071,50,new PCa conservative management,7,with Age >= 65,TwS
+51000071,51,new PCa treatment post conservative management,7,with Age >= 65,TwS
+47000081,47,new Pca,8,with Age < 65,TwS
+48000081,48,new PCa censored,8,with Age < 65,TwS
+49000081,49,new PCa actively treated,8,with Age < 65,TwS
+50000081,50,new PCa conservative management,8,with Age < 65,TwS
+51000081,51,new PCa treatment post conservative management,8,with Age < 65,TwS
+47000091,47,new Pca,9,with Black or African American,TwS
+48000091,48,new PCa censored,9,with Black or African American,TwS
+49000091,49,new PCa actively treated,9,with Black or African American,TwS
+50000091,50,new PCa conservative management,9,with Black or African American,TwS
+51000091,51,new PCa treatment post conservative management,9,with Black or African American,TwS
+47000101,47,new Pca,10,with White,TwS
+48000101,48,new PCa censored,10,with White,TwS
+49000101,49,new PCa actively treated,10,with White,TwS
+50000101,50,new PCa conservative management,10,with White,TwS
+51000101,51,new PCa treatment post conservative management,10,with White,TwS
+47000521,47,new Pca,52,with High-Risk,TwS
+48000521,48,new PCa censored,52,with High-Risk,TwS
+49000521,49,new PCa actively treated,52,with High-Risk,TwS
+50000521,50,new PCa conservative management,52,with High-Risk,TwS
+51000521,51,new PCa treatment post conservative management,52,with High-Risk,TwS
+47000531,47,new Pca,53,with Low-Risk,TwS
+48000531,48,new PCa censored,53,with Low-Risk,TwS
+49000531,49,new PCa actively treated,53,with Low-Risk,TwS
+50000531,50,new PCa conservative management,53,with Low-Risk,TwS
+51000531,51,new PCa treatment post conservative management,53,with Low-Risk,TwS
+47000541,47,new Pca,54,with Intermediate-Risk,TwS
+48000541,48,new PCa censored,54,with Intermediate-Risk,TwS
+49000541,49,new PCa actively treated,54,with Intermediate-Risk,TwS
+50000541,50,new PCa conservative management,54,with Intermediate-Risk,TwS
+51000541,51,new PCa treatment post conservative management,54,with Intermediate-Risk,TwS
+47000551,47,new Pca,55,with Metastatic Dx Extent,TwS
+48000551,48,new PCa censored,55,with Metastatic Dx Extent,TwS
+49000551,49,new PCa actively treated,55,with Metastatic Dx Extent,TwS
+50000551,50,new PCa conservative management,55,with Metastatic Dx Extent,TwS
+51000551,51,new PCa treatment post conservative management,55,with Metastatic Dx Extent,TwS
+47000561,47,new Pca,56,with Locally advanced Dx Extent,TwS
+48000561,48,new PCa censored,56,with Locally advanced Dx Extent,TwS
+49000561,49,new PCa actively treated,56,with Locally advanced Dx Extent,TwS
+50000561,50,new PCa conservative management,56,with Locally advanced Dx Extent,TwS
+51000561,51,new PCa treatment post conservative management,56,with Locally advanced Dx Extent,TwS
+47000571,47,new Pca,57,with Localized Dx Extent,TwS
+48000571,48,new PCa censored,57,with Localized Dx Extent,TwS
+49000571,49,new PCa actively treated,57,with Localized Dx Extent,TwS
+50000571,50,new PCa conservative management,57,with Localized Dx Extent,TwS
+51000571,51,new PCa treatment post conservative management,57,with Localized Dx Extent,TwS
+47000581,47,new Pca,58,with PSA > 20,TwS
+48000581,48,new PCa censored,58,with PSA > 20,TwS
+49000581,49,new PCa actively treated,58,with PSA > 20,TwS
+50000581,50,new PCa conservative management,58,with PSA > 20,TwS
+51000581,51,new PCa treatment post conservative management,58,with PSA > 20,TwS
+47000591,47,new Pca,59,with PSA < 10,TwS
+48000591,48,new PCa censored,59,with PSA < 10,TwS
+49000591,49,new PCa actively treated,59,with PSA < 10,TwS
+50000591,50,new PCa conservative management,59,with PSA < 10,TwS
+51000591,51,new PCa treatment post conservative management,59,with PSA < 10,TwS
+47000601,47,new Pca,60,with PSA 10-20,TwS
+48000601,48,new PCa censored,60,with PSA 10-20,TwS
+49000601,49,new PCa actively treated,60,with PSA 10-20,TwS
+50000601,50,new PCa conservative management,60,with PSA 10-20,TwS
+51000601,51,new PCa treatment post conservative management,60,with PSA 10-20,TwS
+47000631,47,new Pca,63,with Stage T1,TwS
+48000631,48,new PCa censored,63,with Stage T1,TwS
+49000631,49,new PCa actively treated,63,with Stage T1,TwS
+50000631,50,new PCa conservative management,63,with Stage T1,TwS
+51000631,51,new PCa treatment post conservative management,63,with Stage T1,TwS
+47000641,47,new Pca,64,with Stage T2,TwS
+48000641,48,new PCa censored,64,with Stage T2,TwS
+49000641,49,new PCa actively treated,64,with Stage T2,TwS
+50000641,50,new PCa conservative management,64,with Stage T2,TwS
+51000641,51,new PCa treatment post conservative management,64,with Stage T2,TwS
+47000651,47,new Pca,65,with Stage T3,TwS
+48000651,48,new PCa censored,65,with Stage T3,TwS
+49000651,49,new PCa actively treated,65,with Stage T3,TwS
+50000651,50,new PCa conservative management,65,with Stage T3,TwS
+51000651,51,new PCa treatment post conservative management,65,with Stage T3,TwS
+47000661,47,new Pca,66,with Stage T4,TwS
+48000661,48,new PCa censored,66,with Stage T4,TwS
+49000661,49,new PCa actively treated,66,with Stage T4,TwS
+50000661,50,new PCa conservative management,66,with Stage T4,TwS
+51000661,51,new PCa treatment post conservative management,66,with Stage T4,TwS
+47000671,47,new Pca,67,with Grade 1 (GS 2-6),TwS
+48000671,48,new PCa censored,67,with Grade 1 (GS 2-6),TwS
+49000671,49,new PCa actively treated,67,with Grade 1 (GS 2-6),TwS
+50000671,50,new PCa conservative management,67,with Grade 1 (GS 2-6),TwS
+51000671,51,new PCa treatment post conservative management,67,with Grade 1 (GS 2-6),TwS
+47000681,47,new Pca,68,with Grade 2 (GS 7 (3+4)),TwS
+48000681,48,new PCa censored,68,with Grade 2 (GS 7 (3+4)),TwS
+49000681,49,new PCa actively treated,68,with Grade 2 (GS 7 (3+4)),TwS
+50000681,50,new PCa conservative management,68,with Grade 2 (GS 7 (3+4)),TwS
+51000681,51,new PCa treatment post conservative management,68,with Grade 2 (GS 7 (3+4)),TwS
+47000691,47,new Pca,69,with Grade 3 (GS 7 (4+3)),TwS
+48000691,48,new PCa censored,69,with Grade 3 (GS 7 (4+3)),TwS
+49000691,49,new PCa actively treated,69,with Grade 3 (GS 7 (4+3)),TwS
+50000691,50,new PCa conservative management,69,with Grade 3 (GS 7 (4+3)),TwS
+51000691,51,new PCa treatment post conservative management,69,with Grade 3 (GS 7 (4+3)),TwS
+47000701,47,new Pca,70,with Grade 4 (GS 8),TwS
+48000701,48,new PCa censored,70,with Grade 4 (GS 8),TwS
+49000701,49,new PCa actively treated,70,with Grade 4 (GS 8),TwS
+50000701,50,new PCa conservative management,70,with Grade 4 (GS 8),TwS
+51000701,51,new PCa treatment post conservative management,70,with Grade 4 (GS 8),TwS
+47000711,47,new Pca,71,with Grade 5 (GS 9-10),TwS
+48000711,48,new PCa censored,71,with Grade 5 (GS 9-10),TwS
+49000711,49,new PCa actively treated,71,with Grade 5 (GS 9-10),TwS
+50000711,50,new PCa conservative management,71,with Grade 5 (GS 9-10),TwS
+51000711,51,new PCa treatment post conservative management,71,with Grade 5 (GS 9-10),TwS
+47000721,47,new Pca,72,with Family History of Pca,TwS
+48000721,48,new PCa censored,72,with Family History of Pca,TwS
+49000721,49,new PCa actively treated,72,with Family History of Pca,TwS
+50000721,50,new PCa conservative management,72,with Family History of Pca,TwS
+51000721,51,new PCa treatment post conservative management,72,with Family History of Pca,TwS

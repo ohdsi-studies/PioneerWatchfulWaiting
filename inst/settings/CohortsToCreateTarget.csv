@@ -1,6 +1,6 @@
 name,atlasName,atlasId,cohortId
-1_All PCa ,[PIONEER] 1_All PCa ,101,101
-1_All PCa Censored,[PIONEER] 1_All PCa Censored,102,102
-2_PCa Treated Right Away broad,[PIONEER] 2_PCa Treated Right Away broad,103,103
-3_PCa Conservative Management,[PIONEER] 3_PCa Conservative Management,104,104
-4_PCa Treated Post Conservative Management,[PIONEER] 4_PCa Treated Post Conservative Management,105,105
+new Pca,[PIONEER T1] new Pca,47,47
+new PCa censored,[PIONEER T1a] new PCa censored,48,48
+new PCa actively treated,[PIONEER T2] new PCa actively treated,49,49
+new PCa conservative management,[PIONEER T3] new PCa conservative management,50,50
+new PCa treatment post conservative management,[PIONEER T4] new PCa treatment post conservative management,51,51

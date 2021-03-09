@@ -1,3 +1,4 @@
 name,atlasName,atlasId,cohortId
-Symptoms,[PIONEER O1] Symptoms,201,201
-Death,[PIONEER O2] Death,202,202
+Symptoms,[PIONEER O1] Symptoms,45,45
+Death,[PIONEER O2] Death,46,46
+Treatment Initiation,[PIONEER O3] Treatment Initiation,61,61
