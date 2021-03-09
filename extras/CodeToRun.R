@@ -92,7 +92,7 @@ oracleTempSchema <- NULL
 databaseId <- "SP"
 databaseName <- "Synpuf"
 databaseDescription <- "Testing"
-outputFolderPath <- "C:/Users/Artem/PIONEER/Runs"
+outputFolderPath <- "" # set up a path for results
 
 # Details for connecting to the CDM and storing the results
 outputFolder <- file.path(outputFolderPath, databaseId)
