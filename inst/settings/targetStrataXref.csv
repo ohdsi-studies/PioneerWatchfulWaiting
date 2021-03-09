@@ -1,241 +1,249 @@
 targetId,strataId,cohortId,cohortType,name
-47,1,47000011,TwS,new Pca with Full 30-day follow up
-48,1,48000011,TwS,new PCa censored with Full 30-day follow up
-49,1,49000011,TwS,new PCa actively treated with Full 30-day follow up
-50,1,50000011,TwS,new PCa conservative management with Full 30-day follow up
-51,1,51000011,TwS,new PCa treatment post conservative management with Full 30-day follow up
-47,2,47000021,TwS,new Pca with < 30-day follow up
-48,2,48000021,TwS,new PCa censored with < 30-day follow up
-49,2,49000021,TwS,new PCa actively treated with < 30-day follow up
-50,2,50000021,TwS,new PCa conservative management with < 30-day follow up
-51,2,51000021,TwS,new PCa treatment post conservative management with < 30-day follow up
-47,3,47000031,TwS,new Pca with Sex = Female
-48,3,48000031,TwS,new PCa censored with Sex = Female
-49,3,49000031,TwS,new PCa actively treated with Sex = Female
-50,3,50000031,TwS,new PCa conservative management with Sex = Female
-51,3,51000031,TwS,new PCa treatment post conservative management with Sex = Female
-47,4,47000041,TwS,new Pca with Sex = Male
-48,4,48000041,TwS,new PCa censored with Sex = Male
-49,4,49000041,TwS,new PCa actively treated with Sex = Male
-50,4,50000041,TwS,new PCa conservative management with Sex = Male
-51,4,51000041,TwS,new PCa treatment post conservative management with Sex = Male
-47,5,47000051,TwS,new Pca with Age >= 18
-48,5,48000051,TwS,new PCa censored with Age >= 18
-49,5,49000051,TwS,new PCa actively treated with Age >= 18
-50,5,50000051,TwS,new PCa conservative management with Age >= 18
-51,5,51000051,TwS,new PCa treatment post conservative management with Age >= 18
-47,6,47000061,TwS,new Pca with Age < 18
-48,6,48000061,TwS,new PCa censored with Age < 18
-49,6,49000061,TwS,new PCa actively treated with Age < 18
-50,6,50000061,TwS,new PCa conservative management with Age < 18
-51,6,51000061,TwS,new PCa treatment post conservative management with Age < 18
-47,7,47000071,TwS,new Pca with Age >= 65
-48,7,48000071,TwS,new PCa censored with Age >= 65
-49,7,49000071,TwS,new PCa actively treated with Age >= 65
-50,7,50000071,TwS,new PCa conservative management with Age >= 65
-51,7,51000071,TwS,new PCa treatment post conservative management with Age >= 65
-47,8,47000081,TwS,new Pca with Age < 65
-48,8,48000081,TwS,new PCa censored with Age < 65
-49,8,49000081,TwS,new PCa actively treated with Age < 65
-50,8,50000081,TwS,new PCa conservative management with Age < 65
-51,8,51000081,TwS,new PCa treatment post conservative management with Age < 65
-47,9,47000091,TwS,new Pca with Black or African American
-48,9,48000091,TwS,new PCa censored with Black or African American
-49,9,49000091,TwS,new PCa actively treated with Black or African American
-50,9,50000091,TwS,new PCa conservative management with Black or African American
-51,9,51000091,TwS,new PCa treatment post conservative management with Black or African American
-47,10,47000101,TwS,new Pca with White
-48,10,48000101,TwS,new PCa censored with White
-49,10,49000101,TwS,new PCa actively treated with White
-50,10,50000101,TwS,new PCa conservative management with White
-51,10,51000101,TwS,new PCa treatment post conservative management with White
-47,52,47000521,TwS,new Pca with High-Risk
-48,52,48000521,TwS,new PCa censored with High-Risk
-49,52,49000521,TwS,new PCa actively treated with High-Risk
-50,52,50000521,TwS,new PCa conservative management with High-Risk
-51,52,51000521,TwS,new PCa treatment post conservative management with High-Risk
-47,53,47000531,TwS,new Pca with Low-Risk
-48,53,48000531,TwS,new PCa censored with Low-Risk
-49,53,49000531,TwS,new PCa actively treated with Low-Risk
-50,53,50000531,TwS,new PCa conservative management with Low-Risk
-51,53,51000531,TwS,new PCa treatment post conservative management with Low-Risk
-47,54,47000541,TwS,new Pca with Intermediate-Risk
-48,54,48000541,TwS,new PCa censored with Intermediate-Risk
-49,54,49000541,TwS,new PCa actively treated with Intermediate-Risk
-50,54,50000541,TwS,new PCa conservative management with Intermediate-Risk
-51,54,51000541,TwS,new PCa treatment post conservative management with Intermediate-Risk
-47,55,47000551,TwS,new Pca with Metastatic Dx Extent
-48,55,48000551,TwS,new PCa censored with Metastatic Dx Extent
-49,55,49000551,TwS,new PCa actively treated with Metastatic Dx Extent
-50,55,50000551,TwS,new PCa conservative management with Metastatic Dx Extent
-51,55,51000551,TwS,new PCa treatment post conservative management with Metastatic Dx Extent
-47,56,47000561,TwS,new Pca with Locally advanced Dx Extent
-48,56,48000561,TwS,new PCa censored with Locally advanced Dx Extent
-49,56,49000561,TwS,new PCa actively treated with Locally advanced Dx Extent
-50,56,50000561,TwS,new PCa conservative management with Locally advanced Dx Extent
-51,56,51000561,TwS,new PCa treatment post conservative management with Locally advanced Dx Extent
-47,57,47000571,TwS,new Pca with Localized Dx Extent
-48,57,48000571,TwS,new PCa censored with Localized Dx Extent
-49,57,49000571,TwS,new PCa actively treated with Localized Dx Extent
-50,57,50000571,TwS,new PCa conservative management with Localized Dx Extent
-51,57,51000571,TwS,new PCa treatment post conservative management with Localized Dx Extent
-47,58,47000581,TwS,new Pca with PSA > 20
-48,58,48000581,TwS,new PCa censored with PSA > 20
-49,58,49000581,TwS,new PCa actively treated with PSA > 20
-50,58,50000581,TwS,new PCa conservative management with PSA > 20
-51,58,51000581,TwS,new PCa treatment post conservative management with PSA > 20
-47,59,47000591,TwS,new Pca with PSA < 10
-48,59,48000591,TwS,new PCa censored with PSA < 10
-49,59,49000591,TwS,new PCa actively treated with PSA < 10
-50,59,50000591,TwS,new PCa conservative management with PSA < 10
-51,59,51000591,TwS,new PCa treatment post conservative management with PSA < 10
-47,60,47000601,TwS,new Pca with PSA 10-20
-48,60,48000601,TwS,new PCa censored with PSA 10-20
-49,60,49000601,TwS,new PCa actively treated with PSA 10-20
-50,60,50000601,TwS,new PCa conservative management with PSA 10-20
-51,60,51000601,TwS,new PCa treatment post conservative management with PSA 10-20
-47,63,47000631,TwS,new Pca with Stage T1
-48,63,48000631,TwS,new PCa censored with Stage T1
-49,63,49000631,TwS,new PCa actively treated with Stage T1
-50,63,50000631,TwS,new PCa conservative management with Stage T1
-51,63,51000631,TwS,new PCa treatment post conservative management with Stage T1
-47,64,47000641,TwS,new Pca with Stage T2
-48,64,48000641,TwS,new PCa censored with Stage T2
-49,64,49000641,TwS,new PCa actively treated with Stage T2
-50,64,50000641,TwS,new PCa conservative management with Stage T2
-51,64,51000641,TwS,new PCa treatment post conservative management with Stage T2
-47,65,47000651,TwS,new Pca with Stage T3
-48,65,48000651,TwS,new PCa censored with Stage T3
-49,65,49000651,TwS,new PCa actively treated with Stage T3
-50,65,50000651,TwS,new PCa conservative management with Stage T3
-51,65,51000651,TwS,new PCa treatment post conservative management with Stage T3
-47,66,47000661,TwS,new Pca with Stage T4
-48,66,48000661,TwS,new PCa censored with Stage T4
-49,66,49000661,TwS,new PCa actively treated with Stage T4
-50,66,50000661,TwS,new PCa conservative management with Stage T4
-51,66,51000661,TwS,new PCa treatment post conservative management with Stage T4
-47,67,47000671,TwS,new Pca with Grade 1 (GS 2-6)
-48,67,48000671,TwS,new PCa censored with Grade 1 (GS 2-6)
-49,67,49000671,TwS,new PCa actively treated with Grade 1 (GS 2-6)
-50,67,50000671,TwS,new PCa conservative management with Grade 1 (GS 2-6)
-51,67,51000671,TwS,new PCa treatment post conservative management with Grade 1 (GS 2-6)
-47,68,47000681,TwS,new Pca with Grade 2 (GS 7 (3+4))
-48,68,48000681,TwS,new PCa censored with Grade 2 (GS 7 (3+4))
-49,68,49000681,TwS,new PCa actively treated with Grade 2 (GS 7 (3+4))
-50,68,50000681,TwS,new PCa conservative management with Grade 2 (GS 7 (3+4))
-51,68,51000681,TwS,new PCa treatment post conservative management with Grade 2 (GS 7 (3+4))
-47,69,47000691,TwS,new Pca with Grade 3 (GS 7 (4+3))
-48,69,48000691,TwS,new PCa censored with Grade 3 (GS 7 (4+3))
-49,69,49000691,TwS,new PCa actively treated with Grade 3 (GS 7 (4+3))
-50,69,50000691,TwS,new PCa conservative management with Grade 3 (GS 7 (4+3))
-51,69,51000691,TwS,new PCa treatment post conservative management with Grade 3 (GS 7 (4+3))
-47,70,47000701,TwS,new Pca with Grade 4 (GS 8)
-48,70,48000701,TwS,new PCa censored with Grade 4 (GS 8)
-49,70,49000701,TwS,new PCa actively treated with Grade 4 (GS 8)
-50,70,50000701,TwS,new PCa conservative management with Grade 4 (GS 8)
-51,70,51000701,TwS,new PCa treatment post conservative management with Grade 4 (GS 8)
-47,71,47000711,TwS,new Pca with Grade 5 (GS 9-10)
-48,71,48000711,TwS,new PCa censored with Grade 5 (GS 9-10)
-49,71,49000711,TwS,new PCa actively treated with Grade 5 (GS 9-10)
-50,71,50000711,TwS,new PCa conservative management with Grade 5 (GS 9-10)
-51,71,51000711,TwS,new PCa treatment post conservative management with Grade 5 (GS 9-10)
-47,72,47000721,TwS,new Pca with Family History of Pca
-48,72,48000721,TwS,new PCa censored with Family History of Pca
-49,72,49000721,TwS,new PCa actively treated with Family History of Pca
-50,72,50000721,TwS,new PCa conservative management with Family History of Pca
-51,72,51000721,TwS,new PCa treatment post conservative management with Family History of Pca
-47,52,47000522,TwoS,new Pca without High-Risk
-48,52,48000522,TwoS,new PCa censored without High-Risk
-49,52,49000522,TwoS,new PCa actively treated without High-Risk
-50,52,50000522,TwoS,new PCa conservative management without High-Risk
-51,52,51000522,TwoS,new PCa treatment post conservative management without High-Risk
-47,53,47000532,TwoS,new Pca without Low-Risk
-48,53,48000532,TwoS,new PCa censored without Low-Risk
-49,53,49000532,TwoS,new PCa actively treated without Low-Risk
-50,53,50000532,TwoS,new PCa conservative management without Low-Risk
-51,53,51000532,TwoS,new PCa treatment post conservative management without Low-Risk
-47,54,47000542,TwoS,new Pca without Intermediate-Risk
-48,54,48000542,TwoS,new PCa censored without Intermediate-Risk
-49,54,49000542,TwoS,new PCa actively treated without Intermediate-Risk
-50,54,50000542,TwoS,new PCa conservative management without Intermediate-Risk
-51,54,51000542,TwoS,new PCa treatment post conservative management without Intermediate-Risk
-47,55,47000552,TwoS,new Pca without Metastatic Dx Extent
-48,55,48000552,TwoS,new PCa censored without Metastatic Dx Extent
-49,55,49000552,TwoS,new PCa actively treated without Metastatic Dx Extent
-50,55,50000552,TwoS,new PCa conservative management without Metastatic Dx Extent
-51,55,51000552,TwoS,new PCa treatment post conservative management without Metastatic Dx Extent
-47,56,47000562,TwoS,new Pca without Locally advanced Dx Extent
-48,56,48000562,TwoS,new PCa censored without Locally advanced Dx Extent
-49,56,49000562,TwoS,new PCa actively treated without Locally advanced Dx Extent
-50,56,50000562,TwoS,new PCa conservative management without Locally advanced Dx Extent
-51,56,51000562,TwoS,new PCa treatment post conservative management without Locally advanced Dx Extent
-47,57,47000572,TwoS,new Pca without Localized Dx Extent
-48,57,48000572,TwoS,new PCa censored without Localized Dx Extent
-49,57,49000572,TwoS,new PCa actively treated without Localized Dx Extent
-50,57,50000572,TwoS,new PCa conservative management without Localized Dx Extent
-51,57,51000572,TwoS,new PCa treatment post conservative management without Localized Dx Extent
-47,58,47000582,TwoS,new Pca without PSA > 20
-48,58,48000582,TwoS,new PCa censored without PSA > 20
-49,58,49000582,TwoS,new PCa actively treated without PSA > 20
-50,58,50000582,TwoS,new PCa conservative management without PSA > 20
-51,58,51000582,TwoS,new PCa treatment post conservative management without PSA > 20
-47,59,47000592,TwoS,new Pca without PSA < 10
-48,59,48000592,TwoS,new PCa censored without PSA < 10
-49,59,49000592,TwoS,new PCa actively treated without PSA < 10
-50,59,50000592,TwoS,new PCa conservative management without PSA < 10
-51,59,51000592,TwoS,new PCa treatment post conservative management without PSA < 10
-47,60,47000602,TwoS,new Pca without PSA 10-20
-48,60,48000602,TwoS,new PCa censored without PSA 10-20
-49,60,49000602,TwoS,new PCa actively treated without PSA 10-20
-50,60,50000602,TwoS,new PCa conservative management without PSA 10-20
-51,60,51000602,TwoS,new PCa treatment post conservative management without PSA 10-20
-47,63,47000632,TwoS,new Pca without Stage T1
-48,63,48000632,TwoS,new PCa censored without Stage T1
-49,63,49000632,TwoS,new PCa actively treated without Stage T1
-50,63,50000632,TwoS,new PCa conservative management without Stage T1
-51,63,51000632,TwoS,new PCa treatment post conservative management without Stage T1
-47,64,47000642,TwoS,new Pca without Stage T2
-48,64,48000642,TwoS,new PCa censored without Stage T2
-49,64,49000642,TwoS,new PCa actively treated without Stage T2
-50,64,50000642,TwoS,new PCa conservative management without Stage T2
-51,64,51000642,TwoS,new PCa treatment post conservative management without Stage T2
-47,65,47000652,TwoS,new Pca without Stage T3
-48,65,48000652,TwoS,new PCa censored without Stage T3
-49,65,49000652,TwoS,new PCa actively treated without Stage T3
-50,65,50000652,TwoS,new PCa conservative management without Stage T3
-51,65,51000652,TwoS,new PCa treatment post conservative management without Stage T3
-47,66,47000662,TwoS,new Pca without Stage T4
-48,66,48000662,TwoS,new PCa censored without Stage T4
-49,66,49000662,TwoS,new PCa actively treated without Stage T4
-50,66,50000662,TwoS,new PCa conservative management without Stage T4
-51,66,51000662,TwoS,new PCa treatment post conservative management without Stage T4
-47,67,47000672,TwoS,new Pca without Grade 1 (GS 2-6)
-48,67,48000672,TwoS,new PCa censored without Grade 1 (GS 2-6)
-49,67,49000672,TwoS,new PCa actively treated without Grade 1 (GS 2-6)
-50,67,50000672,TwoS,new PCa conservative management without Grade 1 (GS 2-6)
-51,67,51000672,TwoS,new PCa treatment post conservative management without Grade 1 (GS 2-6)
-47,68,47000682,TwoS,new Pca without Grade 2 (GS 7 (3+4))
-48,68,48000682,TwoS,new PCa censored without Grade 2 (GS 7 (3+4))
-49,68,49000682,TwoS,new PCa actively treated without Grade 2 (GS 7 (3+4))
-50,68,50000682,TwoS,new PCa conservative management without Grade 2 (GS 7 (3+4))
-51,68,51000682,TwoS,new PCa treatment post conservative management without Grade 2 (GS 7 (3+4))
-47,69,47000692,TwoS,new Pca without Grade 3 (GS 7 (4+3))
-48,69,48000692,TwoS,new PCa censored without Grade 3 (GS 7 (4+3))
-49,69,49000692,TwoS,new PCa actively treated without Grade 3 (GS 7 (4+3))
-50,69,50000692,TwoS,new PCa conservative management without Grade 3 (GS 7 (4+3))
-51,69,51000692,TwoS,new PCa treatment post conservative management without Grade 3 (GS 7 (4+3))
-47,70,47000702,TwoS,new Pca without Grade 4 (GS 8)
-48,70,48000702,TwoS,new PCa censored without Grade 4 (GS 8)
-49,70,49000702,TwoS,new PCa actively treated without Grade 4 (GS 8)
-50,70,50000702,TwoS,new PCa conservative management without Grade 4 (GS 8)
-51,70,51000702,TwoS,new PCa treatment post conservative management without Grade 4 (GS 8)
-47,71,47000712,TwoS,new Pca without Grade 5 (GS 9-10)
-48,71,48000712,TwoS,new PCa censored without Grade 5 (GS 9-10)
-49,71,49000712,TwoS,new PCa actively treated without Grade 5 (GS 9-10)
-50,71,50000712,TwoS,new PCa conservative management without Grade 5 (GS 9-10)
-51,71,51000712,TwoS,new PCa treatment post conservative management without Grade 5 (GS 9-10)
-47,72,47000722,TwoS,new Pca without Family History of Pca
-48,72,48000722,TwoS,new PCa censored without Family History of Pca
-49,72,49000722,TwoS,new PCa actively treated without Family History of Pca
-50,72,50000722,TwoS,new PCa conservative management without Family History of Pca
-51,72,51000722,TwoS,new PCa treatment post conservative management without Family History of Pca
+101,1,101000011,TwS,new PCa with Full 30-day follow up
+102,1,102000011,TwS,new PCa actively treated with Full 30-day follow up
+103,1,103000011,TwS,new PCa conservative management with Full 30-day follow up
+104,1,104000011,TwS,new PCa treatment post conservative management with Full 30-day follow up
+101,2,101000021,TwS,new PCa with < 30-day follow up
+102,2,102000021,TwS,new PCa actively treated with < 30-day follow up
+103,2,103000021,TwS,new PCa conservative management with < 30-day follow up
+104,2,104000021,TwS,new PCa treatment post conservative management with < 30-day follow up
+101,3,101000031,TwS,new PCa with Sex = Female
+102,3,102000031,TwS,new PCa actively treated with Sex = Female
+103,3,103000031,TwS,new PCa conservative management with Sex = Female
+104,3,104000031,TwS,new PCa treatment post conservative management with Sex = Female
+101,4,101000041,TwS,new PCa with Sex = Male
+102,4,102000041,TwS,new PCa actively treated with Sex = Male
+103,4,103000041,TwS,new PCa conservative management with Sex = Male
+104,4,104000041,TwS,new PCa treatment post conservative management with Sex = Male
+101,5,101000051,TwS,new PCa with Age >= 18
+102,5,102000051,TwS,new PCa actively treated with Age >= 18
+103,5,103000051,TwS,new PCa conservative management with Age >= 18
+104,5,104000051,TwS,new PCa treatment post conservative management with Age >= 18
+101,6,101000061,TwS,new PCa with Age < 18
+102,6,102000061,TwS,new PCa actively treated with Age < 18
+103,6,103000061,TwS,new PCa conservative management with Age < 18
+104,6,104000061,TwS,new PCa treatment post conservative management with Age < 18
+101,7,101000071,TwS,new PCa with Age >= 65
+102,7,102000071,TwS,new PCa actively treated with Age >= 65
+103,7,103000071,TwS,new PCa conservative management with Age >= 65
+104,7,104000071,TwS,new PCa treatment post conservative management with Age >= 65
+101,8,101000081,TwS,new PCa with Age < 65
+102,8,102000081,TwS,new PCa actively treated with Age < 65
+103,8,103000081,TwS,new PCa conservative management with Age < 65
+104,8,104000081,TwS,new PCa treatment post conservative management with Age < 65
+101,9,101000091,TwS,new PCa with Black or African American
+102,9,102000091,TwS,new PCa actively treated with Black or African American
+103,9,103000091,TwS,new PCa conservative management with Black or African American
+104,9,104000091,TwS,new PCa treatment post conservative management with Black or African American
+101,10,101000101,TwS,new PCa with White
+102,10,102000101,TwS,new PCa actively treated with White
+103,10,103000101,TwS,new PCa conservative management with White
+104,10,104000101,TwS,new PCa treatment post conservative management with White
+101,301,101003011,TwS,new PCa with High-Risk
+102,301,102003011,TwS,new PCa actively treated with High-Risk
+103,301,103003011,TwS,new PCa conservative management with High-Risk
+104,301,104003011,TwS,new PCa treatment post conservative management with High-Risk
+101,302,101003021,TwS,new PCa with Low-Risk
+102,302,102003021,TwS,new PCa actively treated with Low-Risk
+103,302,103003021,TwS,new PCa conservative management with Low-Risk
+104,302,104003021,TwS,new PCa treatment post conservative management with Low-Risk
+101,303,101003031,TwS,new PCa with Intermediate-Risk
+102,303,102003031,TwS,new PCa actively treated with Intermediate-Risk
+103,303,103003031,TwS,new PCa conservative management with Intermediate-Risk
+104,303,104003031,TwS,new PCa treatment post conservative management with Intermediate-Risk
+101,304,101003041,TwS,new PCa with Metastatic Dx Extent
+102,304,102003041,TwS,new PCa actively treated with Metastatic Dx Extent
+103,304,103003041,TwS,new PCa conservative management with Metastatic Dx Extent
+104,304,104003041,TwS,new PCa treatment post conservative management with Metastatic Dx Extent
+101,305,101003051,TwS,new PCa with Locally advanced Dx Extent
+102,305,102003051,TwS,new PCa actively treated with Locally advanced Dx Extent
+103,305,103003051,TwS,new PCa conservative management with Locally advanced Dx Extent
+104,305,104003051,TwS,new PCa treatment post conservative management with Locally advanced Dx Extent
+101,306,101003061,TwS,new PCa with Localized Dx Extent
+102,306,102003061,TwS,new PCa actively treated with Localized Dx Extent
+103,306,103003061,TwS,new PCa conservative management with Localized Dx Extent
+104,306,104003061,TwS,new PCa treatment post conservative management with Localized Dx Extent
+101,307,101003071,TwS,new PCa with PSA greater than 20
+102,307,102003071,TwS,new PCa actively treated with PSA greater than 20
+103,307,103003071,TwS,new PCa conservative management with PSA greater than 20
+104,307,104003071,TwS,new PCa treatment post conservative management with PSA greater than 20
+101,308,101003081,TwS,new PCa with PSA less than 10
+102,308,102003081,TwS,new PCa actively treated with PSA less than 10
+103,308,103003081,TwS,new PCa conservative management with PSA less than 10
+104,308,104003081,TwS,new PCa treatment post conservative management with PSA less than 10
+101,309,101003091,TwS,new PCa with PSA 10-20
+102,309,102003091,TwS,new PCa actively treated with PSA 10-20
+103,309,103003091,TwS,new PCa conservative management with PSA 10-20
+104,309,104003091,TwS,new PCa treatment post conservative management with PSA 10-20
+101,310,101003101,TwS,new PCa with Stage T1
+102,310,102003101,TwS,new PCa actively treated with Stage T1
+103,310,103003101,TwS,new PCa conservative management with Stage T1
+104,310,104003101,TwS,new PCa treatment post conservative management with Stage T1
+101,311,101003111,TwS,new PCa with Stage T2
+102,311,102003111,TwS,new PCa actively treated with Stage T2
+103,311,103003111,TwS,new PCa conservative management with Stage T2
+104,311,104003111,TwS,new PCa treatment post conservative management with Stage T2
+101,312,101003121,TwS,new PCa with Stage T3
+102,312,102003121,TwS,new PCa actively treated with Stage T3
+103,312,103003121,TwS,new PCa conservative management with Stage T3
+104,312,104003121,TwS,new PCa treatment post conservative management with Stage T3
+101,313,101003131,TwS,new PCa with Stage T4
+102,313,102003131,TwS,new PCa actively treated with Stage T4
+103,313,103003131,TwS,new PCa conservative management with Stage T4
+104,313,104003131,TwS,new PCa treatment post conservative management with Stage T4
+101,314,101003141,TwS,new PCa with Grade 1 (GS 2-6)
+102,314,102003141,TwS,new PCa actively treated with Grade 1 (GS 2-6)
+103,314,103003141,TwS,new PCa conservative management with Grade 1 (GS 2-6)
+104,314,104003141,TwS,new PCa treatment post conservative management with Grade 1 (GS 2-6)
+101,315,101003151,TwS,new PCa with Grade 2 (GS 7 (3+4))
+102,315,102003151,TwS,new PCa actively treated with Grade 2 (GS 7 (3+4))
+103,315,103003151,TwS,new PCa conservative management with Grade 2 (GS 7 (3+4))
+104,315,104003151,TwS,new PCa treatment post conservative management with Grade 2 (GS 7 (3+4))
+101,316,101003161,TwS,new PCa with Grade 3 (GS 7 (4+3))
+102,316,102003161,TwS,new PCa actively treated with Grade 3 (GS 7 (4+3))
+103,316,103003161,TwS,new PCa conservative management with Grade 3 (GS 7 (4+3))
+104,316,104003161,TwS,new PCa treatment post conservative management with Grade 3 (GS 7 (4+3))
+101,317,101003171,TwS,new PCa with Grade 4 (GS 8)
+102,317,102003171,TwS,new PCa actively treated with Grade 4 (GS 8)
+103,317,103003171,TwS,new PCa conservative management with Grade 4 (GS 8)
+104,317,104003171,TwS,new PCa treatment post conservative management with Grade 4 (GS 8)
+101,318,101003181,TwS,new PCa with Grade 5 (GS 9-10)
+102,318,102003181,TwS,new PCa actively treated with Grade 5 (GS 9-10)
+103,318,103003181,TwS,new PCa conservative management with Grade 5 (GS 9-10)
+104,318,104003181,TwS,new PCa treatment post conservative management with Grade 5 (GS 9-10)
+101,319,101003191,TwS,new PCa with Family History of PCa
+102,319,102003191,TwS,new PCa actively treated with Family History of PCa
+103,319,103003191,TwS,new PCa conservative management with Family History of PCa
+104,319,104003191,TwS,new PCa treatment post conservative management with Family History of PCa
+101,320,101003201,TwS,new PCa with Total Cardiovascular Disease Event
+102,320,102003201,TwS,new PCa actively treated with Total Cardiovascular Disease Event
+103,320,103003201,TwS,new PCa conservative management with Total Cardiovascular Disease Event
+104,320,104003201,TwS,new PCa treatment post conservative management with Total Cardiovascular Disease Event
+101,321,101003211,TwS,new PCa with Stroke
+102,321,102003211,TwS,new PCa actively treated with Stroke
+103,321,103003211,TwS,new PCa conservative management with Stroke
+104,321,104003211,TwS,new PCa treatment post conservative management with Stroke
+101,322,101003221,TwS,new PCa with Type 2 Diabetes
+102,322,102003221,TwS,new PCa actively treated with Type 2 Diabetes
+103,322,103003221,TwS,new PCa conservative management with Type 2 Diabetes
+104,322,104003221,TwS,new PCa treatment post conservative management with Type 2 Diabetes
+101,323,101003231,TwS,new PCa with Any malignancy except malignant neoplasm of skin
+102,323,102003231,TwS,new PCa actively treated with Any malignancy except malignant neoplasm of skin
+103,323,103003231,TwS,new PCa conservative management with Any malignancy except malignant neoplasm of skin
+104,323,104003231,TwS,new PCa treatment post conservative management with Any malignancy except malignant neoplasm of skin
+101,324,101003241,TwS,new PCa with Hypertension
+102,324,102003241,TwS,new PCa actively treated with Hypertension
+103,324,103003241,TwS,new PCa conservative management with Hypertension
+104,324,104003241,TwS,new PCa treatment post conservative management with Hypertension
+101,325,101003251,TwS,new PCa with Obesity
+102,325,102003251,TwS,new PCa actively treated with Obesity
+103,325,103003251,TwS,new PCa conservative management with Obesity
+104,325,104003251,TwS,new PCa treatment post conservative management with Obesity
+101,326,101003261,TwS,new PCa with Venous thromboembolism
+102,326,102003261,TwS,new PCa actively treated with Venous thromboembolism
+103,326,103003261,TwS,new PCa conservative management with Venous thromboembolism
+104,326,104003261,TwS,new PCa treatment post conservative management with Venous thromboembolism
+101,301,101003012,TwoS,new PCa without High-Risk
+102,301,102003012,TwoS,new PCa actively treated without High-Risk
+103,301,103003012,TwoS,new PCa conservative management without High-Risk
+104,301,104003012,TwoS,new PCa treatment post conservative management without High-Risk
+101,302,101003022,TwoS,new PCa without Low-Risk
+102,302,102003022,TwoS,new PCa actively treated without Low-Risk
+103,302,103003022,TwoS,new PCa conservative management without Low-Risk
+104,302,104003022,TwoS,new PCa treatment post conservative management without Low-Risk
+101,303,101003032,TwoS,new PCa without Intermediate-Risk
+102,303,102003032,TwoS,new PCa actively treated without Intermediate-Risk
+103,303,103003032,TwoS,new PCa conservative management without Intermediate-Risk
+104,303,104003032,TwoS,new PCa treatment post conservative management without Intermediate-Risk
+101,304,101003042,TwoS,new PCa without Metastatic Dx Extent
+102,304,102003042,TwoS,new PCa actively treated without Metastatic Dx Extent
+103,304,103003042,TwoS,new PCa conservative management without Metastatic Dx Extent
+104,304,104003042,TwoS,new PCa treatment post conservative management without Metastatic Dx Extent
+101,305,101003052,TwoS,new PCa without Locally advanced Dx Extent
+102,305,102003052,TwoS,new PCa actively treated without Locally advanced Dx Extent
+103,305,103003052,TwoS,new PCa conservative management without Locally advanced Dx Extent
+104,305,104003052,TwoS,new PCa treatment post conservative management without Locally advanced Dx Extent
+101,306,101003062,TwoS,new PCa without Localized Dx Extent
+102,306,102003062,TwoS,new PCa actively treated without Localized Dx Extent
+103,306,103003062,TwoS,new PCa conservative management without Localized Dx Extent
+104,306,104003062,TwoS,new PCa treatment post conservative management without Localized Dx Extent
+101,307,101003072,TwoS,new PCa without PSA greater than 20
+102,307,102003072,TwoS,new PCa actively treated without PSA greater than 20
+103,307,103003072,TwoS,new PCa conservative management without PSA greater than 20
+104,307,104003072,TwoS,new PCa treatment post conservative management without PSA greater than 20
+101,308,101003082,TwoS,new PCa without PSA less than 10
+102,308,102003082,TwoS,new PCa actively treated without PSA less than 10
+103,308,103003082,TwoS,new PCa conservative management without PSA less than 10
+104,308,104003082,TwoS,new PCa treatment post conservative management without PSA less than 10
+101,309,101003092,TwoS,new PCa without PSA 10-20
+102,309,102003092,TwoS,new PCa actively treated without PSA 10-20
+103,309,103003092,TwoS,new PCa conservative management without PSA 10-20
+104,309,104003092,TwoS,new PCa treatment post conservative management without PSA 10-20
+101,310,101003102,TwoS,new PCa without Stage T1
+102,310,102003102,TwoS,new PCa actively treated without Stage T1
+103,310,103003102,TwoS,new PCa conservative management without Stage T1
+104,310,104003102,TwoS,new PCa treatment post conservative management without Stage T1
+101,311,101003112,TwoS,new PCa without Stage T2
+102,311,102003112,TwoS,new PCa actively treated without Stage T2
+103,311,103003112,TwoS,new PCa conservative management without Stage T2
+104,311,104003112,TwoS,new PCa treatment post conservative management without Stage T2
+101,312,101003122,TwoS,new PCa without Stage T3
+102,312,102003122,TwoS,new PCa actively treated without Stage T3
+103,312,103003122,TwoS,new PCa conservative management without Stage T3
+104,312,104003122,TwoS,new PCa treatment post conservative management without Stage T3
+101,313,101003132,TwoS,new PCa without Stage T4
+102,313,102003132,TwoS,new PCa actively treated without Stage T4
+103,313,103003132,TwoS,new PCa conservative management without Stage T4
+104,313,104003132,TwoS,new PCa treatment post conservative management without Stage T4
+101,314,101003142,TwoS,new PCa without Grade 1 (GS 2-6)
+102,314,102003142,TwoS,new PCa actively treated without Grade 1 (GS 2-6)
+103,314,103003142,TwoS,new PCa conservative management without Grade 1 (GS 2-6)
+104,314,104003142,TwoS,new PCa treatment post conservative management without Grade 1 (GS 2-6)
+101,315,101003152,TwoS,new PCa without Grade 2 (GS 7 (3+4))
+102,315,102003152,TwoS,new PCa actively treated without Grade 2 (GS 7 (3+4))
+103,315,103003152,TwoS,new PCa conservative management without Grade 2 (GS 7 (3+4))
+104,315,104003152,TwoS,new PCa treatment post conservative management without Grade 2 (GS 7 (3+4))
+101,316,101003162,TwoS,new PCa without Grade 3 (GS 7 (4+3))
+102,316,102003162,TwoS,new PCa actively treated without Grade 3 (GS 7 (4+3))
+103,316,103003162,TwoS,new PCa conservative management without Grade 3 (GS 7 (4+3))
+104,316,104003162,TwoS,new PCa treatment post conservative management without Grade 3 (GS 7 (4+3))
+101,317,101003172,TwoS,new PCa without Grade 4 (GS 8)
+102,317,102003172,TwoS,new PCa actively treated without Grade 4 (GS 8)
+103,317,103003172,TwoS,new PCa conservative management without Grade 4 (GS 8)
+104,317,104003172,TwoS,new PCa treatment post conservative management without Grade 4 (GS 8)
+101,318,101003182,TwoS,new PCa without Grade 5 (GS 9-10)
+102,318,102003182,TwoS,new PCa actively treated without Grade 5 (GS 9-10)
+103,318,103003182,TwoS,new PCa conservative management without Grade 5 (GS 9-10)
+104,318,104003182,TwoS,new PCa treatment post conservative management without Grade 5 (GS 9-10)
+101,319,101003192,TwoS,new PCa without Family History of PCa
+102,319,102003192,TwoS,new PCa actively treated without Family History of PCa
+103,319,103003192,TwoS,new PCa conservative management without Family History of PCa
+104,319,104003192,TwoS,new PCa treatment post conservative management without Family History of PCa
+101,320,101003202,TwoS,new PCa without Total Cardiovascular Disease Event
+102,320,102003202,TwoS,new PCa actively treated without Total Cardiovascular Disease Event
+103,320,103003202,TwoS,new PCa conservative management without Total Cardiovascular Disease Event
+104,320,104003202,TwoS,new PCa treatment post conservative management without Total Cardiovascular Disease Event
+101,321,101003212,TwoS,new PCa without Stroke
+102,321,102003212,TwoS,new PCa actively treated without Stroke
+103,321,103003212,TwoS,new PCa conservative management without Stroke
+104,321,104003212,TwoS,new PCa treatment post conservative management without Stroke
+101,322,101003222,TwoS,new PCa without Type 2 Diabetes
+102,322,102003222,TwoS,new PCa actively treated without Type 2 Diabetes
+103,322,103003222,TwoS,new PCa conservative management without Type 2 Diabetes
+104,322,104003222,TwoS,new PCa treatment post conservative management without Type 2 Diabetes
+101,323,101003232,TwoS,new PCa without Any malignancy except malignant neoplasm of skin
+102,323,102003232,TwoS,new PCa actively treated without Any malignancy except malignant neoplasm of skin
+103,323,103003232,TwoS,new PCa conservative management without Any malignancy except malignant neoplasm of skin
+104,323,104003232,TwoS,new PCa treatment post conservative management without Any malignancy except malignant neoplasm of skin
+101,324,101003242,TwoS,new PCa without Hypertension
+102,324,102003242,TwoS,new PCa actively treated without Hypertension
+103,324,103003242,TwoS,new PCa conservative management without Hypertension
+104,324,104003242,TwoS,new PCa treatment post conservative management without Hypertension
+101,325,101003252,TwoS,new PCa without Obesity
+102,325,102003252,TwoS,new PCa actively treated without Obesity
+103,325,103003252,TwoS,new PCa conservative management without Obesity
+104,325,104003252,TwoS,new PCa treatment post conservative management without Obesity
+101,326,101003262,TwoS,new PCa without Venous thromboembolism
+102,326,102003262,TwoS,new PCa actively treated without Venous thromboembolism
+103,326,103003262,TwoS,new PCa conservative management without Venous thromboembolism
+104,326,104003262,TwoS,new PCa treatment post conservative management without Venous thromboembolism

@@ -147,17 +147,16 @@
 
 
 # get json cohort from local files, create CohortsToCreate files
-groupNames <- list('target', 'outcome', 'strata')
+nameToIdMapping <- list('target' = 100, 'outcome' = 200, 'strata' = 300)
 # source_cohorts_path <- 'inst_demo/real_cohorts'
-source_cohorts_path <- ''
+source_cohorts_path <- 'C:/Users/Artem/work/PIONEER studyathon/exported from atlas'
 json_cohorts_path <- 'inst/cohorts'
 settingsPath <- "inst/settings"
 
 
-nameToAtlasId <- read.csv(file.path(source_cohorts_path, 'AtlasIds.csv'))
-
 for (i in 1:length(nameToIdMapping)){
-  group_name <- groupNames[i]
+  group_name <- names(nameToIdMapping)[i]
+  offset_num <- nameToIdMapping[[group_name]]
 
   ParallelLogger::logInfo("Importing ", group_name, " cohorts")
   
@@ -181,6 +180,8 @@ for (i in 1:length(nameToIdMapping)){
   readr::write_csv(cohortsToCreate, 
                    file.path(settingsPath, paste0('CohortsToCreate', stringr::str_to_title(group_name), '.csv')))
 }
+
+
 
 
 
