@@ -97,7 +97,7 @@ databaseDescription <- "Testing"
 outputFolderPath <- "" # set up a path for results
 
 # Details for connecting to the CDM and storing the results
-outputFolder <- file.path(outputFolderPath, databaseId)
+outputFolder <- normalizePath(file.path(outputFolderPath, databaseId))
 cdmDatabaseSchema <- Sys.getenv("CDM_SCHEMA")
 cohortDatabaseSchema <- Sys.getenv("COHORT_SCHEMA")
 cohortTable <- paste0("PIONEER_", databaseId)
