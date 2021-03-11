@@ -1,5 +1,4 @@
 cohortGroup,fileName,userCanSelect
-covid,settings/diagnostics/CohortsToCreateCovid.csv,TRUE
-influenza,settings/diagnostics/CohortsToCreateInfluenza.csv,TRUE
+target,settings/diagnostics/CohortsToCreateTarget.csv,TRUE
+outcome,settings/diagnostics/CohortsToCreateOutcome.csv,FALSE
 strata,settings/diagnostics/CohortsToCreateStrata.csv,FALSE
-feature,settings/diagnostics/CohortsToCreateFeature.csv,FALSE

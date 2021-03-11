@@ -23,7 +23,7 @@ getCohortBasedStrata <- function() {
 }
 
 getFeatures <- function() {
-  resourceFile <- file.path(getPathToResource(), "CohortsToCreateFeature.csv")
+  resourceFile <- file.path(getPathToResource(), "CohortsToCreateOutcome.csv")
   return(readCsv(resourceFile))
 }
 
@@ -93,7 +93,7 @@ getAllStudyCohortsWithDetails <- function() {
 }
 
 getThisPackageName <- function() {
-  return("Covid19CharacterizationCharybdis")
+  return("PIONEERCharacterization")
 }
 
 readCsv <- function(resourceFile) {

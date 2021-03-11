@@ -4,7 +4,7 @@
 # install.packages("VennDiagram")
 # install.packages("htmltools")
 dataFolder <- "E:/Covid19Characterization/MDCR_Bail_test"
-appDir <- system.file("shiny", "CharacterizationExplorer", package = "Covid19CharacterizationCharybdis", mustWork = TRUE)
+appDir <- system.file("shiny", "CharacterizationExplorer", package = "PIONEERCharacterization", mustWork = TRUE)
 shinySettings <- list(dataFolder = dataFolder)
 .GlobalEnv$shinySettings <- shinySettings
 on.exit(rm(shinySettings, envir = .GlobalEnv))

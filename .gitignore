@@ -40,4 +40,8 @@ vignettes/*.pdf
 .Rproj.user
 
 # Results data
-inst/shiny/CharybdisResultsExplorer/data
+inst/shiny/PIONEERResultsExplorer/data
+
+#stage directories
+inst_demo
+inst_real

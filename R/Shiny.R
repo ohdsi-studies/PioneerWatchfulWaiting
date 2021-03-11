@@ -26,7 +26,7 @@ launchShinyApp <- function(outputFolder,
   ensure_installed("DT")
   ensure_installed("VennDiagram")
   ensure_installed("htmltools")
-  appDir <- system.file("shiny/CharybdisResultsExplorer", package = getThisPackageName(), mustWork = TRUE)
+  appDir <- system.file("shiny/PIONEERResultsExplorer", package = getThisPackageName(), mustWork = TRUE)
   .GlobalEnv$shinySettings <- shinySettings
   on.exit(rm(shinySettings, envir = .GlobalEnv))
   shiny::runApp(appDir)
@@ -138,7 +138,8 @@ preMergeDiagnosticsFiles <- function(dataFolder) {
   # Remove any duplicate cohort names
   if (exists("cohort", envir = .GlobalEnv)) {
     cohort <- get("cohort", envir = .GlobalEnv)
-    cohort <- unique(cohort[,c("cohortName", "cohortFullName", "cohortId")])
+    # cohort <- unique(cohort[,c("cohortName", "cohortFullName", "cohortId")])
+    cohort <- unique(cohort[,c("cohortName", "cohortId")])
     # Re-assign to the global environment
     assign("cohort", cohort, envir = .GlobalEnv)
   }

@@ -9,4 +9,3 @@ For this study, it was necessary to utilize several files and folder for storing
 - **featureTimeWindows.csv**: Contains the list of time windows in which to create features.
 - **targetStrataXref.csv**: Contains the full list of all combination of target/strata cohorts. This file is produced by the extras/PackageMaintenance.R file.
 
-The "subset" folder contains the same files as above but for a subset of the full study cohorts.

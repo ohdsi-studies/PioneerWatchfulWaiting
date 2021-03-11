@@ -2,9 +2,9 @@ Package: PioneerWatchfulWaiting
 Type: Package
 Title: PIONEER / EHDEN / OHDSI prostate cancer study
 Version: 0.1.0
-Author: Artem Gorbachev
-Maintainer: Kees van Bochove <kees@thehyve.nl>
-Description: Describe the baseline demographic, clinical characteristics, and outcomes of interest for prostate cancer patients managed with non-curative intent therapies.
+Author: Anthony G. Sena, Artem Gorbachev
+Maintainer: Artem Gorbachev <artem.gorbachev@odysseusinc.com>
+Description: Describe the baseline demographic, clinical characteristics, treatments and outcomes of interest among individuals with PCa.
 Depends:
   DatabaseConnector (>= 2.2.0)
 Imports:

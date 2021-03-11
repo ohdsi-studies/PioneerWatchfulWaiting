@@ -53,6 +53,7 @@ runCohortDiagnostics <- function(connectionDetails = NULL,
 
   # Create cohorts -----------------------------
   cohorts <- getCohortsToCreate(cohortGroups = cohortGroups)
+  # cohorts <- cohorts[1:10,]
   cohorts <- cohorts[!(cohorts$cohortId %in% cohortIdsToExcludeFromExecution) & cohorts$atlasId > 0, ] # cohorts$atlasId > 0 is used to avoid those cohorts that use custom SQL identified with an atlasId == -1
   ParallelLogger::logInfo("Creating cohorts in incremental mode")
   instantiateCohortSet(connectionDetails = connectionDetails,
@@ -69,7 +70,6 @@ runCohortDiagnostics <- function(connectionDetails = NULL,
                        incrementalFolder = incrementalFolder,
                        inclusionStatisticsFolder = diagnosticOutputFolder)
 
-  # Run diagnostics -----------------------------
   ParallelLogger::logInfo("Running cohort diagnostics")
   for (i in 1:nrow(cohortGroups)) {
     CohortDiagnostics::runCohortDiagnostics(packageName = getThisPackageName(),
@@ -102,7 +102,7 @@ runCohortDiagnostics <- function(connectionDetails = NULL,
   
   # Bundle the diagnosics for export
   bundledResultsLocation <- bundleDiagnosticsResults(diagnosticOutputFolder, databaseId)
-  ParallelLogger::logInfo(paste("CHARYBDIS cohort diagnostics are bundled for sharing at: ", bundledResultsLocation))
+  ParallelLogger::logInfo(paste("PIONEER cohort diagnostics are bundled for sharing at: ", bundledResultsLocation))
 }
 
 #' @export

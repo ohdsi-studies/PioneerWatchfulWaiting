@@ -25,7 +25,7 @@ runStudy <- function(connectionDetails = NULL,
     dir.create(exportFolder, recursive = TRUE)
   }
   
-  ParallelLogger::addDefaultFileLogger(file.path(exportFolder, "Covid19CharacterizationCharybdis.txt"))
+  ParallelLogger::addDefaultFileLogger(file.path(exportFolder, "PIONEERCharacterization.txt"))
   on.exit(ParallelLogger::unregisterLogger("DEFAULT"))
   
   # Write out the system information
@@ -61,7 +61,8 @@ runStudy <- function(connectionDetails = NULL,
   cohorts <- cohorts[!(cohorts$cohortId %in% cohortIdsToExcludeFromExecution), ]
   targetCohortIds <- cohorts[cohorts$cohortType %in% cohortGroups, "cohortId"][[1]]
   strataCohortIds <- cohorts[cohorts$cohortType == "strata", "cohortId"][[1]]
-  featureCohortIds <- cohorts[cohorts$cohortType == "feature", "cohortId"][[1]]
+  # featureCohortIds <- cohorts[cohorts$cohortType == "feature", "cohortId"][[1]]
+  featureCohortIds <- cohorts[cohorts$cohortType == "outcome", "cohortId"][[1]]
   
   # Start with the target cohorts
   ParallelLogger::logInfo("**********************************************************")

@@ -15,7 +15,7 @@
 # limitations under the License.
 
 rootFTPFolder <- function() {
-  return("/CHARYBDIS/")
+  return("/PIONEER/")
 }
 
 #' @export
