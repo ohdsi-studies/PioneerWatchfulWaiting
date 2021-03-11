@@ -72,32 +72,37 @@ runCohortDiagnostics <- function(connectionDetails = NULL,
 
   ParallelLogger::logInfo("Running cohort diagnostics")
   for (i in 1:nrow(cohortGroups)) {
-    CohortDiagnostics::runCohortDiagnostics(packageName = getThisPackageName(),
-                                            connection = connection,
-                                            cohortToCreateFile = cohortGroups$fileName[i],
-                                            connectionDetails = connectionDetails,
-                                            cdmDatabaseSchema = cdmDatabaseSchema,
-                                            oracleTempSchema = oracleTempSchema,
-                                            cohortDatabaseSchema = cohortDatabaseSchema,
-                                            cohortTable = cohortStagingTable,
-                                            cohortIds = cohorts$cohortId,
-                                            inclusionStatisticsFolder = diagnosticOutputFolder,
-                                            exportFolder = cohortGroups$outputFolder[i],
-                                            databaseId = databaseId,
-                                            databaseName = databaseName,
-                                            databaseDescription = databaseDescription,
-                                            runInclusionStatistics = FALSE,
-                                            runIncludedSourceConcepts = TRUE,
-                                            runOrphanConcepts = TRUE,
-                                            runTimeDistributions = TRUE,
-                                            runBreakdownIndexEvents = TRUE,
-                                            runIncidenceRate = TRUE,
-                                            runCohortOverlap = FALSE,
-                                            runCohortCharacterization = FALSE,
-                                            runTemporalCohortCharacterization = FALSE,
-                                            minCellCount = minCellCount,
-                                            incremental = TRUE,
-                                            incrementalFolder = incrementalFolder)
+    tryCatch(expr ={
+      CohortDiagnostics::runCohortDiagnostics(packageName = getThisPackageName(),
+                                              connection = connection,
+                                              cohortToCreateFile = cohortGroups$fileName[i],
+                                              connectionDetails = connectionDetails,
+                                              cdmDatabaseSchema = cdmDatabaseSchema,
+                                              oracleTempSchema = oracleTempSchema,
+                                              cohortDatabaseSchema = cohortDatabaseSchema,
+                                              cohortTable = cohortStagingTable,
+                                              cohortIds = cohorts$cohortId,
+                                              inclusionStatisticsFolder = diagnosticOutputFolder,
+                                              exportFolder = cohortGroups$outputFolder[i],
+                                              databaseId = databaseId,
+                                              databaseName = databaseName,
+                                              databaseDescription = databaseDescription,
+                                              runInclusionStatistics = FALSE,
+                                              runIncludedSourceConcepts = TRUE,
+                                              runOrphanConcepts = TRUE,
+                                              runTimeDistributions = TRUE,
+                                              runBreakdownIndexEvents = TRUE,
+                                              runIncidenceRate = TRUE,
+                                              runCohortOverlap = FALSE,
+                                              runCohortCharacterization = FALSE,
+                                              runTemporalCohortCharacterization = FALSE,
+                                              minCellCount = minCellCount,
+                                              incremental = TRUE,
+                                              incrementalFolder = incrementalFolder)
+    },error = function(e){
+      ParallelLogger::logError(paste0("Error when running CohortDiagnostics::runCohortDiagnostics on CohortGroup: ", cohortGroups$cohortGroup[i]))
+      ParallelLogger::logError(e)
+    })
   }
   
   # Bundle the diagnosics for export
