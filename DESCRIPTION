@@ -1,22 +1,37 @@
-Package: PIONEER
+Package: PioneerWatchfulWaiting
 Type: Package
-Title: 
+Title: PIONEER / EHDEN / OHDSI prostate cancer study
 Version: 0.1.0
-Author: 
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Artem Gorbachev
+Maintainer: Kees van Bochove <kees@thehyve.nl>
+Description: Describe the baseline demographic, clinical characteristics, and outcomes of interest for prostate cancer patients managed with non-curative intent therapies.
+Depends:
+  DatabaseConnector (>= 2.2.0)
 Imports:
-    tidyverse,
-    dplyr,
-    tidyr,
-    stringr,
-    purrr,
-    magrittr,
-    jsonlite,
-    SqlRender,
-    DatabaseConnector,
-    grDevices
+  CohortDiagnostics (>= 1.2.2),
+  FeatureExtraction,
+  ParallelLogger,
+  OhdsiSharing (>= 0.2.1),
+  SqlRender,
+  ff,
+  digest,
+  readr,
+  dplyr,
+  ggplot2 (<= 3.2.1),
+  tibble
+Suggests:
+  knitr,
+  rmarkdown
+Remotes:
+  OHDSI/CohortDiagnostics,
+  OHDSI/FeatureExtraction,
+  OHDSI/ParallelLogger,
+  OHDSI/SqlRender,
+  OHDSI/OhdsiSharing
+License: Apache License 2.0
+VignetteBuilder: knitr
+URL: https://github.com/ohdsi-studies/PioneerWatchfulWaiting
+BugReports: https://github.com/ohdsi-studies/PioneerWatchfulWaiting/issues
 Encoding: UTF-8
-LazyData: true
+LazyData: TRUE
+RoxygenNote: 7.1.1
