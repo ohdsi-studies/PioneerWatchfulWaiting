@@ -1,27 +1,4 @@
 name,atlasName,atlasId,cohortId
-<<<<<<< HEAD
-100,[COVID ID100 v1] Prevalent Type 2 Diabetes Mellitus,910,100
-101,[COVID ID101 v1] Prevalent hypertension,140,101
-119,[COVID ID119 V1] Prevalent chronic obstructive pulmonary disease (COPD) without asthma,796,119
-120,[COVID ID120 V1] Prevalent Asthma without COPD,840,120
-102,[COVID ID102 v1] Prevalent chronic kidney disease,130,102
-103,[COVID ID103 v1] Prevalent end stage renal disease,9,103
-104,[COVID ID104 v1] Prevalent heart disease,805,104
-105,[COVID ID105 v1] Prevalent malignant neoplasm excluding non-melanoma skin cancer,911,105
-199,[COVID ID199 V1] Pregnant women,985,199
-106,[COVID ID106 v1] Prevalent Human immunodeficiency virus infection,941,106
-117,[COVID ID106 v1] Prevalent tuberculosis,942,117
-107,[COVID ID107 V1] Prevalent Hepatitis C,806,107
-108,[COVID ID108 v1] Prevalent obesity,808,108
-109,[COVID ID109 v1] Prevalent Dementia,770,109
-125,[COVID ID125 V1] Prevalent pre-existing condition of COVID risk factor,964,125
-118,[COVID ID118 v1] Prevalent Autoimmune condition,848,118
-200,[COVID ID200 v1] Flu-like symptom episodes,987,200
-203,[COVID ID203 v1] Prevalent chronic kidney disease broad,1021,203
-204,[COVID ID204 v1] Prevalent end stage renal disease broad,1022,204
-205,[COVID ID121 v1] Prevalent Human immunodeficiency virus infection broad,1019,205
-206,[COVID ID102 v1] Prevalent tuberculosis broad,1020,206
-=======
 301,[PIONEER S01] High-Risk,301,301
 302,[PIONEER S02] Low-Risk,302,302
 303,[PIONEER S03] Intermediate-Risk,303,303
@@ -48,4 +25,3 @@ name,atlasName,atlasId,cohortId
 324,[PIONEER S24] Hypertension,324,324
 325,[PIONEER S25] Obesity,325,325
 326,[PIONEER S26] Venous thromboembolism,326,326
->>>>>>> Tsemharb/master
