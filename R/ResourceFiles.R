@@ -93,7 +93,7 @@ getAllStudyCohortsWithDetails <- function() {
 }
 
 getThisPackageName <- function() {
-  return("PIONEERCharacterization")
+  return("PioneerWatchfulWaiting")
 }
 
 readCsv <- function(resourceFile) {

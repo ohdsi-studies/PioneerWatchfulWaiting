@@ -82,7 +82,7 @@ The study repo has the following major pieces:
 - `extras` folder = the folder where we store a copy of the instructions (called `CodeToRun.R`) below and other files that the study needs to do things like package maintenance or talk with the Shiny app. Aside from `CodeToRun.R`, you can largely ignore the rest of these files.
 - `inst` folder = This is the "install" folder. It contains the most important parts of the study: the study cohort JSONs (analogous to what ATLAS shows you in the Export tab), the study settings, a sub-folder that contains information to the Shiny app, and the study cohort SQL scripts that [SqlRender](https://cran.r-project.org/web/packages/SqlRender/index.html) will use to translate these into your RDBMS.
 
-Below you will find instructions for how to bring this package into your `R`/ `RStudio` environment. Note that if you are not able to connect to the internet in `R`/ `RStudio` to download pacakges, you will have to pull the [TAR file](https://github.com/ohdsi-studies/Covid19CharacterizationCharybdis/archive/master.zip). 
+Below you will find instructions for how to bring this package into your `R`/ `RStudio` environment. Note that if you are not able to connect to the internet in `R`/ `RStudio` to download pacakges, you will have to pull the [TAR file](https://github.com/ohdsi-studies/PioneerWatchfulWaiting/archive/master.zip). 
 
 #### *I see you've got a reference `Renviron` but I've never used that? What do I do?*
 You can install a package like `usethis` to quickly access your Renviron file.  `usethis` :package: has a useful helper function to modify `.Renviron`:

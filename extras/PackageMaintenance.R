@@ -1,6 +1,6 @@
 # # Copyright 2020 Observational Health Data Sciences and Informatics
 # #
-# # This file is part of PIONEERCharacterization
+# # This file is part of PioneerWatchfulWaiting
 # #
 # # Licensed under the Apache License, Version 2.0 (the "License");
 # # you may not use this file except in compliance with the License.
@@ -16,12 +16,12 @@
 # 
 # # Format and check code ---------------------------------------------------
 # OhdsiRTools::formatRFolder()
-# OhdsiRTools::checkUsagePackage("PIONEERCharacterization")
+# OhdsiRTools::checkUsagePackage("PioneerWatchfulWaiting")
 # OhdsiRTools::updateCopyrightYearFolder()
 # 
 # # Create manual -----------------------------------------------------------
-# unlink("extras/PIONEERCharacterization.pdf")
-# shell("R CMD Rd2pdf ./ --output=extras/PIONEERCharacterization.pdf")
+# unlink("extras/PioneerWatchfulWaiting.pdf")
+# shell("R CMD Rd2pdf ./ --output=extras/PioneerWatchfulWaiting.pdf")
 # 
 # pkgdown::build_site()
 # 
@@ -193,7 +193,7 @@ cohortGroups <- readr::read_csv("inst/settings/CohortGroups.csv", col_types=read
 #                                                    insertTableSql = FALSE,
 #                                                    insertCohortCreationR = FALSE,
 #                                                    generateStats = FALSE,
-#                                                    packageName = "PIONEERCharacterization")
+#                                                    packageName = "PioneerWatchfulWaiting")
 # }
 # unlink("inst/cohorts/InclusionRules.csv")
 
@@ -291,4 +291,4 @@ readr::write_csv(targetStrataXRef, file.path(settingsPath, "targetStrataXref.csv
 
 
 # Store environment in which the study was executed -----------------------
-# OhdsiRTools::insertEnvironmentSnapshotInPackage("PIONEERCharacterization")
+# OhdsiRTools::insertEnvironmentSnapshotInPackage("PioneerWatchfulWaiting")

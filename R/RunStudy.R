@@ -25,7 +25,7 @@ runStudy <- function(connectionDetails = NULL,
     dir.create(exportFolder, recursive = TRUE)
   }
   
-  ParallelLogger::addDefaultFileLogger(file.path(exportFolder, "PIONEERCharacterization.txt"))
+  ParallelLogger::addDefaultFileLogger(file.path(exportFolder, "PioneerWatchfulWaiting.txt"))
   on.exit(ParallelLogger::unregisterLogger("DEFAULT"))
   
   # Write out the system information
