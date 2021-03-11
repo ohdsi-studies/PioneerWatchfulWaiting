@@ -72,6 +72,20 @@
               "CONCEPT_CLASS_ID": "Procedure"
             },
             "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 37065295,
+              "CONCEPT_NAME": "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "LP387023-7",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "LOINC",
+              "CONCEPT_CLASS_ID": "LOINC Hierarchy"
+            }
           }
         ]
       }
@@ -257,7 +271,8 @@
               "DOMAIN_ID": "Procedure",
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Procedure"
-            }
+            },
+            "includeDescendants": true
           }
         ]
       }
@@ -359,18 +374,7 @@
                     "ValueAsNumber": {
                       "Value": 20,
                       "Op": "gt"
-                    },
-                    "Unit": [
-                      {
-                        "CONCEPT_CODE": "ng/mL",
-                        "CONCEPT_ID": 8842,
-                        "CONCEPT_NAME": "nanogram per milliliter",
-                        "DOMAIN_ID": "Unit",
-                        "INVALID_REASON_CAPTION": "Unknown",
-                        "STANDARD_CONCEPT_CAPTION": "Unknown",
-                        "VOCABULARY_ID": "UCUM"
-                      }
-                    ]
+                    }
                   }
                 },
                 "StartWindow": {
@@ -415,7 +419,7 @@
             "DemographicCriteriaList": [],
             "Groups": [
               {
-                "Type": "ALL",
+                "Type": "ANY",
                 "CriteriaList": [
                   {
                     "Criteria": {
@@ -467,9 +471,11 @@
                     },
                     "StartWindow": {
                       "Start": {
+                        "Days": 30,
                         "Coeff": -1
                       },
                       "End": {
+                        "Days": 30,
                         "Coeff": 1
                       },
                       "UseEventEnd": false

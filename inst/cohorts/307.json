@@ -87,6 +87,20 @@
               "CONCEPT_CLASS_ID": "LOINC Hierarchy"
             },
             "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 37392634,
+              "CONCEPT_NAME": "Total PSA (prostate specific antigen) level",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "1006591000000104",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Observable Entity"
+            }
           }
         ]
       }
@@ -108,7 +122,8 @@
               "DOMAIN_ID": "Procedure",
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Procedure"
-            }
+            },
+            "includeDescendants": true
           }
         ]
       }
@@ -175,54 +190,36 @@
       "name": "PSA>20",
       "expression": {
         "Type": "ANY",
-        "CriteriaList": [],
-        "DemographicCriteriaList": [],
-        "Groups": [
+        "CriteriaList": [
           {
-            "Type": "ANY",
-            "CriteriaList": [
-              {
-                "Criteria": {
-                  "Measurement": {
-                    "CodesetId": 1,
-                    "ValueAsNumber": {
-                      "Value": 20,
-                      "Op": "gt"
-                    },
-                    "Unit": [
-                      {
-                        "CONCEPT_CODE": "ng/mL",
-                        "CONCEPT_ID": 8842,
-                        "CONCEPT_NAME": "nanogram per milliliter",
-                        "DOMAIN_ID": "Unit",
-                        "INVALID_REASON_CAPTION": "Unknown",
-                        "STANDARD_CONCEPT_CAPTION": "Unknown",
-                        "VOCABULARY_ID": "UCUM"
-                      }
-                    ]
-                  }
-                },
-                "StartWindow": {
-                  "Start": {
-                    "Days": 30,
-                    "Coeff": -1
-                  },
-                  "End": {
-                    "Days": 7,
-                    "Coeff": 1
-                  },
-                  "UseEventEnd": false
-                },
-                "Occurrence": {
-                  "Type": 2,
-                  "Count": 1
+            "Criteria": {
+              "Measurement": {
+                "CodesetId": 1,
+                "ValueAsNumber": {
+                  "Value": 20,
+                  "Op": "gt"
                 }
               }
-            ],
-            "DemographicCriteriaList": [],
-            "Groups": []
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 7,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
           }
-        ]
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
       }
     }
   ],

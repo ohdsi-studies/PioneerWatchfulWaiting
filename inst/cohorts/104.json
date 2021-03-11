@@ -395,6 +395,20 @@
               "VOCABULARY_ID": "CPT4",
               "CONCEPT_CLASS_ID": "CPT4"
             }
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4245119,
+              "CONCEPT_NAME": "CyberKnife",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "396340009",
+              "DOMAIN_ID": "Device",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Physical Object"
+            }
           }
         ]
       }
@@ -469,20 +483,6 @@
               "CONCEPT_CLASS_ID": "Procedure"
             },
             "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "Procedure",
-              "CONCEPT_CODE": "M67.1",
-              "CONCEPT_ID": 44512406,
-              "CONCEPT_NAME": "Endoscopic cryotherapy to lesion of prostate",
-              "DOMAIN_ID": "Procedure",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "VOCABULARY_ID": "OPCS4"
-            }
           },
           {
             "concept": {
@@ -804,21 +804,6 @@
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "Component Class",
-              "CONCEPT_CODE": "46196",
-              "CONCEPT_ID": 35807500,
-              "CONCEPT_NAME": "Androgen receptor inhibitor",
-              "DOMAIN_ID": "Drug",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "C",
-              "STANDARD_CONCEPT_CAPTION": "Classification",
-              "VOCABULARY_ID": "HemOnc"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
               "CONCEPT_ID": 21603834,
               "CONCEPT_NAME": "Anti-androgens",
               "STANDARD_CONCEPT": "C",
@@ -834,46 +819,45 @@
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "ICD10PCS",
-              "CONCEPT_CODE": "0VBC0ZZ",
-              "CONCEPT_ID": 2777952,
-              "CONCEPT_NAME": "Excision of Bilateral Testes, Open Approach",
-              "DOMAIN_ID": "Procedure",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_ID": 40222431,
+              "CONCEPT_NAME": "cabazitaxel",
               "STANDARD_CONCEPT": "S",
               "STANDARD_CONCEPT_CAPTION": "Standard",
-              "VOCABULARY_ID": "ICD10PCS"
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "996051",
+              "DOMAIN_ID": "Drug",
+              "VOCABULARY_ID": "RxNorm",
+              "CONCEPT_CLASS_ID": "Ingredient"
             },
             "includeDescendants": true
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "ICD10PCS",
-              "CONCEPT_CODE": "0VBC3ZZ",
-              "CONCEPT_ID": 2777954,
-              "CONCEPT_NAME": "Excision of Bilateral Testes, Percutaneous Approach",
-              "DOMAIN_ID": "Procedure",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_ID": 4162987,
+              "CONCEPT_NAME": "Colostomy",
               "STANDARD_CONCEPT": "S",
               "STANDARD_CONCEPT_CAPTION": "Standard",
-              "VOCABULARY_ID": "ICD10PCS"
-            },
-            "includeDescendants": true
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "398740003",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            }
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "ICD10PCS",
-              "CONCEPT_CODE": "0VBC3ZX",
-              "CONCEPT_ID": 2777953,
-              "CONCEPT_NAME": "Excision of Bilateral Testes, Percutaneous Approach, Diagnostic",
-              "DOMAIN_ID": "Procedure",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_ID": 1315942,
+              "CONCEPT_NAME": "docetaxel",
               "STANDARD_CONCEPT": "S",
               "STANDARD_CONCEPT_CAPTION": "Standard",
-              "VOCABULARY_ID": "ICD10PCS"
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "72962",
+              "DOMAIN_ID": "Drug",
+              "VOCABULARY_ID": "RxNorm",
+              "CONCEPT_CLASS_ID": "Ingredient"
             },
             "includeDescendants": true
           },
@@ -894,6 +878,20 @@
           },
           {
             "concept": {
+              "CONCEPT_ID": 4194550,
+              "CONCEPT_NAME": "Foley catheter long term use",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "395321006",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            }
+          },
+          {
+            "concept": {
               "CONCEPT_ID": 21603823,
               "CONCEPT_NAME": "Gonadotropin releasing hormone analogues",
               "STANDARD_CONCEPT": "C",
@@ -906,6 +904,20 @@
               "CONCEPT_CLASS_ID": "ATC 4th"
             },
             "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4181450,
+              "CONCEPT_NAME": "Insertion of stent into ureter",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "428817001",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            }
           },
           {
             "concept": {
@@ -984,6 +996,21 @@
           },
           {
             "concept": {
+              "CONCEPT_ID": 45892579,
+              "CONCEPT_NAME": "olaparib",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "1597582",
+              "DOMAIN_ID": "Drug",
+              "VOCABULARY_ID": "RxNorm",
+              "CONCEPT_CLASS_ID": "Ingredient"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
               "CONCEPT_ID": 21603845,
               "CONCEPT_NAME": "Other hormone antagonists and related agents",
               "STANDARD_CONCEPT": "C",
@@ -1029,6 +1056,35 @@
           },
           {
             "concept": {
+              "CONCEPT_ID": 4178736,
+              "CONCEPT_NAME": "Pelvic exenteration",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "52224004",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 45775965,
+              "CONCEPT_NAME": "pembrolizumab",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "1547545",
+              "DOMAIN_ID": "Drug",
+              "VOCABULARY_ID": "RxNorm",
+              "CONCEPT_CLASS_ID": "Ingredient"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
               "CONCEPT_ID": 45763838,
               "CONCEPT_NAME": "Radium 223 brachytherapy",
               "STANDARD_CONCEPT": "S",
@@ -1039,6 +1095,36 @@
               "DOMAIN_ID": "Procedure",
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Procedure"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 1718850,
+              "CONCEPT_NAME": "rucaparib",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "1862579",
+              "DOMAIN_ID": "Drug",
+              "VOCABULARY_ID": "RxNorm",
+              "CONCEPT_CLASS_ID": "Ingredient"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 40224095,
+              "CONCEPT_NAME": "sipuleucel-T",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "997261",
+              "DOMAIN_ID": "Drug",
+              "VOCABULARY_ID": "RxNorm",
+              "CONCEPT_CLASS_ID": "Ingredient"
             },
             "includeDescendants": true
           },
@@ -1056,6 +1142,20 @@
               "CONCEPT_CLASS_ID": "Procedure"
             },
             "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4044045,
+              "CONCEPT_NAME": "Suprapubic cystostomy",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "129252005",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            }
           },
           {
             "concept": {
@@ -1101,155 +1201,12 @@
               "CONCEPT_CLASS_ID": "Procedure"
             },
             "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 40222431,
-              "CONCEPT_NAME": "cabazitaxel",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "996051",
-              "DOMAIN_ID": "Drug",
-              "VOCABULARY_ID": "RxNorm",
-              "CONCEPT_CLASS_ID": "Ingredient"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 1315942,
-              "CONCEPT_NAME": "docetaxel",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "72962",
-              "DOMAIN_ID": "Drug",
-              "VOCABULARY_ID": "RxNorm",
-              "CONCEPT_CLASS_ID": "Ingredient"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 45892579,
-              "CONCEPT_NAME": "olaparib",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "1597582",
-              "DOMAIN_ID": "Drug",
-              "VOCABULARY_ID": "RxNorm",
-              "CONCEPT_CLASS_ID": "Ingredient"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 45775965,
-              "CONCEPT_NAME": "pembrolizumab",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "1547545",
-              "DOMAIN_ID": "Drug",
-              "VOCABULARY_ID": "RxNorm",
-              "CONCEPT_CLASS_ID": "Ingredient"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 1718850,
-              "CONCEPT_NAME": "rucaparib",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "1862579",
-              "DOMAIN_ID": "Drug",
-              "VOCABULARY_ID": "RxNorm",
-              "CONCEPT_CLASS_ID": "Ingredient"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 40224095,
-              "CONCEPT_NAME": "sipuleucel-T",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "997261",
-              "DOMAIN_ID": "Drug",
-              "VOCABULARY_ID": "RxNorm",
-              "CONCEPT_CLASS_ID": "Ingredient"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 4162987,
-              "CONCEPT_NAME": "Colostomy",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "398740003",
-              "DOMAIN_ID": "Procedure",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Procedure"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 4220029,
-              "CONCEPT_NAME": "Nephrostomy",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "39834009",
-              "DOMAIN_ID": "Procedure",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Procedure"
-            },
-            "includeDescendants": true
           }
         ]
       }
     },
     {
       "id": 12,
-      "name": "[PIONEER] PCa",
-      "expression": {
-        "items": [
-          {
-            "concept": {
-              "CONCEPT_ID": 4163261,
-              "CONCEPT_NAME": "Malignant tumor of prostate",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "399068003",
-              "DOMAIN_ID": "Condition",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Clinical Finding"
-            },
-            "includeDescendants": true
-          }
-        ]
-      }
-    },
-    {
-      "id": 13,
       "name": "[PIONEER] Other Malignancies",
       "expression": {
         "items": [
@@ -1330,6 +1287,29 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
+            "includeDescendants": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "name": "[PIONEER] PCa",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_ID": 4163261,
+              "CONCEPT_NAME": "Malignant tumor of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "399068003",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
             "includeDescendants": true
           }
         ]
@@ -1432,38 +1412,312 @@
           }
         ]
       }
+    },
+    {
+      "id": 15,
+      "name": "[PIONEER] Treatment_Palliative Nephrostomy",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_ID": 4220029,
+              "CONCEPT_NAME": "Nephrostomy",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "39834009",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "name": "[PIONEER] AKI",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_ID": 435308,
+              "CONCEPT_NAME": "Acute glomerulonephritis",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "19351000",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4242411,
+              "CONCEPT_NAME": "Acute nephropathy",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "58574008",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4032298,
+              "CONCEPT_NAME": "Acute-on-chronic rejection of renal transplant",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "236582008",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4280571,
+              "CONCEPT_NAME": "Acute pyelonephritis",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "36689008",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4128371,
+              "CONCEPT_NAME": "Acute rejection of renal transplant",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "236574008",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4127550,
+              "CONCEPT_NAME": "Acute rejection of renal transplant - grade I",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "236575009",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4032296,
+              "CONCEPT_NAME": "Acute rejection of renal transplant - grade II",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "236576005",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4127551,
+              "CONCEPT_NAME": "Acute rejection of renal transplant - grade III",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "236577001",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 432961,
+              "CONCEPT_NAME": "Acute renal papillary necrosis with renal failure",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "298015003",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4032295,
+              "CONCEPT_NAME": "Hyperacute rejection of renal transplant",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "236571000",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4126131,
+              "CONCEPT_NAME": "Very mild acute rejection of renal transplant",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "236573002",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "name": "[PIONEER] PSA",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_ID": 2617206,
+              "CONCEPT_NAME": "Prostate cancer screening; prostate specific antigen test (psa)",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "G0103",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "HCPCS",
+              "CONCEPT_CLASS_ID": "HCPCS"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 37065295,
+              "CONCEPT_NAME": "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "LP387023-7",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "LOINC",
+              "CONCEPT_CLASS_ID": "LOINC Hierarchy"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 45889041,
+              "CONCEPT_NAME": "Prostate specific antigen (PSA)",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "1011648",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "CPT4",
+              "CONCEPT_CLASS_ID": "CPT4 Hierarchy"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 44793131,
+              "CONCEPT_NAME": "Total PSA level",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "377981000000102",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 37392634,
+              "CONCEPT_NAME": "Total PSA (prostate specific antigen) level",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "1006591000000104",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Observable Entity"
+            }
+          }
+        ]
+      }
     }
   ],
   "PrimaryCriteria": {
     "CriteriaList": [
       {
-        "ProcedureOccurrence": {
-          "CodesetId": 10
-        }
-      },
-      {
-        "ProcedureOccurrence": {
-          "CodesetId": 11
-        }
-      },
-      {
-        "DrugExposure": {
-          "CodesetId": 11
-        }
-      },
-      {
-        "Observation": {
-          "CodesetId": 8
-        }
-      },
-      {
-        "DeviceExposure": {
-          "CodesetId": 8
-        }
-      },
-      {
-        "ProcedureOccurrence": {
-          "CodesetId": 8
+        "ConditionOccurrence": {
+          "CodesetId": 13,
+          "First": true,
+          "Gender": [
+            {
+              "CONCEPT_CODE": "M",
+              "CONCEPT_ID": 8507,
+              "CONCEPT_NAME": "MALE",
+              "DOMAIN_ID": "Gender",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "Gender"
+            }
+          ]
         }
       }
     ],
@@ -1483,315 +1737,6 @@
   },
   "InclusionRules": [
     {
-      "name": "PCa with biopsy 30-d around and no prior hx and no treatment six months post-initiation",
-      "expression": {
-        "Type": "ALL",
-        "CriteriaList": [
-          {
-            "Criteria": {
-              "ConditionOccurrence": {
-                "CorrelatedCriteria": {
-                  "Type": "ALL",
-                  "CriteriaList": [],
-                  "DemographicCriteriaList": [],
-                  "Groups": [
-                    {
-                      "Type": "ALL",
-                      "CriteriaList": [
-                        {
-                          "Criteria": {
-                            "ConditionOccurrence": {
-                              "CodesetId": 9
-                            }
-                          },
-                          "StartWindow": {
-                            "Start": {
-                              "Days": 365,
-                              "Coeff": -1
-                            },
-                            "End": {
-                              "Days": 1,
-                              "Coeff": -1
-                            },
-                            "UseEventEnd": false
-                          },
-                          "Occurrence": {
-                            "Type": 0,
-                            "Count": 0
-                          }
-                        },
-                        {
-                          "Criteria": {
-                            "Observation": {
-                              "CodesetId": 9
-                            }
-                          },
-                          "StartWindow": {
-                            "Start": {
-                              "Days": 365,
-                              "Coeff": -1
-                            },
-                            "End": {
-                              "Days": 1,
-                              "Coeff": -1
-                            },
-                            "UseEventEnd": false
-                          },
-                          "Occurrence": {
-                            "Type": 0,
-                            "Count": 0
-                          }
-                        }
-                      ],
-                      "DemographicCriteriaList": [],
-                      "Groups": []
-                    },
-                    {
-                      "Type": "ALL",
-                      "CriteriaList": [
-                        {
-                          "Criteria": {
-                            "ProcedureOccurrence": {
-                              "CodesetId": 6
-                            }
-                          },
-                          "StartWindow": {
-                            "Start": {
-                              "Days": 30,
-                              "Coeff": -1
-                            },
-                            "End": {
-                              "Days": 30,
-                              "Coeff": 1
-                            },
-                            "UseEventEnd": false
-                          },
-                          "Occurrence": {
-                            "Type": 2,
-                            "Count": 1
-                          }
-                        }
-                      ],
-                      "DemographicCriteriaList": [],
-                      "Groups": []
-                    },
-                    {
-                      "Type": "ALL",
-                      "CriteriaList": [
-                        {
-                          "Criteria": {
-                            "DrugExposure": {
-                              "CodesetId": 11
-                            }
-                          },
-                          "StartWindow": {
-                            "Start": {
-                              "Days": 0,
-                              "Coeff": 1
-                            },
-                            "End": {
-                              "Days": 180,
-                              "Coeff": 1
-                            },
-                            "UseEventEnd": false
-                          },
-                          "Occurrence": {
-                            "Type": 0,
-                            "Count": 0
-                          }
-                        },
-                        {
-                          "Criteria": {
-                            "ProcedureOccurrence": {
-                              "CodesetId": 11
-                            }
-                          },
-                          "StartWindow": {
-                            "Start": {
-                              "Days": 0,
-                              "Coeff": 1
-                            },
-                            "End": {
-                              "Days": 180,
-                              "Coeff": 1
-                            },
-                            "UseEventEnd": false
-                          },
-                          "Occurrence": {
-                            "Type": 0,
-                            "Count": 0
-                          }
-                        },
-                        {
-                          "Criteria": {
-                            "ProcedureOccurrence": {
-                              "CodesetId": 10
-                            }
-                          },
-                          "StartWindow": {
-                            "Start": {
-                              "Days": 0,
-                              "Coeff": 1
-                            },
-                            "End": {
-                              "Days": 180,
-                              "Coeff": 1
-                            },
-                            "UseEventEnd": false
-                          },
-                          "Occurrence": {
-                            "Type": 0,
-                            "Count": 0
-                          }
-                        },
-                        {
-                          "Criteria": {
-                            "Observation": {
-                              "CodesetId": 8
-                            }
-                          },
-                          "StartWindow": {
-                            "Start": {
-                              "Days": 0,
-                              "Coeff": 1
-                            },
-                            "End": {
-                              "Days": 180,
-                              "Coeff": 1
-                            },
-                            "UseEventEnd": false
-                          },
-                          "Occurrence": {
-                            "Type": 0,
-                            "Count": 0
-                          }
-                        },
-                        {
-                          "Criteria": {
-                            "DeviceExposure": {
-                              "CodesetId": 8
-                            }
-                          },
-                          "StartWindow": {
-                            "Start": {
-                              "Days": 0,
-                              "Coeff": 1
-                            },
-                            "End": {
-                              "Days": 180,
-                              "Coeff": 1
-                            },
-                            "UseEventEnd": false
-                          },
-                          "Occurrence": {
-                            "Type": 0,
-                            "Count": 0
-                          }
-                        },
-                        {
-                          "Criteria": {
-                            "ProcedureOccurrence": {
-                              "CodesetId": 8
-                            }
-                          },
-                          "StartWindow": {
-                            "Start": {
-                              "Days": 0,
-                              "Coeff": 1
-                            },
-                            "End": {
-                              "Days": 180,
-                              "Coeff": 1
-                            },
-                            "UseEventEnd": false
-                          },
-                          "Occurrence": {
-                            "Type": 0,
-                            "Count": 0
-                          }
-                        }
-                      ],
-                      "DemographicCriteriaList": [],
-                      "Groups": []
-                    },
-                    {
-                      "Type": "ALL",
-                      "CriteriaList": [
-                        {
-                          "Criteria": {
-                            "DrugExposure": {
-                              "CodesetId": 14
-                            }
-                          },
-                          "StartWindow": {
-                            "Start": {
-                              "Days": 365,
-                              "Coeff": -1
-                            },
-                            "End": {
-                              "Days": 1,
-                              "Coeff": -1
-                            },
-                            "UseEventEnd": false
-                          },
-                          "Occurrence": {
-                            "Type": 0,
-                            "Count": 0
-                          }
-                        },
-                        {
-                          "Criteria": {
-                            "Observation": {
-                              "CodesetId": 14
-                            }
-                          },
-                          "StartWindow": {
-                            "Start": {
-                              "Days": 365,
-                              "Coeff": -1
-                            },
-                            "End": {
-                              "Days": 1,
-                              "Coeff": -1
-                            },
-                            "UseEventEnd": false
-                          },
-                          "Occurrence": {
-                            "Type": 0,
-                            "Count": 0
-                          }
-                        }
-                      ],
-                      "DemographicCriteriaList": [],
-                      "Groups": []
-                    }
-                  ]
-                },
-                "CodesetId": 12,
-                "First": true
-              }
-            },
-            "StartWindow": {
-              "Start": {
-                "Coeff": -1
-              },
-              "End": {
-                "Days": 180,
-                "Coeff": -1
-              },
-              "UseEventEnd": false
-            },
-            "Occurrence": {
-              "Type": 2,
-              "Count": 1
-            }
-          }
-        ],
-        "DemographicCriteriaList": [],
-        "Groups": []
-      }
-    },
-    {
       "name": "Age >= 18",
       "expression": {
         "Type": "ALL",
@@ -1806,6 +1751,464 @@
         ],
         "Groups": []
       }
+    },
+    {
+      "name": "Biopsy or PSA>50",
+      "expression": {
+        "Type": "ANY",
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "ProcedureOccurrence": {
+                "CodesetId": 6
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 30,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          },
+          {
+            "Criteria": {
+              "Measurement": {
+                "CodesetId": 17,
+                "ValueAsNumber": {
+                  "Value": 50,
+                  "Op": "gt"
+                }
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 30,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    },
+    {
+      "name": "No history of PCa",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "ConditionOccurrence": {
+                "CodesetId": 9
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 1,
+                "Coeff": -1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0
+            }
+          },
+          {
+            "Criteria": {
+              "Observation": {
+                "CodesetId": 9,
+                "ValueAsConcept": [
+                  {
+                    "CONCEPT_CODE": "410515003",
+                    "CONCEPT_ID": 4253628,
+                    "CONCEPT_NAME": "Known present",
+                    "DOMAIN_ID": "Observation",
+                    "INVALID_REASON_CAPTION": "Unknown",
+                    "STANDARD_CONCEPT_CAPTION": "Unknown",
+                    "VOCABULARY_ID": "SNOMED"
+                  }
+                ]
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 1,
+                "Coeff": -1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    },
+    {
+      "name": "At least one treatment during the 6 months post index",
+      "expression": {
+        "Type": "ANY",
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "ProcedureOccurrence": {
+                "CodesetId": 10
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 180,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          },
+          {
+            "Criteria": {
+              "Observation": {
+                "CodesetId": 10
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 180,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          },
+          {
+            "Criteria": {
+              "ProcedureOccurrence": {
+                "CodesetId": 11
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 180,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          },
+          {
+            "Criteria": {
+              "DrugExposure": {
+                "CodesetId": 11
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 180,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          },
+          {
+            "Criteria": {
+              "Observation": {
+                "CodesetId": 11
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 180,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          },
+          {
+            "Criteria": {
+              "DeviceExposure": {
+                "CodesetId": 11
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 180,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          },
+          {
+            "Criteria": {
+              "ProcedureOccurrence": {
+                "CorrelatedCriteria": {
+                  "Type": "ALL",
+                  "CriteriaList": [
+                    {
+                      "Criteria": {
+                        "ConditionOccurrence": {
+                          "CodesetId": 16
+                        }
+                      },
+                      "StartWindow": {
+                        "Start": {
+                          "Days": 180,
+                          "Coeff": -1
+                        },
+                        "End": {
+                          "Days": 0,
+                          "Coeff": -1
+                        },
+                        "UseEventEnd": false
+                      },
+                      "Occurrence": {
+                        "Type": 2,
+                        "Count": 1
+                      }
+                    }
+                  ],
+                  "DemographicCriteriaList": [],
+                  "Groups": []
+                },
+                "CodesetId": 15
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 180,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          },
+          {
+            "Criteria": {
+              "ProcedureOccurrence": {
+                "CodesetId": 8
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 180,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          },
+          {
+            "Criteria": {
+              "Observation": {
+                "CodesetId": 8
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 180,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          },
+          {
+            "Criteria": {
+              "DeviceExposure": {
+                "CodesetId": 8
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 180,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    },
+    {
+      "name": "no ADT and other hormnal",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "DrugExposure": {
+                "CodesetId": 14
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 1,
+                "Coeff": -1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0
+            }
+          },
+          {
+            "Criteria": {
+              "Observation": {
+                "CodesetId": 14
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 1,
+                "Coeff": -1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0
+            }
+          },
+          {
+            "Criteria": {
+              "ProcedureOccurrence": {
+                "CodesetId": 14
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 1,
+                "Coeff": -1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
     }
   ],
   "CensoringCriteria": [
@@ -1814,7 +2217,7 @@
     },
     {
       "ConditionOccurrence": {
-        "CodesetId": 13
+        "CodesetId": 12
       }
     }
   ],

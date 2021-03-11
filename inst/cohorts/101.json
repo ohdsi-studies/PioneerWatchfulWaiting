@@ -273,7 +273,18 @@
       {
         "ConditionOccurrence": {
           "CodesetId": 0,
-          "First": true
+          "First": true,
+          "Gender": [
+            {
+              "CONCEPT_CODE": "M",
+              "CONCEPT_ID": 8507,
+              "CONCEPT_NAME": "MALE",
+              "DOMAIN_ID": "Gender",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "Gender"
+            }
+          ]
         }
       }
     ],
@@ -338,7 +349,18 @@
           {
             "Criteria": {
               "Observation": {
-                "CodesetId": 4
+                "CodesetId": 4,
+                "ValueAsConcept": [
+                  {
+                    "CONCEPT_CODE": "410515003",
+                    "CONCEPT_ID": 4253628,
+                    "CONCEPT_NAME": "Known present",
+                    "DOMAIN_ID": "Observation",
+                    "INVALID_REASON_CAPTION": "Unknown",
+                    "STANDARD_CONCEPT_CAPTION": "Unknown",
+                    "VOCABULARY_ID": "SNOMED"
+                  }
+                ]
               }
             },
             "StartWindow": {

@@ -25,7 +25,7 @@
     },
     {
       "id": 5,
-      "name": "[PIONEER] cT3",
+      "name": "[PIONEER] cT3 cT4",
       "expression": {
         "items": [
           {
@@ -62,6 +62,20 @@
               "CONCEPT_CODE": "cT3b-58-8",
               "CONCEPT_ID": 1539229,
               "CONCEPT_NAME": "Prostate Cancer cT3b TNM Finding by AJCC/UICC 8th edition",
+              "DOMAIN_ID": "Measurement",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "NCIt"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "AJCC Category",
+              "CONCEPT_CODE": "cT4-58-8",
+              "CONCEPT_ID": 1538855,
+              "CONCEPT_NAME": "Prostate Cancer cT4 TNM Finding by AJCC/UICC 8th edition",
               "DOMAIN_ID": "Measurement",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
@@ -154,7 +168,7 @@
   },
   "InclusionRules": [
     {
-      "name": "Stage T3",
+      "name": "Stage T3 or cT4",
       "expression": {
         "Type": "ANY",
         "CriteriaList": [],

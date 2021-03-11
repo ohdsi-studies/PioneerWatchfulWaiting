@@ -76,7 +76,8 @@
               "DOMAIN_ID": "Procedure",
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Procedure"
-            }
+            },
+            "includeDescendants": true
           }
         ]
       }
@@ -165,72 +166,65 @@
       "name": "Grade 2 (3+4)",
       "expression": {
         "Type": "ANY",
-        "CriteriaList": [],
-        "DemographicCriteriaList": [],
-        "Groups": [
+        "CriteriaList": [
           {
-            "Type": "ANY",
-            "CriteriaList": [
-              {
-                "Criteria": {
-                  "Measurement": {
-                    "CodesetId": 9
-                  }
-                },
-                "StartWindow": {
-                  "Start": {
-                    "Days": 30,
-                    "Coeff": -1
-                  },
-                  "End": {
-                    "Days": 7,
-                    "Coeff": 1
-                  },
-                  "UseEventEnd": false
-                },
-                "Occurrence": {
-                  "Type": 2,
-                  "Count": 1
-                }
-              },
-              {
-                "Criteria": {
-                  "Measurement": {
-                    "CodesetId": 14,
-                    "ValueAsConcept": [
-                      {
-                        "CONCEPT_CODE": "LA30795-1",
-                        "CONCEPT_ID": 36662565,
-                        "CONCEPT_NAME": "ISUP Grade (Grade Group) 2 (Gleason score 3+4=7)",
-                        "DOMAIN_ID": "Meas Value",
-                        "INVALID_REASON_CAPTION": "Unknown",
-                        "STANDARD_CONCEPT_CAPTION": "Unknown",
-                        "VOCABULARY_ID": "LOINC"
-                      }
-                    ]
-                  }
-                },
-                "StartWindow": {
-                  "Start": {
-                    "Days": 30,
-                    "Coeff": -1
-                  },
-                  "End": {
-                    "Days": 30,
-                    "Coeff": 1
-                  },
-                  "UseEventEnd": false
-                },
-                "Occurrence": {
-                  "Type": 2,
-                  "Count": 1
-                }
+            "Criteria": {
+              "Measurement": {
+                "CodesetId": 9
               }
-            ],
-            "DemographicCriteriaList": [],
-            "Groups": []
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 7,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          },
+          {
+            "Criteria": {
+              "Measurement": {
+                "CodesetId": 14,
+                "ValueAsConcept": [
+                  {
+                    "CONCEPT_CODE": "LA30795-1",
+                    "CONCEPT_ID": 36662565,
+                    "CONCEPT_NAME": "ISUP Grade (Grade Group) 2 (Gleason score 3+4=7)",
+                    "DOMAIN_ID": "Meas Value",
+                    "INVALID_REASON_CAPTION": "Unknown",
+                    "STANDARD_CONCEPT_CAPTION": "Unknown",
+                    "VOCABULARY_ID": "LOINC"
+                  }
+                ]
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 30,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
           }
-        ]
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
       }
     }
   ],
