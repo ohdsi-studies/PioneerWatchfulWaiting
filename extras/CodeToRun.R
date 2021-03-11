@@ -24,7 +24,6 @@
 #    DB_USER = "database_user_name_goes_here"
 #    DB_PASSWORD = "your_secret_password"
 #    FFTEMP_DIR = "E:/fftemp"
-#    USE_SUBSET = FALSE
 #
 # The following describes the settings
 #    DBMS, DB_SERVER, DB_PORT, DB_USER, DB_PASSWORD := These are the details used to connect
@@ -33,9 +32,6 @@
 #
 #    FFTEMP_DIR = A directory where temporary files used by the FF package are stored while running.
 #
-#    USE_SUBSET = TRUE/FALSE. When set to TRUE, this will allow for runnning this package with a 
-#    subset of the cohorts/features. This is used for testing. PLEASE NOTE: This is only enabled
-#    by setting this environment variable.
 #
 # Once you have established an .Renviron file, you must restart your R session for R to pick up these new
 # variables. 
@@ -60,12 +56,12 @@ Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = TRUE)
 # When asked to update packages, select '1' ('update all') (could be multiple times)
 # When asked whether to install from source, select 'No' (could be multiple times)
 #install.packages("devtools")
-#devtools::install_github("ohdsi-studies/Covid19CharacterizationCharybdis")
+#devtools::install_github("ohdsi-studies/PioneerWatchfulWaiting")
 
 # *******************************************************
 # SECTION 2: Running the package -------------------------------------------------------------------------------
 # *******************************************************
-library(Covid19CharacterizationCharybdis)
+library(PioneerWatchfulWaiting)
 
 # Optional: specify where the temporary files (used by the ff package) will be created:
 fftempdir <- if (Sys.getenv("FFTEMP_DIR") == "") "~/fftemp" else Sys.getenv("FFTEMP_DIR")
@@ -78,78 +74,33 @@ password <- if (Sys.getenv("DB_PASSWORD") == "") NULL else Sys.getenv("DB_PASSWO
 server = Sys.getenv("DB_SERVER")
 port = Sys.getenv("DB_PORT")
 extraSettings <- if (Sys.getenv("DB_EXTRA_SETTINGS") == "") NULL else Sys.getenv("DB_EXTRA_SETTINGS")
+pathToDriver <- if (Sys.getenv("PATH_TO_DRIVER") == "") NULL else Sys.getenv("PATH_TO_DRIVER")
+connectionString <- Sys.getenv("CONNECTION_STRING")
+
 connectionDetails <- DatabaseConnector::createConnectionDetails(dbms = dbms,
-                                                                server = server,
                                                                 user = user,
                                                                 password = password,
+                                                                server = server,
                                                                 port = port,
-                                                                extraSettings = extraSettings)
+                                                                connectionString = connectionString,
+                                                                pathToDriver = pathToDriver)
 
 
-#-----------------------------------------------------------------------------------------------
-# Instructions for the remaining variables
-#-----------------------------------------------------------------------------------------------
-# 
-# - oracleTempSchema := If using Oracle, what is the schema to use. Please see http://ohdsi.github.io/DatabaseConnector/ for more details.
-# - databaseId := The database identifier to use for reporting results. Please review this list and use the one that matches your site:
-# 
-#   | Database_id |                               Database Name                                |
-#   |-------------|----------------------------------------------------------------------------|
-#   | AU_ePBRN    | Australian Electronic Practice Based Research Network                      |
-#   | AUSOM       | Ajou University School of Medicine Database                                |
-#   | CCAE        | IBM MarketScan® Commercial Database                                        |
-#   | CUIMC       | Columbia University Irving Medical Center                                  |
-#   | DCMC        | Daegu Catholic University Medical Center                                   |
-#   | HIRA        | Health Insurance and Review Assessment                                     |
-#   | HM          | HM Hospitales                                                              |
-#   | IPCI        | Integrated Primary Care Information                                        |
-#   | JMDC        | Japan Medical Data Center                                                  |
-#   | MDCD        | IBM MarketScan® Multi-State Medicaid Database                              |
-#   | MDCR        | IBM MarketScan® Medicare Supplemental Database                             |
-#   | OptumDoD    | Optum® De-Identified Clinformatic Data Mart Database – Date of Death (DOD) |
-#   | optumEhr    | Optum® de-identified Electronic Health Record Dataset                      |
-#   | SIDIAP      | The Information System for Research in Primary Care (SIDIAP)               |
-#   | STARR       | STAnford medicine Research data Repository                                 |
-#   | TRDW        | Tufts Researrch Data Warehouse                                             |
-#   | VA          | Department of Veterans Affairs                                             |
-#   
-#    *** If your database is not in this list, please specify the database_id yourself and report it back to the study lead ***
-#
-# - databaseName := The full name of your database
-# - databaseDescription := A full description of your database.
-# - outputFolder := The file path where the results of the study are placed.
-# - cdmDatabaseSchema := The database schema where the OMOP CDM data exists. In the case of SQL Server, this should be the database + schema.
-# - cohortDatabaseSchema := The database schema where the cohort data is created. The account specified as DB_USER must have full rights to that schema to create/drop tables
-# - cohortTable := The name of the table to use the cohorts for the study
-# - cohortStagingTable := The name of the table used to stage the cohorts used in this study
-# - featureSummaryTable := The name of the table to hold the feature summary for this study
-# - minCellCount := Aggregate stats that yield a value < minCellCount are censored in the output
-# - cohortIdsToExcludeFromExecution := A vector of cohort IDs to exclude from generation in the study. This is useful if a particular cohort is problematic in your environment.
-# - cohortIdsToExcludeFromResultsExport := A vector of cohort IDs to exclude from the export of the study. This is useful when you'd like to still generate the cohort, evaluate the results but do not want to share the cohort. 
-#                                         The default is NULL so that all output generated will be available for review. Use the "exportResults" function in this package
-#                                         to further refine the exported results to share with the study lead.
-# - useBulkCharacterization := When set to TRUE, this will attempt to do all of the characterization operations for the whole 
-#                              study via SQL vs sequentially per cohort and time window. This is recommended if your DB platform is 
-#                              robust to perform this type of operation. Best to test this using the USE_SUBSET option to test.
-# - cohortGroups := Optional parameter that allows you to specify which cohorts to use when running the study or diagnostics. By default
-#                   both function will run using all cohorts for the study. For diagnostics, you may specify a vector with 1 or more
-#                   of the following values: c("covid", "influenza", "strata", and "feature"). The runStudy function allows for 
-#                   the specification of c("covid", "influenza"). 
-#-----------------------------------------------------------------------------------------------
 
 # For Oracle: define a schema that can be used to emulate temp tables:
 oracleTempSchema <- NULL
 
 # Details specific to the database:
-databaseId <- "OptumEhr1351"
-databaseName <- "OptumEhr1351"
-databaseDescription <- "OptumEhr1351"
+databaseId <- "SP"
+databaseName <- "Synpuf"
+databaseDescription <- "Testing"
+outputFolderPath <- "" # set up a path for results
 
 # Details for connecting to the CDM and storing the results
-outputFolder <- file.path("E:/CHARYBDIS/Runs", databaseId)
+outputFolder <- file.path(outputFolderPath, databaseId)
 cdmDatabaseSchema <- Sys.getenv("CDM_SCHEMA")
 cohortDatabaseSchema <- Sys.getenv("COHORT_SCHEMA")
-cohortTable <- paste0("AS_CHARYBDIS_", databaseId)
+cohortTable <- paste0("PIONEER_", databaseId)
 cohortStagingTable <- paste0(cohortTable, "_stg")
 featureSummaryTable <- paste0(cohortTable, "_smry")
 minCellCount <- 5
@@ -157,9 +108,6 @@ useBulkCharacterization <- TRUE
 cohortIdsToExcludeFromExecution <- c()
 cohortIdsToExcludeFromResultsExport <- NULL
 
-# For uploading the results. You should have received the key file from the study coordinator:
-keyFileName <- "E:/CHARYBDIS/study-data-site-covid19.dat"
-userName <- "study-data-site-covid19"
 
 # Run cohort diagnostics -----------------------------------
 runCohortDiagnostics(connectionDetails = connectionDetails,
@@ -169,22 +117,22 @@ runCohortDiagnostics(connectionDetails = connectionDetails,
                      oracleTempSchema = oracleTempSchema,
                      cohortIdsToExcludeFromExecution = cohortIdsToExcludeFromExecution,
                      exportFolder = outputFolder,
-                     #cohortGroupNames = c("covid", "influenza", "strata", "feature"), # Optional - will use all groups by default
+                     # cohortGroupNames = c("target", "outcome", "strata"), # Optional - will use all groups by default
                      databaseId = databaseId,
                      databaseName = databaseName,
                      databaseDescription = databaseDescription,
                      minCellCount = minCellCount)
 
-# Use the next command to review cohort diagnostics and replace "covid" with
-# one of these options: "covid", "influenza", "strata", "feature"
-# CohortDiagnostics::launchDiagnosticsExplorer(file.path(outputFolder, "diagnostics", "covid"))
+# preMerge the data for shiny App. Replace "target" with
+# one of these options: "target", "outcome", "strata"
+# preMergeDiagnosticsFiles(file.path(outputFolder, "diagnostics", "strata"))
+# Use the next command to review cohort diagnostics and replace "target" with
+# one of these options: "target", "outcome", "strata"
+# CohortDiagnostics::launchDiagnosticsExplorer(file.path(outputFolder, "diagnostics", "target"))
 
-# When finished with reviewing the diagnostics, use the next command
-# to upload the diagnostic results
-#uploadDiagnosticsResults(outputFolder, keyFileName, userName)
 
-# Use this to run the study. The results will be stored in a zip file called 
-# 'Results_<databaseId>.zip in the outputFolder. 
+# Use this to run the study. The results will be stored in a zip file called
+# 'Results_<databaseId>.zip in the outputFolder.
 runStudy(connectionDetails = connectionDetails,
          cdmDatabaseSchema = cdmDatabaseSchema,
          cohortDatabaseSchema = cohortDatabaseSchema,
@@ -196,19 +144,15 @@ runStudy(connectionDetails = connectionDetails,
          databaseId = databaseId,
          databaseName = databaseName,
          databaseDescription = databaseDescription,
-         #cohortGroups = c("covid", "influenza"), # Optional - will use all groups by default
+         #cohortGroups = c("target"), # Optional - will use all groups by default
          cohortIdsToExcludeFromExecution = cohortIdsToExcludeFromExecution,
          cohortIdsToExcludeFromResultsExport = cohortIdsToExcludeFromResultsExport,
          incremental = TRUE,
          useBulkCharacterization = useBulkCharacterization,
-         minCellCount = minCellCount) 
+         minCellCount = minCellCount)
 
 
 # Use the next set of commands to compress results
 # and view the output.
-#preMergeResultsFiles(outputFolder)
-#launchShinyApp(outputFolder)
-
-# When finished with reviewing the results, use the next command
-# upload study results to OHDSI SFTP server:
-#uploadStudyResults(outputFolder, keyFileName, userName)
+preMergeResultsFiles(outputFolder)
+launchShinyApp(outputFolder)
