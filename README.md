@@ -194,7 +194,7 @@ runStudy(connectionDetails = connectionDetails,
 
 7. You can now look at the characterization output in a local Shiny application:
 ````
-CohortDiagnostics::preMergeDiagnosticsFiles(outputFolder)
+preMergeResultsFiles(outputFolder)
 launchShinyApp(outputFolder)
 ````
 
