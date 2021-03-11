@@ -23,7 +23,7 @@ addInfo <- function(item, infoId, class = NULL, style = NULL) {
 
 dashboardPage(
   dashboardHeader(
-    title = "PIONEERrrrrrrrrrrrrrrrrrrr",
+    title = "PIONEER / EHDEN / OHDSI Watchful Waiting study",
     tags$li(div(img(src = 'logo.png',
                     title = "Characterizing Health Associated Risks, and Your Baseline Disease In SARS-COV-2", 
                     height = "40px", 
