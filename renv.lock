@@ -27,7 +27,6 @@
       "Package": "CohortDiagnostics",
       "Version": "2.0.0",
       "Source": "GitHub",
-      "Remotes": "ohdsi/Eunomia, ohdsi/FeatureExtraction, ohdsi/ROhdsiWebApi,\nohdsi/DatabaseConnector,",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "CohortDiagnostics",
@@ -52,9 +51,14 @@
     },
     "FeatureExtraction": {
       "Package": "FeatureExtraction",
-      "Version": "3.1.0",
-      "Source": "unknown",
-      "Hash": "7c433b26ca6ba9444487de45dadf008c"
+      "Version": "3.0.1",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "FeatureExtraction",
+      "RemoteUsername": "ohdsi",
+      "RemoteRef": "v3.0.1",
+      "Hash": "da03564b86303739708a14e9d10f32f3"
     },
     "MASS": {
       "Package": "MASS",
@@ -73,8 +77,13 @@
     "OhdsiSharing": {
       "Package": "OhdsiSharing",
       "Version": "0.2.2",
-      "Source": "unknown",
-      "Hash": "5be135014a71d2eb093cae0d1b3750d8"
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "OhdsiSharing",
+      "RemoteUsername": "ohdsi",
+      "RemoteRef": "v0.2.2",
+      "Hash": "3995d082957ffd52af191dfddeb89766"
     },
     "ParallelLogger": {
       "Package": "ParallelLogger",
