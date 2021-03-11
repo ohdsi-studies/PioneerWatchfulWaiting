@@ -93,8 +93,9 @@ FROM
   FROM @cdm_database_schema.CONDITION_OCCURRENCE co
   JOIN #Codesets codesets on ((co.condition_concept_id = codesets.concept_id and codesets.codeset_id = 0))
 ) C
-
-WHERE C.ordinal = 1
+JOIN @cdm_database_schema.PERSON P on C.person_id = P.person_id
+WHERE P.gender_concept_id in (8507)
+AND C.ordinal = 1
 -- End Condition Occurrence Criteria
 
   ) E
@@ -208,7 +209,7 @@ from
 JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 4))
 ) C
 
-
+WHERE C.value_as_concept_id in (4253628)
 -- End Observation Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,-365,P.START_DATE) AND A.START_DATE <= DATEADD(day,-1,P.START_DATE)
@@ -413,6 +414,7 @@ with cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date,
 select event_id, person_id, start_date, end_date, op_start_date, op_end_date
 into #included_events
 FROM cteIncludedEvents Results
+
 ;
 
 

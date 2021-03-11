@@ -146,7 +146,8 @@
               "DOMAIN_ID": "Procedure",
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Procedure"
-            }
+            },
+            "includeDescendants": true
           }
         ]
       }

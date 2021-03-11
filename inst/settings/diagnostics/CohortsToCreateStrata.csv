@@ -10,18 +10,25 @@ name,atlasName,atlasId,cohortId
 309,[PIONEER S09] PSA 10-20,309,309
 310,[PIONEER S10] Stage T1,310,310
 311,[PIONEER S11] Stage T2,311,311
-312,[PIONEER S12] Stage T3,312,312
-313,[PIONEER S13] Stage T4,313,313
+312,[PIONEER S12] Stage T3 or T4,312,312
+313,[PIONEER S13] Physical Therapy,313,313
 314,[PIONEER S14] Grade 1 (GS 2-6),314,314
 315,[PIONEER S15] Grade 2 (GS 7 (3+4)),315,315
 316,[PIONEER S16] Grade 3 (GS 7 (4+3)),316,316
 317,[PIONEER S17] Grade 4 (GS 8),317,317
 318,[PIONEER S18] Grade 5 (GS 9-10),318,318
 319,[PIONEER S19] Family History of PCa,319,319
-320,[PIONEER S20] Total Cardiovascular Disease Event,320,320
-321,[PIONEER S21] Stroke,321,321
-322,[PIONEER S22] Type 2 Diabetes,322,322
-323,[PIONEER S23] Any malignancy except malignant neoplasm of skin,323,323
-324,[PIONEER S24] Hypertension,324,324
-325,[PIONEER S25] Obesity,325,325
-326,[PIONEER S26] Venous thromboembolism,326,326
+320,[PIONEER S20] Mutations,320,320
+321,[PIONEER S21] Age below 55,321,321
+322,[PIONEER S22] Age 55-80,322,322
+323,[PIONEER S23] Age above 80,323,323
+324,[PIONEER S24] Charlson Comorbidity Index (cut off 0),324,324
+325,[PIONEER S25] Charlson Comorbidity Index (cut off 1),325,325
+326,[PIONEER S26] Charlson Comorbidity Index (cut off  greater or equals 2 ),326,326
+327,[PIONEER S27] Other malignancies,327,327
+328,[PIONEER S28] Total Cardiovascular Disease Event,328,328
+329,[PIONEER S29] Stroke,329,329
+330,[PIONEER S30] Type 2 Diabetes,330,330
+331,[PIONEER S31] Hypertension,331,331
+332,[PIONEER S32] Obesity,332,332
+333,[PIONEER S33] VTE,333,333

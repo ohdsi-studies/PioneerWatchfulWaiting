@@ -27,6 +27,11 @@ INSERT INTO #Codesets (codeset_id, concept_id)
 SELECT 13 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
   select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4278515)
+UNION  select c.concept_id
+  from @vocabulary_database_schema.CONCEPT c
+  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
+  and ca.ancestor_concept_id in (4278515)
+  and c.invalid_reason is null
 
 ) I
 ) C;
@@ -142,14 +147,6 @@ FROM
   FROM #qualified_events E
   INNER JOIN
   (
-    -- Begin Criteria Group
-select 0 as index_id, person_id, event_id
-FROM
-(
-  select E.person_id, E.event_id 
-  FROM #qualified_events E
-  INNER JOIN
-  (
     -- Begin Correlated Criteria
 SELECT 0 as index_id, p.person_id, p.event_id
 FROM #qualified_events P
@@ -198,12 +195,6 @@ WHERE C.value_as_concept_id in (36662476)
 GROUP BY p.person_id, p.event_id
 HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
 -- End Correlated Criteria
-
-  ) CQ on E.person_id = CQ.person_id and E.event_id = CQ.event_id
-  GROUP BY E.person_id, E.event_id
-  HAVING COUNT(index_id) > 0
-) G
--- End Criteria Group
 
   ) CQ on E.person_id = CQ.person_id and E.event_id = CQ.event_id
   GROUP BY E.person_id, E.event_id

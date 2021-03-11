@@ -1,4 +1,8 @@
 name,atlasName,atlasId,cohortId
-201,[PIONEER O01] Symptoms,201,201
-202,[PIONEER O02] Death,202,202
-203,[PIONEER O03] Treatment Initiation,203,203
+201,[PIONEER O1] Symptoms,201,201
+202,[PIONEER O2] Death,202,202
+203,[PIONEER O3] Treatment Initiation,203,203
+204,[PIONEER O4] Curative Treatment Initiation,204,204
+205,[PIONEER O5] Palliative Treatment Initiation,205,205
+206,[PIONEER O6] Hospitalization,206,206
+207,[PIONEER O7] ER Visit,207,207

@@ -122,7 +122,8 @@
               "DOMAIN_ID": "Procedure",
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Procedure"
-            }
+            },
+            "includeDescendants": true
           }
         ]
       }
@@ -198,18 +199,7 @@
                   "Value": 10,
                   "Extent": 20,
                   "Op": "bt"
-                },
-                "Unit": [
-                  {
-                    "CONCEPT_CODE": "ng/mL",
-                    "CONCEPT_ID": 8842,
-                    "CONCEPT_NAME": "nanogram per milliliter",
-                    "DOMAIN_ID": "Unit",
-                    "INVALID_REASON_CAPTION": "Unknown",
-                    "STANDARD_CONCEPT_CAPTION": "Unknown",
-                    "VOCABULARY_ID": "UCUM"
-                  }
-                ]
+                }
               }
             },
             "StartWindow": {

@@ -1,5 +1,19 @@
 name,atlasName,atlasId,cohortId
-new PCa,[PIONEER T01] new PCa,101,101
-new PCa actively treated,[PIONEER T02] new PCa actively treated,102,102
-new PCa conservative management,[PIONEER T03] new PCa conservative management,103,103
-new PCa treatment post conservative management,[PIONEER T04] new PCa treatment post conservative management,104,104
+new PCa,[PIONEER T1] new PCa,101,101
+new PCa,[PIONEER T1a] new PCa,102,102
+new PCa actively treated,[PIONEER T2] new PCa actively treated,103,103
+new PCa actively treated,[PIONEER T2a] new PCa actively treated,104,104
+new high_intermediate risk PCa conservative management ,[PIONEER T3.1] new high_intermediate risk PCa conservative management ,105,105
+new high_intermediate risk PCa conservative management,[PIONEER T3.1a] new high_intermediate risk PCa conservative management,106,106
+new low-risk PCa conservative management (WW),[PIONEER T3.2] new low-risk PCa conservative management (WW),107,107
+new low-risk PCa conservative management (WW),[PIONEER T3.2a] new low-risk PCa conservative management (WW),108,108
+new low risk PCa conservative management (AS),[PIONEER T3.3] new low risk PCa conservative management (AS),109,109
+new low risk PCa conservative management (AS),[PIONEER T3.3a] new low risk PCa conservative management (AS),110,110
+new PCa conservative management,[PIONEER T3] new PCa conservative management,111,111
+new PCa conservative management,[PIONEER T3a] new PCa conservative management,112,112
+Delayed Curative Management,[PIONEER T4.1] Delayed Curative Management,113,113
+Delayed Curative Management,[PIONEER T4.1a] Delayed Curative Management,114,114
+Delayed Palliative Management,[PIONEER T4.2] Delayed Palliative Management,115,115
+Delayed Palliative Management,[PIONEER T4.2a] Delayed Palliative Management,116,116
+new PCa treatment post conservative management,[PIONEER T4] new PCa treatment post conservative management,117,117
+new PCa treatment post conservative management,[PIONEER T4a] new PCa treatment post conservative management,118,118

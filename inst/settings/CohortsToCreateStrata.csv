@@ -10,18 +10,25 @@ PSA less than 10,[PIONEER S08] PSA less than 10,308,308
 PSA 10-20,[PIONEER S09] PSA 10-20,309,309
 Stage T1,[PIONEER S10] Stage T1,310,310
 Stage T2,[PIONEER S11] Stage T2,311,311
-Stage T3,[PIONEER S12] Stage T3,312,312
-Stage T4,[PIONEER S13] Stage T4,313,313
+Stage T3 or T4,[PIONEER S12] Stage T3 or T4,312,312
+Physical Therapy,[PIONEER S13] Physical Therapy,313,313
 Grade 1 (GS 2-6),[PIONEER S14] Grade 1 (GS 2-6),314,314
 Grade 2 (GS 7 (3+4)),[PIONEER S15] Grade 2 (GS 7 (3+4)),315,315
 Grade 3 (GS 7 (4+3)),[PIONEER S16] Grade 3 (GS 7 (4+3)),316,316
 Grade 4 (GS 8),[PIONEER S17] Grade 4 (GS 8),317,317
 Grade 5 (GS 9-10),[PIONEER S18] Grade 5 (GS 9-10),318,318
 Family History of PCa,[PIONEER S19] Family History of PCa,319,319
-Total Cardiovascular Disease Event,[PIONEER S20] Total Cardiovascular Disease Event,320,320
-Stroke,[PIONEER S21] Stroke,321,321
-Type 2 Diabetes,[PIONEER S22] Type 2 Diabetes,322,322
-Any malignancy except malignant neoplasm of skin,[PIONEER S23] Any malignancy except malignant neoplasm of skin,323,323
-Hypertension,[PIONEER S24] Hypertension,324,324
-Obesity,[PIONEER S25] Obesity,325,325
-Venous thromboembolism,[PIONEER S26] Venous thromboembolism,326,326
+Mutations,[PIONEER S20] Mutations,320,320
+Age below 55,[PIONEER S21] Age below 55,321,321
+Age 55-80,[PIONEER S22] Age 55-80,322,322
+Age above 80,[PIONEER S23] Age above 80,323,323
+Charlson Comorbidity Index (cut off 0),[PIONEER S24] Charlson Comorbidity Index (cut off 0),324,324
+Charlson Comorbidity Index (cut off 1),[PIONEER S25] Charlson Comorbidity Index (cut off 1),325,325
+Charlson Comorbidity Index (cut off  greater or equals 2 ),[PIONEER S26] Charlson Comorbidity Index (cut off  greater or equals 2 ),326,326
+Other malignancies,[PIONEER S27] Other malignancies,327,327
+Total Cardiovascular Disease Event,[PIONEER S28] Total Cardiovascular Disease Event,328,328
+Stroke,[PIONEER S29] Stroke,329,329
+Type 2 Diabetes,[PIONEER S30] Type 2 Diabetes,330,330
+Hypertension,[PIONEER S31] Hypertension,331,331
+Obesity,[PIONEER S32] Obesity,332,332
+VTE,[PIONEER S33] VTE,333,333

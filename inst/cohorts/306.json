@@ -174,14 +174,15 @@
               "DOMAIN_ID": "Procedure",
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Procedure"
-            }
+            },
+            "includeDescendants": true
           }
         ]
       }
     },
     {
       "id": 14,
-      "name": "[PIONEER] N0",
+      "name": "[PIONEER] N0 ",
       "expression": {
         "items": [
           {
@@ -282,7 +283,7 @@
   },
   "InclusionRules": [
     {
-      "name": "cT2 and below, N0 MM0",
+      "name": "cT2 and below and N0 and M0",
       "expression": {
         "Type": "ALL",
         "CriteriaList": [

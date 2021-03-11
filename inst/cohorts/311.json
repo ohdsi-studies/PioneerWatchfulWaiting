@@ -104,7 +104,8 @@
               "DOMAIN_ID": "Procedure",
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Procedure"
-            }
+            },
+            "includeDescendants": true
           }
         ]
       }
@@ -171,39 +172,32 @@
       "name": "Stage T2",
       "expression": {
         "Type": "ANY",
-        "CriteriaList": [],
-        "DemographicCriteriaList": [],
-        "Groups": [
+        "CriteriaList": [
           {
-            "Type": "ANY",
-            "CriteriaList": [
-              {
-                "Criteria": {
-                  "Measurement": {
-                    "CodesetId": 5
-                  }
-                },
-                "StartWindow": {
-                  "Start": {
-                    "Days": 30,
-                    "Coeff": -1
-                  },
-                  "End": {
-                    "Days": 7,
-                    "Coeff": 1
-                  },
-                  "UseEventEnd": false
-                },
-                "Occurrence": {
-                  "Type": 2,
-                  "Count": 1
-                }
+            "Criteria": {
+              "Measurement": {
+                "CodesetId": 5
               }
-            ],
-            "DemographicCriteriaList": [],
-            "Groups": []
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 7,
+                "Coeff": 1
+              },
+              "UseEventEnd": false
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
           }
-        ]
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
       }
     }
   ],

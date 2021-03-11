@@ -18,7 +18,8 @@ Imports:
   readr,
   dplyr,
   ggplot2 (<= 3.2.1),
-  tibble
+  tibble,
+  survival
 Suggests:
   knitr,
   rmarkdown
