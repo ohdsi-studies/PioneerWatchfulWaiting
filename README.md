@@ -21,7 +21,7 @@ This study is undertaken by the joint prostate cancer studyathon of the [IMI PIO
 ### FAQ
 #### *What do I need to do to run the package?*
 OHDSI study repos are designed to have information in the README.md (where you are now) to provide you with instructions on how to navigate the repo. This package has two major components:
-1. [CohortDiagnostics](http://www.github.com/ohdsi/cohortDiagnostics) - an OHDSI R package used to perform diagnostics around the fitness of use of the study phenotypes on your CDM. By running this package you will allow study leads to understand: cohort inclusion rule attrition, inspect source code lists for a phenotype, find orphan codes that should be in a particular concept set but are not, compute incidnece across calendar years, age and gender, break down index events into specific concepts that triggered then, compute overlap of two cohorts and compute basic characteristics of selected cohorts. This package will be requested of all sites. It is run on all available data not just your COVID-19 or Influenza populations. This allows us to understand how the study phenotypes perform in your database and identify any potential gaps in the phenotype definitions.
+1. [CohortDiagnostics](http://www.github.com/ohdsi/cohortDiagnostics) - an OHDSI R package used to perform diagnostics around the fitness of use of the study phenotypes on your CDM. By running this package you will allow study leads to understand: cohort inclusion rule attrition, inspect source code lists for a phenotype, find orphan codes that should be in a particular concept set but are not, compute incidnece across calendar years, age and gender, break down index events into specific concepts that triggered then, compute overlap of two cohorts and compute basic characteristics of selected cohorts. This package will be requested of all sites. It is run on all available data not just your prostate cancer populations. This allows us to understand how the study phenotypes perform in your database and identify any potential gaps in the phenotype definitions.
 2. RunStudy - the characterization package to evaluate Target-Stratum-Feature pairings computing cohort characteristics and creating tables/visualizations to summarize differences between groups.
 
 #### *I don't understand the organization of this Github Repo.*
@@ -112,6 +112,8 @@ Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = TRUE)
 
 *Note: When using this installation method it can be difficult to 'retrace' because you will not see the same folders that you see in the GitHub Repo. If you would prefer to have more visibility into the study contents, you may alternatively download the [TAR file](https://github.com/ohdsi-studies/PioneerWatchfulWaiting/archive/master.zip) for this repo and bring this into your `R`/`RStudio` environment. An example of how to call ZIP files into your `R` environment can be found in the [The Book of OHDSI](https://ohdsi.github.io/TheBookOfOhdsi/PopulationLevelEstimation.html#running-the-study-package).*
 
+If you are using the `DatabaseConnector` package for the first time, then you may also need to download the JDBC drivers to your database. See the [package documentation](https://ohdsi.github.io/DatabaseConnector/reference/jdbcDrivers.html), you can do this with a command like `DatabaseConnector::downloadJdbcDrivers(dbms="redshift", pathToDriver="/my-home-folder/jdbcdrivers")`.
+
 3. Great work! Now you have set-up your environment and installed the library that will run the package. You can use the following `R` script to load in your library and configure your environment connection details:
 
 ```
@@ -144,7 +146,7 @@ runCohortDiagnostics(connectionDetails = connectionDetails,
                      oracleTempSchema = oracleTempSchema,
                      cohortIdsToExcludeFromExecution = cohortIdsToExcludeFromExecution,
                      exportFolder = outputFolder,
-                     #cohortGroupNames = c("covid", "influenza", "strata", "feature"), # Optional - will use all groups by default
+                     #cohortGroupNames = c("target", "outcome", "strata"), # Optional - will use all groups by default
                      databaseId = databaseId,
                      databaseName = databaseName,
                      databaseDescription = databaseDescription,
