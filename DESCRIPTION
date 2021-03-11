@@ -1,7 +1,7 @@
 Package: PioneerWatchfulWaiting
 Type: Package
 Title: PIONEER / EHDEN / OHDSI prostate cancer study
-Version: 0.1.0
+Version: 0.2.0
 Author: Anthony G. Sena, Artem Gorbachev
 Maintainer: Artem Gorbachev <artem.gorbachev@odysseusinc.com>
 Description: Describe the baseline demographic, clinical characteristics, treatments and outcomes of interest among individuals with PCa.
