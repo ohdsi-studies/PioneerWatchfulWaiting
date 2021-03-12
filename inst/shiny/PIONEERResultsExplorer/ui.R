@@ -25,9 +25,9 @@ dashboardPage(
   dashboardHeader(
     title = "PIONEER / EHDEN / OHDSI Watchful Waiting study",
     tags$li(div(img(src = 'logo.png',
-                    title = "Characterizing Health Associated Risks, and Your Baseline Disease In SARS-COV-2", 
-                    height = "40px", 
-                    width = "40px"),
+                    title = "Characterizing long term outcomes of prostate cancer patients undergoing non-interventional management", 
+                    height = "60px", 
+                    width = "200px"),
                 style = "padding-top:0px; padding-bottom:0px;"),
             class = "dropdown")    
     ),  
