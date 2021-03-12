@@ -176,6 +176,23 @@ runStudy <- function(connectionDetails = NULL,
   counts <- dplyr::left_join(x = allStudyCohorts, y = counts, by="cohortId")
   writeToCsv(counts, file.path(exportFolder, "cohort_staging_count.csv"), incremental = incremental, cohortId = counts$cohortId)
 
+  
+  # Generate survival info -----------------------------------------------------------------
+  ParallelLogger::logInfo("Generating time to event data")
+  targetIds <- allStudyCohorts[[2]]
+  targetIds <- setdiff(targetIds, featureCohortIds)
+  targetIds <- setdiff(targetIds, strataCohortIds)
+  timeToEvent <- generateSurvival(connection, cohortDatabaseSchema, cohortTable = cohortStagingTable,
+                                  outcomeIds = featureCohortIds, targetIds = targetIds)
+  
+  
+  combinedOutcomeIds <- allStudyCohorts[allStudyCohorts$name %in% c('Death', 'Symptoms'), 'cohortId'][[1]]
+  combinedIdNum <- 999999
+  timeToCombinedEvent <- generateCombinedSurvival(connection, cohortDatabaseSchema, cohortTable = cohortStagingTable,
+                                                  outcomeIds = combinedOutcomeIds, targetIds = targetIds, combinedIdNum)
+  timeToEvent <- rbind(timeToEvent, timeToCombinedEvent)
+  writeToCsv(timeToEvent, file.path(exportFolder, "cohort_time_to_event.csv"), incremental = incremental, targetId = timeToEvent$targetId)
+  
   # Counting cohorts -----------------------------------------------------------------------
   ParallelLogger::logInfo("Counting cohorts")
   counts <- getCohortCounts(connection = connection,

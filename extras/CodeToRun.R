@@ -94,7 +94,7 @@ oracleTempSchema <- NULL
 databaseId <- "SP"
 databaseName <- "Synpuf"
 databaseDescription <- "Testing"
-outputFolderPath <- "" # set up a path for results
+outputFolderPath <- "C:/Users/Artem/PIONEER/Runs" # set up a path for results
 
 # Details for connecting to the CDM and storing the results
 outputFolder <- normalizePath(file.path(outputFolderPath, databaseId))
@@ -108,6 +108,9 @@ useBulkCharacterization <- TRUE
 cohortIdsToExcludeFromExecution <- c()
 cohortIdsToExcludeFromResultsExport <- NULL
 
+# For uploading the results. You should have received the key file from the study coordinator:
+keyFileName <- ""
+userName <- ""
 
 # Run cohort diagnostics -----------------------------------
 runCohortDiagnostics(connectionDetails = connectionDetails,
@@ -129,6 +132,10 @@ runCohortDiagnostics(connectionDetails = connectionDetails,
 # Use the next command to review cohort diagnostics and replace "target" with
 # one of these options: "target", "outcome", "strata"
 # CohortDiagnostics::launchDiagnosticsExplorer(file.path(outputFolder, "diagnostics", "target"))
+
+# When finished with reviewing the diagnostics, use the next command
+# to upload the diagnostic results
+#uploadDiagnosticsResults(outputFolder, keyFileName, userName)
 
 
 # Use this to run the study. The results will be stored in a zip file called
@@ -156,3 +163,7 @@ runStudy(connectionDetails = connectionDetails,
 # and view the output.
 preMergeResultsFiles(outputFolder)
 launchShinyApp(outputFolder)
+
+# When finished with reviewing the results, use the next command
+# upload study results to OHDSI SFTP server:
+#uploadStudyResults(outputFolder, keyFileName, userName)

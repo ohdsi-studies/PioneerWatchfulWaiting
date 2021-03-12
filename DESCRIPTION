@@ -17,7 +17,7 @@ Imports:
   digest,
   readr,
   dplyr,
-  ggplot2 (<= 3.2.1),
+  ggplot2,
   tibble,
   survival
 Suggests:
