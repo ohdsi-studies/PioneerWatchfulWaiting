@@ -26,7 +26,12 @@ launchShinyApp <- function(outputFolder,
   ensure_installed("DT")
   ensure_installed("VennDiagram")
   ensure_installed("htmltools")
+<<<<<<< HEAD
   appDir <- system.file("shiny/PioneerWatchfulWaitingExplorer", package = getThisPackageName(), mustWork = TRUE)
+=======
+  ensure_installed("pool")
+  appDir <- system.file("shiny/PIONEERResultsExplorer", package = getThisPackageName(), mustWork = TRUE)
+>>>>>>> 51e1e1ef116c6b3d349f77fb7477235699283c12
   .GlobalEnv$shinySettings <- shinySettings
   on.exit(rm(shinySettings, envir = .GlobalEnv))
   shiny::runApp(appDir)

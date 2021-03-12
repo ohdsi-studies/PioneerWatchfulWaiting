@@ -58,6 +58,34 @@ Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = TRUE)
 #install.packages("devtools")
 #devtools::install_github("ohdsi-studies/PioneerWatchfulWaiting")
 
+# You can use the following function to verify installed packages against the declared dependencies in Renv.lock
+verifyDependencies <- function() {
+  expected <- RJSONIO::fromJSON("renv.lock")
+  expected <- dplyr::bind_rows(expected[[2]])
+  basePackages <- rownames(installed.packages(priority = "base"))
+  expected <- expected[!expected$Package %in% basePackages, ]
+  observedVersions <- sapply(sapply(expected$Package, packageVersion), paste, collapse = ".")
+  expectedVersions <- sapply(sapply(expected$Version, numeric_version), paste, collapse = ".")
+  mismatchIdx <- which(observedVersions != expectedVersions)
+  if (length(mismatchIdx) > 0) {
+
+    lines <- sapply(mismatchIdx, function(idx) sprintf("- Package %s version %s should be %s",
+                                                       expected$Package[idx],
+                                                       observedVersions[idx],
+                                                       expectedVersions[idx]))
+    message <- paste(c("Mismatch between required and installed package versions. Did you forget to run renv::restore()?",
+                       lines),
+                     collapse = "\n")
+    stop(message)
+  }
+}
+
+# If you did not download the package, then download renv.lock (assuming master version:)
+# download.file("https://raw.githubusercontent.com/ohdsi-studies/PioneerWatchfulWaiting/master/renv.lock","renv.lock")
+
+# Run this command to verify, it assumes that renv.lock is in the current working directory and requires renv
+verifyDependencies()
+
 # *******************************************************
 # SECTION 2: Running the package -------------------------------------------------------------------------------
 # *******************************************************
@@ -164,6 +192,9 @@ runStudy(connectionDetails = connectionDetails,
 preMergeResultsFiles(outputFolder)
 launchShinyApp(outputFolder)
 
+<<<<<<< HEAD
 # When finished with reviewing the results, use the next command
 # upload study results to OHDSI SFTP server:
 #uploadStudyResults(outputFolder, keyFileName, userName)
+=======
+>>>>>>> 51e1e1ef116c6b3d349f77fb7477235699283c12
