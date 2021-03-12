@@ -23,11 +23,7 @@ addInfo <- function(item, infoId, class = NULL, style = NULL) {
 
 dashboardPage(
   dashboardHeader(
-<<<<<<< HEAD:inst/shiny/PioneerWatchfulWaitingExplorer/ui.R
-    title = "PIONEER",
-=======
     title = "PIONEER / EHDEN / OHDSI Watchful Waiting study",
->>>>>>> 51e1e1ef116c6b3d349f77fb7477235699283c12:inst/shiny/PIONEERResultsExplorer/ui.R
     tags$li(div(img(src = 'logo.png',
                     title = "Characterizing long term outcomes of prostate cancer patients undergoing non-interventional management", 
                     height = "60px", 

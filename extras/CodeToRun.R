@@ -192,9 +192,8 @@ runStudy(connectionDetails = connectionDetails,
 preMergeResultsFiles(outputFolder)
 launchShinyApp(outputFolder)
 
-<<<<<<< HEAD
+
 # When finished with reviewing the results, use the next command
 # upload study results to OHDSI SFTP server:
 #uploadStudyResults(outputFolder, keyFileName, userName)
-=======
->>>>>>> 51e1e1ef116c6b3d349f77fb7477235699283c12
+
