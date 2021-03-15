@@ -14,6 +14,7 @@ Imports:
   OhdsiSharing (>= 0.2.1),
   SqlRender,
   ff,
+  magrittr
   digest,
   readr,
   dplyr,
