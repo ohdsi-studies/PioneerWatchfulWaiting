@@ -1,6 +1,6 @@
 cohortId,targetId,targetName,strataId,strataName,cohortType
-101,101,new PCa,0,All,Target
-102,102,new PCa,0,All,Target
+101,101,Newly diagnosed Pca ,0,All,Target
+102,102,Newly diagnosed Pca (biopsy or PSA GT 50),0,All,Target
 103,103,new PCa actively treated,0,All,Target
 104,104,new PCa actively treated,0,All,Target
 105,105,new high_intermediate risk PCa conservative management ,0,All,Target
