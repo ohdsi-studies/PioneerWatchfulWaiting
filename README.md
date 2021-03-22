@@ -12,7 +12,7 @@ Long term outcomes of prostate cancer patients undergoing non-interventional man
 - Study end date: **-**
 - Protocol: please look in Teams
 - Publications: **-**
-- Diagnositcs explorer: **[Shiny App: Cohort diagnostics](https://data.ohdsi.org/PioneerWatchfulWaitingDiag/)**
+- Diagnositcs explorer: **[Shiny App: Cohort diagnostics] (https://data.ohdsi.org/PioneerWatchfulWaitingDiag/)**
 - Results explorer: **[Shiny App: Characterization Study](https://data.ohdsi.org/PioneerWatchfulWaiting/)**
 
 The aim of this study is to assess the long-term outcomes of prostate cancer patients managed with non-curative intent therapies in different disease risk profiles. The impact of life expectancy and comorbidities on the risk of recurrence and disease-free and overall survival will be assessed. 
