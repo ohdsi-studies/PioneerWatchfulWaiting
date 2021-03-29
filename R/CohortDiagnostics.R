@@ -119,3 +119,13 @@ bundleDiagnosticsResults <- function(diagnosticOutputFolder, databaseId) {
   DatabaseConnector::createZipFile(zipFile = zipName, files = files)
   return(zipName)
 }
+
+#' @export
+writeMetaData <- function(diagnosticOutputFolder) {
+  packages <- installed.packages()
+  version <- packages[getThisPackageName(), 'Version']
+  f <- file.path(diagnosticOutputFolder, "runMetaData.txt")
+  date <- format(Sys.time(), "%Y-%m-%d %X %z")
+  readr::write_lines(c(date, paste(getThisPackageName(), version)), f)
+}
+
