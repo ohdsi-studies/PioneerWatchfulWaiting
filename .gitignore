@@ -45,3 +45,6 @@ inst/shiny/PIONEERResultsExplorer/data
 #stage directories
 inst_demo
 inst_real
+
+# Error reports
+errorReportSql.txt
