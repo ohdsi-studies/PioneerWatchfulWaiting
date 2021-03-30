@@ -78,6 +78,9 @@ See [this video](https://youtu.be/DjVgbBGK4jM) for instructions on how to set up
 #    DB_PASSWORD = "your_secret_password"
 #    FFTEMP_DIR = "E:/fftemp"
 #    USE_SUBSET = FALSE
+#    CDM_SCHEMA = "your_cdm_schema"
+#    COHORT_SCHEMA = "public"  # or other schema to write intermediate results to
+#    PATH_TO_DRIVER = "/path/to/jdbc_driver"
 #
 # The following describes the settings
 #    DBMS, DB_SERVER, DB_PORT, DB_USER, DB_PASSWORD := These are the details used to connect
