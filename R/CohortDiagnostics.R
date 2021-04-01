@@ -105,16 +105,25 @@ runCohortDiagnostics <- function(connectionDetails = NULL,
     })
   }
   
-  # Bundle the diagnosics for export
+  # Bundle the diagnostics for export
   bundledResultsLocation <- bundleDiagnosticsResults(diagnosticOutputFolder, databaseId)
   ParallelLogger::logInfo(paste("PIONEER cohort diagnostics are bundled for sharing at: ", bundledResultsLocation))
 }
 
 #' @export
 bundleDiagnosticsResults <- function(diagnosticOutputFolder, databaseId) {
-  zipName <- file.path(diagnosticOutputFolder, paste0("Results_diagnostics_", databaseId, ".zip"))  
-  files <- list.files(diagnosticOutputFolder, "^Results_.*.zip$", full.names = TRUE, recursive = TRUE)
-  oldWd <- setwd(diagnosticOutputFolder)
+  outcomeFolder <-  file.path(diagnosticOutputFolder, "outcome")
+  
+  # Prepare additional metadata files
+  codemetar::write_codemeta(pkg = find.package(getThisPackageName()), 
+                            path = file.path(outcomeFolder, "codemeta.json"))
+  file.copy(file.path(diagnosticOutputFolder, "cohortDiagnosticsLog.txt"), 
+            file.path(outcomeFolder, "cohortDiagnosticsLog.txt"), overwrite=TRUE)
+  
+  date <- format(Sys.time(), "%Y%m%dT%H%M%S")
+  zipName <- file.path(diagnosticOutputFolder, paste0("Results_diagnostics_", databaseId, "_", date, ".zip")) 
+  files <- list.files(outcomeFolder, "^Results_.*.zip$|codemeta.json|cohortDiagnosticsLog.txt", full.names = TRUE, recursive = TRUE)
+  oldWd <- setwd(outcomeFolder)
   on.exit(setwd(oldWd), add = TRUE)
   DatabaseConnector::createZipFile(zipFile = zipName, files = files)
   return(zipName)
