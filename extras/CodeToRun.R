@@ -24,7 +24,10 @@
 #    DB_USER = "database_user_name_goes_here"
 #    DB_PASSWORD = "your_secret_password"
 #    FFTEMP_DIR = "E:/fftemp"
-#
+#    CDM_SCHEMA = "your_cdm_schema"
+#    COHORT_SCHEMA = "public"  # or other schema to write intermediate results to
+#    PATH_TO_DRIVER = "/path/to/jdbc_driver"
+#   
 # The following describes the settings
 #    DBMS, DB_SERVER, DB_PORT, DB_USER, DB_PASSWORD := These are the details used to connect
 #    to your database server. For more information on how these are set, please refer to:
@@ -59,6 +62,7 @@ Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = TRUE)
 #devtools::install_github("ohdsi-studies/PioneerWatchfulWaiting")
 
 # You can use the following function to verify installed packages against the declared dependencies in Renv.lock
+# Note: this function depends on packages bslib and httpuv
 verifyDependencies <- function() {
   expected <- RJSONIO::fromJSON("renv.lock")
   expected <- dplyr::bind_rows(expected[[2]])
@@ -122,7 +126,7 @@ oracleTempSchema <- NULL
 databaseId <- "SP"
 databaseName <- "Synpuf"
 databaseDescription <- "Testing"
-outputFolderPath <- "" # set up a path for results
+outputFolderPath <- getwd() # if needed, set up a different path for results
 
 # Details for connecting to the CDM and storing the results
 outputFolder <- normalizePath(file.path(outputFolderPath, databaseId))
