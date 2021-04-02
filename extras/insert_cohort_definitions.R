@@ -12,11 +12,13 @@ for (cohortType in c("Target", "Outcome", "Strata")) {
     sqlFolder = "inst/sql/sql_server",
     rFileName = "R/CreateCohorts.R",
     insertTableSql = TRUE,
-    insertCohortCreationR = TRUE,
-    generateStats = TRUE,
+    insertCohortCreationR = FALSE,
+    generateStats = FALSE,
     packageName = "PioneerWatchfulWaiting"
   )
 }
 #Post-processing to match json style:
-#find . -iname '*.json' -type f -exec gnused -i.orig 's/\t/  /g' {} +
+#cd inst/cohorts
+#find . -iname '*.json' -type f -exec sed -i.orig 's/\t/  /g' {} +
 #find . -iname '*.json' -type f -exec sed -i.orig 's/" : /": /g' {} +
+#rm -r *.orig
