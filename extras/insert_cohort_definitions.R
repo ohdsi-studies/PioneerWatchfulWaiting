@@ -2,7 +2,7 @@
 library(ROhdsiWebApi)
 
 baseUrl="https://pioneer-atlas.thehyve.net/WebAPI"
-ROhdsiWebApi::setAuthHeader(baseUrl,"Bearer ey") # get this token from an active ATLAS web session
+ROhdsiWebApi::setAuthHeader(baseUrl,"Bearer ey...") # get this token from an active ATLAS web session
 
 for (cohortType in c("Target", "Outcome", "Strata")) {
   ROhdsiWebApi::insertCohortDefinitionSetInPackage(
@@ -17,3 +17,6 @@ for (cohortType in c("Target", "Outcome", "Strata")) {
     packageName = "PioneerWatchfulWaiting"
   )
 }
+#Post-processing to match json style:
+#find . -iname '*.json' -type f -exec gnused -i.orig 's/\t/  /g' {} +
+#find . -iname '*.json' -type f -exec sed -i.orig 's/" : /": /g' {} +
