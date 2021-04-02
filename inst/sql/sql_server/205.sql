@@ -7,11 +7,11 @@ CREATE TABLE #Codesets (
 INSERT INTO #Codesets (codeset_id, concept_id)
 SELECT 8 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (2615971,4330771,4040606,2615969,2615970,2615744,2615974,2615746,2615976,2615973,2615975,2615755,4245119,45888526,2108725,2101759,45888139,4029715,46257605,2720687,42736837,2110047)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (46257658,2615971,4330771,4040606,2615969,2615970,2615744,2615974,2615746,2615976,2615973,2615975,2110046,4073126,45888526,2108725,42628035,2101759,46257625,46257688,46257736,45890647,2211872,42742550,42742549,45888139,4029715,45890260,926905,724946,46257605,2211859,45890639,45890643,2211858,2720687,38003195,4056678,42628728,2211873,42739244,42736837,2110047,4318947,4141157,37111533)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (45888526,45888139,4029715,42736837)
+  and ca.ancestor_concept_id in (46257658,4330771,45888526,2108725,2101759,46257625,46257688,46257736,45890647,2211872,42742550,42742549,45888139,4029715,45890260,926905,724946,46257605,2211859,45890639,45890643,2211858,2720687,2211873,42736837,2110047)
   and c.invalid_reason is null
 
 ) I
@@ -19,14 +19,25 @@ UNION  select c.concept_id
 INSERT INTO #Codesets (codeset_id, concept_id)
 SELECT 11 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (45768763,937694,21603834,40222431,4162987,1315942,40487901,4194550,21603823,4181450,40490894,2109986,44816340,953300,1309188,45892579,21603845,1378382,4057754,4178736,45775965,45763838,1718850,40224095,4342016,4044045,4341536,2109822,4234536)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (2108678,45768763,937694,21603834,40222431,4162987,1315942,21603823,44816340,953300,1309188,45892579,21603845,1378382,4057754,4178736,45775965,45763838,1718850,40224095,4003224,45889069,2109822,4234536)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (45768763,937694,21603834,40222431,1315942,40487901,21603823,40490894,2109986,44816340,953300,1309188,45892579,21603845,1378382,4057754,45775965,45763838,1718850,40224095,4342016,4341536,2109822,4234536)
+  and ca.ancestor_concept_id in (45768763,937694,21603834,40222431,4162987,1315942,21603823,44816340,953300,1309188,45892579,21603845,1378382,4057754,4178736,45775965,45763838,1718850,40224095,4003224,45889069,2109822,4234536)
   and c.invalid_reason is null
 
 ) I
+LEFT JOIN
+(
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (2109223,2109221,2109046,4306061,4130558,4275133,4042907,2103796,2109206,4022910,4185848,2110180,4187917,4097307,4202217,4084297,4296082,2109666)
+UNION  select c.concept_id
+  from @vocabulary_database_schema.CONCEPT c
+  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
+  and ca.ancestor_concept_id in (2109223,2109221,2109046,4306061,4130558,4275133,4042907,2103796,2109206,4022910,4185848,2110180,4187917,4097307,4202217,4084297,4296082,2109666)
+  and c.invalid_reason is null
+
+) E ON I.concept_id = E.concept_id
+WHERE E.concept_id is null
 ) C;
 INSERT INTO #Codesets (codeset_id, concept_id)
 SELECT 12 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
@@ -38,32 +49,14 @@ SELECT 12 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 INSERT INTO #Codesets (codeset_id, concept_id)
 SELECT 13 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4220029)
-
-) I
-) C;
-INSERT INTO #Codesets (codeset_id, concept_id)
-SELECT 14 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
-( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4242411)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4220029,2109550,42628675)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (4242411)
+  and ca.ancestor_concept_id in (4220029)
   and c.invalid_reason is null
 
 ) I
-LEFT JOIN
-(
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (435308,4032298,4280571,4128371,4127550,4032296,4127551,432961,4032295,4126131)
-UNION  select c.concept_id
-  from @vocabulary_database_schema.CONCEPT c
-  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (435308,4032298,4280571,4128371,4127550,4032296,4127551,432961,4032295,4126131)
-  and c.invalid_reason is null
-
-) E ON I.concept_id = E.concept_id
-WHERE E.concept_id is null
 ) C;
 INSERT INTO #Codesets (codeset_id, concept_id)
 SELECT 15 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
@@ -654,6 +647,134 @@ INSERT INTO @target_database_schema.@target_cohort_table (cohort_definition_id, 
 select @target_cohort_id as cohort_definition_id, person_id, start_date, end_date 
 FROM #final_cohort CO
 ;
+
+
+-- Find the event that is the 'best match' per person.  
+-- the 'best match' is defined as the event that satisfies the most inclusion rules.
+-- ties are solved by choosing the event that matches the earliest inclusion rule, and then earliest.
+
+select q.person_id, q.event_id
+into #best_events
+from #qualified_events Q
+join (
+	SELECT R.person_id, R.event_id, ROW_NUMBER() OVER (PARTITION BY R.person_id ORDER BY R.rule_count DESC,R.min_rule_id ASC, R.start_date ASC) AS rank_value
+	FROM (
+		SELECT Q.person_id, Q.event_id, COALESCE(COUNT(DISTINCT I.inclusion_rule_id), 0) AS rule_count, COALESCE(MIN(I.inclusion_rule_id), 0) AS min_rule_id, Q.start_date
+		FROM #qualified_events Q
+		LEFT JOIN #inclusion_events I ON q.person_id = i.person_id AND q.event_id = i.event_id
+		GROUP BY Q.person_id, Q.event_id, Q.start_date
+	) R
+) ranked on Q.person_id = ranked.person_id and Q.event_id = ranked.event_id
+WHERE ranked.rank_value = 1
+;
+
+-- modes of generation: (the same tables store the results for the different modes, identified by the mode_id column)
+-- 0: all events
+-- 1: best event
+
+
+-- BEGIN: Inclusion Impact Analysis - event
+-- calculte matching group counts
+delete from @results_database_schema.cohort_inclusion_result where cohort_definition_id = @target_cohort_id and mode_id = 0;
+insert into @results_database_schema.cohort_inclusion_result (cohort_definition_id, inclusion_rule_mask, person_count, mode_id)
+select @target_cohort_id as cohort_definition_id, inclusion_rule_mask, count_big(*) as person_count, 0 as mode_id
+from
+(
+  select Q.person_id, Q.event_id, CAST(SUM(coalesce(POWER(cast(2 as bigint), I.inclusion_rule_id), 0)) AS bigint) as inclusion_rule_mask
+  from #qualified_events Q
+  LEFT JOIN #inclusion_events I on q.person_id = i.person_id and q.event_id = i.event_id
+  GROUP BY Q.person_id, Q.event_id
+) MG -- matching groups
+group by inclusion_rule_mask
+;
+
+-- calculate gain counts 
+delete from @results_database_schema.cohort_inclusion_stats where cohort_definition_id = @target_cohort_id and mode_id = 0;
+insert into @results_database_schema.cohort_inclusion_stats (cohort_definition_id, rule_sequence, person_count, gain_count, person_total, mode_id)
+select ir.cohort_definition_id, ir.rule_sequence, coalesce(T.person_count, 0) as person_count, coalesce(SR.person_count, 0) gain_count, EventTotal.total, 0 as mode_id
+from @results_database_schema.cohort_inclusion ir
+left join
+(
+  select i.inclusion_rule_id, count_big(i.event_id) as person_count
+  from #qualified_events Q
+  JOIN #inclusion_events i on Q.person_id = I.person_id and Q.event_id = i.event_id
+  group by i.inclusion_rule_id
+) T on ir.rule_sequence = T.inclusion_rule_id
+CROSS JOIN (select count(*) as total_rules from @results_database_schema.cohort_inclusion where cohort_definition_id = @target_cohort_id) RuleTotal
+CROSS JOIN (select count_big(event_id) as total from #qualified_events) EventTotal
+LEFT JOIN @results_database_schema.cohort_inclusion_result SR on SR.mode_id = 0 AND SR.cohort_definition_id = @target_cohort_id AND (POWER(cast(2 as bigint),RuleTotal.total_rules) - POWER(cast(2 as bigint),ir.rule_sequence) - 1) = SR.inclusion_rule_mask -- POWER(2,rule count) - POWER(2,rule sequence) - 1 is the mask for 'all except this rule' 
+WHERE ir.cohort_definition_id = @target_cohort_id
+;
+
+-- calculate totals
+delete from @results_database_schema.cohort_summary_stats where cohort_definition_id = @target_cohort_id and mode_id = 0;
+insert into @results_database_schema.cohort_summary_stats (cohort_definition_id, base_count, final_count, mode_id)
+select @target_cohort_id as cohort_definition_id, PC.total as person_count, coalesce(FC.total, 0) as final_count, 0 as mode_id
+FROM
+(select count_big(event_id) as total from #qualified_events) PC,
+(select sum(sr.person_count) as total
+  from @results_database_schema.cohort_inclusion_result sr
+  CROSS JOIN (select count(*) as total_rules from @results_database_schema.cohort_inclusion where cohort_definition_id = @target_cohort_id) RuleTotal
+  where sr.mode_id = 0 and sr.cohort_definition_id = @target_cohort_id and sr.inclusion_rule_mask = POWER(cast(2 as bigint),RuleTotal.total_rules)-1
+) FC
+;
+
+-- END: Inclusion Impact Analysis - event
+
+-- BEGIN: Inclusion Impact Analysis - person
+-- calculte matching group counts
+delete from @results_database_schema.cohort_inclusion_result where cohort_definition_id = @target_cohort_id and mode_id = 1;
+insert into @results_database_schema.cohort_inclusion_result (cohort_definition_id, inclusion_rule_mask, person_count, mode_id)
+select @target_cohort_id as cohort_definition_id, inclusion_rule_mask, count_big(*) as person_count, 1 as mode_id
+from
+(
+  select Q.person_id, Q.event_id, CAST(SUM(coalesce(POWER(cast(2 as bigint), I.inclusion_rule_id), 0)) AS bigint) as inclusion_rule_mask
+  from #best_events Q
+  LEFT JOIN #inclusion_events I on q.person_id = i.person_id and q.event_id = i.event_id
+  GROUP BY Q.person_id, Q.event_id
+) MG -- matching groups
+group by inclusion_rule_mask
+;
+
+-- calculate gain counts 
+delete from @results_database_schema.cohort_inclusion_stats where cohort_definition_id = @target_cohort_id and mode_id = 1;
+insert into @results_database_schema.cohort_inclusion_stats (cohort_definition_id, rule_sequence, person_count, gain_count, person_total, mode_id)
+select ir.cohort_definition_id, ir.rule_sequence, coalesce(T.person_count, 0) as person_count, coalesce(SR.person_count, 0) gain_count, EventTotal.total, 1 as mode_id
+from @results_database_schema.cohort_inclusion ir
+left join
+(
+  select i.inclusion_rule_id, count_big(i.event_id) as person_count
+  from #best_events Q
+  JOIN #inclusion_events i on Q.person_id = I.person_id and Q.event_id = i.event_id
+  group by i.inclusion_rule_id
+) T on ir.rule_sequence = T.inclusion_rule_id
+CROSS JOIN (select count(*) as total_rules from @results_database_schema.cohort_inclusion where cohort_definition_id = @target_cohort_id) RuleTotal
+CROSS JOIN (select count_big(event_id) as total from #best_events) EventTotal
+LEFT JOIN @results_database_schema.cohort_inclusion_result SR on SR.mode_id = 1 AND SR.cohort_definition_id = @target_cohort_id AND (POWER(cast(2 as bigint),RuleTotal.total_rules) - POWER(cast(2 as bigint),ir.rule_sequence) - 1) = SR.inclusion_rule_mask -- POWER(2,rule count) - POWER(2,rule sequence) - 1 is the mask for 'all except this rule' 
+WHERE ir.cohort_definition_id = @target_cohort_id
+;
+
+-- calculate totals
+delete from @results_database_schema.cohort_summary_stats where cohort_definition_id = @target_cohort_id and mode_id = 1;
+insert into @results_database_schema.cohort_summary_stats (cohort_definition_id, base_count, final_count, mode_id)
+select @target_cohort_id as cohort_definition_id, PC.total as person_count, coalesce(FC.total, 0) as final_count, 1 as mode_id
+FROM
+(select count_big(event_id) as total from #best_events) PC,
+(select sum(sr.person_count) as total
+  from @results_database_schema.cohort_inclusion_result sr
+  CROSS JOIN (select count(*) as total_rules from @results_database_schema.cohort_inclusion where cohort_definition_id = @target_cohort_id) RuleTotal
+  where sr.mode_id = 1 and sr.cohort_definition_id = @target_cohort_id and sr.inclusion_rule_mask = POWER(cast(2 as bigint),RuleTotal.total_rules)-1
+) FC
+;
+
+-- END: Inclusion Impact Analysis - person
+
+-- BEGIN: Censored Stats
+
+-- END: Censored Stats
+
+TRUNCATE TABLE #best_events;
+DROP TABLE #best_events;
 
 
 

@@ -1,14 +1,11 @@
 name,atlasName,atlasId,cohortId
-Death,[PIONEER O1] Death,46,O1
-Symptomatic progression ,[PIONEER O2] Symptomatic progression ,45,O2
-Treatment initiation,[PIONEER O3] Treatment initiation,61,O3
-Curative treatment,[PIONEER O4] Curative treatment,73,O4
-Palliative treatment ,[PIONEER O5] Palliative treatment ,74,O5
-Hospitalization,[PIONEER O6] Hospitalization,87,O6
-ED visit,[PIONEER O7 ] ED visit,90,O7 
-PCa Death,[PIONEER O8] PCa Death,,O8
-Death from other causes,[PIONEER O9] Death from other causes,,O9
-RP (Radical Prostatectomy),[PIONEER O10] RP (Radical Prostatectomy),149,O10
-ADT,[PIONEER ON2] ADT,150,ON2
-RP (Radical Prostatectomy),[PIONEER O12] RP (Radical Prostatectomy),151,O12
-systemic anti-neoplastic agents,[PIONEER O13] systemic anti-neoplastic agents,,O13
+201,[PIONEER O1] Death,46,O1
+202,[PIONEER O2] Symptomatic progression ,45,O2
+203,[PIONEER O3] Treatment initiation,61,O3
+204,[PIONEER O4] Curative treatment,73,O4
+205,[PIONEER O5] Palliative treatment ,74,O5
+206,[PIONEER O6] Hospitalization,87,O6
+207,[PIONEER O7 ] ED visit,90,O7 
+208,[PIONEER O10] RP (Radical Prostatectomy),149,O10
+209,[PIONEER ON2] ADT,150,ON2
+210,[PIONEER O12] RP (Radical Prostatectomy),151,O12

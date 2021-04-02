@@ -1,39 +1,39 @@
 name,atlasName,atlasId,cohortId
-EAU High Risk,[PIONEER S1] EAU High Risk,52,S1
-EAU Low Risk,[PIONEER S2] EAU Low Risk,53,S2
-EAU Intermediate Risk,[PIONEER S3] EAU Intermediate Risk,54,S3
-Metastatic PCa,[PIONEER S4] Metastatic PCa,55,S4
-Locally Advanced PCa,[PIONEER S5] Locally Advanced PCa,56,S5
-localized PCa,[PIONEER S6] localized PCa,57,S6
-PSA >20 at Diagnosis ,[PIONEER S7] PSA >20 at Diagnosis ,58,S7
-PSA <10 at Diagnosis,[PIONEER S8] PSA <10 at Diagnosis,59,S8
-PSA 10-20 at Diagnosis,[PIONEER S9] PSA 10-20 at Diagnosis,60,S9
-Stage cT1 at Dx,[PIONEER S10] Stage cT1 at Dx,63,S10
-Stage cT2 at Dx,[PIONEER S11] Stage cT2 at Dx,64,S11
-Stage cT3/cT4 at Dx,[PIONEER S12] Stage cT3/cT4 at Dx,65,S12
-Physical Therapy/Exercise,[PIONEER S13] Physical Therapy/Exercise,112,S13
-Grade 1 (GS 2-6),[PIONEER S14] Grade 1 (GS 2-6),67,S14
-Grade 2 (GS 3+4),[PIONEER S15] Grade 2 (GS 3+4),68,S15
-Grade 3 (GS 4+3),[PIONEER S16] Grade 3 (GS 4+3),69,S16
-Grade 4 (GS 8),[PIONEER S17] Grade 4 (GS 8),70,S17
-Grade 5 (GS 9-10),[PIONEER S18] Grade 5 (GS 9-10),71,S18
-Family history of Prostate cancer or history of family history of germline mutations,[PIONEER S19] Family history of Prostate cancer or history of family history of germline mutations,72,S19
-"Mutation (germline or somatic) in BRCA2, BRCA1, ATM, MLH1, MSH1, MSH2, MSH6, CHEK2, RAD51B and PALB2 ","[PIONEER S20] Mutation (germline or somatic) in BRCA2, BRCA1, ATM, MLH1, MSH1, MSH2, MSH6, CHEK2, RAD51B and PALB2 ",83,S20
-Age at diagnosis <55,[PIONEER S21] Age at diagnosis <55,111,S21
-Age at diagnosis 55-80,[PIONEER S22] Age at diagnosis 55-80,110,S22
-Age at diagnosis >80,[PIONEER S23] Age at diagnosis >80,109,S23
-Charlson CCI=0,[PIONEER S24] Charlson CCI=0,120,S24
-Charlson CCI=1,[PIONEER S25] Charlson CCI=1,121,S25
-Charlson CCI>=2,[PIONEER S26] Charlson CCI>=2,122,S26
-"Any malignancy, except malignant neoplasm of skin","[PIONEER S27] Any malignancy, except malignant neoplasm of skin",81,S27
-Performance status ECOG=0,[PIONEER S28] Performance status ECOG=0,146,S28
-Performance status ECOG=1,[PIONEER S29] Performance status ECOG=1,147,S29
-Performance status ECOG=2+,[PIONEER S30] Performance status ECOG=2+,148,S30
-Total Cardiovascular Disease Event,[PIONEER S31] Total Cardiovascular Disease Event,152,S31
-Stroke,[PIONEER S32] Stroke,153,S32
-Type 2 Diabetes,[PIONEER S33] Type 2 Diabetes,154,S33
-Hypertension,[PIONEER S34] Hypertension,155,S34
-Obesity,[PIONEER S35] Obesity,156,S35
-VTE,[PIONEER S36] VTE,157,S36
-Anxiety,[PIONEER S37] Anxiety,158,S37
-Prevalent Asthma or Chronic obstructive pulmonary disease (COPD),[PIONEER S38] Prevalent Asthma or Chronic obstructive pulmonary disease (COPD),159,S38
+301,[PIONEER S1] EAU High Risk,52,S1
+302,[PIONEER S2] EAU Low Risk,53,S2
+303,[PIONEER S3] EAU Intermediate Risk,54,S3
+304,[PIONEER S4] Metastatic PCa,55,S4
+305,[PIONEER S5] Locally Advanced PCa,56,S5
+306,[PIONEER S6] localized PCa,57,S6
+307,[PIONEER S7] PSA >20 at Diagnosis ,58,S7
+308,[PIONEER S8] PSA <10 at Diagnosis,59,S8
+309,[PIONEER S9] PSA 10-20 at Diagnosis,60,S9
+310,[PIONEER S10] Stage cT1 at Dx,63,S10
+311,[PIONEER S11] Stage cT2 at Dx,64,S11
+312,[PIONEER S12] Stage cT3/cT4 at Dx,65,S12
+313,[PIONEER S13] Physical Therapy/Exercise,112,S13
+314,[PIONEER S14] Grade 1 (GS 2-6),67,S14
+315,[PIONEER S15] Grade 2 (GS 3+4),68,S15
+316,[PIONEER S16] Grade 3 (GS 4+3),69,S16
+317,[PIONEER S17] Grade 4 (GS 8),70,S17
+318,[PIONEER S18] Grade 5 (GS 9-10),71,S18
+319,[PIONEER S19] Family history of Prostate cancer or history of family history of germline mutations,72,S19
+320,"[PIONEER S20] Mutation (germline or somatic) in BRCA2, BRCA1, ATM, MLH1, MSH1, MSH2, MSH6, CHEK2, RAD51B and PALB2 ",83,S20
+321,[PIONEER S21] Age at diagnosis <55,111,S21
+322,[PIONEER S22] Age at diagnosis 55-80,110,S22
+323,[PIONEER S23] Age at diagnosis >80,109,S23
+324,[PIONEER S24] Charlson CCI=0,120,S24
+325,[PIONEER S25] Charlson CCI=1,121,S25
+326,[PIONEER S26] Charlson CCI>=2,122,S26
+327,"[PIONEER S27] Any malignancy, except malignant neoplasm of skin",81,S27
+328,[PIONEER S28] Performance status ECOG=0,146,S28
+329,[PIONEER S29] Performance status ECOG=1,147,S29
+330,[PIONEER S30] Performance status ECOG=2+,148,S30
+331,[PIONEER S31] Total Cardiovascular Disease Event,152,S31
+332,[PIONEER S32] Stroke,153,S32
+333,[PIONEER S33] Type 2 Diabetes,154,S33
+334,[PIONEER S34] Hypertension,155,S34
+335,[PIONEER S35] Obesity,156,S35
+336,[PIONEER S36] VTE,157,S36
+337,[PIONEER S37] Anxiety,158,S37
+338,[PIONEER S38] Prevalent Asthma or Chronic obstructive pulmonary disease (COPD),159,S38
