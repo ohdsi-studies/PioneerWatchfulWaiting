@@ -1,752 +1,752 @@
 {
-	"cdmVersionRange" : ">=5.0.0",
-	"PrimaryCriteria" : {
-		"CriteriaList" : [
-			{
-				"ProcedureOccurrence" : {
-					"CodesetId" : 0,
-					"ProcedureTypeExclude" : false
-				}
-			},
-			{
-				"Observation" : {
-					"CodesetId" : 0,
-					"ObservationTypeExclude" : false
-				}
-			}
-		],
-		"ObservationWindow" : {
-			"PriorDays" : 0,
-			"PostDays" : 0
-		},
-		"PrimaryCriteriaLimit" : {
-			"Type" : "All"
-		}
-	},
-	"ConceptSets" : [
-		{
-			"id" : 0,
-			"name" : "[PHENOTYPE] Physiotherapy",
-			"expression" : {
-				"items" : [
-					{
-						"concept" : {
-							"CONCEPT_ID" : 45767174,
-							"CONCEPT_NAME" : "Advice given about pelvic floor exercise",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "704503005",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Context-dependent"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 2314278,
-							"CONCEPT_NAME" : "Application of a modality to 1 or more areas; electrical stimulation (manual), each 15 minutes",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "97032",
-							"DOMAIN_ID" : "Procedure",
-							"VOCABULARY_ID" : "CPT4",
-							"CONCEPT_CLASS_ID" : "CPT4"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4040929,
-							"CONCEPT_NAME" : "Back exercises",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "229138000",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4079927,
-							"CONCEPT_NAME" : "Cardiovascular retraining",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "183327007",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4079490,
-							"CONCEPT_NAME" : "Combined physical therapy",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "183326003",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4267965,
-							"CONCEPT_NAME" : "Electromyographic biofeedback",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "36430006",
-							"DOMAIN_ID" : "Procedure",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 44786643,
-							"CONCEPT_NAME" : "Exercise activity",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "73985-4",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "LOINC",
-							"CONCEPT_CLASS_ID" : "Clinical Observation"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4022567,
-							"CONCEPT_NAME" : "Exercises",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "226029000",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4045289,
-							"CONCEPT_NAME" : "Exercise therapy",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "229065009",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 44790988,
-							"CONCEPT_NAME" : "In-house physiotherapy first appointment",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "247481000000104",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 44790994,
-							"CONCEPT_NAME" : "In-house physiotherapy follow-up appointment",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "247501000000108",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4038350,
-							"CONCEPT_NAME" : "Lower limb exercises",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "229152003",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4039926,
-							"CONCEPT_NAME" : "Manual therapy",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "229315006",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4327195,
-							"CONCEPT_NAME" : "Mobilization",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "74923002",
-							"DOMAIN_ID" : "Procedure",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4084193,
-							"CONCEPT_NAME" : "Mobilizing",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "183376001",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4040783,
-							"CONCEPT_NAME" : "Movement therapy",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "229064008",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4141766,
-							"CONCEPT_NAME" : "Muscle strength exercise",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "266741004",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4237462,
-							"CONCEPT_NAME" : "Musculoskeletal care",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "408869004",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4079921,
-							"CONCEPT_NAME" : "Passive exercise",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "183311000",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4083020,
-							"CONCEPT_NAME" : "Pelvic floor exercises",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "183306002",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4084182,
-							"CONCEPT_NAME" : "Physical exercises",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "183301007",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4149194,
-							"CONCEPT_NAME" : "Physical medicine treatment with electrical manual stimulation",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "35044000",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4032376,
-							"CONCEPT_NAME" : "Physical rehabilitation therapy procedure",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "108305003",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 37020638,
-							"CONCEPT_NAME" : "Physical therapy goal",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "92710-3",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "LOINC",
-							"CONCEPT_CLASS_ID" : "Clinical Observation"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4261996,
-							"CONCEPT_NAME" : "Physical therapy management",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "410160006",
-							"DOMAIN_ID" : "Procedure",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4174880,
-							"CONCEPT_NAME" : "Physical therapy surveillance",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "424291000",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4029804,
-							"CONCEPT_NAME" : "Physiotherapeutic breathing exercise",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "12895002",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 36716213,
-							"CONCEPT_NAME" : "Physiotherapy",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "722138006",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Qualifier Value"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4027365,
-							"CONCEPT_NAME" : "Physiotherapy class activities",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "12799001",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4229568,
-							"CONCEPT_NAME" : "Pilates exercise",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "404928000",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4215652,
-							"CONCEPT_NAME" : "Referral for home physical therapy",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "416790000",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 763697,
-							"CONCEPT_NAME" : "Referral for office-based physical therapy",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "444911000124101",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 763691,
-							"CONCEPT_NAME" : "Referral for physical therapy",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "444831000124102",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 46273938,
-							"CONCEPT_NAME" : "Reinforcement of adherence to physical therapy regimen",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "711170009",
-							"DOMAIN_ID" : "Procedure",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4021386,
-							"CONCEPT_NAME" : "Relaxation exercise",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "11609002",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4223799,
-							"CONCEPT_NAME" : "Resistive exercise",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "40454005",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4021966,
-							"CONCEPT_NAME" : "Rhythmical exercises",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "225926000",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4236835,
-							"CONCEPT_NAME" : "Therapeutic electrical stimulation",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "57942008",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 2314284,
-							"CONCEPT_NAME" : "Therapeutic procedure, 1 or more areas, each 15 minutes; therapeutic exercises to develop strength and endurance, range of motion and flexibility",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "97110",
-							"DOMAIN_ID" : "Procedure",
-							"VOCABULARY_ID" : "CPT4",
-							"CONCEPT_CLASS_ID" : "CPT4"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4040931,
-							"CONCEPT_NAME" : "Trunk exercises",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "229142002",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4081618,
-							"CONCEPT_NAME" : "Use of ergometer bicycle",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "18463003",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					}
-				]
-			}
-		}
-	],
-	"QualifiedLimit" : {
-		"Type" : "First"
-	},
-	"ExpressionLimit" : {
-		"Type" : "First"
-	},
-	"InclusionRules" : [],
-	"EndStrategy" : {
-		"DateOffset" : {
-			"DateField" : "EndDate",
-			"Offset" : 1
-		}
-	},
-	"CensoringCriteria" : [],
-	"CollapseSettings" : {
-		"CollapseType" : "ERA",
-		"EraPad" : 0
-	},
-	"CensorWindow" : {}
+  "cdmVersionRange" : ">=5.0.0",
+  "PrimaryCriteria" : {
+    "CriteriaList" : [
+      {
+        "ProcedureOccurrence" : {
+          "CodesetId" : 0,
+          "ProcedureTypeExclude" : false
+        }
+      },
+      {
+        "Observation" : {
+          "CodesetId" : 0,
+          "ObservationTypeExclude" : false
+        }
+      }
+    ],
+    "ObservationWindow" : {
+      "PriorDays" : 0,
+      "PostDays" : 0
+    },
+    "PrimaryCriteriaLimit" : {
+      "Type" : "All"
+    }
+  },
+  "ConceptSets" : [
+    {
+      "id" : 0,
+      "name" : "[PHENOTYPE] Physiotherapy",
+      "expression" : {
+        "items" : [
+          {
+            "concept" : {
+              "CONCEPT_ID" : 45767174,
+              "CONCEPT_NAME" : "Advice given about pelvic floor exercise",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "704503005",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Context-dependent"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 2314278,
+              "CONCEPT_NAME" : "Application of a modality to 1 or more areas; electrical stimulation (manual), each 15 minutes",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "97032",
+              "DOMAIN_ID" : "Procedure",
+              "VOCABULARY_ID" : "CPT4",
+              "CONCEPT_CLASS_ID" : "CPT4"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4040929,
+              "CONCEPT_NAME" : "Back exercises",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "229138000",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4079927,
+              "CONCEPT_NAME" : "Cardiovascular retraining",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "183327007",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4079490,
+              "CONCEPT_NAME" : "Combined physical therapy",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "183326003",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4267965,
+              "CONCEPT_NAME" : "Electromyographic biofeedback",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "36430006",
+              "DOMAIN_ID" : "Procedure",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 44786643,
+              "CONCEPT_NAME" : "Exercise activity",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "73985-4",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "LOINC",
+              "CONCEPT_CLASS_ID" : "Clinical Observation"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4022567,
+              "CONCEPT_NAME" : "Exercises",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "226029000",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4045289,
+              "CONCEPT_NAME" : "Exercise therapy",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "229065009",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 44790988,
+              "CONCEPT_NAME" : "In-house physiotherapy first appointment",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "247481000000104",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 44790994,
+              "CONCEPT_NAME" : "In-house physiotherapy follow-up appointment",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "247501000000108",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4038350,
+              "CONCEPT_NAME" : "Lower limb exercises",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "229152003",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4039926,
+              "CONCEPT_NAME" : "Manual therapy",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "229315006",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4327195,
+              "CONCEPT_NAME" : "Mobilization",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "74923002",
+              "DOMAIN_ID" : "Procedure",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4084193,
+              "CONCEPT_NAME" : "Mobilizing",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "183376001",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4040783,
+              "CONCEPT_NAME" : "Movement therapy",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "229064008",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4141766,
+              "CONCEPT_NAME" : "Muscle strength exercise",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "266741004",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4237462,
+              "CONCEPT_NAME" : "Musculoskeletal care",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "408869004",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4079921,
+              "CONCEPT_NAME" : "Passive exercise",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "183311000",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4083020,
+              "CONCEPT_NAME" : "Pelvic floor exercises",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "183306002",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4084182,
+              "CONCEPT_NAME" : "Physical exercises",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "183301007",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4149194,
+              "CONCEPT_NAME" : "Physical medicine treatment with electrical manual stimulation",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "35044000",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4032376,
+              "CONCEPT_NAME" : "Physical rehabilitation therapy procedure",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "108305003",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 37020638,
+              "CONCEPT_NAME" : "Physical therapy goal",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "92710-3",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "LOINC",
+              "CONCEPT_CLASS_ID" : "Clinical Observation"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4261996,
+              "CONCEPT_NAME" : "Physical therapy management",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "410160006",
+              "DOMAIN_ID" : "Procedure",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4174880,
+              "CONCEPT_NAME" : "Physical therapy surveillance",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "424291000",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4029804,
+              "CONCEPT_NAME" : "Physiotherapeutic breathing exercise",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "12895002",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 36716213,
+              "CONCEPT_NAME" : "Physiotherapy",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "722138006",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Qualifier Value"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4027365,
+              "CONCEPT_NAME" : "Physiotherapy class activities",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "12799001",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4229568,
+              "CONCEPT_NAME" : "Pilates exercise",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "404928000",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4215652,
+              "CONCEPT_NAME" : "Referral for home physical therapy",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "416790000",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 763697,
+              "CONCEPT_NAME" : "Referral for office-based physical therapy",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "444911000124101",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 763691,
+              "CONCEPT_NAME" : "Referral for physical therapy",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "444831000124102",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 46273938,
+              "CONCEPT_NAME" : "Reinforcement of adherence to physical therapy regimen",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "711170009",
+              "DOMAIN_ID" : "Procedure",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4021386,
+              "CONCEPT_NAME" : "Relaxation exercise",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "11609002",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4223799,
+              "CONCEPT_NAME" : "Resistive exercise",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "40454005",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4021966,
+              "CONCEPT_NAME" : "Rhythmical exercises",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "225926000",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4236835,
+              "CONCEPT_NAME" : "Therapeutic electrical stimulation",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "57942008",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 2314284,
+              "CONCEPT_NAME" : "Therapeutic procedure, 1 or more areas, each 15 minutes; therapeutic exercises to develop strength and endurance, range of motion and flexibility",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "97110",
+              "DOMAIN_ID" : "Procedure",
+              "VOCABULARY_ID" : "CPT4",
+              "CONCEPT_CLASS_ID" : "CPT4"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4040931,
+              "CONCEPT_NAME" : "Trunk exercises",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "229142002",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4081618,
+              "CONCEPT_NAME" : "Use of ergometer bicycle",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "18463003",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          }
+        ]
+      }
+    }
+  ],
+  "QualifiedLimit" : {
+    "Type" : "First"
+  },
+  "ExpressionLimit" : {
+    "Type" : "First"
+  },
+  "InclusionRules" : [],
+  "EndStrategy" : {
+    "DateOffset" : {
+      "DateField" : "EndDate",
+      "Offset" : 1
+    }
+  },
+  "CensoringCriteria" : [],
+  "CollapseSettings" : {
+    "CollapseType" : "ERA",
+    "EraPad" : 0
+  },
+  "CensorWindow" : {}
 }

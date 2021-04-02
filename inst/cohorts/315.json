@@ -1,450 +1,450 @@
 {
-	"cdmVersionRange" : ">=5.0.0",
-	"PrimaryCriteria" : {
-		"CriteriaList" : [
-			{
-				"ConditionOccurrence" : {
-					"CodesetId" : 0,
-					"First" : true,
-					"ConditionTypeExclude" : false,
-					"Age" : {
-						"Value" : 18,
-						"Op" : "gte"
-					}
-				}
-			}
-		],
-		"ObservationWindow" : {
-			"PriorDays" : 365,
-			"PostDays" : 0
-		},
-		"PrimaryCriteriaLimit" : {
-			"Type" : "First"
-		}
-	},
-	"AdditionalCriteria" : {
-		"Type" : "ANY",
-		"CriteriaList" : [
-			{
-				"Criteria" : {
-					"ProcedureOccurrence" : {
-						"CodesetId" : 13,
-						"ProcedureTypeExclude" : false
-					}
-				},
-				"StartWindow" : {
-					"Start" : {
-						"Days" : 30,
-						"Coeff" : -1
-					},
-					"End" : {
-						"Days" : 30,
-						"Coeff" : 1
-					},
-					"UseIndexEnd" : false,
-					"UseEventEnd" : false
-				},
-				"RestrictVisit" : false,
-				"IgnoreObservationPeriod" : false,
-				"Occurrence" : {
-					"Type" : 2,
-					"Count" : 1,
-					"IsDistinct" : false
-				}
-			}
-		],
-		"DemographicCriteriaList" : [],
-		"Groups" : [
-			{
-				"Type" : "ANY",
-				"CriteriaList" : [
-					{
-						"Criteria" : {
-							"Measurement" : {
-								"CodesetId" : 15,
-								"MeasurementTypeExclude" : false,
-								"ValueAsNumber" : {
-									"Value" : 50,
-									"Op" : "gt"
-								}
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 30,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 30,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Observation" : {
-								"CodesetId" : 15,
-								"ObservationTypeExclude" : false,
-								"ValueAsNumber" : {
-									"Value" : 30,
-									"Op" : "gt"
-								}
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 30,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 30,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
-							"IsDistinct" : false
-						}
-					}
-				],
-				"DemographicCriteriaList" : [],
-				"Groups" : []
-			}
-		]
-	},
-	"ConceptSets" : [
-		{
-			"id" : 0,
-			"name" : "[PIONEER] PCa",
-			"expression" : {
-				"items" : [
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4163261,
-							"CONCEPT_NAME" : "Malignant tumor of prostate",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "399068003",
-							"DOMAIN_ID" : "Condition",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Clinical Finding"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4314337,
-							"CONCEPT_NAME" : "Secondary malignant neoplasm of prostate",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "94503003",
-							"DOMAIN_ID" : "Condition",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Clinical Finding"
-						},
-						"isExcluded" : true,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					}
-				]
-			}
-		},
-		{
-			"id" : 9,
-			"name" : "[PIONEER] Gleason Score 7",
-			"expression" : {
-				"items" : [
-					{
-						"concept" : {
-							"CONCEPT_ID" : 36769947,
-							"CONCEPT_NAME" : "Gleason Grade group 2 (Gleason Score 3 + 4 = 7)",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "OMOP4999624",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "Cancer Modifier",
-							"CONCEPT_CLASS_ID" : "Staging/Grading"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					}
-				]
-			}
-		},
-		{
-			"id" : 13,
-			"name" : "[PIONEER] Biopsy",
-			"expression" : {
-				"items" : [
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4278515,
-							"CONCEPT_NAME" : "Biopsy of prostate",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "65575008",
-							"DOMAIN_ID" : "Procedure",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					}
-				]
-			}
-		},
-		{
-			"id" : 14,
-			"name" : "[PIONEER] ISUP",
-			"expression" : {
-				"items" : [
-					{
-						"concept" : {
-							"CONCEPT_ID" : 36660206,
-							"CONCEPT_NAME" : "Prostate cancer grade group [Score] in Prostate tumor Qualitative",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "94734-1",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "LOINC",
-							"CONCEPT_CLASS_ID" : "Lab Test"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					}
-				]
-			}
-		},
-		{
-			"id" : 15,
-			"name" : "[PIONEER] PSA",
-			"expression" : {
-				"items" : [
-					{
-						"concept" : {
-							"CONCEPT_ID" : 2617206,
-							"CONCEPT_NAME" : "Prostate cancer screening; prostate specific antigen test (psa)",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "G0103",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "HCPCS",
-							"CONCEPT_CLASS_ID" : "HCPCS"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 37065295,
-							"CONCEPT_NAME" : "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
-							"STANDARD_CONCEPT" : "C",
-							"STANDARD_CONCEPT_CAPTION" : "Classification",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "LP387023-7",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "LOINC",
-							"CONCEPT_CLASS_ID" : "LOINC Hierarchy"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 3002131,
-							"CONCEPT_NAME" : "Prostate specific Ag [Units/volume] in Serum or Plasma",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "19195-7",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "LOINC",
-							"CONCEPT_CLASS_ID" : "Lab Test"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 45889041,
-							"CONCEPT_NAME" : "Prostate specific antigen (PSA)",
-							"STANDARD_CONCEPT" : "C",
-							"STANDARD_CONCEPT_CAPTION" : "Classification",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "1011648",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "CPT4",
-							"CONCEPT_CLASS_ID" : "CPT4 Hierarchy"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 44793131,
-							"CONCEPT_NAME" : "Total PSA level",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "377981000000102",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 37392634,
-							"CONCEPT_NAME" : "Total PSA (prostate specific antigen) level",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "1006591000000104",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Observable Entity"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					}
-				]
-			}
-		}
-	],
-	"QualifiedLimit" : {
-		"Type" : "First"
-	},
-	"ExpressionLimit" : {
-		"Type" : "First"
-	},
-	"InclusionRules" : [
-		{
-			"name" : "Grade 2 (3+4)",
-			"expression" : {
-				"Type" : "ANY",
-				"CriteriaList" : [
-					{
-						"Criteria" : {
-							"Measurement" : {
-								"CodesetId" : 9,
-								"MeasurementTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 30,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 7,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Measurement" : {
-								"CodesetId" : 14,
-								"MeasurementTypeExclude" : false,
-								"ValueAsConcept" : [
-									{
-										"CONCEPT_ID" : 36662565,
-										"CONCEPT_NAME" : "ISUP Grade (Grade Group) 2 (Gleason score 3+4=7)",
-										"STANDARD_CONCEPT" : null,
-										"STANDARD_CONCEPT_CAPTION" : "Unknown",
-										"INVALID_REASON" : null,
-										"INVALID_REASON_CAPTION" : "Unknown",
-										"CONCEPT_CODE" : "LA30795-1",
-										"DOMAIN_ID" : "Meas Value",
-										"VOCABULARY_ID" : "LOINC",
-										"CONCEPT_CLASS_ID" : null
-									}
-								]
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 30,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 30,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
-							"IsDistinct" : false
-						}
-					}
-				],
-				"DemographicCriteriaList" : [],
-				"Groups" : []
-			}
-		}
-	],
-	"CensoringCriteria" : [],
-	"CollapseSettings" : {
-		"CollapseType" : "ERA",
-		"EraPad" : 0
-	},
-	"CensorWindow" : {}
+  "cdmVersionRange" : ">=5.0.0",
+  "PrimaryCriteria" : {
+    "CriteriaList" : [
+      {
+        "ConditionOccurrence" : {
+          "CodesetId" : 0,
+          "First" : true,
+          "ConditionTypeExclude" : false,
+          "Age" : {
+            "Value" : 18,
+            "Op" : "gte"
+          }
+        }
+      }
+    ],
+    "ObservationWindow" : {
+      "PriorDays" : 365,
+      "PostDays" : 0
+    },
+    "PrimaryCriteriaLimit" : {
+      "Type" : "First"
+    }
+  },
+  "AdditionalCriteria" : {
+    "Type" : "ANY",
+    "CriteriaList" : [
+      {
+        "Criteria" : {
+          "ProcedureOccurrence" : {
+            "CodesetId" : 13,
+            "ProcedureTypeExclude" : false
+          }
+        },
+        "StartWindow" : {
+          "Start" : {
+            "Days" : 30,
+            "Coeff" : -1
+          },
+          "End" : {
+            "Days" : 30,
+            "Coeff" : 1
+          },
+          "UseIndexEnd" : false,
+          "UseEventEnd" : false
+        },
+        "RestrictVisit" : false,
+        "IgnoreObservationPeriod" : false,
+        "Occurrence" : {
+          "Type" : 2,
+          "Count" : 1,
+          "IsDistinct" : false
+        }
+      }
+    ],
+    "DemographicCriteriaList" : [],
+    "Groups" : [
+      {
+        "Type" : "ANY",
+        "CriteriaList" : [
+          {
+            "Criteria" : {
+              "Measurement" : {
+                "CodesetId" : 15,
+                "MeasurementTypeExclude" : false,
+                "ValueAsNumber" : {
+                  "Value" : 50,
+                  "Op" : "gt"
+                }
+              }
+            },
+            "StartWindow" : {
+              "Start" : {
+                "Days" : 30,
+                "Coeff" : -1
+              },
+              "End" : {
+                "Days" : 30,
+                "Coeff" : 1
+              },
+              "UseIndexEnd" : false,
+              "UseEventEnd" : false
+            },
+            "RestrictVisit" : false,
+            "IgnoreObservationPeriod" : false,
+            "Occurrence" : {
+              "Type" : 2,
+              "Count" : 1,
+              "IsDistinct" : false
+            }
+          },
+          {
+            "Criteria" : {
+              "Observation" : {
+                "CodesetId" : 15,
+                "ObservationTypeExclude" : false,
+                "ValueAsNumber" : {
+                  "Value" : 30,
+                  "Op" : "gt"
+                }
+              }
+            },
+            "StartWindow" : {
+              "Start" : {
+                "Days" : 30,
+                "Coeff" : -1
+              },
+              "End" : {
+                "Days" : 30,
+                "Coeff" : 1
+              },
+              "UseIndexEnd" : false,
+              "UseEventEnd" : false
+            },
+            "RestrictVisit" : false,
+            "IgnoreObservationPeriod" : false,
+            "Occurrence" : {
+              "Type" : 2,
+              "Count" : 1,
+              "IsDistinct" : false
+            }
+          }
+        ],
+        "DemographicCriteriaList" : [],
+        "Groups" : []
+      }
+    ]
+  },
+  "ConceptSets" : [
+    {
+      "id" : 0,
+      "name" : "[PIONEER] PCa",
+      "expression" : {
+        "items" : [
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4163261,
+              "CONCEPT_NAME" : "Malignant tumor of prostate",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "399068003",
+              "DOMAIN_ID" : "Condition",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Clinical Finding"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4314337,
+              "CONCEPT_NAME" : "Secondary malignant neoplasm of prostate",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "94503003",
+              "DOMAIN_ID" : "Condition",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Clinical Finding"
+            },
+            "isExcluded" : true,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          }
+        ]
+      }
+    },
+    {
+      "id" : 9,
+      "name" : "[PIONEER] Gleason Score 7",
+      "expression" : {
+        "items" : [
+          {
+            "concept" : {
+              "CONCEPT_ID" : 36769947,
+              "CONCEPT_NAME" : "Gleason Grade group 2 (Gleason Score 3 + 4 = 7)",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "OMOP4999624",
+              "DOMAIN_ID" : "Measurement",
+              "VOCABULARY_ID" : "Cancer Modifier",
+              "CONCEPT_CLASS_ID" : "Staging/Grading"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          }
+        ]
+      }
+    },
+    {
+      "id" : 13,
+      "name" : "[PIONEER] Biopsy",
+      "expression" : {
+        "items" : [
+          {
+            "concept" : {
+              "CONCEPT_ID" : 4278515,
+              "CONCEPT_NAME" : "Biopsy of prostate",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "65575008",
+              "DOMAIN_ID" : "Procedure",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          }
+        ]
+      }
+    },
+    {
+      "id" : 14,
+      "name" : "[PIONEER] ISUP",
+      "expression" : {
+        "items" : [
+          {
+            "concept" : {
+              "CONCEPT_ID" : 36660206,
+              "CONCEPT_NAME" : "Prostate cancer grade group [Score] in Prostate tumor Qualitative",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "94734-1",
+              "DOMAIN_ID" : "Measurement",
+              "VOCABULARY_ID" : "LOINC",
+              "CONCEPT_CLASS_ID" : "Lab Test"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          }
+        ]
+      }
+    },
+    {
+      "id" : 15,
+      "name" : "[PIONEER] PSA",
+      "expression" : {
+        "items" : [
+          {
+            "concept" : {
+              "CONCEPT_ID" : 2617206,
+              "CONCEPT_NAME" : "Prostate cancer screening; prostate specific antigen test (psa)",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "G0103",
+              "DOMAIN_ID" : "Measurement",
+              "VOCABULARY_ID" : "HCPCS",
+              "CONCEPT_CLASS_ID" : "HCPCS"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 37065295,
+              "CONCEPT_NAME" : "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
+              "STANDARD_CONCEPT" : "C",
+              "STANDARD_CONCEPT_CAPTION" : "Classification",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "LP387023-7",
+              "DOMAIN_ID" : "Measurement",
+              "VOCABULARY_ID" : "LOINC",
+              "CONCEPT_CLASS_ID" : "LOINC Hierarchy"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 3002131,
+              "CONCEPT_NAME" : "Prostate specific Ag [Units/volume] in Serum or Plasma",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "19195-7",
+              "DOMAIN_ID" : "Measurement",
+              "VOCABULARY_ID" : "LOINC",
+              "CONCEPT_CLASS_ID" : "Lab Test"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 45889041,
+              "CONCEPT_NAME" : "Prostate specific antigen (PSA)",
+              "STANDARD_CONCEPT" : "C",
+              "STANDARD_CONCEPT_CAPTION" : "Classification",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "1011648",
+              "DOMAIN_ID" : "Measurement",
+              "VOCABULARY_ID" : "CPT4",
+              "CONCEPT_CLASS_ID" : "CPT4 Hierarchy"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 44793131,
+              "CONCEPT_NAME" : "Total PSA level",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "377981000000102",
+              "DOMAIN_ID" : "Measurement",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Procedure"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : true,
+            "includeMapped" : false
+          },
+          {
+            "concept" : {
+              "CONCEPT_ID" : 37392634,
+              "CONCEPT_NAME" : "Total PSA (prostate specific antigen) level",
+              "STANDARD_CONCEPT" : "S",
+              "STANDARD_CONCEPT_CAPTION" : "Standard",
+              "INVALID_REASON" : "V",
+              "INVALID_REASON_CAPTION" : "Valid",
+              "CONCEPT_CODE" : "1006591000000104",
+              "DOMAIN_ID" : "Observation",
+              "VOCABULARY_ID" : "SNOMED",
+              "CONCEPT_CLASS_ID" : "Observable Entity"
+            },
+            "isExcluded" : false,
+            "includeDescendants" : false,
+            "includeMapped" : false
+          }
+        ]
+      }
+    }
+  ],
+  "QualifiedLimit" : {
+    "Type" : "First"
+  },
+  "ExpressionLimit" : {
+    "Type" : "First"
+  },
+  "InclusionRules" : [
+    {
+      "name" : "Grade 2 (3+4)",
+      "expression" : {
+        "Type" : "ANY",
+        "CriteriaList" : [
+          {
+            "Criteria" : {
+              "Measurement" : {
+                "CodesetId" : 9,
+                "MeasurementTypeExclude" : false
+              }
+            },
+            "StartWindow" : {
+              "Start" : {
+                "Days" : 30,
+                "Coeff" : -1
+              },
+              "End" : {
+                "Days" : 7,
+                "Coeff" : 1
+              },
+              "UseIndexEnd" : false,
+              "UseEventEnd" : false
+            },
+            "RestrictVisit" : false,
+            "IgnoreObservationPeriod" : false,
+            "Occurrence" : {
+              "Type" : 2,
+              "Count" : 1,
+              "IsDistinct" : false
+            }
+          },
+          {
+            "Criteria" : {
+              "Measurement" : {
+                "CodesetId" : 14,
+                "MeasurementTypeExclude" : false,
+                "ValueAsConcept" : [
+                  {
+                    "CONCEPT_ID" : 36662565,
+                    "CONCEPT_NAME" : "ISUP Grade (Grade Group) 2 (Gleason score 3+4=7)",
+                    "STANDARD_CONCEPT" : null,
+                    "STANDARD_CONCEPT_CAPTION" : "Unknown",
+                    "INVALID_REASON" : null,
+                    "INVALID_REASON_CAPTION" : "Unknown",
+                    "CONCEPT_CODE" : "LA30795-1",
+                    "DOMAIN_ID" : "Meas Value",
+                    "VOCABULARY_ID" : "LOINC",
+                    "CONCEPT_CLASS_ID" : null
+                  }
+                ]
+              }
+            },
+            "StartWindow" : {
+              "Start" : {
+                "Days" : 30,
+                "Coeff" : -1
+              },
+              "End" : {
+                "Days" : 30,
+                "Coeff" : 1
+              },
+              "UseIndexEnd" : false,
+              "UseEventEnd" : false
+            },
+            "RestrictVisit" : false,
+            "IgnoreObservationPeriod" : false,
+            "Occurrence" : {
+              "Type" : 2,
+              "Count" : 1,
+              "IsDistinct" : false
+            }
+          }
+        ],
+        "DemographicCriteriaList" : [],
+        "Groups" : []
+      }
+    }
+  ],
+  "CensoringCriteria" : [],
+  "CollapseSettings" : {
+    "CollapseType" : "ERA",
+    "EraPad" : 0
+  },
+  "CensorWindow" : {}
 }
