@@ -1,19 +1,19 @@
 name,atlasName,atlasId,cohortId
-new PCa,[PIONEER T1] new PCa,101,101
-new PCa,[PIONEER T1a] new PCa,102,102
-new PCa actively treated,[PIONEER T2] new PCa actively treated,103,103
-new PCa actively treated,[PIONEER T2a] new PCa actively treated,104,104
-new high_intermediate risk PCa conservative management ,[PIONEER T3.1] new high_intermediate risk PCa conservative management ,105,105
-new high_intermediate risk PCa conservative management,[PIONEER T3.1a] new high_intermediate risk PCa conservative management,106,106
-new low-risk PCa conservative management (WW),[PIONEER T3.2] new low-risk PCa conservative management (WW),107,107
-new low-risk PCa conservative management (WW),[PIONEER T3.2a] new low-risk PCa conservative management (WW),108,108
-new low risk PCa conservative management (AS),[PIONEER T3.3] new low risk PCa conservative management (AS),109,109
-new low risk PCa conservative management (AS),[PIONEER T3.3a] new low risk PCa conservative management (AS),110,110
-new PCa conservative management,[PIONEER T3] new PCa conservative management,111,111
-new PCa conservative management,[PIONEER T3a] new PCa conservative management,112,112
-Delayed Curative Management,[PIONEER T4.1] Delayed Curative Management,113,113
-Delayed Curative Management,[PIONEER T4.1a] Delayed Curative Management,114,114
-Delayed Palliative Management,[PIONEER T4.2] Delayed Palliative Management,115,115
-Delayed Palliative Management,[PIONEER T4.2a] Delayed Palliative Management,116,116
-new PCa treatment post conservative management,[PIONEER T4] new PCa treatment post conservative management,117,117
-new PCa treatment post conservative management,[PIONEER T4a] new PCa treatment post conservative management,118,118
+Newly diagnosed Pca ,[PIONEER T1] Newly diagnosed Pca ,47,T1
+PCa treated right away,[PIONEER T2] PCa treated right away,49,T2
+PCa under conservative management,[PIONEER T3] PCa under conservative management,137,T3
+PCa treated after conservative management ,[PIONEER T4] PCa treated after conservative management ,143,T4
+PCa high/intermediate risk conservative management,[PIONEER T3.1] PCa high/intermediate risk conservative management,138,T3.1
+PCa low risk grade conservative management and no intense monitoring,[PIONEER T3.2] PCa low risk grade conservative management and no intense monitoring,139,T3.2
+PCa low risk grade conservative management and intense monitoring,[PIONEER T3.3] PCa low risk grade conservative management and intense monitoring,140,T3.3
+Delayed Curative Management,[PIONEER T4.1] Delayed Curative Management,144,T4.1
+Delayed Palliative Management,[PIONEER T4.2] Delayed Palliative Management,145,T4.2
+Newly diagnosed Pca (biopsy or PSA GT 50),[PIONEER T1a] Newly diagnosed Pca (biopsy or PSA GT 50),141,T1a
+PCa treated right away (biopsy or PSA GT 50),[PIONEER T2a] PCa treated right away (biopsy or PSA GT 50),142,T2a
+PCa under conservative management (biopsy or PSA GT 50),[PIONEER T3a] PCa under conservative management (biopsy or PSA GT 50),125,T3a
+PCa treated after conservative management (biopsy or PSA GT 50),[PIONEER T4a] PCa treated after conservative management (biopsy or PSA GT 50),129,T4a
+PCa high/intermediate risk conservative managemetn (biopsy or PSA GT 50),[PIONEER T3.1a] PCa high/intermediate risk conservative managemetn (biopsy or PSA GT 50),126,T3.1a
+PCa low risk grade conservative management and no intense monitoring (biopsy or PSA GT 50),[PIONEER T3.2a] PCa low risk grade conservative management and no intense monitoring (biopsy or PSA GT 50),127,T3.2a
+PCa low risk grade conservative management and intense monitoring  (biopsy or PSA GT 50),[PIONEER T3.3a] PCa low risk grade conservative management and intense monitoring  (biopsy or PSA GT 50),128,T3.3a
+Delayed Curative Management (biopsy or PSA GT 50),[PIONEER T4.1a] Delayed Curative Management (biopsy or PSA GT 50),131,T4.1a
+Delayed Palliative Management (biopsy or PSA GT 50),[PIONEER T4.2a] Delayed Palliative Management (biopsy or PSA GT 50),132,T4.2a
