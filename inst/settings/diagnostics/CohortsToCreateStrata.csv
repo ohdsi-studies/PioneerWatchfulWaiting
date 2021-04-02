@@ -26,14 +26,14 @@ name,atlasName,atlasId,cohortId
 325,[PIONEER S25] Charlson CCI=1,121,S25
 326,[PIONEER S26] Charlson CCI>=2,122,S26
 327,"[PIONEER S27] Any malignancy, except malignant neoplasm of skin",81,S27
-328,[PIONEER S28] Performance status ECOG=0,146,S28
-329,[PIONEER S29] Performance status ECOG=1,147,S29
-330,[PIONEER S30] Performance status ECOG=2+,148,S30
-331,[PIONEER S31] Total Cardiovascular Disease Event,152,S31
-332,[PIONEER S32] Stroke,153,S32
-333,[PIONEER S33] Type 2 Diabetes,154,S33
-334,[PIONEER S34] Hypertension,155,S34
-335,[PIONEER S35] Obesity,156,S35
-336,[PIONEER S36] VTE,157,S36
+334,[PIONEER S28] Performance status ECOG=0,146,S28
+335,[PIONEER S29] Performance status ECOG=1,147,S29
+336,[PIONEER S30] Performance status ECOG=2+,148,S30
+328,[PIONEER S31] Total Cardiovascular Disease Event,152,S31
+329,[PIONEER S32] Stroke,153,S32
+330,[PIONEER S33] Type 2 Diabetes,154,S33
+331,[PIONEER S34] Hypertension,155,S34
+332,[PIONEER S35] Obesity,156,S35
+333,[PIONEER S36] VTE,157,S36
 337,[PIONEER S37] Anxiety,158,S37
 338,[PIONEER S38] Prevalent Asthma or Chronic obstructive pulmonary disease (COPD),159,S38
