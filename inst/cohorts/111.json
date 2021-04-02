@@ -4,7 +4,7 @@
 		"CriteriaList" : [
 			{
 				"ConditionOccurrence" : {
-					"CodesetId" : 13,
+					"CodesetId" : 12,
 					"First" : true,
 					"ConditionTypeExclude" : false,
 					"Gender" : [
@@ -1928,6 +1928,48 @@
 		},
 		{
 			"id" : 12,
+			"name" : "[PIONEER] PCa",
+			"expression" : {
+				"items" : [
+					{
+						"concept" : {
+							"CONCEPT_ID" : 4163261,
+							"CONCEPT_NAME" : "Malignant tumor of prostate",
+							"STANDARD_CONCEPT" : "S",
+							"STANDARD_CONCEPT_CAPTION" : "Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "399068003",
+							"DOMAIN_ID" : "Condition",
+							"VOCABULARY_ID" : "SNOMED",
+							"CONCEPT_CLASS_ID" : "Clinical Finding"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 4314337,
+							"CONCEPT_NAME" : "Secondary malignant neoplasm of prostate",
+							"STANDARD_CONCEPT" : "S",
+							"STANDARD_CONCEPT_CAPTION" : "Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "94503003",
+							"DOMAIN_ID" : "Condition",
+							"VOCABULARY_ID" : "SNOMED",
+							"CONCEPT_CLASS_ID" : "Clinical Finding"
+						},
+						"isExcluded" : true,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					}
+				]
+			}
+		},
+		{
+			"id" : 13,
 			"name" : "[PIONEER] Other Malignancies",
 			"expression" : {
 				"items" : [
@@ -1991,48 +2033,6 @@
 							"INVALID_REASON" : "V",
 							"INVALID_REASON_CAPTION" : "Valid",
 							"CONCEPT_CODE" : "254651007",
-							"DOMAIN_ID" : "Condition",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Clinical Finding"
-						},
-						"isExcluded" : true,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					}
-				]
-			}
-		},
-		{
-			"id" : 13,
-			"name" : "[PIONEER] PCa",
-			"expression" : {
-				"items" : [
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4163261,
-							"CONCEPT_NAME" : "Malignant tumor of prostate",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "399068003",
-							"DOMAIN_ID" : "Condition",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Clinical Finding"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4314337,
-							"CONCEPT_NAME" : "Secondary malignant neoplasm of prostate",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "94503003",
 							"DOMAIN_ID" : "Condition",
 							"VOCABULARY_ID" : "SNOMED",
 							"CONCEPT_CLASS_ID" : "Clinical Finding"
@@ -2514,23 +2514,6 @@
 						"isExcluded" : false,
 						"includeDescendants" : false,
 						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 3002131,
-							"CONCEPT_NAME" : "Prostate specific Ag [Units/volume] in Serum or Plasma",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "19195-7",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "LOINC",
-							"CONCEPT_CLASS_ID" : "Lab Test"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
 					}
 				]
 			}
@@ -2560,77 +2543,15 @@
 			}
 		},
 		{
-			"name" : "Biopsy or PSA>50",
+			"name" : "Biopsy",
 			"expression" : {
-				"Type" : "ALL",
+				"Type" : "ANY",
 				"CriteriaList" : [
 					{
 						"Criteria" : {
 							"ProcedureOccurrence" : {
 								"CodesetId" : 6,
 								"ProcedureTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 30,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 30,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Measurement" : {
-								"CodesetId" : 17,
-								"MeasurementTypeExclude" : false,
-								"ValueAsNumber" : {
-									"Value" : 50,
-									"Op" : "gt"
-								}
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 30,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 30,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Observation" : {
-								"CodesetId" : 17,
-								"ObservationTypeExclude" : false,
-								"ValueAsNumber" : {
-									"Value" : 50,
-									"Op" : "gt"
-								}
 							}
 						},
 						"StartWindow" : {
@@ -2737,9 +2658,9 @@
 			}
 		},
 		{
-			"name" : "At least one treatment during the 6 months post index",
+			"name" : "No treatment 6 months post index",
 			"expression" : {
-				"Type" : "ANY",
+				"Type" : "ALL",
 				"CriteriaList" : [
 					{
 						"Criteria" : {
@@ -2763,8 +2684,8 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
+							"Type" : 0,
+							"Count" : 0,
 							"IsDistinct" : false
 						}
 					},
@@ -2790,8 +2711,8 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
+							"Type" : 0,
+							"Count" : 0,
 							"IsDistinct" : false
 						}
 					},
@@ -2817,8 +2738,8 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
+							"Type" : 0,
+							"Count" : 0,
 							"IsDistinct" : false
 						}
 					},
@@ -2844,8 +2765,8 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
+							"Type" : 0,
+							"Count" : 0,
 							"IsDistinct" : false
 						}
 					},
@@ -2871,8 +2792,8 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
+							"Type" : 0,
+							"Count" : 0,
 							"IsDistinct" : false
 						}
 					},
@@ -2898,8 +2819,8 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
+							"Type" : 0,
+							"Count" : 0,
 							"IsDistinct" : false
 						}
 					},
@@ -2911,9 +2832,8 @@
 									"CriteriaList" : [
 										{
 											"Criteria" : {
-												"ConditionOccurrence" : {
-													"CodesetId" : 16,
-													"ConditionTypeExclude" : false
+												"ConditionEra" : {
+													"CodesetId" : 16
 												}
 											},
 											"StartWindow" : {
@@ -2959,8 +2879,8 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
+							"Type" : 0,
+							"Count" : 0,
 							"IsDistinct" : false
 						}
 					},
@@ -2986,8 +2906,8 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
+							"Type" : 0,
+							"Count" : 0,
 							"IsDistinct" : false
 						}
 					},
@@ -3013,8 +2933,8 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
+							"Type" : 0,
+							"Count" : 0,
 							"IsDistinct" : false
 						}
 					},
@@ -3040,8 +2960,8 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
+							"Type" : 0,
+							"Count" : 0,
 							"IsDistinct" : false
 						}
 					}
@@ -3051,7 +2971,7 @@
 			}
 		},
 		{
-			"name" : "no ADT and other hormnal",
+			"name" : "no ADT and other hormonal PCA trt",
 			"expression" : {
 				"Type" : "ALL",
 				"CriteriaList" : [
@@ -3123,7 +3043,7 @@
 							},
 							"End" : {
 								"Days" : 1,
-								"Coeff" : -1
+								"Coeff" : 1
 							},
 							"UseIndexEnd" : false,
 							"UseEventEnd" : false
@@ -3150,7 +3070,7 @@
 		},
 		{
 			"ConditionOccurrence" : {
-				"CodesetId" : 12,
+				"CodesetId" : 13,
 				"ConditionTypeExclude" : false
 			}
 		}

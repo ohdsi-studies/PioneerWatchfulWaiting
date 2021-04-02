@@ -3,24 +3,187 @@
 	"PrimaryCriteria" : {
 		"CriteriaList" : [
 			{
-				"ConditionOccurrence" : {
-					"CodesetId" : 12,
-					"First" : true,
-					"ConditionTypeExclude" : false,
-					"Gender" : [
-						{
-							"CONCEPT_ID" : 8507,
-							"CONCEPT_NAME" : "MALE",
-							"STANDARD_CONCEPT" : null,
-							"STANDARD_CONCEPT_CAPTION" : "Unknown",
-							"INVALID_REASON" : null,
-							"INVALID_REASON_CAPTION" : "Unknown",
-							"CONCEPT_CODE" : "M",
-							"DOMAIN_ID" : "Gender",
-							"VOCABULARY_ID" : "Gender",
-							"CONCEPT_CLASS_ID" : null
-						}
-					]
+				"ProcedureOccurrence" : {
+					"CodesetId" : 11,
+					"ProcedureTypeExclude" : false
+				}
+			},
+			{
+				"DrugExposure" : {
+					"CodesetId" : 11,
+					"DrugTypeExclude" : false
+				}
+			},
+			{
+				"Observation" : {
+					"CodesetId" : 11,
+					"ObservationTypeExclude" : false
+				}
+			},
+			{
+				"DeviceExposure" : {
+					"CodesetId" : 11,
+					"DeviceTypeExclude" : false
+				}
+			},
+			{
+				"ProcedureOccurrence" : {
+					"CorrelatedCriteria" : {
+						"Type" : "ALL",
+						"CriteriaList" : [
+							{
+								"Criteria" : {
+									"ConditionOccurrence" : {
+										"CodesetId" : 15,
+										"ConditionTypeExclude" : false
+									}
+								},
+								"StartWindow" : {
+									"Start" : {
+										"Days" : 180,
+										"Coeff" : -1
+									},
+									"End" : {
+										"Days" : 0,
+										"Coeff" : -1
+									},
+									"UseIndexEnd" : false,
+									"UseEventEnd" : false
+								},
+								"RestrictVisit" : false,
+								"IgnoreObservationPeriod" : false,
+								"Occurrence" : {
+									"Type" : 2,
+									"Count" : 1,
+									"IsDistinct" : false
+								}
+							}
+						],
+						"DemographicCriteriaList" : [],
+						"Groups" : []
+					},
+					"CodesetId" : 16,
+					"ProcedureTypeExclude" : false
+				}
+			},
+			{
+				"Observation" : {
+					"CorrelatedCriteria" : {
+						"Type" : "ALL",
+						"CriteriaList" : [
+							{
+								"Criteria" : {
+									"ConditionOccurrence" : {
+										"CodesetId" : 17,
+										"ConditionTypeExclude" : false
+									}
+								},
+								"StartWindow" : {
+									"Start" : {
+										"Days" : 180,
+										"Coeff" : -1
+									},
+									"End" : {
+										"Days" : 0,
+										"Coeff" : -1
+									},
+									"UseIndexEnd" : false,
+									"UseEventEnd" : false
+								},
+								"RestrictVisit" : false,
+								"IgnoreObservationPeriod" : false,
+								"Occurrence" : {
+									"Type" : 2,
+									"Count" : 1,
+									"IsDistinct" : false
+								}
+							}
+						],
+						"DemographicCriteriaList" : [],
+						"Groups" : []
+					},
+					"CodesetId" : 8,
+					"ObservationTypeExclude" : false
+				}
+			},
+			{
+				"DeviceExposure" : {
+					"CorrelatedCriteria" : {
+						"Type" : "ALL",
+						"CriteriaList" : [
+							{
+								"Criteria" : {
+									"ConditionOccurrence" : {
+										"CodesetId" : 17,
+										"ConditionTypeExclude" : false
+									}
+								},
+								"StartWindow" : {
+									"Start" : {
+										"Days" : 180,
+										"Coeff" : -1
+									},
+									"End" : {
+										"Days" : 0,
+										"Coeff" : -1
+									},
+									"UseIndexEnd" : false,
+									"UseEventEnd" : false
+								},
+								"RestrictVisit" : false,
+								"IgnoreObservationPeriod" : false,
+								"Occurrence" : {
+									"Type" : 2,
+									"Count" : 1,
+									"IsDistinct" : false
+								}
+							}
+						],
+						"DemographicCriteriaList" : [],
+						"Groups" : []
+					},
+					"CodesetId" : 8,
+					"DeviceTypeExclude" : false
+				}
+			},
+			{
+				"ProcedureOccurrence" : {
+					"CorrelatedCriteria" : {
+						"Type" : "ALL",
+						"CriteriaList" : [
+							{
+								"Criteria" : {
+									"ConditionOccurrence" : {
+										"CodesetId" : 17,
+										"ConditionTypeExclude" : false
+									}
+								},
+								"StartWindow" : {
+									"Start" : {
+										"Days" : 180,
+										"Coeff" : -1
+									},
+									"End" : {
+										"Days" : 0,
+										"Coeff" : -1
+									},
+									"UseIndexEnd" : false,
+									"UseEventEnd" : false
+								},
+								"RestrictVisit" : false,
+								"IgnoreObservationPeriod" : false,
+								"Occurrence" : {
+									"Type" : 2,
+									"Count" : 1,
+									"IsDistinct" : false
+								}
+							}
+						],
+						"DemographicCriteriaList" : [],
+						"Groups" : []
+					},
+					"CodesetId" : 8,
+					"ProcedureTypeExclude" : false
 				}
 			}
 		],
@@ -29,7 +192,7 @@
 			"PostDays" : 0
 		},
 		"PrimaryCriteriaLimit" : {
-			"Type" : "First"
+			"Type" : "All"
 		}
 	},
 	"ConceptSets" : [
@@ -1933,67 +2096,16 @@
 				"items" : [
 					{
 						"concept" : {
-							"CONCEPT_ID" : 2617206,
-							"CONCEPT_NAME" : "Prostate cancer screening; prostate specific antigen test (psa)",
+							"CONCEPT_ID" : 4163261,
+							"CONCEPT_NAME" : "Malignant tumor of prostate",
 							"STANDARD_CONCEPT" : "S",
 							"STANDARD_CONCEPT_CAPTION" : "Standard",
 							"INVALID_REASON" : "V",
 							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "G0103",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "HCPCS",
-							"CONCEPT_CLASS_ID" : "HCPCS"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 37065295,
-							"CONCEPT_NAME" : "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
-							"STANDARD_CONCEPT" : "C",
-							"STANDARD_CONCEPT_CAPTION" : "Classification",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "LP387023-7",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "LOINC",
-							"CONCEPT_CLASS_ID" : "LOINC Hierarchy"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 45889041,
-							"CONCEPT_NAME" : "Prostate specific antigen (PSA)",
-							"STANDARD_CONCEPT" : "C",
-							"STANDARD_CONCEPT_CAPTION" : "Classification",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "1011648",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "CPT4",
-							"CONCEPT_CLASS_ID" : "CPT4 Hierarchy"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 44793131,
-							"CONCEPT_NAME" : "Total PSA level",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "377981000000102",
-							"DOMAIN_ID" : "Measurement",
+							"CONCEPT_CODE" : "399068003",
+							"DOMAIN_ID" : "Condition",
 							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
+							"CONCEPT_CLASS_ID" : "Clinical Finding"
 						},
 						"isExcluded" : false,
 						"includeDescendants" : true,
@@ -2001,19 +2113,19 @@
 					},
 					{
 						"concept" : {
-							"CONCEPT_ID" : 37392634,
-							"CONCEPT_NAME" : "Total PSA (prostate specific antigen) level",
+							"CONCEPT_ID" : 4314337,
+							"CONCEPT_NAME" : "Secondary malignant neoplasm of prostate",
 							"STANDARD_CONCEPT" : "S",
 							"STANDARD_CONCEPT_CAPTION" : "Standard",
 							"INVALID_REASON" : "V",
 							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "1006591000000104",
-							"DOMAIN_ID" : "Observation",
+							"CONCEPT_CODE" : "94503003",
+							"DOMAIN_ID" : "Condition",
 							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Observable Entity"
+							"CONCEPT_CLASS_ID" : "Clinical Finding"
 						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
+						"isExcluded" : true,
+						"includeDescendants" : true,
 						"includeMapped" : false
 					}
 				]
@@ -2224,285 +2336,6 @@
 		},
 		{
 			"id" : 15,
-			"name" : "[PIONEER] PSA",
-			"expression" : {
-				"items" : [
-					{
-						"concept" : {
-							"CONCEPT_ID" : 19195,
-							"CONCEPT_NAME" : "Asphyxiation due to mechanical threat to breathing due to other causes, intentional self-harm",
-							"STANDARD_CONCEPT" : "N",
-							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "T71.192",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "ICD10CM",
-							"CONCEPT_CLASS_ID" : "6-char nonbill code"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4,
-							"CONCEPT_NAME" : "Ethnicity",
-							"STANDARD_CONCEPT" : "N",
-							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "OMOP generated",
-							"DOMAIN_ID" : "Metadata",
-							"VOCABULARY_ID" : "Domain",
-							"CONCEPT_CLASS_ID" : "Domain"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 7,
-							"CONCEPT_NAME" : "Metadata",
-							"STANDARD_CONCEPT" : "N",
-							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "OMOP generated",
-							"DOMAIN_ID" : "Metadata",
-							"VOCABULARY_ID" : "Domain",
-							"CONCEPT_CLASS_ID" : "Domain"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 2617206,
-							"CONCEPT_NAME" : "Prostate cancer screening; prostate specific antigen test (psa)",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "G0103",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "HCPCS",
-							"CONCEPT_CLASS_ID" : "HCPCS"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 37065295,
-							"CONCEPT_NAME" : "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
-							"STANDARD_CONCEPT" : "C",
-							"STANDARD_CONCEPT_CAPTION" : "Classification",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "LP387023-7",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "LOINC",
-							"CONCEPT_CLASS_ID" : "LOINC Hierarchy"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 3002131,
-							"CONCEPT_NAME" : "Prostate specific Ag [Units/volume] in Serum or Plasma",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "19195-7",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "LOINC",
-							"CONCEPT_CLASS_ID" : "Lab Test"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 45889041,
-							"CONCEPT_NAME" : "Prostate specific antigen (PSA)",
-							"STANDARD_CONCEPT" : "C",
-							"STANDARD_CONCEPT_CAPTION" : "Classification",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "1011648",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "CPT4",
-							"CONCEPT_CLASS_ID" : "CPT4 Hierarchy"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 44793131,
-							"CONCEPT_NAME" : "Total PSA level",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "377981000000102",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 37392634,
-							"CONCEPT_NAME" : "Total PSA (prostate specific antigen) level",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "1006591000000104",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Observable Entity"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					}
-				]
-			}
-		},
-		{
-			"id" : 16,
-			"name" : "[PIONEER] Urological Visit Codes",
-			"expression" : {
-				"items" : [
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4140343,
-							"CONCEPT_NAME" : "Discharge by urologist",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "306490006",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4125696,
-							"CONCEPT_NAME" : "Seen by urologist",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "305729009",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Clinical Finding"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4120296,
-							"CONCEPT_NAME" : "Urological investigation",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "302778005",
-							"DOMAIN_ID" : "Procedure",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					}
-				]
-			}
-		},
-		{
-			"id" : 17,
-			"name" : "[PIONEER] Treatment_Palliative Nephrostomy",
-			"expression" : {
-				"items" : [
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4220029,
-							"CONCEPT_NAME" : "Nephrostomy",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "39834009",
-							"DOMAIN_ID" : "Procedure",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 2109550,
-							"CONCEPT_NAME" : "Nephrostomy, nephrotomy with drainage",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "50040",
-							"DOMAIN_ID" : "Procedure",
-							"VOCABULARY_ID" : "CPT4",
-							"CONCEPT_CLASS_ID" : "CPT4"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 42628675,
-							"CONCEPT_NAME" : "Placement of nephrostomy catheter, percutaneous, including diagnostic nephrostogram and/or ureterogram when performed, imaging guidance (eg, ultrasound and/or fluoroscopy) and all associated radiological supervision and interpretation",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "50432",
-							"DOMAIN_ID" : "Procedure",
-							"VOCABULARY_ID" : "CPT4",
-							"CONCEPT_CLASS_ID" : "CPT4"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					}
-				]
-			}
-		},
-		{
-			"id" : 18,
 			"name" : "[PIONEER] AKI",
 			"expression" : {
 				"items" : [
@@ -2537,6 +2370,23 @@
 							"CONCEPT_CLASS_ID" : "Clinical Finding"
 						},
 						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 4032298,
+							"CONCEPT_NAME" : "Acute-on-chronic rejection of renal transplant",
+							"STANDARD_CONCEPT" : "S",
+							"STANDARD_CONCEPT_CAPTION" : "Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "236582008",
+							"DOMAIN_ID" : "Condition",
+							"VOCABULARY_ID" : "SNOMED",
+							"CONCEPT_CLASS_ID" : "Clinical Finding"
+						},
+						"isExcluded" : true,
 						"includeDescendants" : true,
 						"includeMapped" : false
 					},
@@ -2644,23 +2494,6 @@
 					},
 					{
 						"concept" : {
-							"CONCEPT_ID" : 4032298,
-							"CONCEPT_NAME" : "Acute-on-chronic rejection of renal transplant",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "236582008",
-							"DOMAIN_ID" : "Condition",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Clinical Finding"
-						},
-						"isExcluded" : true,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
 							"CONCEPT_ID" : 4032295,
 							"CONCEPT_NAME" : "Hyperacute rejection of renal transplant",
 							"STANDARD_CONCEPT" : "S",
@@ -2697,22 +2530,39 @@
 			}
 		},
 		{
-			"id" : 19,
-			"name" : "[PIONEER] cT1, cT2a",
+			"id" : 16,
+			"name" : "[PIONEER] Treatment_Palliative Nephrostomy",
 			"expression" : {
 				"items" : [
 					{
 						"concept" : {
-							"CONCEPT_ID" : 1538812,
-							"CONCEPT_NAME" : "Prostate Cancer cT1 TNM Finding by AJCC/UICC 8th edition",
+							"CONCEPT_ID" : 4220029,
+							"CONCEPT_NAME" : "Nephrostomy",
 							"STANDARD_CONCEPT" : "S",
 							"STANDARD_CONCEPT_CAPTION" : "Standard",
 							"INVALID_REASON" : "V",
 							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "cT1-58-8",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "NCIt",
-							"CONCEPT_CLASS_ID" : "AJCC Category"
+							"CONCEPT_CODE" : "39834009",
+							"DOMAIN_ID" : "Procedure",
+							"VOCABULARY_ID" : "SNOMED",
+							"CONCEPT_CLASS_ID" : "Procedure"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 2109550,
+							"CONCEPT_NAME" : "Nephrostomy, nephrotomy with drainage",
+							"STANDARD_CONCEPT" : "S",
+							"STANDARD_CONCEPT_CAPTION" : "Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "50040",
+							"DOMAIN_ID" : "Procedure",
+							"VOCABULARY_ID" : "CPT4",
+							"CONCEPT_CLASS_ID" : "CPT4"
 						},
 						"isExcluded" : false,
 						"includeDescendants" : false,
@@ -2720,67 +2570,16 @@
 					},
 					{
 						"concept" : {
-							"CONCEPT_ID" : 1538366,
-							"CONCEPT_NAME" : "Prostate Cancer cT1a TNM Finding by AJCC/UICC 8th edition",
+							"CONCEPT_ID" : 42628675,
+							"CONCEPT_NAME" : "Placement of nephrostomy catheter, percutaneous, including diagnostic nephrostogram and/or ureterogram when performed, imaging guidance (eg, ultrasound and/or fluoroscopy) and all associated radiological supervision and interpretation",
 							"STANDARD_CONCEPT" : "S",
 							"STANDARD_CONCEPT_CAPTION" : "Standard",
 							"INVALID_REASON" : "V",
 							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "cT1a-58-8",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "NCIt",
-							"CONCEPT_CLASS_ID" : "AJCC Category"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 1538219,
-							"CONCEPT_NAME" : "Prostate Cancer cT1b TNM Finding by AJCC/UICC 8th edition",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "cT1b-58-8",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "NCIt",
-							"CONCEPT_CLASS_ID" : "AJCC Category"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 1538775,
-							"CONCEPT_NAME" : "Prostate Cancer cT1c TNM Finding by AJCC/UICC 8th edition",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "cT1c-58-8",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "NCIt",
-							"CONCEPT_CLASS_ID" : "AJCC Category"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 1539231,
-							"CONCEPT_NAME" : "Prostate Cancer cT2a TNM Finding by AJCC/UICC 8th edition",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "cT2a-58-8",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "NCIt",
-							"CONCEPT_CLASS_ID" : "AJCC Category"
+							"CONCEPT_CODE" : "50432",
+							"DOMAIN_ID" : "Procedure",
+							"VOCABULARY_ID" : "CPT4",
+							"CONCEPT_CLASS_ID" : "CPT4"
 						},
 						"isExcluded" : false,
 						"includeDescendants" : false,
@@ -2790,22 +2589,39 @@
 			}
 		},
 		{
-			"id" : 20,
-			"name" : "[PIONEER] Gleason 6",
+			"id" : 17,
+			"name" : "[PIONEER] Bone metastasis Symptoms",
 			"expression" : {
 				"items" : [
 					{
 						"concept" : {
-							"CONCEPT_ID" : 36770582,
-							"CONCEPT_NAME" : "Gleason Grade group 1 (Gleason Score 3 + 3 = 6)",
+							"CONCEPT_ID" : 4179527,
+							"CONCEPT_NAME" : "Compression fracture of vertebral column",
 							"STANDARD_CONCEPT" : "S",
 							"STANDARD_CONCEPT_CAPTION" : "Standard",
 							"INVALID_REASON" : "V",
 							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "OMOP5000262",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "Cancer Modifier",
-							"CONCEPT_CLASS_ID" : "Staging/Grading"
+							"CONCEPT_CODE" : "42942008",
+							"DOMAIN_ID" : "Condition",
+							"VOCABULARY_ID" : "SNOMED",
+							"CONCEPT_CLASS_ID" : "Clinical Finding"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : false,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 37017192,
+							"CONCEPT_NAME" : "Metastatic spinal cord compression",
+							"STANDARD_CONCEPT" : "S",
+							"STANDARD_CONCEPT_CAPTION" : "Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "713425003",
+							"DOMAIN_ID" : "Condition",
+							"VOCABULARY_ID" : "SNOMED",
+							"CONCEPT_CLASS_ID" : "Clinical Finding"
 						},
 						"isExcluded" : false,
 						"includeDescendants" : false,
@@ -2815,19 +2631,104 @@
 			}
 		},
 		{
-			"id" : 21,
-			"name" : "[PIONEER] ISUP",
+			"id" : 18,
+			"name" : "[PIONEER] PSA",
 			"expression" : {
 				"items" : [
 					{
 						"concept" : {
-							"CONCEPT_ID" : 36660206,
-							"CONCEPT_NAME" : "Prostate cancer grade group [Score] in Prostate tumor Qualitative",
+							"CONCEPT_ID" : 2617206,
+							"CONCEPT_NAME" : "Prostate cancer screening; prostate specific antigen test (psa)",
 							"STANDARD_CONCEPT" : "S",
 							"STANDARD_CONCEPT_CAPTION" : "Standard",
 							"INVALID_REASON" : "V",
 							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "94734-1",
+							"CONCEPT_CODE" : "G0103",
+							"DOMAIN_ID" : "Measurement",
+							"VOCABULARY_ID" : "HCPCS",
+							"CONCEPT_CLASS_ID" : "HCPCS"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 37065295,
+							"CONCEPT_NAME" : "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
+							"STANDARD_CONCEPT" : "C",
+							"STANDARD_CONCEPT_CAPTION" : "Classification",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "LP387023-7",
+							"DOMAIN_ID" : "Measurement",
+							"VOCABULARY_ID" : "LOINC",
+							"CONCEPT_CLASS_ID" : "LOINC Hierarchy"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 45889041,
+							"CONCEPT_NAME" : "Prostate specific antigen (PSA)",
+							"STANDARD_CONCEPT" : "C",
+							"STANDARD_CONCEPT_CAPTION" : "Classification",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "1011648",
+							"DOMAIN_ID" : "Measurement",
+							"VOCABULARY_ID" : "CPT4",
+							"CONCEPT_CLASS_ID" : "CPT4 Hierarchy"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 44793131,
+							"CONCEPT_NAME" : "Total PSA level",
+							"STANDARD_CONCEPT" : "S",
+							"STANDARD_CONCEPT_CAPTION" : "Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "377981000000102",
+							"DOMAIN_ID" : "Measurement",
+							"VOCABULARY_ID" : "SNOMED",
+							"CONCEPT_CLASS_ID" : "Procedure"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 37392634,
+							"CONCEPT_NAME" : "Total PSA (prostate specific antigen) level",
+							"STANDARD_CONCEPT" : "S",
+							"STANDARD_CONCEPT_CAPTION" : "Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "1006591000000104",
+							"DOMAIN_ID" : "Observation",
+							"VOCABULARY_ID" : "SNOMED",
+							"CONCEPT_CLASS_ID" : "Observable Entity"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : false,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 3002131,
+							"CONCEPT_NAME" : "Prostate specific Ag [Units/volume] in Serum or Plasma",
+							"STANDARD_CONCEPT" : "S",
+							"STANDARD_CONCEPT_CAPTION" : "Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "19195-7",
 							"DOMAIN_ID" : "Measurement",
 							"VOCABULARY_ID" : "LOINC",
 							"CONCEPT_CLASS_ID" : "Lab Test"
@@ -2844,11 +2745,625 @@
 		"Type" : "First"
 	},
 	"ExpressionLimit" : {
-		"Type" : "All"
+		"Type" : "First"
 	},
 	"InclusionRules" : [
 		{
-			"name" : "Age >= 18",
+			"name" : "PCa with biopsy or PSA 30-d around and no prior hx and no treatment six months post-initiation",
+			"expression" : {
+				"Type" : "ALL",
+				"CriteriaList" : [
+					{
+						"Criteria" : {
+							"ConditionOccurrence" : {
+								"CorrelatedCriteria" : {
+									"Type" : "ALL",
+									"CriteriaList" : [],
+									"DemographicCriteriaList" : [],
+									"Groups" : [
+										{
+											"Type" : "ALL",
+											"CriteriaList" : [
+												{
+													"Criteria" : {
+														"ConditionOccurrence" : {
+															"CodesetId" : 9,
+															"ConditionTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 365,
+															"Coeff" : -1
+														},
+														"End" : {
+															"Days" : 1,
+															"Coeff" : -1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"Observation" : {
+															"CodesetId" : 9,
+															"ObservationTypeExclude" : false,
+															"ValueAsConcept" : [
+																{
+																	"CONCEPT_ID" : 4253628,
+																	"CONCEPT_NAME" : "Known present",
+																	"STANDARD_CONCEPT" : null,
+																	"STANDARD_CONCEPT_CAPTION" : "Unknown",
+																	"INVALID_REASON" : null,
+																	"INVALID_REASON_CAPTION" : "Unknown",
+																	"CONCEPT_CODE" : "410515003",
+																	"DOMAIN_ID" : "Observation",
+																	"VOCABULARY_ID" : "SNOMED",
+																	"CONCEPT_CLASS_ID" : null
+																}
+															]
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 365,
+															"Coeff" : -1
+														},
+														"End" : {
+															"Days" : 1,
+															"Coeff" : -1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												}
+											],
+											"DemographicCriteriaList" : [],
+											"Groups" : []
+										},
+										{
+											"Type" : "ANY",
+											"CriteriaList" : [
+												{
+													"Criteria" : {
+														"ProcedureOccurrence" : {
+															"CodesetId" : 6,
+															"ProcedureTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 30,
+															"Coeff" : -1
+														},
+														"End" : {
+															"Days" : 30,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 2,
+														"Count" : 1,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"Measurement" : {
+															"CodesetId" : 18,
+															"MeasurementTypeExclude" : false,
+															"ValueAsNumber" : {
+																"Value" : 50,
+																"Op" : "gt"
+															}
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 30,
+															"Coeff" : -1
+														},
+														"End" : {
+															"Days" : 30,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 2,
+														"Count" : 1,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"Observation" : {
+															"CodesetId" : 18,
+															"ObservationTypeExclude" : false,
+															"ValueAsNumber" : {
+																"Value" : 50,
+																"Op" : "gt"
+															}
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 30,
+															"Coeff" : -1
+														},
+														"End" : {
+															"Days" : 30,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 2,
+														"Count" : 1,
+														"IsDistinct" : false
+													}
+												}
+											],
+											"DemographicCriteriaList" : [],
+											"Groups" : []
+										},
+										{
+											"Type" : "ALL",
+											"CriteriaList" : [
+												{
+													"Criteria" : {
+														"DrugExposure" : {
+															"CodesetId" : 11,
+															"DrugTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 0,
+															"Coeff" : 1
+														},
+														"End" : {
+															"Days" : 180,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"ProcedureOccurrence" : {
+															"CodesetId" : 11,
+															"ProcedureTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 0,
+															"Coeff" : 1
+														},
+														"End" : {
+															"Days" : 180,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"Observation" : {
+															"CodesetId" : 11,
+															"ObservationTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 0,
+															"Coeff" : -1
+														},
+														"End" : {
+															"Days" : 180,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"DeviceExposure" : {
+															"CodesetId" : 11,
+															"DeviceTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 0,
+															"Coeff" : -1
+														},
+														"End" : {
+															"Days" : 180,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"ProcedureOccurrence" : {
+															"CodesetId" : 10,
+															"ProcedureTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 0,
+															"Coeff" : 1
+														},
+														"End" : {
+															"Days" : 180,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"Observation" : {
+															"CodesetId" : 10,
+															"ObservationTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 0,
+															"Coeff" : 1
+														},
+														"End" : {
+															"Days" : 180,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"ProcedureOccurrence" : {
+															"CorrelatedCriteria" : {
+																"Type" : "ALL",
+																"CriteriaList" : [
+																	{
+																		"Criteria" : {
+																			"ProcedureOccurrence" : {
+																				"CodesetId" : 15,
+																				"ProcedureTypeExclude" : false
+																			}
+																		},
+																		"StartWindow" : {
+																			"Start" : {
+																				"Days" : 180,
+																				"Coeff" : -1
+																			},
+																			"End" : {
+																				"Days" : 0,
+																				"Coeff" : -1
+																			},
+																			"UseIndexEnd" : false,
+																			"UseEventEnd" : false
+																		},
+																		"RestrictVisit" : false,
+																		"IgnoreObservationPeriod" : false,
+																		"Occurrence" : {
+																			"Type" : 2,
+																			"Count" : 1,
+																			"IsDistinct" : false
+																		}
+																	}
+																],
+																"DemographicCriteriaList" : [],
+																"Groups" : []
+															},
+															"CodesetId" : 16,
+															"ProcedureTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 0,
+															"Coeff" : 1
+														},
+														"End" : {
+															"Days" : 180,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"Observation" : {
+															"CodesetId" : 8,
+															"ObservationTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 0,
+															"Coeff" : 1
+														},
+														"End" : {
+															"Days" : 180,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"DeviceExposure" : {
+															"CodesetId" : 8,
+															"DeviceTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 0,
+															"Coeff" : 1
+														},
+														"End" : {
+															"Days" : 180,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"ProcedureOccurrence" : {
+															"CodesetId" : 8,
+															"ProcedureTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 0,
+															"Coeff" : 1
+														},
+														"End" : {
+															"Days" : 180,
+															"Coeff" : 1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												}
+											],
+											"DemographicCriteriaList" : [],
+											"Groups" : []
+										},
+										{
+											"Type" : "ALL",
+											"CriteriaList" : [
+												{
+													"Criteria" : {
+														"DrugExposure" : {
+															"CodesetId" : 14,
+															"DrugTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 365,
+															"Coeff" : -1
+														},
+														"End" : {
+															"Days" : 1,
+															"Coeff" : -1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"Observation" : {
+															"CodesetId" : 14,
+															"ObservationTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 365,
+															"Coeff" : -1
+														},
+														"End" : {
+															"Days" : 1,
+															"Coeff" : -1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												},
+												{
+													"Criteria" : {
+														"ProcedureOccurrence" : {
+															"CodesetId" : 14,
+															"ProcedureTypeExclude" : false
+														}
+													},
+													"StartWindow" : {
+														"Start" : {
+															"Days" : 365,
+															"Coeff" : -1
+														},
+														"End" : {
+															"Days" : 1,
+															"Coeff" : -1
+														},
+														"UseIndexEnd" : false,
+														"UseEventEnd" : false
+													},
+													"RestrictVisit" : false,
+													"IgnoreObservationPeriod" : false,
+													"Occurrence" : {
+														"Type" : 0,
+														"Count" : 0,
+														"IsDistinct" : false
+													}
+												}
+											],
+											"DemographicCriteriaList" : [],
+											"Groups" : []
+										}
+									]
+								},
+								"CodesetId" : 12,
+								"First" : true,
+								"ConditionTypeExclude" : false
+							}
+						},
+						"StartWindow" : {
+							"Start" : {
+								"Coeff" : -1
+							},
+							"End" : {
+								"Days" : 180,
+								"Coeff" : -1
+							},
+							"UseIndexEnd" : false,
+							"UseEventEnd" : false
+						},
+						"RestrictVisit" : false,
+						"IgnoreObservationPeriod" : false,
+						"Occurrence" : {
+							"Type" : 2,
+							"Count" : 1,
+							"IsDistinct" : false
+						}
+					}
+				],
+				"DemographicCriteriaList" : [],
+				"Groups" : []
+			}
+		},
+		{
+			"name" : "adult male 18 and above",
 			"expression" : {
 				"Type" : "ALL",
 				"CriteriaList" : [],
@@ -2857,924 +3372,23 @@
 						"Age" : {
 							"Value" : 18,
 							"Op" : "gte"
-						}
-					}
-				],
-				"Groups" : []
-			}
-		},
-		{
-			"name" : "Biopsy or PSA>50",
-			"expression" : {
-				"Type" : "ANY",
-				"CriteriaList" : [
-					{
-						"Criteria" : {
-							"ProcedureOccurrence" : {
-								"CodesetId" : 6,
-								"ProcedureTypeExclude" : false
-							}
 						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 30,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 30,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Measurement" : {
-								"CodesetId" : 15,
-								"MeasurementTypeExclude" : false,
-								"ValueAsNumber" : {
-									"Value" : 50,
-									"Op" : "gt"
-								}
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 30,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 30,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Observation" : {
-								"CodesetId" : 15,
-								"ObservationTypeExclude" : false,
-								"ValueAsNumber" : {
-									"Value" : 50,
-									"Op" : "gt"
-								}
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 30,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 30,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
-							"IsDistinct" : false
-						}
-					}
-				],
-				"DemographicCriteriaList" : [],
-				"Groups" : []
-			}
-		},
-		{
-			"name" : "No history of PCa",
-			"expression" : {
-				"Type" : "ALL",
-				"CriteriaList" : [
-					{
-						"Criteria" : {
-							"ConditionOccurrence" : {
-								"CodesetId" : 9,
-								"ConditionTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 365,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 1,
-								"Coeff" : -1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Observation" : {
-								"CodesetId" : 9,
-								"ObservationTypeExclude" : false,
-								"ValueAsConcept" : [
-									{
-										"CONCEPT_ID" : 4253628,
-										"CONCEPT_NAME" : "Known present",
-										"STANDARD_CONCEPT" : null,
-										"STANDARD_CONCEPT_CAPTION" : "Unknown",
-										"INVALID_REASON" : null,
-										"INVALID_REASON_CAPTION" : "Unknown",
-										"CONCEPT_CODE" : "410515003",
-										"DOMAIN_ID" : "Observation",
-										"VOCABULARY_ID" : "SNOMED",
-										"CONCEPT_CLASS_ID" : null
-									}
-								]
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 365,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 1,
-								"Coeff" : -1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					}
-				],
-				"DemographicCriteriaList" : [],
-				"Groups" : []
-			}
-		},
-		{
-			"name" : "No treatment 6 months post index",
-			"expression" : {
-				"Type" : "ALL",
-				"CriteriaList" : [
-					{
-						"Criteria" : {
-							"ProcedureOccurrence" : {
-								"CodesetId" : 10,
-								"ProcedureTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 0,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 180,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Observation" : {
-								"CodesetId" : 10,
-								"ObservationTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 0,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 180,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"ProcedureOccurrence" : {
-								"CodesetId" : 11,
-								"ProcedureTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 0,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 180,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"DrugExposure" : {
-								"CodesetId" : 11,
-								"DrugTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 0,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 180,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Observation" : {
-								"CodesetId" : 11,
-								"ObservationTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 0,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 180,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"DeviceExposure" : {
-								"CodesetId" : 11,
-								"DeviceTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 0,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 180,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"ProcedureOccurrence" : {
-								"CorrelatedCriteria" : {
-									"Type" : "ALL",
-									"CriteriaList" : [
-										{
-											"Criteria" : {
-												"ConditionOccurrence" : {
-													"CodesetId" : 18,
-													"ConditionTypeExclude" : false
-												}
-											},
-											"StartWindow" : {
-												"Start" : {
-													"Days" : 180,
-													"Coeff" : -1
-												},
-												"End" : {
-													"Days" : 0,
-													"Coeff" : -1
-												},
-												"UseIndexEnd" : false,
-												"UseEventEnd" : false
-											},
-											"RestrictVisit" : false,
-											"IgnoreObservationPeriod" : false,
-											"Occurrence" : {
-												"Type" : 2,
-												"Count" : 1,
-												"IsDistinct" : false
-											}
-										}
-									],
-									"DemographicCriteriaList" : [],
-									"Groups" : []
-								},
-								"CodesetId" : 17,
-								"ProcedureTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 0,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 180,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"ProcedureOccurrence" : {
-								"CodesetId" : 8,
-								"ProcedureTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 0,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 180,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Observation" : {
-								"CodesetId" : 8,
-								"ObservationTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 0,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 180,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"DeviceExposure" : {
-								"CodesetId" : 8,
-								"DeviceTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 0,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 180,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					}
-				],
-				"DemographicCriteriaList" : [],
-				"Groups" : []
-			}
-		},
-		{
-			"name" : "no ADT and other hormonal PCA trt",
-			"expression" : {
-				"Type" : "ALL",
-				"CriteriaList" : [
-					{
-						"Criteria" : {
-							"DrugExposure" : {
-								"CodesetId" : 14,
-								"DrugTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 365,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 1,
-								"Coeff" : -1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Observation" : {
-								"CodesetId" : 14,
-								"ObservationTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 365,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 1,
-								"Coeff" : -1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"ProcedureOccurrence" : {
-								"CodesetId" : 14,
-								"ProcedureTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 365,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 1,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 0,
-							"Count" : 0,
-							"IsDistinct" : false
-						}
-					}
-				],
-				"DemographicCriteriaList" : [],
-				"Groups" : []
-			}
-		},
-		{
-			"name" : "Low grade attributes",
-			"expression" : {
-				"Type" : "ALL",
-				"CriteriaList" : [
-					{
-						"Criteria" : {
-							"Measurement" : {
-								"CodesetId" : 15,
-								"MeasurementTypeExclude" : false,
-								"ValueAsNumber" : {
-									"Value" : 10,
-									"Op" : "lt"
-								}
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 30,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 7,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Measurement" : {
-								"CodesetId" : 19,
-								"MeasurementTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 30,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 7,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
-							"IsDistinct" : false
-						}
-					}
-				],
-				"DemographicCriteriaList" : [],
-				"Groups" : [
-					{
-						"Type" : "ANY",
-						"CriteriaList" : [
+						"Gender" : [
 							{
-								"Criteria" : {
-									"Measurement" : {
-										"CodesetId" : 20,
-										"MeasurementTypeExclude" : false
-									}
-								},
-								"StartWindow" : {
-									"Start" : {
-										"Days" : 30,
-										"Coeff" : -1
-									},
-									"End" : {
-										"Days" : 7,
-										"Coeff" : 1
-									},
-									"UseIndexEnd" : false,
-									"UseEventEnd" : false
-								},
-								"RestrictVisit" : false,
-								"IgnoreObservationPeriod" : false,
-								"Occurrence" : {
-									"Type" : 2,
-									"Count" : 1,
-									"IsDistinct" : false
-								}
-							},
-							{
-								"Criteria" : {
-									"Measurement" : {
-										"CodesetId" : 21,
-										"MeasurementTypeExclude" : false,
-										"ValueAsConcept" : [
-											{
-												"CONCEPT_ID" : 36662377,
-												"CONCEPT_NAME" : "ISUP Grade (Grade Group) 1 (Gleason score <=6)",
-												"STANDARD_CONCEPT" : null,
-												"STANDARD_CONCEPT_CAPTION" : "Unknown",
-												"INVALID_REASON" : null,
-												"INVALID_REASON_CAPTION" : "Unknown",
-												"CONCEPT_CODE" : "LA30794-4",
-												"DOMAIN_ID" : "Meas Value",
-												"VOCABULARY_ID" : "LOINC",
-												"CONCEPT_CLASS_ID" : null
-											}
-										]
-									}
-								},
-								"StartWindow" : {
-									"Start" : {
-										"Days" : 30,
-										"Coeff" : -1
-									},
-									"End" : {
-										"Days" : 7,
-										"Coeff" : 1
-									},
-									"UseIndexEnd" : false,
-									"UseEventEnd" : false
-								},
-								"RestrictVisit" : false,
-								"IgnoreObservationPeriod" : false,
-								"Occurrence" : {
-									"Type" : 2,
-									"Count" : 1,
-									"IsDistinct" : false
-								}
+								"CONCEPT_ID" : 8507,
+								"CONCEPT_NAME" : "MALE",
+								"STANDARD_CONCEPT" : null,
+								"STANDARD_CONCEPT_CAPTION" : "Unknown",
+								"INVALID_REASON" : null,
+								"INVALID_REASON_CAPTION" : "Unknown",
+								"CONCEPT_CODE" : "M",
+								"DOMAIN_ID" : "Gender",
+								"VOCABULARY_ID" : "Gender",
+								"CONCEPT_CLASS_ID" : null
 							}
-						],
-						"DemographicCriteriaList" : [],
-						"Groups" : []
-					}
-				]
-			}
-		},
-		{
-			"name" : "Biopsy within first 18 months OR ≥ 3 PSA testing within the first 18 months OR >= 3 urological visits within the first 18 months",
-			"expression" : {
-				"Type" : "ANY",
-				"CriteriaList" : [
-					{
-						"Criteria" : {
-							"ProcedureOccurrence" : {
-								"CodesetId" : 6,
-								"ProcedureTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 31,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 548,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"Measurement" : {
-								"CodesetId" : 15,
-								"MeasurementTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 1,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 548,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 3,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"VisitOccurrence" : {
-								"VisitTypeExclude" : false,
-								"ProviderSpecialty" : [
-									{
-										"CONCEPT_ID" : 38004474,
-										"CONCEPT_NAME" : "Urology",
-										"STANDARD_CONCEPT" : null,
-										"STANDARD_CONCEPT_CAPTION" : "Unknown",
-										"INVALID_REASON" : null,
-										"INVALID_REASON_CAPTION" : "Unknown",
-										"CONCEPT_CODE" : "34",
-										"DOMAIN_ID" : "Provider",
-										"VOCABULARY_ID" : "Medicare Specialty",
-										"CONCEPT_CLASS_ID" : null
-									}
-								]
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 1,
-								"Coeff" : 1
-							},
-							"End" : {
-								"Days" : 548,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 3,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"VisitOccurrence" : {
-								"CorrelatedCriteria" : {
-									"Type" : "ALL",
-									"CriteriaList" : [
-										{
-											"Criteria" : {
-												"Observation" : {
-													"CodesetId" : 16,
-													"ObservationTypeExclude" : false
-												}
-											},
-											"StartWindow" : {
-												"Start" : {
-													"Days" : 0,
-													"Coeff" : 1
-												},
-												"End" : {
-													"Coeff" : 1
-												},
-												"UseIndexEnd" : false,
-												"UseEventEnd" : false
-											},
-											"RestrictVisit" : false,
-											"IgnoreObservationPeriod" : false,
-											"Occurrence" : {
-												"Type" : 2,
-												"Count" : 1,
-												"IsDistinct" : false
-											}
-										},
-										{
-											"Criteria" : {
-												"ProcedureOccurrence" : {
-													"CodesetId" : 16,
-													"ProcedureTypeExclude" : false
-												}
-											},
-											"StartWindow" : {
-												"Start" : {
-													"Days" : 0,
-													"Coeff" : 1
-												},
-												"End" : {
-													"Coeff" : 1
-												},
-												"UseIndexEnd" : false,
-												"UseEventEnd" : false
-											},
-											"RestrictVisit" : false,
-											"IgnoreObservationPeriod" : false,
-											"Occurrence" : {
-												"Type" : 2,
-												"Count" : 1,
-												"IsDistinct" : false
-											}
-										}
-									],
-									"DemographicCriteriaList" : [],
-									"Groups" : []
-								},
-								"VisitTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 1,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 548,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 3,
-							"IsDistinct" : false
-						}
+						]
 					}
 				],
-				"DemographicCriteriaList" : [],
 				"Groups" : []
 			}
 		}

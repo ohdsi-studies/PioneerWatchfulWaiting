@@ -15,43 +15,27 @@
 				}
 			},
 			{
+				"ProcedureOccurrence" : {
+					"CodesetId" : 11,
+					"ProcedureTypeExclude" : false
+				}
+			},
+			{
+				"DrugExposure" : {
+					"CodesetId" : 11,
+					"DrugTypeExclude" : false
+				}
+			},
+			{
 				"Observation" : {
-					"CorrelatedCriteria" : {
-						"Type" : "ALL",
-						"CriteriaList" : [
-							{
-								"Criteria" : {
-									"ConditionOccurrence" : {
-										"CodesetId" : 17,
-										"ConditionTypeExclude" : false
-									}
-								},
-								"StartWindow" : {
-									"Start" : {
-										"Days" : 180,
-										"Coeff" : -1
-									},
-									"End" : {
-										"Days" : 0,
-										"Coeff" : -1
-									},
-									"UseIndexEnd" : false,
-									"UseEventEnd" : false
-								},
-								"RestrictVisit" : false,
-								"IgnoreObservationPeriod" : false,
-								"Occurrence" : {
-									"Type" : 0,
-									"Count" : 0,
-									"IsDistinct" : false
-								}
-							}
-						],
-						"DemographicCriteriaList" : [],
-						"Groups" : []
-					},
-					"CodesetId" : 8,
+					"CodesetId" : 11,
 					"ObservationTypeExclude" : false
+				}
+			},
+			{
+				"DeviceExposure" : {
+					"CodesetId" : 11,
+					"DeviceTypeExclude" : false
 				}
 			},
 			{
@@ -62,7 +46,7 @@
 							{
 								"Criteria" : {
 									"ConditionOccurrence" : {
-										"CodesetId" : 17,
+										"CodesetId" : 15,
 										"ConditionTypeExclude" : false
 									}
 								},
@@ -81,8 +65,8 @@
 								"RestrictVisit" : false,
 								"IgnoreObservationPeriod" : false,
 								"Occurrence" : {
-									"Type" : 0,
-									"Count" : 0,
+									"Type" : 2,
+									"Count" : 1,
 									"IsDistinct" : false
 								}
 							}
@@ -90,48 +74,26 @@
 						"DemographicCriteriaList" : [],
 						"Groups" : []
 					},
-					"CodesetId" : 8,
+					"CodesetId" : 16,
 					"ProcedureTypeExclude" : false
 				}
 			},
 			{
+				"Observation" : {
+					"CodesetId" : 8,
+					"ObservationTypeExclude" : false
+				}
+			},
+			{
 				"DeviceExposure" : {
-					"CorrelatedCriteria" : {
-						"Type" : "ALL",
-						"CriteriaList" : [
-							{
-								"Criteria" : {
-									"ConditionOccurrence" : {
-										"CodesetId" : 17,
-										"ConditionTypeExclude" : false
-									}
-								},
-								"StartWindow" : {
-									"Start" : {
-										"Days" : 180,
-										"Coeff" : -1
-									},
-									"End" : {
-										"Days" : 0,
-										"Coeff" : -1
-									},
-									"UseIndexEnd" : false,
-									"UseEventEnd" : false
-								},
-								"RestrictVisit" : false,
-								"IgnoreObservationPeriod" : false,
-								"Occurrence" : {
-									"Type" : 0,
-									"Count" : 0,
-									"IsDistinct" : false
-								}
-							}
-						],
-						"DemographicCriteriaList" : [],
-						"Groups" : []
-					},
 					"CodesetId" : 8,
 					"DeviceTypeExclude" : false
+				}
+			},
+			{
+				"ProcedureOccurrence" : {
+					"CodesetId" : 8,
+					"ProcedureTypeExclude" : false
 				}
 			}
 		],
@@ -2044,16 +2006,16 @@
 				"items" : [
 					{
 						"concept" : {
-							"CONCEPT_ID" : 4163261,
-							"CONCEPT_NAME" : "Malignant tumor of prostate",
+							"CONCEPT_ID" : 2617206,
+							"CONCEPT_NAME" : "Prostate cancer screening; prostate specific antigen test (psa)",
 							"STANDARD_CONCEPT" : "S",
 							"STANDARD_CONCEPT_CAPTION" : "Standard",
 							"INVALID_REASON" : "V",
 							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "399068003",
-							"DOMAIN_ID" : "Condition",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Clinical Finding"
+							"CONCEPT_CODE" : "G0103",
+							"DOMAIN_ID" : "Measurement",
+							"VOCABULARY_ID" : "HCPCS",
+							"CONCEPT_CLASS_ID" : "HCPCS"
 						},
 						"isExcluded" : false,
 						"includeDescendants" : true,
@@ -2061,19 +2023,70 @@
 					},
 					{
 						"concept" : {
-							"CONCEPT_ID" : 4314337,
-							"CONCEPT_NAME" : "Secondary malignant neoplasm of prostate",
+							"CONCEPT_ID" : 37065295,
+							"CONCEPT_NAME" : "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
+							"STANDARD_CONCEPT" : "C",
+							"STANDARD_CONCEPT_CAPTION" : "Classification",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "LP387023-7",
+							"DOMAIN_ID" : "Measurement",
+							"VOCABULARY_ID" : "LOINC",
+							"CONCEPT_CLASS_ID" : "LOINC Hierarchy"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 45889041,
+							"CONCEPT_NAME" : "Prostate specific antigen (PSA)",
+							"STANDARD_CONCEPT" : "C",
+							"STANDARD_CONCEPT_CAPTION" : "Classification",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "1011648",
+							"DOMAIN_ID" : "Measurement",
+							"VOCABULARY_ID" : "CPT4",
+							"CONCEPT_CLASS_ID" : "CPT4 Hierarchy"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 44793131,
+							"CONCEPT_NAME" : "Total PSA level",
 							"STANDARD_CONCEPT" : "S",
 							"STANDARD_CONCEPT_CAPTION" : "Standard",
 							"INVALID_REASON" : "V",
 							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "94503003",
-							"DOMAIN_ID" : "Condition",
+							"CONCEPT_CODE" : "377981000000102",
+							"DOMAIN_ID" : "Measurement",
 							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Clinical Finding"
+							"CONCEPT_CLASS_ID" : "Procedure"
 						},
-						"isExcluded" : true,
+						"isExcluded" : false,
 						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 37392634,
+							"CONCEPT_NAME" : "Total PSA (prostate specific antigen) level",
+							"STANDARD_CONCEPT" : "S",
+							"STANDARD_CONCEPT_CAPTION" : "Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "1006591000000104",
+							"DOMAIN_ID" : "Observation",
+							"VOCABULARY_ID" : "SNOMED",
+							"CONCEPT_CLASS_ID" : "Observable Entity"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : false,
 						"includeMapped" : false
 					}
 				]
@@ -2535,158 +2548,6 @@
 					}
 				]
 			}
-		},
-		{
-			"id" : 17,
-			"name" : "[PIONEER] Bone metastasis Symptoms",
-			"expression" : {
-				"items" : [
-					{
-						"concept" : {
-							"CONCEPT_ID" : 4179527,
-							"CONCEPT_NAME" : "Compression fracture of vertebral column",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "42942008",
-							"DOMAIN_ID" : "Condition",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Clinical Finding"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 37017192,
-							"CONCEPT_NAME" : "Metastatic spinal cord compression",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "713425003",
-							"DOMAIN_ID" : "Condition",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Clinical Finding"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					}
-				]
-			}
-		},
-		{
-			"id" : 18,
-			"name" : "[PIONEER] PSA",
-			"expression" : {
-				"items" : [
-					{
-						"concept" : {
-							"CONCEPT_ID" : 2617206,
-							"CONCEPT_NAME" : "Prostate cancer screening; prostate specific antigen test (psa)",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "G0103",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "HCPCS",
-							"CONCEPT_CLASS_ID" : "HCPCS"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 37065295,
-							"CONCEPT_NAME" : "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
-							"STANDARD_CONCEPT" : "C",
-							"STANDARD_CONCEPT_CAPTION" : "Classification",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "LP387023-7",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "LOINC",
-							"CONCEPT_CLASS_ID" : "LOINC Hierarchy"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 45889041,
-							"CONCEPT_NAME" : "Prostate specific antigen (PSA)",
-							"STANDARD_CONCEPT" : "C",
-							"STANDARD_CONCEPT_CAPTION" : "Classification",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "1011648",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "CPT4",
-							"CONCEPT_CLASS_ID" : "CPT4 Hierarchy"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 44793131,
-							"CONCEPT_NAME" : "Total PSA level",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "377981000000102",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 37392634,
-							"CONCEPT_NAME" : "Total PSA (prostate specific antigen) level",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "1006591000000104",
-							"DOMAIN_ID" : "Observation",
-							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Observable Entity"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 3002131,
-							"CONCEPT_NAME" : "Prostate specific Ag [Units/volume] in Serum or Plasma",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "19195-7",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "LOINC",
-							"CONCEPT_CLASS_ID" : "Lab Test"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
-						"includeMapped" : false
-					}
-				]
-			}
 		}
 	],
 	"QualifiedLimit" : {
@@ -2697,7 +2558,7 @@
 	},
 	"InclusionRules" : [
 		{
-			"name" : "PCa with biopsy or PSA 30-d around and no prior hx and no treatment six months post-initiation",
+			"name" : "PCa with biopsy 30-d around and no prior hx and no treatment six months post-initiation",
 			"expression" : {
 				"Type" : "ALL",
 				"CriteriaList" : [
@@ -2792,68 +2653,6 @@
 														"ProcedureOccurrence" : {
 															"CodesetId" : 6,
 															"ProcedureTypeExclude" : false
-														}
-													},
-													"StartWindow" : {
-														"Start" : {
-															"Days" : 30,
-															"Coeff" : -1
-														},
-														"End" : {
-															"Days" : 30,
-															"Coeff" : 1
-														},
-														"UseIndexEnd" : false,
-														"UseEventEnd" : false
-													},
-													"RestrictVisit" : false,
-													"IgnoreObservationPeriod" : false,
-													"Occurrence" : {
-														"Type" : 2,
-														"Count" : 1,
-														"IsDistinct" : false
-													}
-												},
-												{
-													"Criteria" : {
-														"Measurement" : {
-															"CodesetId" : 18,
-															"MeasurementTypeExclude" : false,
-															"ValueAsNumber" : {
-																"Value" : 50,
-																"Op" : "gt"
-															}
-														}
-													},
-													"StartWindow" : {
-														"Start" : {
-															"Days" : 30,
-															"Coeff" : -1
-														},
-														"End" : {
-															"Days" : 30,
-															"Coeff" : 1
-														},
-														"UseIndexEnd" : false,
-														"UseEventEnd" : false
-													},
-													"RestrictVisit" : false,
-													"IgnoreObservationPeriod" : false,
-													"Occurrence" : {
-														"Type" : 2,
-														"Count" : 1,
-														"IsDistinct" : false
-													}
-												},
-												{
-													"Criteria" : {
-														"Observation" : {
-															"CodesetId" : 18,
-															"ObservationTypeExclude" : false,
-															"ValueAsNumber" : {
-																"Value" : 50,
-																"Op" : "gt"
-															}
 														}
 													},
 													"StartWindow" : {

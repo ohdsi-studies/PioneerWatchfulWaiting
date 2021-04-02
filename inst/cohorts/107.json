@@ -1933,67 +1933,16 @@
 				"items" : [
 					{
 						"concept" : {
-							"CONCEPT_ID" : 2617206,
-							"CONCEPT_NAME" : "Prostate cancer screening; prostate specific antigen test (psa)",
+							"CONCEPT_ID" : 4163261,
+							"CONCEPT_NAME" : "Malignant tumor of prostate",
 							"STANDARD_CONCEPT" : "S",
 							"STANDARD_CONCEPT_CAPTION" : "Standard",
 							"INVALID_REASON" : "V",
 							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "G0103",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "HCPCS",
-							"CONCEPT_CLASS_ID" : "HCPCS"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 37065295,
-							"CONCEPT_NAME" : "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
-							"STANDARD_CONCEPT" : "C",
-							"STANDARD_CONCEPT_CAPTION" : "Classification",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "LP387023-7",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "LOINC",
-							"CONCEPT_CLASS_ID" : "LOINC Hierarchy"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 45889041,
-							"CONCEPT_NAME" : "Prostate specific antigen (PSA)",
-							"STANDARD_CONCEPT" : "C",
-							"STANDARD_CONCEPT_CAPTION" : "Classification",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "1011648",
-							"DOMAIN_ID" : "Measurement",
-							"VOCABULARY_ID" : "CPT4",
-							"CONCEPT_CLASS_ID" : "CPT4 Hierarchy"
-						},
-						"isExcluded" : false,
-						"includeDescendants" : true,
-						"includeMapped" : false
-					},
-					{
-						"concept" : {
-							"CONCEPT_ID" : 44793131,
-							"CONCEPT_NAME" : "Total PSA level",
-							"STANDARD_CONCEPT" : "S",
-							"STANDARD_CONCEPT_CAPTION" : "Standard",
-							"INVALID_REASON" : "V",
-							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "377981000000102",
-							"DOMAIN_ID" : "Measurement",
+							"CONCEPT_CODE" : "399068003",
+							"DOMAIN_ID" : "Condition",
 							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Procedure"
+							"CONCEPT_CLASS_ID" : "Clinical Finding"
 						},
 						"isExcluded" : false,
 						"includeDescendants" : true,
@@ -2001,19 +1950,19 @@
 					},
 					{
 						"concept" : {
-							"CONCEPT_ID" : 37392634,
-							"CONCEPT_NAME" : "Total PSA (prostate specific antigen) level",
+							"CONCEPT_ID" : 4314337,
+							"CONCEPT_NAME" : "Secondary malignant neoplasm of prostate",
 							"STANDARD_CONCEPT" : "S",
 							"STANDARD_CONCEPT_CAPTION" : "Standard",
 							"INVALID_REASON" : "V",
 							"INVALID_REASON_CAPTION" : "Valid",
-							"CONCEPT_CODE" : "1006591000000104",
-							"DOMAIN_ID" : "Observation",
+							"CONCEPT_CODE" : "94503003",
+							"DOMAIN_ID" : "Condition",
 							"VOCABULARY_ID" : "SNOMED",
-							"CONCEPT_CLASS_ID" : "Observable Entity"
+							"CONCEPT_CLASS_ID" : "Clinical Finding"
 						},
-						"isExcluded" : false,
-						"includeDescendants" : false,
+						"isExcluded" : true,
+						"includeDescendants" : true,
 						"includeMapped" : false
 					}
 				]
@@ -2293,6 +2242,23 @@
 						},
 						"isExcluded" : false,
 						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 37392634,
+							"CONCEPT_NAME" : "Total PSA (prostate specific antigen) level",
+							"STANDARD_CONCEPT" : "S",
+							"STANDARD_CONCEPT_CAPTION" : "Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "1006591000000104",
+							"DOMAIN_ID" : "Observation",
+							"VOCABULARY_ID" : "SNOMED",
+							"CONCEPT_CLASS_ID" : "Observable Entity"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : false,
 						"includeMapped" : false
 					}
 				]
@@ -3443,9 +3409,9 @@
 			}
 		},
 		{
-			"name" : "Biopsy within first 18 months OR ≥ 3 PSA testing within the first 18 months OR >= 3 urological visits within the first 18 months",
+			"name" : "No further biopsy within the first 18 months after diagnosis",
 			"expression" : {
-				"Type" : "ANY",
+				"Type" : "ALL",
 				"CriteriaList" : [
 					{
 						"Criteria" : {
@@ -3469,11 +3435,21 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 1,
+							"Type" : 0,
+							"Count" : 0,
 							"IsDistinct" : false
 						}
-					},
+					}
+				],
+				"DemographicCriteriaList" : [],
+				"Groups" : []
+			}
+		},
+		{
+			"name" : "No ≥ 3 PSA testing within the first 18 months after diagnosis",
+			"expression" : {
+				"Type" : "ALL",
+				"CriteriaList" : [
 					{
 						"Criteria" : {
 							"Measurement" : {
@@ -3496,8 +3472,73 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
+							"Type" : 1,
+							"Count" : 2,
+							"IsDistinct" : false
+						}
+					}
+				],
+				"DemographicCriteriaList" : [],
+				"Groups" : []
+			}
+		},
+		{
+			"name" : "No ≥ 3 urological visits within the first 18 months after diagnosis  ",
+			"expression" : {
+				"Type" : "AT_MOST",
+				"Count" : 2,
+				"CriteriaList" : [
+					{
+						"Criteria" : {
+							"Observation" : {
+								"CodesetId" : 16,
+								"ObservationTypeExclude" : false
+							}
+						},
+						"StartWindow" : {
+							"Start" : {
+								"Days" : 1,
+								"Coeff" : -1
+							},
+							"End" : {
+								"Days" : 548,
+								"Coeff" : 1
+							},
+							"UseIndexEnd" : false,
+							"UseEventEnd" : false
+						},
+						"RestrictVisit" : false,
+						"IgnoreObservationPeriod" : false,
+						"Occurrence" : {
 							"Type" : 2,
-							"Count" : 3,
+							"Count" : 1,
+							"IsDistinct" : false
+						}
+					},
+					{
+						"Criteria" : {
+							"ProcedureOccurrence" : {
+								"CodesetId" : 16,
+								"ProcedureTypeExclude" : false
+							}
+						},
+						"StartWindow" : {
+							"Start" : {
+								"Days" : 1,
+								"Coeff" : -1
+							},
+							"End" : {
+								"Days" : 548,
+								"Coeff" : 1
+							},
+							"UseIndexEnd" : false,
+							"UseEventEnd" : false
+						},
+						"RestrictVisit" : false,
+						"IgnoreObservationPeriod" : false,
+						"Occurrence" : {
+							"Type" : 2,
+							"Count" : 1,
 							"IsDistinct" : false
 						}
 					},
@@ -3536,93 +3577,8 @@
 						"RestrictVisit" : false,
 						"IgnoreObservationPeriod" : false,
 						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 3,
-							"IsDistinct" : false
-						}
-					},
-					{
-						"Criteria" : {
-							"VisitOccurrence" : {
-								"CorrelatedCriteria" : {
-									"Type" : "ALL",
-									"CriteriaList" : [
-										{
-											"Criteria" : {
-												"Observation" : {
-													"CodesetId" : 16,
-													"ObservationTypeExclude" : false
-												}
-											},
-											"StartWindow" : {
-												"Start" : {
-													"Days" : 0,
-													"Coeff" : 1
-												},
-												"End" : {
-													"Coeff" : 1
-												},
-												"UseIndexEnd" : false,
-												"UseEventEnd" : false
-											},
-											"RestrictVisit" : false,
-											"IgnoreObservationPeriod" : false,
-											"Occurrence" : {
-												"Type" : 2,
-												"Count" : 1,
-												"IsDistinct" : false
-											}
-										},
-										{
-											"Criteria" : {
-												"ProcedureOccurrence" : {
-													"CodesetId" : 16,
-													"ProcedureTypeExclude" : false
-												}
-											},
-											"StartWindow" : {
-												"Start" : {
-													"Days" : 0,
-													"Coeff" : 1
-												},
-												"End" : {
-													"Coeff" : 1
-												},
-												"UseIndexEnd" : false,
-												"UseEventEnd" : false
-											},
-											"RestrictVisit" : false,
-											"IgnoreObservationPeriod" : false,
-											"Occurrence" : {
-												"Type" : 2,
-												"Count" : 1,
-												"IsDistinct" : false
-											}
-										}
-									],
-									"DemographicCriteriaList" : [],
-									"Groups" : []
-								},
-								"VisitTypeExclude" : false
-							}
-						},
-						"StartWindow" : {
-							"Start" : {
-								"Days" : 1,
-								"Coeff" : -1
-							},
-							"End" : {
-								"Days" : 548,
-								"Coeff" : 1
-							},
-							"UseIndexEnd" : false,
-							"UseEventEnd" : false
-						},
-						"RestrictVisit" : false,
-						"IgnoreObservationPeriod" : false,
-						"Occurrence" : {
-							"Type" : 2,
-							"Count" : 3,
+							"Type" : 1,
+							"Count" : 1,
 							"IsDistinct" : false
 						}
 					}
