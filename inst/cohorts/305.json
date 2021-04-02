@@ -1,607 +1,607 @@
 {
-  "cdmVersionRange" : ">=5.0.0",
-  "PrimaryCriteria" : {
-    "CriteriaList" : [
+  "cdmVersionRange": ">=5.0.0",
+  "PrimaryCriteria": {
+    "CriteriaList": [
       {
-        "ConditionOccurrence" : {
-          "CodesetId" : 0,
-          "First" : true,
-          "ConditionTypeExclude" : false,
-          "Age" : {
-            "Value" : 18,
-            "Op" : "gte"
+        "ConditionOccurrence": {
+          "CodesetId": 0,
+          "First": true,
+          "ConditionTypeExclude": false,
+          "Age": {
+            "Value": 18,
+            "Op": "gte"
           }
         }
       }
     ],
-    "ObservationWindow" : {
-      "PriorDays" : 365,
-      "PostDays" : 0
+    "ObservationWindow": {
+      "PriorDays": 365,
+      "PostDays": 0
     },
-    "PrimaryCriteriaLimit" : {
-      "Type" : "First"
+    "PrimaryCriteriaLimit": {
+      "Type": "First"
     }
   },
-  "AdditionalCriteria" : {
-    "Type" : "ANY",
-    "CriteriaList" : [
+  "AdditionalCriteria": {
+    "Type": "ANY",
+    "CriteriaList": [
       {
-        "Criteria" : {
-          "ProcedureOccurrence" : {
-            "CodesetId" : 13,
-            "ProcedureTypeExclude" : false
+        "Criteria": {
+          "ProcedureOccurrence": {
+            "CodesetId": 13,
+            "ProcedureTypeExclude": false
           }
         },
-        "StartWindow" : {
-          "Start" : {
-            "Days" : 30,
-            "Coeff" : -1
+        "StartWindow": {
+          "Start": {
+            "Days": 30,
+            "Coeff": -1
           },
-          "End" : {
-            "Days" : 30,
-            "Coeff" : 1
+          "End": {
+            "Days": 30,
+            "Coeff": 1
           },
-          "UseIndexEnd" : false,
-          "UseEventEnd" : false
+          "UseIndexEnd": false,
+          "UseEventEnd": false
         },
-        "RestrictVisit" : false,
-        "IgnoreObservationPeriod" : false,
-        "Occurrence" : {
-          "Type" : 2,
-          "Count" : 1,
-          "IsDistinct" : false
+        "RestrictVisit": false,
+        "IgnoreObservationPeriod": false,
+        "Occurrence": {
+          "Type": 2,
+          "Count": 1,
+          "IsDistinct": false
         }
       }
     ],
-    "DemographicCriteriaList" : [],
-    "Groups" : [
+    "DemographicCriteriaList": [],
+    "Groups": [
       {
-        "Type" : "ANY",
-        "CriteriaList" : [
+        "Type": "ANY",
+        "CriteriaList": [
           {
-            "Criteria" : {
-              "Measurement" : {
-                "CodesetId" : 14,
-                "MeasurementTypeExclude" : false,
-                "ValueAsNumber" : {
-                  "Value" : 50,
-                  "Op" : "gt"
+            "Criteria": {
+              "Measurement": {
+                "CodesetId": 14,
+                "MeasurementTypeExclude": false,
+                "ValueAsNumber": {
+                  "Value": 50,
+                  "Op": "gt"
                 }
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 30,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 30,
-                "Coeff" : 1
+              "End": {
+                "Days": 30,
+                "Coeff": 1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 2,
-              "Count" : 1,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1,
+              "IsDistinct": false
             }
           },
           {
-            "Criteria" : {
-              "Observation" : {
-                "CodesetId" : 14,
-                "ObservationTypeExclude" : false,
-                "ValueAsNumber" : {
-                  "Value" : 50,
-                  "Op" : "gt"
+            "Criteria": {
+              "Observation": {
+                "CodesetId": 14,
+                "ObservationTypeExclude": false,
+                "ValueAsNumber": {
+                  "Value": 50,
+                  "Op": "gt"
                 }
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 30,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 30,
-                "Coeff" : 1
+              "End": {
+                "Days": 30,
+                "Coeff": 1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 2,
-              "Count" : 1,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1,
+              "IsDistinct": false
             }
           }
         ],
-        "DemographicCriteriaList" : [],
-        "Groups" : []
+        "DemographicCriteriaList": [],
+        "Groups": []
       }
     ]
   },
-  "ConceptSets" : [
+  "ConceptSets": [
     {
-      "id" : 0,
-      "name" : "[PIONEER] PCa",
-      "expression" : {
-        "items" : [
+      "id": 0,
+      "name": "[PIONEER] PCa",
+      "expression": {
+        "items": [
           {
-            "concept" : {
-              "CONCEPT_ID" : 4163261,
-              "CONCEPT_NAME" : "Malignant tumor of prostate",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "399068003",
-              "DOMAIN_ID" : "Condition",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Clinical Finding"
+            "concept": {
+              "CONCEPT_ID": 4163261,
+              "CONCEPT_NAME": "Malignant tumor of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "399068003",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 4314337,
-              "CONCEPT_NAME" : "Secondary malignant neoplasm of prostate",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "94503003",
-              "DOMAIN_ID" : "Condition",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Clinical Finding"
+            "concept": {
+              "CONCEPT_ID": 4314337,
+              "CONCEPT_NAME": "Secondary malignant neoplasm of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "94503003",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "isExcluded" : true,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": true,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
     },
     {
-      "id" : 1,
-      "name" : "[PIONEER] pN1",
-      "expression" : {
-        "items" : [
+      "id": 1,
+      "name": "[PIONEER] pN1",
+      "expression": {
+        "items": [
           {
-            "concept" : {
-              "CONCEPT_ID" : 1538914,
-              "CONCEPT_NAME" : "Prostate Cancer pN1 TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "pN1-58-8",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "NCIt",
-              "CONCEPT_CLASS_ID" : "AJCC Category"
+            "concept": {
+              "CONCEPT_ID": 1538914,
+              "CONCEPT_NAME": "Prostate Cancer pN1 TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "pN1-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           }
         ]
       }
     },
     {
-      "id" : 9,
-      "name" : "[PIONEER] cM0",
-      "expression" : {
-        "items" : [
+      "id": 9,
+      "name": "[PIONEER] cM0",
+      "expression": {
+        "items": [
           {
-            "concept" : {
-              "CONCEPT_ID" : 1538822,
-              "CONCEPT_NAME" : "Prostate Cancer cM0 TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "cM0-58-8",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "NCIt",
-              "CONCEPT_CLASS_ID" : "AJCC Category"
+            "concept": {
+              "CONCEPT_ID": 1538822,
+              "CONCEPT_NAME": "Prostate Cancer cM0 TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "cM0-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           }
         ]
       }
     },
     {
-      "id" : 10,
-      "name" : "[PIONEER] T3, T4",
-      "expression" : {
-        "items" : [
+      "id": 10,
+      "name": "[PIONEER] T3, T4",
+      "expression": {
+        "items": [
           {
-            "concept" : {
-              "CONCEPT_ID" : 1538400,
-              "CONCEPT_NAME" : "Prostate Cancer cT3 TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "cT3-58-8",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "NCIt",
-              "CONCEPT_CLASS_ID" : "AJCC Category"
+            "concept": {
+              "CONCEPT_ID": 1538400,
+              "CONCEPT_NAME": "Prostate Cancer cT3 TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "cT3-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 1539253,
-              "CONCEPT_NAME" : "Prostate Cancer cT3a TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "cT3a-58-8",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "NCIt",
-              "CONCEPT_CLASS_ID" : "AJCC Category"
+            "concept": {
+              "CONCEPT_ID": 1539253,
+              "CONCEPT_NAME": "Prostate Cancer cT3a TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "cT3a-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 1539229,
-              "CONCEPT_NAME" : "Prostate Cancer cT3b TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "cT3b-58-8",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "NCIt",
-              "CONCEPT_CLASS_ID" : "AJCC Category"
+            "concept": {
+              "CONCEPT_ID": 1539229,
+              "CONCEPT_NAME": "Prostate Cancer cT3b TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "cT3b-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 1538855,
-              "CONCEPT_NAME" : "Prostate Cancer cT4 TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "cT4-58-8",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "NCIt",
-              "CONCEPT_CLASS_ID" : "AJCC Category"
+            "concept": {
+              "CONCEPT_ID": 1538855,
+              "CONCEPT_NAME": "Prostate Cancer cT4 TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "cT4-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 1537803,
-              "CONCEPT_NAME" : "Prostate Cancer pT3 TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "pT3-58-8",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "NCIt",
-              "CONCEPT_CLASS_ID" : "AJCC Category"
+            "concept": {
+              "CONCEPT_ID": 1537803,
+              "CONCEPT_NAME": "Prostate Cancer pT3 TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "pT3-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 1537951,
-              "CONCEPT_NAME" : "Prostate Cancer pT3a TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "pT3a-58-8",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "NCIt",
-              "CONCEPT_CLASS_ID" : "AJCC Category"
+            "concept": {
+              "CONCEPT_ID": 1537951,
+              "CONCEPT_NAME": "Prostate Cancer pT3a TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "pT3a-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 1538964,
-              "CONCEPT_NAME" : "Prostate Cancer pT3b TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "pT3b-58-8",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "NCIt",
-              "CONCEPT_CLASS_ID" : "AJCC Category"
+            "concept": {
+              "CONCEPT_ID": 1538964,
+              "CONCEPT_NAME": "Prostate Cancer pT3b TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "pT3b-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 1538492,
-              "CONCEPT_NAME" : "Prostate Cancer pT4 TNM Finding by AJCC/UICC 8th edition",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "pT4-58-8",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "NCIt",
-              "CONCEPT_CLASS_ID" : "AJCC Category"
+            "concept": {
+              "CONCEPT_ID": 1538492,
+              "CONCEPT_NAME": "Prostate Cancer pT4 TNM Finding by AJCC/UICC 8th edition",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "pT4-58-8",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "NCIt",
+              "CONCEPT_CLASS_ID": "AJCC Category"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           }
         ]
       }
     },
     {
-      "id" : 13,
-      "name" : "[PIONEER] Biopsy",
-      "expression" : {
-        "items" : [
+      "id": 13,
+      "name": "[PIONEER] Biopsy",
+      "expression": {
+        "items": [
           {
-            "concept" : {
-              "CONCEPT_ID" : 4278515,
-              "CONCEPT_NAME" : "Biopsy of prostate",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "65575008",
-              "DOMAIN_ID" : "Procedure",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Procedure"
+            "concept": {
+              "CONCEPT_ID": 4278515,
+              "CONCEPT_NAME": "Biopsy of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "65575008",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
     },
     {
-      "id" : 14,
-      "name" : "[PIONEER] PSA",
-      "expression" : {
-        "items" : [
+      "id": 14,
+      "name": "[PIONEER] PSA",
+      "expression": {
+        "items": [
           {
-            "concept" : {
-              "CONCEPT_ID" : 2617206,
-              "CONCEPT_NAME" : "Prostate cancer screening; prostate specific antigen test (psa)",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "G0103",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "HCPCS",
-              "CONCEPT_CLASS_ID" : "HCPCS"
+            "concept": {
+              "CONCEPT_ID": 2617206,
+              "CONCEPT_NAME": "Prostate cancer screening; prostate specific antigen test (psa)",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "G0103",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "HCPCS",
+              "CONCEPT_CLASS_ID": "HCPCS"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 37065295,
-              "CONCEPT_NAME" : "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
-              "STANDARD_CONCEPT" : "C",
-              "STANDARD_CONCEPT_CAPTION" : "Classification",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "LP387023-7",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "LOINC",
-              "CONCEPT_CLASS_ID" : "LOINC Hierarchy"
+            "concept": {
+              "CONCEPT_ID": 37065295,
+              "CONCEPT_NAME": "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "LP387023-7",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "LOINC",
+              "CONCEPT_CLASS_ID": "LOINC Hierarchy"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 3002131,
-              "CONCEPT_NAME" : "Prostate specific Ag [Units/volume] in Serum or Plasma",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "19195-7",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "LOINC",
-              "CONCEPT_CLASS_ID" : "Lab Test"
+            "concept": {
+              "CONCEPT_ID": 3002131,
+              "CONCEPT_NAME": "Prostate specific Ag [Units/volume] in Serum or Plasma",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "19195-7",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "LOINC",
+              "CONCEPT_CLASS_ID": "Lab Test"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 45889041,
-              "CONCEPT_NAME" : "Prostate specific antigen (PSA)",
-              "STANDARD_CONCEPT" : "C",
-              "STANDARD_CONCEPT_CAPTION" : "Classification",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "1011648",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "CPT4",
-              "CONCEPT_CLASS_ID" : "CPT4 Hierarchy"
+            "concept": {
+              "CONCEPT_ID": 45889041,
+              "CONCEPT_NAME": "Prostate specific antigen (PSA)",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "1011648",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "CPT4",
+              "CONCEPT_CLASS_ID": "CPT4 Hierarchy"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 44793131,
-              "CONCEPT_NAME" : "Total PSA level",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "377981000000102",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Procedure"
+            "concept": {
+              "CONCEPT_ID": 44793131,
+              "CONCEPT_NAME": "Total PSA level",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "377981000000102",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 37392634,
-              "CONCEPT_NAME" : "Total PSA (prostate specific antigen) level",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "1006591000000104",
-              "DOMAIN_ID" : "Observation",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Observable Entity"
+            "concept": {
+              "CONCEPT_ID": 37392634,
+              "CONCEPT_NAME": "Total PSA (prostate specific antigen) level",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "1006591000000104",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Observable Entity"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           }
         ]
       }
     }
   ],
-  "QualifiedLimit" : {
-    "Type" : "First"
+  "QualifiedLimit": {
+    "Type": "First"
   },
-  "ExpressionLimit" : {
-    "Type" : "First"
+  "ExpressionLimit": {
+    "Type": "First"
   },
-  "InclusionRules" : [
+  "InclusionRules": [
     {
-      "name" : "T3, T4, N1, M0",
-      "expression" : {
-        "Type" : "ALL",
-        "CriteriaList" : [
+      "name": "T3, T4, N1, M0",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [
           {
-            "Criteria" : {
-              "Measurement" : {
-                "CodesetId" : 10,
-                "MeasurementTypeExclude" : false
+            "Criteria": {
+              "Measurement": {
+                "CodesetId": 10,
+                "MeasurementTypeExclude": false
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 30,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 30,
-                "Coeff" : 1
+              "End": {
+                "Days": 30,
+                "Coeff": 1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 2,
-              "Count" : 1,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1,
+              "IsDistinct": false
             }
           },
           {
-            "Criteria" : {
-              "Measurement" : {
-                "CodesetId" : 1,
-                "MeasurementTypeExclude" : false
+            "Criteria": {
+              "Measurement": {
+                "CodesetId": 1,
+                "MeasurementTypeExclude": false
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 30,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 30,
-                "Coeff" : 1
+              "End": {
+                "Days": 30,
+                "Coeff": 1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 2,
-              "Count" : 1,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1,
+              "IsDistinct": false
             }
           },
           {
-            "Criteria" : {
-              "Measurement" : {
-                "CodesetId" : 9,
-                "MeasurementTypeExclude" : false
+            "Criteria": {
+              "Measurement": {
+                "CodesetId": 9,
+                "MeasurementTypeExclude": false
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 30,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 30,
-                "Coeff" : 1
+              "End": {
+                "Days": 30,
+                "Coeff": 1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 2,
-              "Count" : 1,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1,
+              "IsDistinct": false
             }
           }
         ],
-        "DemographicCriteriaList" : [],
-        "Groups" : []
+        "DemographicCriteriaList": [],
+        "Groups": []
       }
     }
   ],
-  "CensoringCriteria" : [],
-  "CollapseSettings" : {
-    "CollapseType" : "ERA",
-    "EraPad" : 0
+  "CensoringCriteria": [],
+  "CollapseSettings": {
+    "CollapseType": "ERA",
+    "EraPad": 0
   },
-  "CensorWindow" : {}
+  "CensorWindow": {}
 }

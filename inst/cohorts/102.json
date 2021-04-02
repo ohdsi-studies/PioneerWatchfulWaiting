@@ -1,787 +1,787 @@
 {
-  "cdmVersionRange" : ">=5.0.0",
-  "PrimaryCriteria" : {
-    "CriteriaList" : [
+  "cdmVersionRange": ">=5.0.0",
+  "PrimaryCriteria": {
+    "CriteriaList": [
       {
-        "ConditionOccurrence" : {
-          "CodesetId" : 0,
-          "First" : true,
-          "ConditionTypeExclude" : false,
-          "Gender" : [
+        "ConditionOccurrence": {
+          "CodesetId": 0,
+          "First": true,
+          "ConditionTypeExclude": false,
+          "Gender": [
             {
-              "CONCEPT_ID" : 8507,
-              "CONCEPT_NAME" : "MALE",
-              "STANDARD_CONCEPT" : null,
-              "STANDARD_CONCEPT_CAPTION" : "Unknown",
-              "INVALID_REASON" : null,
-              "INVALID_REASON_CAPTION" : "Unknown",
-              "CONCEPT_CODE" : "M",
-              "DOMAIN_ID" : "Gender",
-              "VOCABULARY_ID" : "Gender",
-              "CONCEPT_CLASS_ID" : null
+              "CONCEPT_ID": 8507,
+              "CONCEPT_NAME": "MALE",
+              "STANDARD_CONCEPT": null,
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "INVALID_REASON": null,
+              "INVALID_REASON_CAPTION": "Unknown",
+              "CONCEPT_CODE": "M",
+              "DOMAIN_ID": "Gender",
+              "VOCABULARY_ID": "Gender",
+              "CONCEPT_CLASS_ID": null
             }
           ]
         }
       }
     ],
-    "ObservationWindow" : {
-      "PriorDays" : 365,
-      "PostDays" : 0
+    "ObservationWindow": {
+      "PriorDays": 365,
+      "PostDays": 0
     },
-    "PrimaryCriteriaLimit" : {
-      "Type" : "First"
+    "PrimaryCriteriaLimit": {
+      "Type": "First"
     }
   },
-  "ConceptSets" : [
+  "ConceptSets": [
     {
-      "id" : 0,
-      "name" : "[PIONEER] PCa",
-      "expression" : {
-        "items" : [
+      "id": 0,
+      "name": "[PIONEER] PCa",
+      "expression": {
+        "items": [
           {
-            "concept" : {
-              "CONCEPT_ID" : 4163261,
-              "CONCEPT_NAME" : "Malignant tumor of prostate",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "399068003",
-              "DOMAIN_ID" : "Condition",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Clinical Finding"
+            "concept": {
+              "CONCEPT_ID": 4163261,
+              "CONCEPT_NAME": "Malignant tumor of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "399068003",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 4314337,
-              "CONCEPT_NAME" : "Secondary malignant neoplasm of prostate",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "94503003",
-              "DOMAIN_ID" : "Condition",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Clinical Finding"
+            "concept": {
+              "CONCEPT_ID": 4314337,
+              "CONCEPT_NAME": "Secondary malignant neoplasm of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "94503003",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "isExcluded" : true,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": true,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
     },
     {
-      "id" : 1,
-      "name" : "[PIONEER] Biopsy",
-      "expression" : {
-        "items" : [
+      "id": 1,
+      "name": "[PIONEER] Biopsy",
+      "expression": {
+        "items": [
           {
-            "concept" : {
-              "CONCEPT_ID" : 4278515,
-              "CONCEPT_NAME" : "Biopsy of prostate",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "65575008",
-              "DOMAIN_ID" : "Procedure",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Procedure"
+            "concept": {
+              "CONCEPT_ID": 4278515,
+              "CONCEPT_NAME": "Biopsy of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "65575008",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 4073010,
-              "CONCEPT_NAME" : "Open biopsy of prostate",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "176268002",
-              "DOMAIN_ID" : "Procedure",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Procedure"
+            "concept": {
+              "CONCEPT_ID": 4073010,
+              "CONCEPT_NAME": "Open biopsy of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "176268002",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
             },
-            "isExcluded" : true,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": true,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
     },
     {
-      "id" : 4,
-      "name" : "[PIONEER] Prior Prostate Ca related obs/condition",
-      "expression" : {
-        "items" : [
+      "id": 4,
+      "name": "[PIONEER] Prior Prostate Ca related obs/condition",
+      "expression": {
+        "items": [
           {
-            "concept" : {
-              "CONCEPT_ID" : 40482030,
-              "CONCEPT_NAME" : "Dysplasia of prostate",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "445068007",
-              "DOMAIN_ID" : "Condition",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Clinical Finding"
+            "concept": {
+              "CONCEPT_ID": 40482030,
+              "CONCEPT_NAME": "Dysplasia of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "445068007",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 4180749,
-              "CONCEPT_NAME" : "History of malignant neoplasm of prostate",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "428262008",
-              "DOMAIN_ID" : "Observation",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Context-dependent"
+            "concept": {
+              "CONCEPT_ID": 4180749,
+              "CONCEPT_NAME": "History of malignant neoplasm of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "428262008",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Context-dependent"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           }
         ]
       }
     },
     {
-      "id" : 6,
-      "name" : "[PIONEER] Other Malignancies",
-      "expression" : {
-        "items" : [
+      "id": 6,
+      "name": "[PIONEER] Other Malignancies",
+      "expression": {
+        "items": [
           {
-            "concept" : {
-              "CONCEPT_ID" : 4112752,
-              "CONCEPT_NAME" : "Basal cell carcinoma of skin",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "254701007",
-              "DOMAIN_ID" : "Condition",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Clinical Finding"
+            "concept": {
+              "CONCEPT_ID": 4112752,
+              "CONCEPT_NAME": "Basal cell carcinoma of skin",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "254701007",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "isExcluded" : true,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": true,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 4111921,
-              "CONCEPT_NAME" : "Squamous cell carcinoma of skin",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "254651007",
-              "DOMAIN_ID" : "Condition",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Clinical Finding"
+            "concept": {
+              "CONCEPT_ID": 4111921,
+              "CONCEPT_NAME": "Squamous cell carcinoma of skin",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "254651007",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "isExcluded" : true,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": true,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 4163261,
-              "CONCEPT_NAME" : "Malignant tumor of prostate",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "399068003",
-              "DOMAIN_ID" : "Condition",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Clinical Finding"
+            "concept": {
+              "CONCEPT_ID": 4163261,
+              "CONCEPT_NAME": "Malignant tumor of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "399068003",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "isExcluded" : true,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": true,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 443392,
-              "CONCEPT_NAME" : "Malignant neoplastic disease",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "363346000",
-              "DOMAIN_ID" : "Condition",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Clinical Finding"
+            "concept": {
+              "CONCEPT_ID": 443392,
+              "CONCEPT_NAME": "Malignant neoplastic disease",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "363346000",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
     },
     {
-      "id" : 7,
-      "name" : "[PIONEER] ADT and other PCa hormonal treatment ",
-      "expression" : {
-        "items" : [
+      "id": 7,
+      "name": "[PIONEER] ADT and other PCa hormonal treatment ",
+      "expression": {
+        "items": [
           {
-            "concept" : {
-              "CONCEPT_ID" : 2108678,
-              "CONCEPT_NAME" : "Adjuvant (ie, in combination with external beam radiotherapy to the prostate for prostate cancer) hormonal therapy (gonadotropin-releasing hormone [GnRH] agonist or antagonist) prescribed/administered (PRCA)",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "4164F",
-              "DOMAIN_ID" : "Observation",
-              "VOCABULARY_ID" : "CPT4",
-              "CONCEPT_CLASS_ID" : "CPT4"
+            "concept": {
+              "CONCEPT_ID": 2108678,
+              "CONCEPT_NAME": "Adjuvant (ie, in combination with external beam radiotherapy to the prostate for prostate cancer) hormonal therapy (gonadotropin-releasing hormone [GnRH] agonist or antagonist) prescribed/administered (PRCA)",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "4164F",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "CPT4",
+              "CONCEPT_CLASS_ID": "CPT4"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 45768763,
-              "CONCEPT_NAME" : "Androgen deprivation therapy",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "707266006",
-              "DOMAIN_ID" : "Procedure",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Procedure"
+            "concept": {
+              "CONCEPT_ID": 45768763,
+              "CONCEPT_NAME": "Androgen deprivation therapy",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "707266006",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 937694,
-              "CONCEPT_NAME" : "Androgen deprivation therapy prescribed/administered in combination with external beam radiotherapy to the prostate",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "G9894",
-              "DOMAIN_ID" : "Observation",
-              "VOCABULARY_ID" : "HCPCS",
-              "CONCEPT_CLASS_ID" : "HCPCS"
+            "concept": {
+              "CONCEPT_ID": 937694,
+              "CONCEPT_NAME": "Androgen deprivation therapy prescribed/administered in combination with external beam radiotherapy to the prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "G9894",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "HCPCS",
+              "CONCEPT_CLASS_ID": "HCPCS"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 21603834,
-              "CONCEPT_NAME" : "Anti-androgens",
-              "STANDARD_CONCEPT" : "C",
-              "STANDARD_CONCEPT_CAPTION" : "Classification",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "L02BB",
-              "DOMAIN_ID" : "Drug",
-              "VOCABULARY_ID" : "ATC",
-              "CONCEPT_CLASS_ID" : "ATC 4th"
+            "concept": {
+              "CONCEPT_ID": 21603834,
+              "CONCEPT_NAME": "Anti-androgens",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "L02BB",
+              "DOMAIN_ID": "Drug",
+              "VOCABULARY_ID": "ATC",
+              "CONCEPT_CLASS_ID": "ATC 4th"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 21603823,
-              "CONCEPT_NAME" : "Gonadotropin releasing hormone analogues",
-              "STANDARD_CONCEPT" : "C",
-              "STANDARD_CONCEPT_CAPTION" : "Classification",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "L02AE",
-              "DOMAIN_ID" : "Drug",
-              "VOCABULARY_ID" : "ATC",
-              "CONCEPT_CLASS_ID" : "ATC 4th"
+            "concept": {
+              "CONCEPT_ID": 21603823,
+              "CONCEPT_NAME": "Gonadotropin releasing hormone analogues",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "L02AE",
+              "DOMAIN_ID": "Drug",
+              "VOCABULARY_ID": "ATC",
+              "CONCEPT_CLASS_ID": "ATC 4th"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 2721577,
-              "CONCEPT_NAME" : "Home injectable therapy; hormonal therapy (e.g.; leuprolide, goserelin), including administrative services, professional pharmacy services, care coordination, and all necessary supplies and equipment (drugs and nursing visits coded separately), per diem",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "S9560",
-              "DOMAIN_ID" : "Procedure",
-              "VOCABULARY_ID" : "HCPCS",
-              "CONCEPT_CLASS_ID" : "HCPCS"
+            "concept": {
+              "CONCEPT_ID": 2721577,
+              "CONCEPT_NAME": "Home injectable therapy; hormonal therapy (e.g.; leuprolide, goserelin), including administrative services, professional pharmacy services, care coordination, and all necessary supplies and equipment (drugs and nursing visits coded separately), per diem",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "S9560",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "HCPCS",
+              "CONCEPT_CLASS_ID": "HCPCS"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 21603845,
-              "CONCEPT_NAME" : "Other hormone antagonists and related agents",
-              "STANDARD_CONCEPT" : "C",
-              "STANDARD_CONCEPT_CAPTION" : "Classification",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "L02BX",
-              "DOMAIN_ID" : "Drug",
-              "VOCABULARY_ID" : "ATC",
-              "CONCEPT_CLASS_ID" : "ATC 4th"
+            "concept": {
+              "CONCEPT_ID": 21603845,
+              "CONCEPT_NAME": "Other hormone antagonists and related agents",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "L02BX",
+              "DOMAIN_ID": "Drug",
+              "VOCABULARY_ID": "ATC",
+              "CONCEPT_CLASS_ID": "ATC 4th"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
     },
     {
-      "id" : 8,
-      "name" : "[PIONEER] PSA",
-      "expression" : {
-        "items" : [
+      "id": 8,
+      "name": "[PIONEER] PSA",
+      "expression": {
+        "items": [
           {
-            "concept" : {
-              "CONCEPT_ID" : 2617206,
-              "CONCEPT_NAME" : "Prostate cancer screening; prostate specific antigen test (psa)",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "G0103",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "HCPCS",
-              "CONCEPT_CLASS_ID" : "HCPCS"
+            "concept": {
+              "CONCEPT_ID": 2617206,
+              "CONCEPT_NAME": "Prostate cancer screening; prostate specific antigen test (psa)",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "G0103",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "HCPCS",
+              "CONCEPT_CLASS_ID": "HCPCS"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 37065295,
-              "CONCEPT_NAME" : "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
-              "STANDARD_CONCEPT" : "C",
-              "STANDARD_CONCEPT_CAPTION" : "Classification",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "LP387023-7",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "LOINC",
-              "CONCEPT_CLASS_ID" : "LOINC Hierarchy"
+            "concept": {
+              "CONCEPT_ID": 37065295,
+              "CONCEPT_NAME": "Prostate specific Ag panel | Serum or Plasma | Chemistry Panels",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "LP387023-7",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "LOINC",
+              "CONCEPT_CLASS_ID": "LOINC Hierarchy"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 45889041,
-              "CONCEPT_NAME" : "Prostate specific antigen (PSA)",
-              "STANDARD_CONCEPT" : "C",
-              "STANDARD_CONCEPT_CAPTION" : "Classification",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "1011648",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "CPT4",
-              "CONCEPT_CLASS_ID" : "CPT4 Hierarchy"
+            "concept": {
+              "CONCEPT_ID": 45889041,
+              "CONCEPT_NAME": "Prostate specific antigen (PSA)",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "1011648",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "CPT4",
+              "CONCEPT_CLASS_ID": "CPT4 Hierarchy"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 44793131,
-              "CONCEPT_NAME" : "Total PSA level",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "377981000000102",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Procedure"
+            "concept": {
+              "CONCEPT_ID": 44793131,
+              "CONCEPT_NAME": "Total PSA level",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "377981000000102",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
             },
-            "isExcluded" : false,
-            "includeDescendants" : true,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 37392634,
-              "CONCEPT_NAME" : "Total PSA (prostate specific antigen) level",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "1006591000000104",
-              "DOMAIN_ID" : "Observation",
-              "VOCABULARY_ID" : "SNOMED",
-              "CONCEPT_CLASS_ID" : "Observable Entity"
+            "concept": {
+              "CONCEPT_ID": 37392634,
+              "CONCEPT_NAME": "Total PSA (prostate specific antigen) level",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "1006591000000104",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Observable Entity"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
-            "concept" : {
-              "CONCEPT_ID" : 3002131,
-              "CONCEPT_NAME" : "Prostate specific Ag [Units/volume] in Serum or Plasma",
-              "STANDARD_CONCEPT" : "S",
-              "STANDARD_CONCEPT_CAPTION" : "Standard",
-              "INVALID_REASON" : "V",
-              "INVALID_REASON_CAPTION" : "Valid",
-              "CONCEPT_CODE" : "19195-7",
-              "DOMAIN_ID" : "Measurement",
-              "VOCABULARY_ID" : "LOINC",
-              "CONCEPT_CLASS_ID" : "Lab Test"
+            "concept": {
+              "CONCEPT_ID": 3002131,
+              "CONCEPT_NAME": "Prostate specific Ag [Units/volume] in Serum or Plasma",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "19195-7",
+              "DOMAIN_ID": "Measurement",
+              "VOCABULARY_ID": "LOINC",
+              "CONCEPT_CLASS_ID": "Lab Test"
             },
-            "isExcluded" : false,
-            "includeDescendants" : false,
-            "includeMapped" : false
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           }
         ]
       }
     }
   ],
-  "QualifiedLimit" : {
-    "Type" : "First"
+  "QualifiedLimit": {
+    "Type": "First"
   },
-  "ExpressionLimit" : {
-    "Type" : "All"
+  "ExpressionLimit": {
+    "Type": "All"
   },
-  "InclusionRules" : [
+  "InclusionRules": [
     {
-      "name" : "Age >= 18",
-      "expression" : {
-        "Type" : "ALL",
-        "CriteriaList" : [],
-        "DemographicCriteriaList" : [
+      "name": "Age >= 18",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [],
+        "DemographicCriteriaList": [
           {
-            "Age" : {
-              "Value" : 18,
-              "Op" : "gte"
+            "Age": {
+              "Value": 18,
+              "Op": "gte"
             }
           }
         ],
-        "Groups" : []
+        "Groups": []
       }
     },
     {
-      "name" : "No history of PCa",
-      "expression" : {
-        "Type" : "ALL",
-        "CriteriaList" : [
+      "name": "No history of PCa",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [
           {
-            "Criteria" : {
-              "ConditionOccurrence" : {
-                "CodesetId" : 4,
-                "ConditionTypeExclude" : false
+            "Criteria": {
+              "ConditionOccurrence": {
+                "CodesetId": 4,
+                "ConditionTypeExclude": false
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 365,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 1,
-                "Coeff" : -1
+              "End": {
+                "Days": 1,
+                "Coeff": -1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 0,
-              "Count" : 0,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
             }
           },
           {
-            "Criteria" : {
-              "Observation" : {
-                "CodesetId" : 4,
-                "ObservationTypeExclude" : false,
-                "ValueAsConcept" : [
+            "Criteria": {
+              "Observation": {
+                "CodesetId": 4,
+                "ObservationTypeExclude": false,
+                "ValueAsConcept": [
                   {
-                    "CONCEPT_ID" : 4253628,
-                    "CONCEPT_NAME" : "Known present",
-                    "STANDARD_CONCEPT" : null,
-                    "STANDARD_CONCEPT_CAPTION" : "Unknown",
-                    "INVALID_REASON" : null,
-                    "INVALID_REASON_CAPTION" : "Unknown",
-                    "CONCEPT_CODE" : "410515003",
-                    "DOMAIN_ID" : "Observation",
-                    "VOCABULARY_ID" : "SNOMED",
-                    "CONCEPT_CLASS_ID" : null
+                    "CONCEPT_ID": 4253628,
+                    "CONCEPT_NAME": "Known present",
+                    "STANDARD_CONCEPT": null,
+                    "STANDARD_CONCEPT_CAPTION": "Unknown",
+                    "INVALID_REASON": null,
+                    "INVALID_REASON_CAPTION": "Unknown",
+                    "CONCEPT_CODE": "410515003",
+                    "DOMAIN_ID": "Observation",
+                    "VOCABULARY_ID": "SNOMED",
+                    "CONCEPT_CLASS_ID": null
                   }
                 ]
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 365,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 1,
-                "Coeff" : -1
+              "End": {
+                "Days": 1,
+                "Coeff": -1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 0,
-              "Count" : 0,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
             }
           }
         ],
-        "DemographicCriteriaList" : [],
-        "Groups" : []
+        "DemographicCriteriaList": [],
+        "Groups": []
       }
     },
     {
-      "name" : "PCa biopsy or PSA>50",
-      "expression" : {
-        "Type" : "AT_LEAST",
-        "Count" : 1,
-        "CriteriaList" : [
+      "name": "PCa biopsy or PSA>50",
+      "expression": {
+        "Type": "AT_LEAST",
+        "Count": 1,
+        "CriteriaList": [
           {
-            "Criteria" : {
-              "ProcedureOccurrence" : {
-                "CodesetId" : 1,
-                "ProcedureTypeExclude" : false
+            "Criteria": {
+              "ProcedureOccurrence": {
+                "CodesetId": 1,
+                "ProcedureTypeExclude": false
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 30,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 30,
-                "Coeff" : 1
+              "End": {
+                "Days": 30,
+                "Coeff": 1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 2,
-              "Count" : 1,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1,
+              "IsDistinct": false
             }
           },
           {
-            "Criteria" : {
-              "Measurement" : {
-                "CodesetId" : 8,
-                "MeasurementTypeExclude" : false,
-                "ValueAsNumber" : {
-                  "Value" : 50,
-                  "Op" : "gt"
+            "Criteria": {
+              "Measurement": {
+                "CodesetId": 8,
+                "MeasurementTypeExclude": false,
+                "ValueAsNumber": {
+                  "Value": 50,
+                  "Op": "gt"
                 }
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 30,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 30,
-                "Coeff" : 1
+              "End": {
+                "Days": 30,
+                "Coeff": 1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 2,
-              "Count" : 1,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1,
+              "IsDistinct": false
             }
           },
           {
-            "Criteria" : {
-              "Observation" : {
-                "CodesetId" : 8,
-                "ObservationTypeExclude" : false,
-                "ValueAsNumber" : {
-                  "Value" : 50,
-                  "Op" : "gt"
+            "Criteria": {
+              "Observation": {
+                "CodesetId": 8,
+                "ObservationTypeExclude": false,
+                "ValueAsNumber": {
+                  "Value": 50,
+                  "Op": "gt"
                 }
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 30,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 30,
-                "Coeff" : 1
+              "End": {
+                "Days": 30,
+                "Coeff": 1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 2,
-              "Count" : 1,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1,
+              "IsDistinct": false
             }
           }
         ],
-        "DemographicCriteriaList" : [],
-        "Groups" : []
+        "DemographicCriteriaList": [],
+        "Groups": []
       }
     },
     {
-      "name" : "no ADT and androgen agonist, inhibitors",
-      "expression" : {
-        "Type" : "ALL",
-        "CriteriaList" : [
+      "name": "no ADT and androgen agonist, inhibitors",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [
           {
-            "Criteria" : {
-              "DrugExposure" : {
-                "CodesetId" : 7,
-                "DrugTypeExclude" : false
+            "Criteria": {
+              "DrugExposure": {
+                "CodesetId": 7,
+                "DrugTypeExclude": false
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 365,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 1,
-                "Coeff" : -1
+              "End": {
+                "Days": 1,
+                "Coeff": -1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 0,
-              "Count" : 0,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
             }
           },
           {
-            "Criteria" : {
-              "Observation" : {
-                "CodesetId" : 7,
-                "ObservationTypeExclude" : false
+            "Criteria": {
+              "Observation": {
+                "CodesetId": 7,
+                "ObservationTypeExclude": false
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 365,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 1,
-                "Coeff" : -1
+              "End": {
+                "Days": 1,
+                "Coeff": -1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 0,
-              "Count" : 0,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
             }
           },
           {
-            "Criteria" : {
-              "ProcedureOccurrence" : {
-                "CodesetId" : 7,
-                "ProcedureTypeExclude" : false
+            "Criteria": {
+              "ProcedureOccurrence": {
+                "CodesetId": 7,
+                "ProcedureTypeExclude": false
               }
             },
-            "StartWindow" : {
-              "Start" : {
-                "Days" : 365,
-                "Coeff" : -1
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
               },
-              "End" : {
-                "Days" : 1,
-                "Coeff" : -1
+              "End": {
+                "Days": 1,
+                "Coeff": -1
               },
-              "UseIndexEnd" : false,
-              "UseEventEnd" : false
+              "UseIndexEnd": false,
+              "UseEventEnd": false
             },
-            "RestrictVisit" : false,
-            "IgnoreObservationPeriod" : false,
-            "Occurrence" : {
-              "Type" : 0,
-              "Count" : 0,
-              "IsDistinct" : false
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
             }
           }
         ],
-        "DemographicCriteriaList" : [],
-        "Groups" : []
+        "DemographicCriteriaList": [],
+        "Groups": []
       }
     }
   ],
-  "CensoringCriteria" : [
+  "CensoringCriteria": [
     {
-      "Death" : {
-        "DeathTypeExclude" : false
+      "Death": {
+        "DeathTypeExclude": false
       }
     },
     {
-      "ConditionOccurrence" : {
-        "CodesetId" : 6,
-        "ConditionTypeExclude" : false
+      "ConditionOccurrence": {
+        "CodesetId": 6,
+        "ConditionTypeExclude": false
       }
     }
   ],
-  "CollapseSettings" : {
-    "CollapseType" : "ERA",
-    "EraPad" : 0
+  "CollapseSettings": {
+    "CollapseType": "ERA",
+    "EraPad": 0
   },
-  "CensorWindow" : {}
+  "CensorWindow": {}
 }
