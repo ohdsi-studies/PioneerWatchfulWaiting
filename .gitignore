@@ -40,8 +40,11 @@ vignettes/*.pdf
 .Rproj.user
 
 # Results data
-inst/shiny/PIONEERResultsExplorer/data
+inst/shiny/PioneerWatchfulWaitingExplorer/data
 
 #stage directories
 inst_demo
 inst_real
+
+# Error reports
+errorReportSql.txt

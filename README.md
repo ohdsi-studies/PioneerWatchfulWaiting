@@ -78,6 +78,9 @@ See [this video](https://youtu.be/DjVgbBGK4jM) for instructions on how to set up
 #    DB_PASSWORD = "your_secret_password"
 #    FFTEMP_DIR = "E:/fftemp"
 #    USE_SUBSET = FALSE
+#    CDM_SCHEMA = "your_cdm_schema"
+#    COHORT_SCHEMA = "public"  # or other schema to write intermediate results to
+#    PATH_TO_DRIVER = "/path/to/jdbc_driver"
 #
 # The following describes the settings
 #    DBMS, DB_SERVER, DB_PORT, DB_USER, DB_PASSWORD := These are the details used to connect
@@ -118,6 +121,7 @@ In [`CodeToRun.R`](extras/CodeToRun.R) you will find a function `verifyDependenc
 
 *Note: If you are using the `DatabaseConnector` package for the first time, then you may also need to download the JDBC drivers to your database. See the [package documentation](https://ohdsi.github.io/DatabaseConnector/reference/jdbcDrivers.html), you can do this with a command like `DatabaseConnector::downloadJdbcDrivers(dbms="redshift", pathToDriver="/my-home-folder/jdbcdrivers")`.*
 
+*Note: if you run into 403 errors from Github URLs when installing the package, you may have exceeded your Github API rate limit. If you have a Github account, then you can create a personal access token (PAT) using the link https://github.com/settings/tokens/new?scopes=repo,gist&description=R:GITHUB_PAT, and add that to your local environment, for example using `credentials::set_github_pat()` (install the package with `install.packages("credentials")` if you don't have it). The counter should also reset after an hour, so alternatively you can wait for that to happen.*
 
 3. Great work! Now you have set-up your environment and installed the library that will run the package. You can use the following `R` script to load in your library and configure your environment connection details:
 

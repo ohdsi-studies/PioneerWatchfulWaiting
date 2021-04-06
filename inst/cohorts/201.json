@@ -1,4 +1,28 @@
 {
+  "cdmVersionRange": ">=5.0.0",
+  "PrimaryCriteria": {
+    "CriteriaList": [
+      {
+        "ConditionOccurrence": {
+          "CodesetId": 0,
+          "ConditionTypeExclude": false
+        }
+      },
+      {
+        "ConditionOccurrence": {
+          "CodesetId": 1,
+          "ConditionTypeExclude": false
+        }
+      }
+    ],
+    "ObservationWindow": {
+      "PriorDays": 0,
+      "PostDays": 0
+    },
+    "PrimaryCriteriaLimit": {
+      "Type": "All"
+    }
+  },
   "ConceptSets": [
     {
       "id": 0,
@@ -17,119 +41,10 @@
               "DOMAIN_ID": "Condition",
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Clinical Finding"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 4179527,
-              "CONCEPT_NAME": "Compression fracture of vertebral column",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "42942008",
-              "DOMAIN_ID": "Condition",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Clinical Finding"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 433811,
-              "CONCEPT_NAME": "Hydronephrosis",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "43064006",
-              "DOMAIN_ID": "Condition",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Clinical Finding"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 193518,
-              "CONCEPT_NAME": "Intestinal obstruction",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "81060008",
-              "DOMAIN_ID": "Condition",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Clinical Finding"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 37017192,
-              "CONCEPT_NAME": "Metastatic spinal cord compression",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "713425003",
-              "DOMAIN_ID": "Condition",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Clinical Finding"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 192450,
-              "CONCEPT_NAME": "Retention of urine",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "267064002",
-              "DOMAIN_ID": "Condition",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Clinical Finding"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 4090129,
-              "CONCEPT_NAME": "Small bowel obstruction",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "281255004",
-              "DOMAIN_ID": "Condition",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Clinical Finding"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 4090128,
-              "CONCEPT_NAME": "Large bowel obstruction",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "281254000",
-              "DOMAIN_ID": "Condition",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Clinical Finding"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "Clinical Finding",
-              "CONCEPT_CODE": "16834011000119109",
-              "CONCEPT_ID": 37209652,
-              "CONCEPT_NAME": "Partial obstruction of intestine",
-              "DOMAIN_ID": "Condition",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "VOCABULARY_ID": "SNOMED"
-            }
+            },
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -145,7 +60,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -161,7 +77,25 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4179527,
+              "CONCEPT_NAME": "Compression fracture of vertebral column",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "42942008",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -177,7 +111,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -192,7 +127,9 @@
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -208,7 +145,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -224,7 +162,93 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 75004,
+              "CONCEPT_NAME": "Frank hematuria",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "197941005",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 433811,
+              "CONCEPT_NAME": "Hydronephrosis",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "43064006",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 36715479,
+              "CONCEPT_NAME": "Hydronephrosis due to ureteral obstruction",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "721169007",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 193518,
+              "CONCEPT_NAME": "Intestinal obstruction",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "81060008",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4090128,
+              "CONCEPT_NAME": "Large bowel obstruction",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "281254000",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -239,22 +263,9 @@
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 439926,
-              "CONCEPT_NAME": "Malaise and fatigue",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "271795006",
-              "DOMAIN_ID": "Condition",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Clinical Finding"
-            },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -269,7 +280,26 @@
               "VOCABULARY_ID": "ICD10CM",
               "CONCEPT_CLASS_ID": "3-char nonbill code"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 439926,
+              "CONCEPT_NAME": "Malaise and fatigue",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "271795006",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -284,7 +314,9 @@
               "VOCABULARY_ID": "ICD9CM",
               "CONCEPT_CLASS_ID": "4-dig nonbill code"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -300,7 +332,25 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 37017192,
+              "CONCEPT_NAME": "Metastatic spinal cord compression",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "713425003",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -315,7 +365,9 @@
               "VOCABULARY_ID": "ICD9CM",
               "CONCEPT_CLASS_ID": "5-dig billing code"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -330,7 +382,9 @@
               "VOCABULARY_ID": "ICD10CM",
               "CONCEPT_CLASS_ID": "4-char nonbill code"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -346,7 +400,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -362,7 +417,25 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 192450,
+              "CONCEPT_NAME": "Retention of urine",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "267064002",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -378,7 +451,25 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4090129,
+              "CONCEPT_NAME": "Small bowel obstruction",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "281255004",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -394,7 +485,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
@@ -418,7 +510,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -433,7 +526,9 @@
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -449,7 +544,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -465,7 +561,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -481,7 +578,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -497,7 +595,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -513,7 +612,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -529,7 +629,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -545,7 +646,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -561,7 +663,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -577,38 +680,13 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
     }
   ],
-  "PrimaryCriteria": {
-    "CriteriaList": [
-      {
-        "ConditionOccurrence": {
-          "CodesetId": 0
-        }
-      },
-      {
-        "ConditionOccurrence": {
-          "CodesetId": 1
-        }
-      },
-      {
-        "Observation": {
-          "CodesetId": 0
-        }
-      }
-    ],
-    "ObservationWindow": {
-      "PriorDays": 0,
-      "PostDays": 0
-    },
-    "PrimaryCriteriaLimit": {
-      "Type": "All"
-    }
-  },
   "QualifiedLimit": {
     "Type": "First"
   },
@@ -627,6 +705,5 @@
     "CollapseType": "ERA",
     "EraPad": 0
   },
-  "CensorWindow": {},
-  "cdmVersionRange": ">=5.0.0"
+  "CensorWindow": {}
 }

@@ -1,4 +1,22 @@
 {
+  "cdmVersionRange": ">=5.0.0",
+  "PrimaryCriteria": {
+    "CriteriaList": [
+      {
+        "Observation": {
+          "CodesetId": 0,
+          "ObservationTypeExclude": false
+        }
+      }
+    ],
+    "ObservationWindow": {
+      "PriorDays": 0,
+      "PostDays": 0
+    },
+    "PrimaryCriteriaLimit": {
+      "Type": "First"
+    }
+  },
   "ConceptSets": [
     {
       "id": 0,
@@ -18,7 +36,9 @@
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Context-dependent"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -33,7 +53,9 @@
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Context-dependent"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -48,7 +70,9 @@
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Context-dependent"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -63,7 +87,9 @@
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Context-dependent"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -78,7 +104,9 @@
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Context-dependent"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -93,28 +121,14 @@
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Context-dependent"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
     }
   ],
-  "PrimaryCriteria": {
-    "CriteriaList": [
-      {
-        "Observation": {
-          "CodesetId": 0
-        }
-      }
-    ],
-    "ObservationWindow": {
-      "PriorDays": 0,
-      "PostDays": 0
-    },
-    "PrimaryCriteriaLimit": {
-      "Type": "First"
-    }
-  },
   "QualifiedLimit": {
     "Type": "First"
   },
@@ -127,6 +141,5 @@
     "CollapseType": "ERA",
     "EraPad": 0
   },
-  "CensorWindow": {},
-  "cdmVersionRange": ">=5.0.0"
+  "CensorWindow": {}
 }

@@ -1,4 +1,26 @@
 {
+  "cdmVersionRange": ">=5.0.0",
+  "PrimaryCriteria": {
+    "CriteriaList": [
+      {
+        "Measurement": {
+          "CodesetId": 0,
+          "MeasurementTypeExclude": false,
+          "ValueAsNumber": {
+            "Value": 0,
+            "Op": "eq"
+          }
+        }
+      }
+    ],
+    "ObservationWindow": {
+      "PriorDays": 0,
+      "PostDays": 0
+    },
+    "PrimaryCriteriaLimit": {
+      "Type": "All"
+    }
+  },
   "ConceptSets": [
     {
       "id": 0,
@@ -17,32 +39,15 @@
               "DOMAIN_ID": "Measurement",
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Staging / Scales"
-            }
+            },
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
           }
         ]
       }
     }
   ],
-  "PrimaryCriteria": {
-    "CriteriaList": [
-      {
-        "Measurement": {
-          "CodesetId": 0,
-          "ValueAsNumber": {
-            "Value": 0,
-            "Op": "eq"
-          }
-        }
-      }
-    ],
-    "ObservationWindow": {
-      "PriorDays": 0,
-      "PostDays": 0
-    },
-    "PrimaryCriteriaLimit": {
-      "Type": "All"
-    }
-  },
   "QualifiedLimit": {
     "Type": "First"
   },
@@ -61,6 +66,5 @@
     "CollapseType": "ERA",
     "EraPad": 0
   },
-  "CensorWindow": {},
-  "cdmVersionRange": ">=5.0.0"
+  "CensorWindow": {}
 }
