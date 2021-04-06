@@ -1,0 +1,180 @@
+{
+  "cdmVersionRange": ">=5.0.0",
+  "PrimaryCriteria": {
+    "CriteriaList": [
+      {
+        "ProcedureOccurrence": {
+          "CodesetId": 14,
+          "ProcedureTypeExclude": false
+        }
+      },
+      {
+        "Observation": {
+          "CodesetId": 14,
+          "ObservationTypeExclude": false
+        }
+      },
+      {
+        "DrugExposure": {
+          "CodesetId": 14,
+          "DrugTypeExclude": false
+        }
+      }
+    ],
+    "ObservationWindow": {
+      "PriorDays": 0,
+      "PostDays": 0
+    },
+    "PrimaryCriteriaLimit": {
+      "Type": "First"
+    }
+  },
+  "ConceptSets": [
+    {
+      "id": 14,
+      "name": "[PIONEER] ADT and other PCa hormonal treatment ",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_ID": 2108678,
+              "CONCEPT_NAME": "Adjuvant (ie, in combination with external beam radiotherapy to the prostate for prostate cancer) hormonal therapy (gonadotropin-releasing hormone [GnRH] agonist or antagonist) prescribed/administered (PRCA)",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "4164F",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "CPT4",
+              "CONCEPT_CLASS_ID": "CPT4"
+            },
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 45768763,
+              "CONCEPT_NAME": "Androgen deprivation therapy",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "707266006",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 937694,
+              "CONCEPT_NAME": "Androgen deprivation therapy prescribed/administered in combination with external beam radiotherapy to the prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "G9894",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "HCPCS",
+              "CONCEPT_CLASS_ID": "HCPCS"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 21603834,
+              "CONCEPT_NAME": "Anti-androgens",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "L02BB",
+              "DOMAIN_ID": "Drug",
+              "VOCABULARY_ID": "ATC",
+              "CONCEPT_CLASS_ID": "ATC 4th"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 21603823,
+              "CONCEPT_NAME": "Gonadotropin releasing hormone analogues",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "L02AE",
+              "DOMAIN_ID": "Drug",
+              "VOCABULARY_ID": "ATC",
+              "CONCEPT_CLASS_ID": "ATC 4th"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 2721577,
+              "CONCEPT_NAME": "Home injectable therapy; hormonal therapy (e.g.; leuprolide, goserelin), including administrative services, professional pharmacy services, care coordination, and all necessary supplies and equipment (drugs and nursing visits coded separately), per diem",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "S9560",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "HCPCS",
+              "CONCEPT_CLASS_ID": "HCPCS"
+            },
+            "isExcluded": false,
+            "includeDescendants": false,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 21603845,
+              "CONCEPT_NAME": "Other hormone antagonists and related agents",
+              "STANDARD_CONCEPT": "C",
+              "STANDARD_CONCEPT_CAPTION": "Classification",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "L02BX",
+              "DOMAIN_ID": "Drug",
+              "VOCABULARY_ID": "ATC",
+              "CONCEPT_CLASS_ID": "ATC 4th"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          }
+        ]
+      }
+    }
+  ],
+  "QualifiedLimit": {
+    "Type": "First"
+  },
+  "ExpressionLimit": {
+    "Type": "All"
+  },
+  "InclusionRules": [],
+  "EndStrategy": {
+    "DateOffset": {
+      "DateField": "EndDate",
+      "Offset": 1
+    }
+  },
+  "CensoringCriteria": [],
+  "CollapseSettings": {
+    "CollapseType": "ERA",
+    "EraPad": 0
+  },
+  "CensorWindow": {}
+}

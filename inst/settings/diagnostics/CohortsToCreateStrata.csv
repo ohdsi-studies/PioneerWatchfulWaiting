@@ -1,34 +1,39 @@
 name,atlasName,atlasId,cohortId
-301,[PIONEER S01] High-Risk,301,301
-302,[PIONEER S02] Low-Risk,302,302
-303,[PIONEER S03] Intermediate-Risk,303,303
-304,[PIONEER S04] Metastatic Dx Extent,304,304
-305,[PIONEER S05] Locally advanced Dx Extent,305,305
-306,[PIONEER S06] Localized Dx Extent,306,306
-307,[PIONEER S07] PSA greater than 20,307,307
-308,[PIONEER S08] PSA less than 10,308,308
-309,[PIONEER S09] PSA 10-20,309,309
-310,[PIONEER S10] Stage T1,310,310
-311,[PIONEER S11] Stage T2,311,311
-312,[PIONEER S12] Stage T3 or T4,312,312
-313,[PIONEER S13] Physical Therapy,313,313
-314,[PIONEER S14] Grade 1 (GS 2-6),314,314
-315,[PIONEER S15] Grade 2 (GS 7 (3+4)),315,315
-316,[PIONEER S16] Grade 3 (GS 7 (4+3)),316,316
-317,[PIONEER S17] Grade 4 (GS 8),317,317
-318,[PIONEER S18] Grade 5 (GS 9-10),318,318
-319,[PIONEER S19] Family History of PCa,319,319
-320,[PIONEER S20] Mutations,320,320
-321,[PIONEER S21] Age below 55,321,321
-322,[PIONEER S22] Age 55-80,322,322
-323,[PIONEER S23] Age above 80,323,323
-324,[PIONEER S24] Charlson Comorbidity Index (cut off 0),324,324
-325,[PIONEER S25] Charlson Comorbidity Index (cut off 1),325,325
-326,[PIONEER S26] Charlson Comorbidity Index (cut off  greater or equals 2 ),326,326
-327,[PIONEER S27] Other malignancies,327,327
-328,[PIONEER S28] Total Cardiovascular Disease Event,328,328
-329,[PIONEER S29] Stroke,329,329
-330,[PIONEER S30] Type 2 Diabetes,330,330
-331,[PIONEER S31] Hypertension,331,331
-332,[PIONEER S32] Obesity,332,332
-333,[PIONEER S33] VTE,333,333
+301,[PIONEER S1] EAU High Risk,52,301
+302,[PIONEER S2] EAU Low Risk,53,302
+303,[PIONEER S3] EAU Intermediate Risk,54,303
+304,[PIONEER S4] Metastatic PCa,55,304
+305,[PIONEER S5] Locally Advanced PCa,56,305
+306,[PIONEER S6] localized PCa,57,306
+307,[PIONEER S7] PSA >20 at Diagnosis ,58,307
+308,[PIONEER S8] PSA <10 at Diagnosis,59,308
+309,[PIONEER S9] PSA 10-20 at Diagnosis,60,309
+310,[PIONEER S10] Stage cT1 at Dx,63,310
+311,[PIONEER S11] Stage cT2 at Dx,64,311
+312,[PIONEER S12] Stage cT3/cT4 at Dx,65,312
+313,[PIONEER S13] Physical Therapy/Exercise,112,313
+314,[PIONEER S14] Grade 1 (GS 2-6),67,314
+315,[PIONEER S15] Grade 2 (GS 3+4),68,315
+316,[PIONEER S16] Grade 3 (GS 4+3),69,316
+317,[PIONEER S17] Grade 4 (GS 8),70,317
+318,[PIONEER S18] Grade 5 (GS 9-10),71,318
+319,[PIONEER S19] Family history of Prostate cancer or history of family history of germline mutations,72,319
+320,"[PIONEER S20] Mutation (germline or somatic) in BRCA2, BRCA1, ATM, MLH1, MSH1, MSH2, MSH6, CHEK2, RAD51B and PALB2 ",83,320
+321,[PIONEER S21] Age at diagnosis <55,111,321
+322,[PIONEER S22] Age at diagnosis 55-80,110,322
+323,[PIONEER S23] Age at diagnosis >80,109,323
+324,[PIONEER S24] Charlson CCI=0,120,324
+325,[PIONEER S25] Charlson CCI=1,121,325
+326,[PIONEER S26] Charlson CCI>=2,122,326
+327,"[PIONEER S27] Any malignancy, except malignant neoplasm of skin",81,327
+334,[PIONEER S28] Performance status ECOG=0,146,334
+335,[PIONEER S29] Performance status ECOG=1,147,335
+336,[PIONEER S30] Performance status ECOG=2+,148,336
+328,[PIONEER S31] Total Cardiovascular Disease Event,152,328
+329,[PIONEER S32] Stroke,153,329
+330,[PIONEER S33] Type 2 Diabetes,154,330
+331,[PIONEER S34] Hypertension,155,331
+332,[PIONEER S35] Obesity,156,332
+333,[PIONEER S36] VTE,157,333
+337,[PIONEER S37] Anxiety,158,337
+338,[PIONEER S38] Prevalent Asthma or Chronic obstructive pulmonary disease (COPD),159,338

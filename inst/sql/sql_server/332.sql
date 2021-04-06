@@ -7,26 +7,28 @@ CREATE TABLE #Codesets (
 INSERT INTO #Codesets (codeset_id, concept_id)
 SELECT 0 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (3038553,36304830)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (3038553,36304833)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (3038553,36304830)
+  and ca.ancestor_concept_id in (3038553,36304833)
   and c.invalid_reason is null
 
 ) I
-) C UNION ALL 
+) C;
+INSERT INTO #Codesets (codeset_id, concept_id)
 SELECT 1 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4060985,4256640,45766200,433736,4176962,4081038)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4060985,4256640,45766204,433736,4176962,4081038)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (4060985,4256640,45766200,433736,4176962,4081038)
+  and ca.ancestor_concept_id in (4060985,4256640,45766204,433736,4176962,4081038)
   and c.invalid_reason is null
 
 ) I
-) C UNION ALL 
+) C;
+INSERT INTO #Codesets (codeset_id, concept_id)
 SELECT 2 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
   select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (3025315,4099154,3013762,3027492,3023166)
@@ -48,8 +50,8 @@ UNION  select c.concept_id
 
 ) E ON I.concept_id = E.concept_id
 WHERE E.concept_id is null
-) C
-;
+) C;
+
 
 with primary_events (event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id) as
 (
@@ -64,7 +66,8 @@ FROM
   (
   -- Begin Measurement Criteria
 select C.person_id, C.measurement_id as event_id, C.measurement_date as start_date, DATEADD(d,1,C.measurement_date) as END_DATE,
-       C.visit_occurrence_id, C.measurement_date as sort_date
+       C.measurement_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
+       C.measurement_date as sort_date
 from 
 (
   select m.* 
@@ -78,7 +81,8 @@ WHERE (C.value_as_number >= 30.0000 and C.value_as_number <= 60.0000)
 UNION ALL
 -- Begin Condition Occurrence Criteria
 SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
-  C.visit_occurrence_id, C.condition_start_date as sort_date
+       C.CONDITION_CONCEPT_ID as TARGET_CONCEPT_ID, C.visit_occurrence_id,
+       C.condition_start_date as sort_date
 FROM 
 (
   SELECT co.* 
@@ -92,7 +96,8 @@ FROM
 UNION ALL
 -- Begin Observation Criteria
 select C.person_id, C.observation_id as event_id, C.observation_date as start_date, DATEADD(d,1,C.observation_date) as END_DATE,
-       C.visit_occurrence_id, C.observation_date as sort_date
+       C.observation_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
+       C.observation_date as sort_date
 from 
 (
   select o.* 
@@ -106,7 +111,8 @@ JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and 
 UNION ALL
 -- Begin Measurement Criteria
 select C.person_id, C.measurement_id as event_id, C.measurement_date as start_date, DATEADD(d,1,C.measurement_date) as END_DATE,
-       C.visit_occurrence_id, C.measurement_date as sort_date
+       C.measurement_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
+       C.measurement_date as sort_date
 from 
 (
   select m.* 
@@ -121,7 +127,8 @@ AND C.unit_concept_id in (9529)
 UNION ALL
 -- Begin Observation Criteria
 select C.person_id, C.observation_id as event_id, C.observation_date as start_date, DATEADD(d,1,C.observation_date) as END_DATE,
-       C.visit_occurrence_id, C.observation_date as sort_date
+       C.observation_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
+       C.observation_date as sort_date
 from 
 (
   select o.* 
@@ -256,7 +263,6 @@ INSERT INTO @target_database_schema.@target_cohort_table (cohort_definition_id, 
 select @target_cohort_id as cohort_definition_id, person_id, start_date, end_date 
 FROM #final_cohort CO
 ;
-
 
 
 
