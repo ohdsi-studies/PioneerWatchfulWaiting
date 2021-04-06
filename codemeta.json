@@ -10,7 +10,7 @@
   "codeRepository": "https://github.com/ohdsi-studies/PioneerWatchfulWaiting",
   "issueTracker": "https://github.com/ohdsi-studies/PioneerWatchfulWaiting/issues",
   "license": "https://spdx.org/licenses/Apache-2.0",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -263,6 +263,6 @@
     }
   ],
   "readme": "https://github.com/ohdsi-studies/PioneerWatchfulWaiting/blob/master/README.md",
-  "fileSize": "244117.609KB",
+  "fileSize": "246413.076KB",
   "isPartOf": "https://ohdsi.org"
 }
