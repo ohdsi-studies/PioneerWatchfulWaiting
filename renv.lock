@@ -115,15 +115,14 @@
     },
     "ROhdsiWebApi": {
       "Package": "ROhdsiWebApi",
-      "Version": "1.1.3",
+      "Version": "1.2.0",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
+      "RemoteUsername": "OHDSI",
       "RemoteRepo": "ROhdsiWebApi",
-      "RemoteUsername": "ohdsi",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "23eaf1e0fe3f7f6a4aae6dcfb3ebdb8fd39ed900",
-      "Hash": "b4fc892ff8e3bb9757bcb2cd2c37138e"
+      "RemoteRef": "v1.2.0",
+      "RemoteSha": "db363a4e5d77dfa1a68267a9e1e4697ec46c02f1"
     },
     "RSQLite": {
       "Package": "RSQLite",
@@ -229,6 +228,11 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "ebaa97ac99cc2daf04e77eecc7b781d7"
+    },
+    "codemetar": {
+      "Package": "codemetar",
+      "Version": "0.1.9",
+      "Source": "Repository"
     },
     "colorspace": {
       "Package": "colorspace",
