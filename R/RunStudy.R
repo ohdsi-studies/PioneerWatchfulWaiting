@@ -185,8 +185,7 @@ runStudy <- function(connectionDetails = NULL,
   timeToEvent <- generateSurvival(connection, cohortDatabaseSchema, cohortTable = cohortStagingTable,
                                   outcomeIds = featureCohortIds, targetIds = targetIds)
   
-  
-  combinedOutcomeIds <- allStudyCohorts[allStudyCohorts$name %in% c('202', '201'), 'cohortId'][[1]] # 202=Death, 201=Symptoms
+  combinedOutcomeIds <- c(201, 202)  # 202=Death, 201=Symptoms
   combinedIdNum <- 999999
   timeToCombinedEvent <- generateCombinedSurvival(connection, cohortDatabaseSchema, cohortTable = cohortStagingTable,
                                                   outcomeIds = combinedOutcomeIds, targetIds = targetIds, combinedIdNum)
