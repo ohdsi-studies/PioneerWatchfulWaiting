@@ -140,9 +140,9 @@ useBulkCharacterization <- TRUE
 cohortIdsToExcludeFromExecution <- c()
 cohortIdsToExcludeFromResultsExport <- NULL
 
-# For uploading the results. You should have received the key file from the study coordinator:
-keyFileName <- ""
-userName <- ""
+# For uploading the results. You should have received the key file from the study coordinator, input the correct path here:
+keyFileName <- "your-home-folder-here/.ssh/study-data-site-pioneer"
+userName <- "study-data-site-pioneer"
 
 # Run cohort diagnostics -----------------------------------
 runCohortDiagnostics(connectionDetails = connectionDetails,
@@ -158,7 +158,7 @@ runCohortDiagnostics(connectionDetails = connectionDetails,
                      databaseDescription = databaseDescription,
                      minCellCount = minCellCount)
 
-# preMerge the data for shiny App. Replace "target" with
+# Optionally, preMerge the data for shiny App. Replace "target" with
 # one of these options: "target", "outcome", "strata"
 # preMergeDiagnosticsFiles(file.path(outputFolder, "diagnostics", "strata"))
 # Use the next command to review cohort diagnostics and replace "target" with
@@ -167,7 +167,7 @@ runCohortDiagnostics(connectionDetails = connectionDetails,
 
 # When finished with reviewing the diagnostics, use the next command
 # to upload the diagnostic results
-#uploadDiagnosticsResults(outputFolder, keyFileName, userName)
+uploadDiagnosticsResults(outputFolder, keyFileName, userName)
 
 
 # Use this to run the study. The results will be stored in a zip file called
@@ -199,5 +199,5 @@ launchShinyApp(outputFolder)
 
 # When finished with reviewing the results, use the next command
 # upload study results to OHDSI SFTP server:
-#uploadStudyResults(outputFolder, keyFileName, userName)
+uploadStudyResults(outputFolder, keyFileName, userName)
 
