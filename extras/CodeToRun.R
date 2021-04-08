@@ -158,7 +158,7 @@ runCohortDiagnostics(connectionDetails = connectionDetails,
                      databaseDescription = databaseDescription,
                      minCellCount = minCellCount)
 
-# preMerge the data for shiny App. Replace "target" with
+# Optionally, preMerge the data for shiny App. Replace "target" with
 # one of these options: "target", "outcome", "strata"
 # preMergeDiagnosticsFiles(file.path(outputFolder, "diagnostics", "strata"))
 # Use the next command to review cohort diagnostics and replace "target" with
@@ -199,5 +199,5 @@ launchShinyApp(outputFolder)
 
 # When finished with reviewing the results, use the next command
 # upload study results to OHDSI SFTP server:
-#uploadStudyResults(outputFolder, keyFileName, userName)
+uploadStudyResults(outputFolder, keyFileName, userName)
 
