@@ -140,9 +140,9 @@ useBulkCharacterization <- TRUE
 cohortIdsToExcludeFromExecution <- c()
 cohortIdsToExcludeFromResultsExport <- NULL
 
-# For uploading the results. You should have received the key file from the study coordinator:
-keyFileName <- ""
-userName <- ""
+# For uploading the results. You should have received the key file from the study coordinator, input the correct path here:
+keyFileName <- "your-home-folder-here/.ssh/study-data-site-pioneer"
+userName <- "study-data-site-pioneer"
 
 # Run cohort diagnostics -----------------------------------
 runCohortDiagnostics(connectionDetails = connectionDetails,
@@ -167,7 +167,7 @@ runCohortDiagnostics(connectionDetails = connectionDetails,
 
 # When finished with reviewing the diagnostics, use the next command
 # to upload the diagnostic results
-#uploadDiagnosticsResults(outputFolder, keyFileName, userName)
+uploadDiagnosticsResults(outputFolder, keyFileName, userName)
 
 
 # Use this to run the study. The results will be stored in a zip file called
