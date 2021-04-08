@@ -185,8 +185,7 @@ runStudy <- function(connectionDetails = NULL,
   timeToEvent <- generateSurvival(connection, cohortDatabaseSchema, cohortTable = cohortStagingTable,
                                   outcomeIds = featureCohortIds, targetIds = targetIds)
   
-  
-  combinedOutcomeIds <- allStudyCohorts[allStudyCohorts$name %in% c('Death', 'Symptoms'), 'cohortId'][[1]]
+  combinedOutcomeIds <- c(201, 202)  # 202=Death, 201=Symptoms
   combinedIdNum <- 999999
   timeToCombinedEvent <- generateCombinedSurvival(connection, cohortDatabaseSchema, cohortTable = cohortStagingTable,
                                                   outcomeIds = combinedOutcomeIds, targetIds = targetIds, combinedIdNum)
@@ -462,7 +461,6 @@ loadCohortsForExportFromPackage <- function(cohortIds) {
   cohorts <- getCohortsToCreate()
   cohorts$atlasId <- NULL
   if ("atlasName" %in% colnames(cohorts)) {
-    cohorts$atlasName <- cohorts$name # Hack to always use the name field
     cohorts <- dplyr::rename(cohorts, cohortName = "name", cohortFullName = "atlasName")
   } else {
     cohorts <- dplyr::rename(cohorts, cohortName = "name", cohortFullName = "fullName")
