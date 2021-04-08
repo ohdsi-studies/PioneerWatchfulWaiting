@@ -461,7 +461,6 @@ loadCohortsForExportFromPackage <- function(cohortIds) {
   cohorts <- getCohortsToCreate()
   cohorts$atlasId <- NULL
   if ("atlasName" %in% colnames(cohorts)) {
-    cohorts$atlasName <- cohorts$name # Hack to always use the name field
     cohorts <- dplyr::rename(cohorts, cohortName = "name", cohortFullName = "atlasName")
   } else {
     cohorts <- dplyr::rename(cohorts, cohortName = "name", cohortFullName = "fullName")

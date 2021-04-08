@@ -287,9 +287,9 @@ shinyServer(function(input, output, session) {
       return(plot)
     }
 
-    symptomsCohortId <- cohortStagingCount[cohortStagingCount$name == 'Symptoms', 'cohortId'][[1]]
-    deathCohortId <- cohortStagingCount[cohortStagingCount$name == 'Death', 'cohortId'][[1]]
-    treatmentCohortId <- cohortStagingCount[cohortStagingCount$name == 'Treatment Initiation', 'cohortId'][[1]]
+    symptomsCohortId <- cohortStagingCount[cohortStagingCount$name == '201', 'cohortId'][[1]]
+    deathCohortId <- cohortStagingCount[cohortStagingCount$name == '202', 'cohortId'][[1]]
+    treatmentCohortId <- cohortStagingCount[cohortStagingCount$name == '203', 'cohortId'][[1]]
 
     targetIdTimeToEvent <- cohortTimeToEvent %>% dplyr::filter(targetId == target_id)
     

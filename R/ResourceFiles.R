@@ -77,7 +77,7 @@ getAllStudyCohortsWithDetails <- function() {
   colNames <- c("cohortId", "cohortName", "targetCohortId", "targetCohortName", "strataCohortId", "strataCohortName", "cohortType")
   # Format - cohortsToCreate
   cohortsToCreate$targetCohortId <- cohortsToCreate$cohortId
-  cohortsToCreate$targetCohortName <- cohortsToCreate$name
+  cohortsToCreate$targetCohortName <- cohortsToCreate$atlasName
   cohortsToCreate$strataCohortId <- 0
   cohortsToCreate$strataCohortName <- "All"
   cohortsToCreate <- dplyr::rename(cohortsToCreate, cohortName = "name")
