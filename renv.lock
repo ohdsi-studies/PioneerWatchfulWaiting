@@ -232,7 +232,9 @@
     "codemetar": {
       "Package": "codemetar",
       "Version": "0.1.9",
-      "Source": "Repository"
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "e37c895d8906267146b6644970a1388b"
     },
     "colorspace": {
       "Package": "colorspace",
