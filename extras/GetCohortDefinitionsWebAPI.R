@@ -21,7 +21,7 @@ atlasLinkField <- "Where..link.to.PIONEER.CENTRAL.ATLAS."
 cohortTypeField <- "Intended.use"
 
 # WebAPI connection info
-token <- 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhcnRlbS5nb3JiYWNoZXZAb2R5c3NldXNpbmMuY29tIiwiZXhwIjoxNjE3NzkxMTI1fQ.GwmQwXJ5w6uPKhfoTmTHyyGmE9jUDJDlgtPR2mohCyWudDZ2svzWQ_mU-4SYZh6TfKv0g8OT8I5yJkwoFnxadA'
+token <- 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhcnRlbS5nb3JiYWNoZXZAb2R5c3NldXNpbmMuY29tIiwiZXhwIjoxNjE4MDA5NjM0fQ.ijPIQRWZSheSXRNXeO8EOQ5ZrkEB6DiCIM09zqnaVEXSk-cZ_lz_6Mw9h-T-UBtPHyqk1bRUW3yKoah27H4fsA'
 baseUrl <- 'https://pioneer-atlas.thehyve.net/WebAPI'
 setAuthHeader(baseUrl = baseUrl, token)
 # to be sure that connection is established
@@ -70,7 +70,7 @@ getCohortInfo <- function(allCohorts, type, baseUrl){
       print(name)
       cohortInfo <- getCohortDefinition(atlasId, baseUrl)
       atlasName <- cohortInfo$name
-      sql <- getCohortSql(cohortInfo, baseUrl)
+      sql <- getCohortSql(cohortInfo, baseUrl, generateStats = FALSE)
       json <- toJSON(cohortInfo$expression)
       row <- c(name, atlasName, atlasId, atlasId)
       
