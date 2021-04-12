@@ -147,39 +147,39 @@
 
 
 # get json cohort from local files, create CohortsToCreate files
-# nameToIdMapping <- list('target' = 100, 'outcome' = 200, 'strata' = 300)
+nameToIdMapping <- list('target' = 100, 'outcome' = 200, 'strata' = 300)
 # source_cohorts_path <- 'inst_demo/real_cohorts'
-# source_cohorts_path <- 'C:/Users/Artem/work/PIONEER studyathon/exported from atlas'
-# json_cohorts_path <- 'inst/cohorts'
+source_cohorts_path <- 'C:/Users/Artem/work/PIONEER studyathon/exported from atlas'
+json_cohorts_path <- 'inst/cohorts'
 settingsPath <- "inst/settings"
 
-# 
-# for (i in 1:length(nameToIdMapping)){
-#   group_name <- names(nameToIdMapping)[i]
-#   offset_num <- nameToIdMapping[[group_name]]
-# 
-#   ParallelLogger::logInfo("Importing ", group_name, " cohorts")
-#   
-#   oldNames <- sort(list.files(path = file.path(source_cohorts_path, group_name),
-#                               pattern = "\\[.+\\].+\\.json", full.names = FALSE))
-# 
-#   newNames <- c((offset_num + 1): (offset_num + length(oldNames)))
-#   newNames <- file.path(paste(newNames, 'json', sep='.'))
-#   
-#   file.copy(from = file.path(source_cohorts_path, group_name, oldNames), to=file.path(json_cohorts_path))
-#   file.rename(from = file.path(json_cohorts_path, oldNames), 
-#               to = file.path(json_cohorts_path, newNames))
-#   
-#   
-#   
-#   cohortsToCreate <- data.frame(name = gsub('\\[.+\\] ', '', gsub('.json', '', oldNames)), 
-#                                 atlasName = gsub('.json', '', oldNames),
-#                                 atlasId = gsub('.json', '', newNames), 
-#                                 cohortId = gsub('.json', '', newNames))
-#   
-#   readr::write_csv(cohortsToCreate, 
-#                    file.path(settingsPath, paste0('CohortsToCreate', stringr::str_to_title(group_name), '.csv')))
-# }
+
+for (i in 1:length(nameToIdMapping)){
+  group_name <- names(nameToIdMapping)[i]
+  offset_num <- nameToIdMapping[[group_name]]
+
+  ParallelLogger::logInfo("Importing ", group_name, " cohorts")
+  
+  oldNames <- sort(list.files(path = file.path(source_cohorts_path, group_name),
+                              pattern = "\\[.+\\].+\\.json", full.names = FALSE))
+
+  newNames <- c((offset_num + 1): (offset_num + length(oldNames)))
+  newNames <- file.path(paste(newNames, 'json', sep='.'))
+  
+  file.copy(from = file.path(source_cohorts_path, group_name, oldNames), to=file.path(json_cohorts_path))
+  file.rename(from = file.path(json_cohorts_path, oldNames), 
+              to = file.path(json_cohorts_path, newNames))
+  
+  
+  
+  cohortsToCreate <- data.frame(name = gsub('\\[.+\\] ', '', gsub('.json', '', oldNames)), 
+                                atlasName = gsub('.json', '', oldNames),
+                                atlasId = gsub('.json', '', newNames), 
+                                cohortId = gsub('.json', '', newNames))
+  
+  readr::write_csv(cohortsToCreate, 
+                   file.path(settingsPath, paste0('CohortsToCreate', stringr::str_to_title(group_name), '.csv')))
+}
 
 
 
@@ -281,7 +281,7 @@ shinyCohortXref <- rbind(targetCohortsForShiny[,xrefColumnNames],
                          inverseStrata[,xrefColumnNames],
                          targetStrataXRef[targetStrataXRef$cohortType == "TwS",xrefColumnNames])
 if (!useSubset) {
-  readr::write_csv(shinyCohortXref, file.path("inst/shiny/PIONEERWatchfulWaitingExplorer", "cohortXref.csv"))
+  readr::write_csv(shinyCohortXref, file.path("inst/shiny/PIONEERResultsExplorer", "cohortXref.csv"))
 }
 
 targetStrataXRef <- targetStrataXRef[,c("targetId","strataId","cohortId","cohortType","name")]
@@ -292,4 +292,3 @@ readr::write_csv(targetStrataXRef, file.path(settingsPath, "targetStrataXref.csv
 
 # Store environment in which the study was executed -----------------------
 # OhdsiRTools::insertEnvironmentSnapshotInPackage("PioneerWatchfulWaiting")
-
