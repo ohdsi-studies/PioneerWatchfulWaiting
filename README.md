@@ -235,5 +235,3 @@ Once you have checked results, you can use the following code to send:
 #userName <- "study-data-site-pioneer" # do not change this, it is linked to the key you have
 uploadStudyResults(outputFolder, keyFileName, userName)
 ````
-
-Please notify Susan Evans Axelsson via Teams when you have dropped results in the folder.
