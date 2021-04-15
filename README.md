@@ -171,6 +171,14 @@ When the package is completed, you can view the `CohortDiagnostics` output in a 
 # CohortDiagnostics::launchDiagnosticsExplorer(file.path(outputFolder, "diagnostics", "target"))
 ````
 
+If it looks good, you can upload the results to the OHDSI server:
+```
+# For uploading the results. You should have received the key file from the study coordinator, input the correct path here:
+keyFileName <- "[key location: e.g. ~/.ssh/study-data-site-pioneer]"
+userName <- "study-data-site-pioneer" # do not change this, it is linked to the key you have
+uploadDiagnosticsResults(outputFolder, keyFileName, userName)
+```
+
 5. Once you have run `CohortDiagnostics` you are encouraged to reach out to the study leads to review your outputs. 
 
 6. You can now run the characterization package. This step is designed to take advantage of incremental building. This means if the job fails, the R package will start back up where it left off. This package has been designed to be computationally efficient. Package runtime will vary based on your infrastructure but it should be significantly faster than your prior CohortDiagnostic run.
@@ -223,14 +231,9 @@ As a data owner, you will want to inspect these files for adherence to the minCe
 Once you have checked results, you can use the following code to send:
 ````
 # For uploading the results. You should have received the key file from the study coordinator:
-#keyFileName <- "[location where you are storing: e.g. ~/keys/study-data-site-pioneer]"
-userName <- "study-data-site-pioneer" # do not change this, it is linked to the key you have
-
-# Upload results to OHDSI SFTP server:
-OhdsiSharing::sftpUploadFile(privateKeyFileName = keyFileName,
-                             userName = userName,
-                             remoteFolder = "[your db name]",
-                             fileName = "[location where you stored your export: e.g. home/studyresults/MyResults.zip])
+#keyFileName <- "[key location: e.g. ~/.ssh/study-data-site-pioneer]"
+#userName <- "study-data-site-pioneer" # do not change this, it is linked to the key you have
+uploadStudyResults(outputFolder, keyFileName, userName)
 ````
 
 Please notify Susan Evans Axelsson via Teams when you have dropped results in the folder.
