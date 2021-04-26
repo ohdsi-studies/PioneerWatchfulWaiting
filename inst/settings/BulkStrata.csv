@@ -1,8 +1,5 @@
 generationScript,name,lbOperator,lbStrataValue,ubOperator,ubStrataValue,cohortId
 strata/StratifyByFollowUpTime.sql,Full 365-day follow up,>=,365,<,99999,1
 strata/StratifyByFollowUpTime.sql,< 365-day follow up,>=,0,<,365,2
-strata/StratifyByAge.sql,Age < 55,>=,18,<,55,3
-strata/StratifyByAge.sql,Age 55 - 80,>=,55,<,80,4
-strata/StratifyByAge.sql,Age >= 80,>=,80,<,99999,5
 strata/StratifyByRace.sql,Black or African American,=,8516,NA,NA,6
 strata/StratifyByRace.sql,White,=,8527,NA,NA,7
