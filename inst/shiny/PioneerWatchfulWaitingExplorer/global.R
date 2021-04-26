@@ -131,7 +131,7 @@ domain$name <- as.character(domain$name)
 domainName <- "All"
 
 # This must match the featureTimeWindow.csv from the Charybdis study
-timeWindow <- data.frame(windowId=c(1:4), name=c("-365d to -1d", "-30d to -1d", "index", "index to 30d"))
+timeWindow <- data.frame(windowId=c(1:4), name=c("-365d to -1d", "index", "index to 365d", "index to 5y"))
 timeWindow$name <- as.character(timeWindow$name)
 
 cohortXref <- readr::read_csv("./cohortXref.csv", col_types = readr::cols())
