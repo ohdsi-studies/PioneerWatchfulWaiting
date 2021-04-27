@@ -137,7 +137,8 @@ shinyServer(function(input, output, session) {
   
   # Filter Options -----
   cohortIdTimeToEvent <- reactive({
-    return(unlist(cohortXref[cohortXref$targetId %in% targetCohortIdTimeToEvent() & cohortXref$strataName %in% input$strataTimeToEvent,c("cohortId")]))
+    return(unlist(cohortXref[cohortXref$targetId %in% targetCohortIdTimeToEvent() 
+                             & cohortXref$strataName %in% input$strataTimeToEvent,c("cohortId")]))
   })
   
   targetCohortIdTimeToEvent <- reactive({
@@ -145,7 +146,14 @@ shinyServer(function(input, output, session) {
   })
   
 
+  cohortIdMetricsDistribution <- reactive({
+    return(unlist(cohortXref[cohortXref$targetId %in% targetCohortIdMetricsDistribution() 
+                             & cohortXref$strataName %in% input$strataMetricsDistribution, c("cohortId")]))
+  })
   
+  targetCohortIdMetricsDistribution <- reactive({
+    return(targetCohort$targetId[targetCohort$targetName %in% input$targetMetricsDistribution])
+  })
   
   
   cohortIdList <- reactive({
@@ -269,14 +277,8 @@ shinyServer(function(input, output, session) {
   
   
   # timeToEvent-----------------
-  getSurvivalInfo <- reactive({
-    table <- cohortCount[cohortCount$databaseId %in% input$databasesTimeToEvent & cohortCount$cohortId %in% cohortIdTimeToEvent(), ]
-    # print(cohortTimeToEvent)
-    return(table)
-  })
   
   output$survivalHeader <- renderText({
-    # print(cohortCount[cohortCount$databaseId %in% input$databases & cohortCount$cohortId %in% cohortIdTimeToEvent(), ][[1]])
     paste(input$targetTimeToEvent, input$strataTimeToEvent, sep=" ")
   })
   
@@ -287,11 +289,12 @@ shinyServer(function(input, output, session) {
       return(plot)
     }
 
-    symptomsCohortId <- cohortStagingCount[cohortStagingCount$name == '201', 'cohortId'][[1]]
-    deathCohortId <- cohortStagingCount[cohortStagingCount$name == '202', 'cohortId'][[1]]
-    treatmentCohortId <- cohortStagingCount[cohortStagingCount$name == '203', 'cohortId'][[1]]
+    symptomsCohortId <- cohortStagingCount[cohortStagingCount$name == 'Symptoms', 'cohortId'][[1]]
+    deathCohortId <- cohortStagingCount[cohortStagingCount$name == 'Death', 'cohortId'][[1]]
+    treatmentCohortId <- cohortStagingCount[cohortStagingCount$name == 'Treatment Initiation', 'cohortId'][[1]]
 
-    targetIdTimeToEvent <- cohortTimeToEvent %>% dplyr::filter(targetId == target_id)
+    # targetIdTimeToEvent <- cohortTimeToEvent %>% dplyr::filter(targetId == target_id)
+    targetIdTimeToEvent <- cohortTimeToEvent %>% dplyr::filter(targetId == target_id, databaseId == input$databasesTimeToEvent)
     
     if (length(symptomsCohortId)>0){
       dataBoth <- targetIdTimeToEvent %>% dplyr::filter(outcomeId == c(999999))
@@ -341,7 +344,27 @@ shinyServer(function(input, output, session) {
   
   
   
-
+  # Metrics Distribution
+  output$metricsHeader <- renderText({
+    paste(input$targetMetricsDistribution, input$strataMetricsDistribution, sep=" ")
+  })
+  
+  
+  getMetricsTable <- reactive ({
+    target_id <- cohortCount[cohortCount$databaseId %in% input$databasesMetricsDistribution 
+                             & cohortCount$cohortId %in% cohortIdMetricsDistribution(), ][[1]]
+    metricsTable <- metricsDistribution %>% dplyr::filter(cohortDefinitionId == target_id, 
+                                                          databaseId == input$databasesMetricsDistribution)
+    names(metricsTable)[names(metricsTable) == 'iqr'] <- 'IQR'
+    return(metricsTable[c('analysisName', 'IQR', 'minimum', 'q1', 'median', 'q3', 'maximum')])
+  })
+  
+  
+  output$metricsTable <- renderDataTable(
+    getMetricsTable()
+  )
+  
+  
   # Cohort Counts ---------
   output$borderCohortCounts <- renderUI({
     return(renderBorderTag())
