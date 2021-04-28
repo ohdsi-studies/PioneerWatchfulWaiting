@@ -2,7 +2,10 @@ Long term outcomes of prostate cancer patients undergoing non-interventional man
 =============
 
 <img src="https://img.shields.io/badge/Study%20Status-Started-blue.svg" alt="Study Status: Started"/>
-<img src="https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B%20%20%E2%97%8F%20%20%E2%97%8B-orange" alt="FAIR status: Orange">https://fair-software.eu</img>
+
+[![fair-software.eu](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu)
+
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4836/badge)](https://bestpractices.coreinfrastructure.org/projects/4836)
 
 - Analytics use case(s): **Characterization**
 - Study type: **Clinical Application**
