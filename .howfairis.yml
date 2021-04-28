@@ -1,0 +1,1 @@
+skip_registry_checks_reason: "The package is listed in https://data.ohdsi.org/OhdsiStudies but isn't general purpose enough to list in a repository"
