@@ -1,7 +1,7 @@
 Long term outcomes of prostate cancer patients undergoing non-interventional management
 =============
 
-<img src="https://img.shields.io/badge/Study%20Status-Started-blue.svg" alt="Study Status: Started"/>
+[![Study Status: Started](https://img.shields.io/badge/Study%20Status-Started-blue.svg)](https://ohdsi.github.io/TheBookOfOhdsi/StudySteps.html)
 
 [![fair-software.eu](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F-green)](https://fair-software.eu)
 
@@ -14,9 +14,9 @@ Long term outcomes of prostate cancer patients undergoing non-interventional man
 - Study lead forums tag: please refer to **[keesvanbochove](https://forums.ohdsi.org/u/keesvanbochove)**
 - Study start date: **09-Mar-2021**
 - Study end date: **-**
-- Protocol: please look in Teams
+- Protocol: **[RQ2_OHDSI_FINAL.pdf](extras/Protocol_RQ2_OHDSI_FINAL.pdf)**
 - Publications: **-**
-- Diagnositcs explorer: **[Shiny App: Cohort diagnostics](https://data.ohdsi.org/PioneerWatchfulWaitingDiag/)**
+- Diagnostics explorer: **[Shiny App: Cohort diagnostics](https://data.ohdsi.org/PioneerWatchfulWaitingDiag/)**
 - Results explorer: **[Shiny App: Characterization Study](https://data.ohdsi.org/PioneerWatchfulWaiting/)**
 
 The aim of this study is to assess the long-term outcomes of prostate cancer patients managed with non-curative intent therapies in different disease risk profiles. The impact of life expectancy and comorbidities on the risk of recurrence and disease-free and overall survival will be assessed. 
