@@ -25,7 +25,7 @@ generateSurvival <- function(connection, cohortDatabaseSchema, cohortTable, targ
       
       surv_info <- survival::survfit(survival::Surv(timeToEvent, event) ~ 1, data = km_proc)
       
-      surv_info <- surv_summary(surv_info)
+      surv_info <- survminer::surv_summary(surv_info)
 
       data.frame(targetId = targetId, outcomeId = outcomeId, time = surv_info$time,
                  surv = surv_info$surv, n.censor = surv_info$n.censor,
@@ -62,7 +62,7 @@ generateCombinedSurvival <- function(connection, cohortDatabaseSchema, cohortTab
     
     surv_info <- survival::survfit(survival::Surv(timeToEvent, event) ~ 1, data = km_proc)
     
-    surv_info <- surv_summary(surv_info)
+    surv_info <- survminer::surv_summary(surv_info)
     
     data.frame(targetId = targetId, outcomeId = combinedOutcomeId, time = surv_info$time,
                surv = surv_info$surv, n.censor = surv_info$n.censor,

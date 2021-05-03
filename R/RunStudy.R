@@ -185,8 +185,8 @@ runStudy <- function(connectionDetails = NULL,
   KMOutcomesIds <- KMOutcomes$cohortId[KMOutcomes$createTimeToEvent == TRUE]
   timeToEvent <- generateSurvival(connection, cohortDatabaseSchema, cohortTable = cohortStagingTable,
                                   targetIds = targetIds, outcomeIds = KMOutcomesIds, databaseId = databaseId, packageName = getThisPackageName())
-  
-  
+
+
   KMOutcomesIds <- KMOutcomes$cohortId[KMOutcomes$name %in% c('Death', 'Symptomatic progression')]
   # combinedOutcomeId <- 999999
   combinedOutcomeId <- max(allStudyCohorts$cohortId) + 1
@@ -194,13 +194,44 @@ runStudy <- function(connectionDetails = NULL,
                                                   targetIds = targetIds, outcomeIds = KMOutcomesIds,
                                                   combinedOutcomeId = combinedOutcomeId, databaseId = databaseId, packageName = getThisPackageName())
   timeToEvent <- rbind(timeToEvent, timeToCombinedEvent)
-  
-  
+
+
   writeToCsv(timeToEvent, file.path(exportFolder, "cohort_time_to_event.csv"), incremental = incremental, targetId = timeToEvent$targetId)
   
   
+  # Generate metricsDistribution info -----------------------------------------------------
+  ParallelLogger::logInfo("Generating metrics distribution")
+
   
-  getAgeAtEventDistribution()
+  # prepare necessary tables
+  targetIdsFormatted <- paste(targetIds, collapse = ', ')
+  pathToSql <- system.file("sql", "sql_server", "IQRComplementaryTables.sql", package = getThisPackageName())
+  sql <- readChar(pathToSql, file.info(pathToSql)$size)
+  DatabaseConnector::renderTranslateExecuteSql(connection,
+                                               sql = sql,
+                                               cdm_database_schema = cdmDatabaseSchema,
+                                               cohort_database_schema = cohortDatabaseSchema,
+                                               cohort_table = cohortStagingTable,
+                                               target_ids = targetIdsFormatted)
+                                               
+
+  ageAtDx <- getAtEventDistribution(connection, cohortDatabaseSchema, cdmDatabaseSchema, cohortTable = cohortStagingTable,
+                                       targetIds = targetIds, databaseId = databaseId, packageName = getThisPackageName(), 
+                                       sqlFileName <- "AgeAtDiagnosis.sql")
+  
+  yearOfDx <- getAtEventDistribution(connection, cohortDatabaseSchema, cdmDatabaseSchema, cohortTable = cohortStagingTable,
+                                     targetIds = targetIds, databaseId = databaseId, packageName = getThisPackageName(), 
+                                     sqlFileName <- "YearOfDiagnosis.sql")
+  
+  CCIatDx <- getAtEventDistribution(connection, cohortDatabaseSchema, cdmDatabaseSchema, cohortTable = cohortStagingTable,
+                                    targetIds = targetIds, databaseId = databaseId, packageName = getThisPackageName(), 
+                                    sqlFileName <- "CCIAtDiagnosis.sql")
+  
+  metricsDistribution <- rbind(ageAtDx, yearOfDx, CCIatDx)
+  writeToCsv(metricsDistribution, file.path(exportFolder, "metrics_distribution.csv"), incremental = incremental,
+             cohortDefinitionId = metricsDistribution$cohortDefinitionId)
+  
+  
   # Counting cohorts -----------------------------------------------------------------------
   ParallelLogger::logInfo("Counting cohorts")
   counts <- getCohortCounts(connection = connection,
