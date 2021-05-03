@@ -1,11 +1,11 @@
-"name","atlasName","atlasId","cohortId"
-"Death","[PIONEER O1] Death","46","46"
-"RP (Radical Prostatectomy)","NOT FINALIZED [PIONEER O10] RadioTherapy","149","149"
-"RP (Radical Prostatectomy)","[PIONEER ON3] Prostatectomy","151","151"
-"Symptomatic progression","[PIONEER O2] Symptomatic progression","45","45"
-"Treatment initiation","[PIONEER O3] Treatment Initiation","61","61"
-"Curative treatment","[PIONEER O4] Curative Treatment Initiation","73","73"
-"Palliative treatment","[PIONEER O5] Palliative Treatment Initiation","74","74"
-"Hospitalization","[PIONEER O6] Hospitalization","87","87"
-"ED visit","[PIONEER O7] ER Visit","90","90"
-"ADT","[PIONEER ON2] ADT","150","150"
+name,atlasName,atlasId,cohortId,createTimeToEvent
+Death,[PIONEER O1] Death,46,46,TRUE
+RP (Radical Prostatectomy),NOT FINALIZED [PIONEER O10] RadioTherapy,149,149,FALSE
+RP (Radical Prostatectomy),[PIONEER ON3] Prostatectomy,151,151,FALSE
+Symptomatic progression,[PIONEER O2] Symptomatic progression,45,45,TRUE
+Treatment initiation,[PIONEER O3] Treatment Initiation,61,61,TRUE
+Curative treatment,[PIONEER O4] Curative Treatment Initiation,73,73,TRUE
+Palliative treatment,[PIONEER O5] Palliative Treatment Initiation,74,74,TRUE
+Hospitalization,[PIONEER O6] Hospitalization,87,87,FALSE
+ED visit,[PIONEER O7] ER Visit,90,90,FALSE
+ADT,[PIONEER ON2] ADT,150,150,FALSE

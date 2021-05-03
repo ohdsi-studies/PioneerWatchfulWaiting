@@ -18,9 +18,9 @@ runStudy <- function(connectionDetails = NULL,
                      minCellCount = 5,
                      incremental = TRUE,
                      incrementalFolder = file.path(exportFolder, "RecordKeeping")) {
-
+  
   start <- Sys.time()
-
+  
   if (!file.exists(exportFolder)) {
     dir.create(exportFolder, recursive = TRUE)
   }
@@ -35,7 +35,7 @@ runStudy <- function(connectionDetails = NULL,
   if (!is.na(as.logical(useSubset)) && as.logical(useSubset)) {
     ParallelLogger::logWarn("Running in subset mode for testing")
   }
-
+  
   if (incremental) {
     if (is.null(incrementalFolder)) {
       stop("Must specify incrementalFolder when incremental = TRUE")
@@ -49,7 +49,7 @@ runStudy <- function(connectionDetails = NULL,
     warning("fftempdir '", getOption("fftempdir"), "' not found. Attempting to create folder")
     dir.create(getOption("fftempdir"), recursive = TRUE)
   }
-
+  
   if (is.null(connection)) {
     connection <- DatabaseConnector::connect(connectionDetails)
     on.exit(DatabaseConnector::disconnect(connection))
@@ -81,7 +81,7 @@ runStudy <- function(connectionDetails = NULL,
                        incremental = incremental,
                        incrementalFolder = incrementalFolder,
                        inclusionStatisticsFolder = exportFolder)
-
+  
   # Next do the strata cohorts
   ParallelLogger::logInfo("******************************************")
   ParallelLogger::logInfo("  ---- Creating strata cohorts  ---- ")
@@ -99,7 +99,7 @@ runStudy <- function(connectionDetails = NULL,
                        incremental = incremental,
                        incrementalFolder = incrementalFolder,
                        inclusionStatisticsFolder = exportFolder)
-
+  
   # Create the feature cohorts
   ParallelLogger::logInfo("**********************************************************")
   ParallelLogger::logInfo(" ---- Creating feature cohorts ---- ")
@@ -117,7 +117,7 @@ runStudy <- function(connectionDetails = NULL,
                        incremental = incremental,
                        incrementalFolder = incrementalFolder,
                        inclusionStatisticsFolder = exportFolder)
-
+  
   # Create the stratified cohorts
   ParallelLogger::logInfo("**********************************************************")
   ParallelLogger::logInfo(" ---- Creating stratified target cohorts ---- ")
@@ -128,7 +128,7 @@ runStudy <- function(connectionDetails = NULL,
                    cohortStagingTable = cohortStagingTable,
                    targetIds = targetCohortIds,
                    oracleTempSchema = oracleTempSchema)
-
+  
   # Copy and censor cohorts to the final table
   ParallelLogger::logInfo("**********************************************************")
   ParallelLogger::logInfo(" ---- Copy cohorts to main table ---- ")
@@ -140,7 +140,7 @@ runStudy <- function(connectionDetails = NULL,
                        minCellCount = minCellCount,
                        targetIds = targetCohortIds,
                        oracleTempSchema = oracleTempSchema)
-
+  
   # Compute the features
   ParallelLogger::logInfo("**********************************************************")
   ParallelLogger::logInfo(" ---- Create feature proportions ---- ")
@@ -151,7 +151,7 @@ runStudy <- function(connectionDetails = NULL,
                            cohortTable = cohortTable,
                            featureSummaryTable = featureSummaryTable,
                            oracleTempSchema = oracleTempSchema)
-
+  
   ParallelLogger::logInfo("Saving database metadata")
   database <- data.frame(databaseId = databaseId,
                          databaseName = databaseName,
@@ -161,7 +161,7 @@ runStudy <- function(connectionDetails = NULL,
                                                                oracleTempSchema = oracleTempSchema),
                          isMetaAnalysis = 0)
   writeToCsv(database, file.path(exportFolder, "database.csv"))
-
+  
   # Counting staging cohorts ---------------------------------------------------------------
   ParallelLogger::logInfo("Counting staging cohorts")
   counts <- getCohortCounts(connection = connection,
@@ -175,23 +175,32 @@ runStudy <- function(connectionDetails = NULL,
   allStudyCohorts <- getAllStudyCohorts()
   counts <- dplyr::left_join(x = allStudyCohorts, y = counts, by="cohortId")
   writeToCsv(counts, file.path(exportFolder, "cohort_staging_count.csv"), incremental = incremental, cohortId = counts$cohortId)
-
   
   # Generate survival info -----------------------------------------------------------------
   ParallelLogger::logInfo("Generating time to event data")
   targetIds <- allStudyCohorts[[2]]
   targetIds <- setdiff(targetIds, featureCohortIds)
   targetIds <- setdiff(targetIds, strataCohortIds)
+  KMOutcomes <- getFeatures()
+  KMOutcomesIds <- KMOutcomes$cohortId[KMOutcomes$createTimeToEvent == TRUE]
   timeToEvent <- generateSurvival(connection, cohortDatabaseSchema, cohortTable = cohortStagingTable,
-                                  outcomeIds = featureCohortIds, targetIds = targetIds)
+                                  targetIds = targetIds, outcomeIds = KMOutcomesIds, databaseId = databaseId, packageName = getThisPackageName())
   
-  combinedOutcomeIds <- c(201, 202)  # 202=Death, 201=Symptoms
-  combinedIdNum <- 999999
+  
+  KMOutcomesIds <- KMOutcomes$cohortId[KMOutcomes$name %in% c('Death', 'Symptomatic progression')]
+  # combinedOutcomeId <- 999999
+  combinedOutcomeId <- max(allStudyCohorts$cohortId) + 1
   timeToCombinedEvent <- generateCombinedSurvival(connection, cohortDatabaseSchema, cohortTable = cohortStagingTable,
-                                                  outcomeIds = combinedOutcomeIds, targetIds = targetIds, combinedIdNum)
+                                                  targetIds = targetIds, outcomeIds = KMOutcomesIds,
+                                                  combinedOutcomeId = combinedOutcomeId, databaseId = databaseId, packageName = getThisPackageName())
   timeToEvent <- rbind(timeToEvent, timeToCombinedEvent)
+  
+  
   writeToCsv(timeToEvent, file.path(exportFolder, "cohort_time_to_event.csv"), incremental = incremental, targetId = timeToEvent$targetId)
   
+  
+  
+  getAgeAtEventDistribution()
   # Counting cohorts -----------------------------------------------------------------------
   ParallelLogger::logInfo("Counting cohorts")
   counts <- getCohortCounts(connection = connection,
@@ -203,15 +212,15 @@ runStudy <- function(connectionDetails = NULL,
     counts <- enforceMinCellValue(counts, "cohortSubjects", minCellCount)
   }
   writeToCsv(counts, file.path(exportFolder, "cohort_count.csv"), incremental = incremental, cohortId = counts$cohortId)
-
+  
   # Read in the cohort counts
   counts <- readr::read_csv(file.path(exportFolder, "cohort_count.csv"), col_types = readr::cols())
   colnames(counts) <- SqlRender::snakeCaseToCamelCase(colnames(counts))
-
+  
   # Export the cohorts from the study
   cohortsForExport <- loadCohortsForExportFromPackage(cohortIds = counts$cohortId)
   writeToCsv(cohortsForExport, file.path(exportFolder, "cohort.csv"))
-
+  
   # Extract feature counts -----------------------------------------------------------------------
   ParallelLogger::logInfo("Extract feature counts")
   featureProportions <- exportFeatureProportions(connection = connection,
@@ -230,7 +239,7 @@ runStudy <- function(connectionDetails = NULL,
   writeToCsv(featureValues, file.path(exportFolder, "covariate_value.csv"), incremental = incremental, cohortId = featureValues$cohortId, covariateId = featureValues$covariateId)
   # Also keeping a raw output for debugging
   writeToCsv(featureProportions, file.path(exportFolder, "feature_proportions.csv"))
-
+  
   # Cohort characterization ---------------------------------------------------------------
   # Note to package maintainer: If any of the logic to this changes, you'll need to revist
   # the function createBulkCharacteristics
@@ -246,11 +255,11 @@ runStudy <- function(connectionDetails = NULL,
     if (nrow(data) > 0) {
       data$cohortId <- cohortId
     }
-
+    
     data$covariateId <- data$covariateId * 10 + windowId
     return(data)
   }
-
+  
   # Subset the cohorts to the target/strata for running feature extraction
   # that are >= 140 per protocol to improve efficency
   featureExtractionCohorts <-  loadCohortsForExportWithChecksumFromPackage(counts[counts$cohortSubjects >= getMinimumSubjectCountForCharacterization(), c("cohortId")]$cohortId)
@@ -352,7 +361,7 @@ exportResults <- function(exportFolder, databaseId, cohortIdsToExcludeFromResult
       dir.create(tempFolder)
     }
     file.copy(file.path(exportFolder, files), tempFolder)
-
+    
     # Censor out the cohorts based on the IDs passed in
     for(i in 1:length(filesWithCohortIds)) {
       fileName <- file.path(tempFolder, filesWithCohortIds[i])
@@ -476,11 +485,11 @@ loadCohortsForExportFromPackage <- function(cohortIds) {
   
   cols <- names(cohorts)
   cohorts <- rbind(cohorts, targetStrataXref[cols])
-    
+  
   if (!is.null(cohortIds)) {
     cohorts <- cohorts[cohorts$cohortId %in% cohortIds, ]
   }
-
+  
   return(cohorts)
 }
 

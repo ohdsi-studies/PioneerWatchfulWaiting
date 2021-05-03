@@ -85,7 +85,12 @@ dashboardPage(
                                                            choices = strataCohort$strataName,
                                                            selected = 'All',
                                                            options = shinyWidgets::pickerOptions(actionsBox = TRUE, liveSearch = TRUE, dropupAuto = FALSE),
-                                                           multiple = FALSE)
+                                                           multiple = FALSE), 
+                                 shinyWidgets::pickerInput("KMPlot", "Plot Choice",
+                                                           choices = KMIds$name,
+                                                           selected = KMIds$name,
+                                                           options = shinyWidgets::pickerOptions(actionsBox = TRUE, liveSearch = TRUE, dropupAuto = FALSE),
+                                                           multiple = TRUE )
                 ),
                 
                 conditionalPanel(condition = "input.tabs=='metricsDistribution'",
@@ -204,6 +209,8 @@ dashboardPage(
       ),
       
       tabItem(tabName = "timeToEvent",
+              div(class="download-container",
+                  downloadButton("dlTimeToEvent", "Download Data")),
               tags$h4(textOutput('survivalHeader')),
               tags$div(
                 plotOutput("TimeToEventDeath", height = 650, width = 1050)

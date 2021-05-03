@@ -114,7 +114,6 @@ if (dataStorage == "database") {
   }  
 }
 
-
 if (exists("covariate")) {
   covariate <- unique(covariate)
   covariate$windowId <- as.numeric(substr(covariate$covariateId, nchar(covariate$covariateId), nchar(covariate$covariateId)))
@@ -167,3 +166,15 @@ dbTermsOfUse <- readr::read_csv("./databaseTermsOfUse.csv", col_types = readr::c
 colnames(dbTermsOfUse) <- SqlRender::snakeCaseToCamelCase(colnames(dbTermsOfUse))
 database <- dplyr::left_join(database, dbTermsOfUse, by="databaseId")
 database <- database[order(database$databaseId),]
+
+
+# Add Time to Event names and ids
+ids <- unique(cohortTimeToEvent$outcomeId)
+names <- unique(cohortStagingCount$name[cohortStagingCount$cohortId %in% ids])
+if(length(cohortStagingCount$name[cohortStagingCount$cohortId == max(ids)]) == 0){
+  names <- c(names, 'Symptomatic progression free survival')
+}
+
+KMIds <- data.frame(id = ids,
+                    name = names)
+

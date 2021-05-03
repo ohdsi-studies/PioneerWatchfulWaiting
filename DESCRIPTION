@@ -30,6 +30,7 @@ Imports:
   tibble,
   magrittr,
   survival,
+  survminer,
   codemetar,
   renv
 Suggests:
