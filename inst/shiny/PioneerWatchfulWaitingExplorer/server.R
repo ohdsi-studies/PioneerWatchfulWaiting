@@ -328,7 +328,7 @@ shinyServer(function(input, output, session) {
                   conf.int = TRUE,
                   legend.title = 'Event',
                   ylim = c(min(accumulatedData$lower), 1),
-                  ggtheme = theme_bw(),
+                  ggtheme = ggplot2::theme_bw(),
                   )
     return(plot)
   })

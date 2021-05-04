@@ -126,11 +126,12 @@ domain <- rbind(domain,data.frame(name = "Cohort", covariateAnalysisId = c(10000
 domain <- rbind(domain,data.frame(name = "Demographics", covariateAnalysisId = c(1:99)))
 domain <- rbind(domain,data.frame(name = "Drug", covariateAnalysisId = c(412)))
 domain <- rbind(domain,data.frame(name = "Condition", covariateAnalysisId = c(212)))
+domain <- rbind(domain,data.frame(name = 'Procedure', covariateAnalysisId = c(712)))
 domain$name <- as.character(domain$name)
 domainName <- "All"
 
-# This must match the featureTimeWindow.csv from the Charybdis study
-timeWindow <- data.frame(windowId=c(1:4), name=c("-365d to -1d", "index", "index to 365d", "index to 5y"))
+# This must match the featureTimeWindow.csv from the Pioneer study
+timeWindow <- data.frame(windowId=c(1:3), name=c("index to 365", "366d to 730d", "731d+"))
 timeWindow$name <- as.character(timeWindow$name)
 
 cohortXref <- readr::read_csv("./cohortXref.csv", col_types = readr::cols())
