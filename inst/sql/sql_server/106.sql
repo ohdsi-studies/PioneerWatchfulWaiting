@@ -30,11 +30,11 @@ WHERE E.concept_id is null
 INSERT INTO #Codesets (codeset_id, concept_id)
 SELECT 8 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (46257658,2615971,4330771,4040606,2615969,2615970,2615744,2615974,2615746,2615976,2615973,2615975,2110046,4073126,45888526,2108725,42628035,2101759,46257625,46257688,46257736,45890647,2211872,42742550,42742549,45888139,4029715,45890260,926905,724946,46257605,2211859,45890639,45890643,2211858,2720687,38003195,4056678,42628728,2211873,42739244,42736837,2110047,4318947,4141157,37111533)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (46257658,2615971,4330771,4040606,2615969,2615970,2615744,2615974,2615746,2615976,2615973,2615975,2110046,4073126,45888526,2108725,42628035,2101759,46257625,46257688,46257736,45890647,2211872,42742550,42742549,45888139,45890260,926905,724946,46257605,2211859,45890639,45890643,2211858,2720687,38003195,4056678,42628728,2211873,42739244,42736837,2110047,4318947,4141157,37111533)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (46257658,4330771,45888526,2108725,2101759,46257625,46257688,46257736,45890647,2211872,42742550,42742549,45888139,4029715,45890260,926905,724946,46257605,2211859,45890639,45890643,2211858,2720687,2211873,42736837,2110047)
+  and ca.ancestor_concept_id in (46257658,4330771,4040606,45888526,2108725,2101759,46257625,46257688,46257736,45890647,2211872,42742550,42742549,45888139,45890260,926905,724946,46257605,2211859,45890639,45890643,2211858,2720687,2211873,42736837,2110047)
   and c.invalid_reason is null
 
 ) I
@@ -117,11 +117,11 @@ UNION  select c.concept_id
 ) I
 LEFT JOIN
 (
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4112752,4163261,4111921)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4112752,4163261,4111921,432851)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (4112752,4163261,4111921)
+  and ca.ancestor_concept_id in (4112752,4163261,4111921,432851)
   and c.invalid_reason is null
 
 ) E ON I.concept_id = E.concept_id
@@ -934,33 +934,8 @@ FROM
   FROM #qualified_events E
   INNER JOIN
   (
-    -- Begin Correlated Criteria
-SELECT 0 as index_id, p.person_id, p.event_id
-FROM #qualified_events P
-INNER JOIN
-(
-  -- Begin Measurement Criteria
-select C.person_id, C.measurement_id as event_id, C.measurement_date as start_date, DATEADD(d,1,C.measurement_date) as END_DATE,
-       C.measurement_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
-       C.measurement_date as sort_date
-from 
-(
-  select m.* 
-  FROM @cdm_database_schema.MEASUREMENT m
-JOIN #Codesets codesets on ((m.measurement_concept_id = codesets.concept_id and codesets.codeset_id = 19))
-) C
-
-
--- End Measurement Criteria
-
-) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,30,P.START_DATE)
-GROUP BY p.person_id, p.event_id
-HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
--- End Correlated Criteria
-
-UNION ALL
--- Begin Criteria Group
-select 1 as index_id, person_id, event_id
+    -- Begin Criteria Group
+select 0 as index_id, person_id, event_id
 FROM
 (
   select E.person_id, E.event_id 
@@ -986,7 +961,7 @@ JOIN #Codesets codesets on ((m.measurement_concept_id = codesets.concept_id and 
 WHERE C.value_as_number > 10.0000
 -- End Measurement Criteria
 
-) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,-30,P.START_DATE) AND A.START_DATE <= DATEADD(day,7,P.START_DATE)
+) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,-30,P.START_DATE) AND A.START_DATE <= DATEADD(day,30,P.START_DATE)
 GROUP BY p.person_id, p.event_id
 HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
 -- End Correlated Criteria
@@ -994,6 +969,31 @@ HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
 UNION ALL
 -- Begin Correlated Criteria
 SELECT 1 as index_id, p.person_id, p.event_id
+FROM #qualified_events P
+INNER JOIN
+(
+  -- Begin Observation Criteria
+select C.person_id, C.observation_id as event_id, C.observation_date as start_date, DATEADD(d,1,C.observation_date) as END_DATE,
+       C.observation_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
+       C.observation_date as sort_date
+from 
+(
+  select o.* 
+  FROM @cdm_database_schema.OBSERVATION o
+JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 18))
+) C
+
+WHERE C.value_as_number > 10.0000
+-- End Observation Criteria
+
+) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,-30,P.START_DATE) AND A.START_DATE <= DATEADD(day,30,P.START_DATE)
+GROUP BY p.person_id, p.event_id
+HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
+-- End Correlated Criteria
+
+UNION ALL
+-- Begin Correlated Criteria
+SELECT 2 as index_id, p.person_id, p.event_id
 FROM #qualified_events P
 INNER JOIN
 (
@@ -1011,14 +1011,14 @@ JOIN #Codesets codesets on ((m.measurement_concept_id = codesets.concept_id and 
 
 -- End Measurement Criteria
 
-) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,-30,P.START_DATE) AND A.START_DATE <= DATEADD(day,7,P.START_DATE)
+) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,-30,P.START_DATE) AND A.START_DATE <= DATEADD(day,30,P.START_DATE)
 GROUP BY p.person_id, p.event_id
 HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
 -- End Correlated Criteria
 
 UNION ALL
 -- Begin Criteria Group
-select 2 as index_id, person_id, event_id
+select 3 as index_id, person_id, event_id
 FROM
 (
   select E.person_id, E.event_id 
@@ -1044,7 +1044,7 @@ JOIN #Codesets codesets on ((m.measurement_concept_id = codesets.concept_id and 
 
 -- End Measurement Criteria
 
-) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,-30,P.START_DATE) AND A.START_DATE <= DATEADD(day,7,P.START_DATE)
+) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,-30,P.START_DATE) AND A.START_DATE <= DATEADD(day,30,P.START_DATE)
 GROUP BY p.person_id, p.event_id
 HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
 -- End Correlated Criteria
@@ -1069,7 +1069,7 @@ JOIN #Codesets codesets on ((m.measurement_concept_id = codesets.concept_id and 
 WHERE C.value_as_concept_id in (36662565,36662476,36662300,36662543)
 -- End Measurement Criteria
 
-) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,-30,P.START_DATE) AND A.START_DATE <= DATEADD(day,7,P.START_DATE)
+) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,-30,P.START_DATE) AND A.START_DATE <= DATEADD(day,30,P.START_DATE)
 GROUP BY p.person_id, p.event_id
 HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
 -- End Correlated Criteria

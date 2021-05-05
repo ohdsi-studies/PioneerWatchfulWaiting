@@ -26,9 +26,9 @@ name,atlasName,atlasId,cohortId
 325,[PIONEER S25] Charlson CCI=1,121,325
 326,[PIONEER S26] Charlson CCI>=2,122,326
 327,"[PIONEER S27] Any malignancy, except malignant neoplasm of skin",81,327
-334,[PIONEER S28] Performance status ECOG=0,146,334
-335,[PIONEER S29] Performance status ECOG=1,147,335
-336,[PIONEER S30] Performance status ECOG=2+,148,336
+334,[PIONEER S28] Performance status ECOG=0,164,334
+335,[PIONEER S29] Performance status ECOG=1,165,335
+336,[PIONEER S30] Performance status ECOG=2+,166,336
 328,[PIONEER S31] Total Cardiovascular Disease Event,152,328
 329,[PIONEER S32] Stroke,153,329
 330,[PIONEER S33] Type 2 Diabetes,154,330
