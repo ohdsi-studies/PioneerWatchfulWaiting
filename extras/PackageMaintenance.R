@@ -1,4 +1,194 @@
+<<<<<<< HEAD
 settingsPath <- "inst/settings"
+=======
+# # Copyright 2020 Observational Health Data Sciences and Informatics
+# #
+# # This file is part of PioneerWatchfulWaiting
+# #
+# # Licensed under the Apache License, Version 2.0 (the "License");
+# # you may not use this file except in compliance with the License.
+# # You may obtain a copy of the License at
+# #
+# #     http://www.apache.org/licenses/LICENSE-2.0
+# #
+# # Unless required by applicable law or agreed to in writing, software
+# # distributed under the License is distributed on an "AS IS" BASIS,
+# # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# # See the License for the specific language governing permissions and
+# # limitations under the License.
+# 
+# # Format and check code ---------------------------------------------------
+# OhdsiRTools::formatRFolder()
+# OhdsiRTools::checkUsagePackage("PioneerWatchfulWaiting")
+# OhdsiRTools::updateCopyrightYearFolder()
+# 
+# # Create manual -----------------------------------------------------------
+# unlink("extras/PioneerWatchfulWaiting.pdf")
+# shell("R CMD Rd2pdf ./ --output=extras/PioneerWatchfulWaiting.pdf")
+# 
+# pkgdown::build_site()
+# 
+# 
+# # AGS: Had to copy these functions from OhdsiRWebAPI since we're using
+# # the cohortId for the SQL file names
+# # Insert cohort definitions from ATLAS into package -----------------------
+# insertCohortDefinitionSetInPackage <- function(fileName = "inst/settings/CohortsToCreate.csv",
+#                                                baseUrl,
+#                                                jsonFolder = "inst/cohorts",
+#                                                sqlFolder = "inst/sql/sql_server",
+#                                                rFileName = "R/CreateCohorts.R",
+#                                                insertTableSql = TRUE,
+#                                                insertCohortCreationR = TRUE,
+#                                                generateStats = FALSE,
+#                                                packageName) {
+#   errorMessage <- checkmate::makeAssertCollection()
+#   checkmate::assertLogical(insertTableSql, add = errorMessage)
+#   checkmate::assertLogical(insertCohortCreationR, add = errorMessage)
+#   checkmate::assertLogical(generateStats, add = errorMessage)
+#   checkmate::assertScalar(packageName, add = errorMessage)
+#   checkmate::assertCharacter(packageName, add = errorMessage)
+#   checkmate::reportAssertions(errorMessage)
+# 
+#   if (insertCohortCreationR && !insertTableSql)
+#     stop("Need to insert table SQL in order to generate R code")
+#   if (insertCohortCreationR && generateStats && jsonFolder != "inst/cohorts")
+#     stop("When generating R code and generating stats, the jsonFolder must be 'inst/cohorts'")
+#   if (insertCohortCreationR && sqlFolder != "inst/sql/sql_server")
+#     stop("When generating R code, the sqlFolder must be 'inst/sql/sql_server'")
+#   if (insertCohortCreationR && !grepl("inst", fileName))
+#     stop("When generating R code, the input CSV file must be in the inst folder.")
+# 
+#   cohortsToCreate <- readr::read_csv(fileName, col_types = readr::cols())
+#   cohortsToCreate <- cohortsToCreate[cohortsToCreate$atlasId > 0, ]
+# 
+#   # Inserting cohort JSON and SQL
+#   for (i in 1:nrow(cohortsToCreate)) {
+#     writeLines(paste("Inserting cohort:", cohortsToCreate$name[i]))
+#     insertCohortDefinitionInPackage(cohortId = cohortsToCreate$atlasId[i],
+#                                     localCohortId = cohortsToCreate$cohortId[i],
+#                                     name = cohortsToCreate$name[i],
+#                                     baseUrl = baseUrl,
+#                                     jsonFolder = jsonFolder,
+#                                     sqlFolder = sqlFolder,
+#                                     generateStats = generateStats)
+#   }
+# 
+#   # Insert SQL to create empty cohort table
+#   if (insertTableSql) {
+#     writeLines("Creating SQL to create empty cohort table")
+#     .insertSqlForCohortTableInPackage(statsTables = generateStats, sqlFolder = sqlFolder)
+#   }
+# 
+#   # Store information on inclusion rules
+#   if (generateStats) {
+#     writeLines("Storing information on inclusion rules")
+#     rules <- .getCohortInclusionRules(jsonFolder)
+#     rules <- merge(rules, data.frame(cohortId = cohortsToCreate$cohortId,
+#                                      cohortName = cohortsToCreate$name))
+#     csvFileName <- file.path(jsonFolder, "InclusionRules.csv")
+#     write.csv(rules, csvFileName, row.names = FALSE)
+#     writeLines(paste("- Created CSV file:", csvFileName))
+#   }
+# 
+#   # Generate R code to create cohorts
+#   if (insertCohortCreationR) {
+#     writeLines("Generating R code to create cohorts")
+#     templateFileName <- system.file("CreateCohorts.R", package = "ROhdsiWebApi", mustWork = TRUE)
+#     rCode <- readChar(templateFileName, file.info(templateFileName)$size)
+#     rCode <- gsub("#CopyrightYear#", format(Sys.Date(), "%Y"), rCode)
+#     rCode <- gsub("#packageName#", packageName, rCode)
+#     libPath <- gsub(".*inst[/\\]", "", fileName)
+#     libPath <- gsub("/|\\\\", "\", \"", libPath)
+#     rCode <- gsub("#fileName#", libPath, rCode)
+#     if (generateStats) {
+#       rCode <- gsub("#stats_start#", "", rCode)
+#       rCode <- gsub("#stats_end#", "", rCode)
+#     } else {
+#       rCode <- gsub("#stats_start#.*?#stats_end#", "", rCode)
+#     }
+#     fileConn <- file(rFileName)
+#     writeChar(rCode, fileConn, eos = NULL)
+#     close(fileConn)
+#     writeLines(paste("- Created R file:", rFileName))
+#   }
+# }
+# 
+# insertCohortDefinitionInPackage <- function(cohortId,
+#                                             localCohortId,
+#                                             name = NULL,
+#                                             jsonFolder = "inst/cohorts",
+#                                             sqlFolder = "inst/sql/sql_server",
+#                                             baseUrl,
+#                                             generateStats = FALSE) {
+#   errorMessage <- checkmate::makeAssertCollection()
+#   checkmate::assertInt(cohortId, add = errorMessage)
+#   checkmate::assertLogical(generateStats, add = errorMessage)
+#   checkmate::reportAssertions(errorMessage)
+# 
+#   object <- ROhdsiWebApi::getCohortDefinition(cohortId = cohortId,
+#                                               baseUrl = baseUrl)
+#   if (is.null(name)) {
+#     name <- object$name
+#   }
+#   if (!file.exists(jsonFolder)) {
+#     dir.create(jsonFolder, recursive = TRUE)
+#   }
+#   jsonFileName <- file.path(jsonFolder, paste(localCohortId, "json", sep = "."))
+#   json <- RJSONIO::toJSON(object$expression, pretty = TRUE)
+#   SqlRender::writeSql(sql = json, targetFile = jsonFileName)
+#   writeLines(paste("- Created JSON file:", jsonFileName))
+# 
+#   # Fetch SQL
+#   sql <- ROhdsiWebApi::getCohortSql(baseUrl = baseUrl, cohortDefinition = object, generateStats = generateStats)
+#   if (!file.exists(sqlFolder)) {
+#     dir.create(sqlFolder, recursive = TRUE)
+#   }
+#   sqlFileName <- file.path(sqlFolder, paste(localCohortId, "sql", sep = "."))
+#   SqlRender::writeSql(sql = sql, targetFile = sqlFileName)
+#   writeLines(paste("- Created SQL file:", sqlFileName))
+# }
+
+
+# get json cohort from local files, create CohortsToCreate files
+nameToIdMapping <- list('target' = 100, 'outcome' = 200, 'strata' = 300)
+# source_cohorts_path <- 'inst_demo/real_cohorts'
+source_cohorts_path <- 'C:/Users/Artem/work/PIONEER studyathon/exported from atlas'
+json_cohorts_path <- 'inst/cohorts'
+settingsPath <- "inst/settings"
+
+
+for (i in 1:length(nameToIdMapping)){
+  group_name <- names(nameToIdMapping)[i]
+  offset_num <- nameToIdMapping[[group_name]]
+
+  ParallelLogger::logInfo("Importing ", group_name, " cohorts")
+  
+  oldNames <- sort(list.files(path = file.path(source_cohorts_path, group_name),
+                              pattern = "\\[.+\\].+\\.json", full.names = FALSE))
+
+  newNames <- c((offset_num + 1): (offset_num + length(oldNames)))
+  newNames <- file.path(paste(newNames, 'json', sep='.'))
+  
+  file.copy(from = file.path(source_cohorts_path, group_name, oldNames), to=file.path(json_cohorts_path))
+  file.rename(from = file.path(json_cohorts_path, oldNames), 
+              to = file.path(json_cohorts_path, newNames))
+  
+  
+  
+  cohortsToCreate <- data.frame(name = gsub('\\[.+\\] ', '', gsub('.json', '', oldNames)), 
+                                atlasName = gsub('.json', '', oldNames),
+                                atlasId = gsub('.json', '', newNames), 
+                                cohortId = gsub('.json', '', newNames))
+  
+  readr::write_csv(cohortsToCreate, 
+                   file.path(settingsPath, paste0('CohortsToCreate', stringr::str_to_title(group_name), '.csv')))
+}
+
+
+
+
+
+>>>>>>> master
 cohortGroups <- readr::read_csv("inst/settings/CohortGroups.csv", col_types=readr::cols())
 
 # Create the corresponding diagnostic file 
@@ -89,7 +279,7 @@ shinyCohortXref <- rbind(targetCohortsForShiny[,xrefColumnNames],
                          inverseStrata[,xrefColumnNames],
                          targetStrataXRef[targetStrataXRef$cohortType == "TwS",xrefColumnNames])
 if (!useSubset) {
-  readr::write_csv(shinyCohortXref, file.path("inst/shiny/PIONEERWatchfulWaitingExplorer", "cohortXref.csv"))
+  readr::write_csv(shinyCohortXref, file.path("inst/shiny/PIONEERResultsExplorer", "cohortXref.csv"))
 }
 
 targetStrataXRef <- targetStrataXRef[,c("targetId","strataId","cohortId","cohortType","name")]
@@ -100,4 +290,3 @@ readr::write_csv(targetStrataXRef, file.path(settingsPath, "targetStrataXref.csv
 
 # Store environment in which the study was executed -----------------------
 # OhdsiRTools::insertEnvironmentSnapshotInPackage("PioneerWatchfulWaiting")
-

@@ -427,8 +427,13 @@ exportResults <- function(exportFolder, databaseId, cohortIdsToExcludeFromResult
 }
 
 zipResults <- function(exportFolder, databaseId) {
-  zipName <- file.path(exportFolder, paste0("Results_", databaseId, ".zip"))
-  files <- list.files(exportFolder, pattern = ".*\\.csv$")
+  # Prepare additional metadata files
+  codemetar::write_codemeta(pkg = find.package(getThisPackageName()), 
+                            path = file.path(exportFolder, "codemeta.json"))
+  
+  date <- format(Sys.time(), "%Y%m%dT%H%M%S")
+  zipName <- file.path(exportFolder, paste0("Results_", databaseId, "_", date, ".zip")) 
+  files <- list.files(exportFolder, ".*\\.csv$|codemeta.json")
   oldWd <- setwd(exportFolder)
   on.exit(setwd(oldWd), add = TRUE)
   DatabaseConnector::createZipFile(zipFile = zipName, files = files)

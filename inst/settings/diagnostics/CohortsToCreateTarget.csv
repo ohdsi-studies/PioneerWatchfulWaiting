@@ -1,19 +1,19 @@
 name,atlasName,atlasId,cohortId
-47,[PIONEER T1] new PCa,47,47
-141,[PIONEER T1a] new PCa,141,141
-49,[PIONEER T2] new PCa actively treated,49,49
-142,[PIONEER T2a] new PCa actively treated,142,142
-137,[PIONEER T3] new PCa conservative management,137,137
-138,[PIONEER T3.1] new high/intermediate risk PCa conservative management,138,138
-126,[PIONEER T3.1a] new high/intermediate risk PCa conservative management,126,126
-139,[PIONEER T3.2] new low-risk PCa conservative management (WW),139,139
-127,[PIONEER T3.2a] new low-risk PCa conservative management (WW),127,127
-140,[PIONEER T3.3] new low risk PCa conservative management (AS),140,140
-128,[PIONEER T3.3a] new low risk PCa conservative management (AS),128,128
-125,[PIONEER T3a] new PCa conservative management,125,125
-143,[PIONEER T4] new PCa treatment post conservative management,143,143
-144,[PIONEER T4.1] Delayed Curative Management,144,144
-131,[PIONEER T4.1a] Delayed Curative Management,131,131
-145,[PIONEER T4.2] Delayed Palliative Management,145,145
-132,[PIONEER T4.2a] Delayed Palliative Management,132,132
-129,[PIONEER T4a] new PCa treatment post conservative management,129,129
+101,[PIONEER T1] Newly diagnosed Pca ,47,101
+103,[PIONEER T2] PCa treated right away,49,103
+111,[PIONEER T3] PCa under conservative management,137,111
+117,[PIONEER T4] PCa treated after conservative management ,143,117
+105,[PIONEER T3.1] PCa high/intermediate risk conservative management,138,105
+107,[PIONEER T3.2] PCa low risk grade conservative management and no intense monitoring,139,107
+109,[PIONEER T3.3] PCa low risk grade conservative management and intense monitoring,140,109
+113,[PIONEER T4.1] Delayed Curative Management,144,113
+115,[PIONEER T4.2] Delayed Palliative Management,145,115
+102,[PIONEER T1a] Newly diagnosed Pca (biopsy or PSA GT 50),141,102
+104,[PIONEER T2a] PCa treated right away (biopsy or PSA GT 50),142,104
+112,[PIONEER T3a] PCa under conservative management (biopsy or PSA GT 50),125,112
+118,[PIONEER T4a] PCa treated after conservative management (biopsy or PSA GT 50),129,118
+106,[PIONEER T3.1a] PCa high/intermediate risk conservative managemetn (biopsy or PSA GT 50),126,106
+108,[PIONEER T3.2a] PCa low risk grade conservative management and no intense monitoring (biopsy or PSA GT 50),127,108
+110,[PIONEER T3.3a] PCa low risk grade conservative management and intense monitoring  (biopsy or PSA GT 50),128,110
+114,[PIONEER T4.1a] Delayed Curative Management (biopsy or PSA GT 50),131,114
+116,[PIONEER T4.2a] Delayed Palliative Management (biopsy or PSA GT 50),132,116

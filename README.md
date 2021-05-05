@@ -1,7 +1,11 @@
 Long term outcomes of prostate cancer patients undergoing non-interventional management
 =============
 
-<img src="https://img.shields.io/badge/Study%20Status-Started-blue.svg" alt="Study Status: Started">
+[![Study Status: Started](https://img.shields.io/badge/Study%20Status-Started-blue.svg)](https://ohdsi.github.io/TheBookOfOhdsi/StudySteps.html)
+
+[![fair-software.eu](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F-green)](https://fair-software.eu)
+
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4836/badge)](https://bestpractices.coreinfrastructure.org/projects/4836)
 
 - Analytics use case(s): **Characterization**
 - Study type: **Clinical Application**
@@ -10,9 +14,9 @@ Long term outcomes of prostate cancer patients undergoing non-interventional man
 - Study lead forums tag: please refer to **[keesvanbochove](https://forums.ohdsi.org/u/keesvanbochove)**
 - Study start date: **09-Mar-2021**
 - Study end date: **-**
-- Protocol: please look in Teams
+- Protocol: **[RQ2_OHDSI_FINAL.pdf](extras/Protocol_RQ2_OHDSI_FINAL.pdf)**
 - Publications: **-**
-- Diagnositcs explorer: **[Shiny App: Cohort diagnostics](https://data.ohdsi.org/PioneerWatchfulWaitingDiag/)**
+- Diagnostics explorer: **[Shiny App: Cohort diagnostics](https://data.ohdsi.org/PioneerWatchfulWaitingDiag/)**
 - Results explorer: **[Shiny App: Characterization Study](https://data.ohdsi.org/PioneerWatchfulWaiting/)**
 
 The aim of this study is to assess the long-term outcomes of prostate cancer patients managed with non-curative intent therapies in different disease risk profiles. The impact of life expectancy and comorbidities on the risk of recurrence and disease-free and overall survival will be assessed. 
@@ -24,6 +28,9 @@ This study is undertaken by the joint prostate cancer studyathon of the [IMI PIO
 OHDSI study repos are designed to have information in the README.md (where you are now) to provide you with instructions on how to navigate the repo. This package has two major components:
 1. [CohortDiagnostics](http://www.github.com/ohdsi/cohortDiagnostics) - an OHDSI R package used to perform diagnostics around the fitness of use of the study phenotypes on your CDM. By running this package you will allow study leads to understand: cohort inclusion rule attrition, inspect source code lists for a phenotype, find orphan codes that should be in a particular concept set but are not, compute incidnece across calendar years, age and gender, break down index events into specific concepts that triggered then, compute overlap of two cohorts and compute basic characteristics of selected cohorts. This package will be requested of all sites. It is run on all available data not just your prostate cancer populations. This allows us to understand how the study phenotypes perform in your database and identify any potential gaps in the phenotype definitions.
 2. RunStudy - the characterization package to evaluate Target-Stratum-Feature pairings computing cohort characteristics and creating tables/visualizations to summarize differences between groups.
+
+#### *I have a problem running the code or want to contribute a fix or enhancement.*
+Please review the questions below, and if that doesn't answer it consider filing an issue in the Github tracker for the project: https://github.com/ohdsi-studies/PioneerWatchfulWaiting/issues
 
 #### *I don't understand the organization of this Github Repo.*
 The study repo has the following major pieces:
@@ -111,7 +118,7 @@ Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = TRUE)
 # When asked to update packages, select '1' ('update all') (could be multiple times)
 # When asked whether to install from source, select 'No' (could be multiple times)
 #install.packages("devtools")
-#devtools::install_github("ohdsi-studies/PioneerWatchfulWaiting")
+#devtools::install_github("ohdsi-studies/PioneerWatchfulWaiting", ref="v0.3.2")
 ````
 In [`CodeToRun.R`](extras/CodeToRun.R) you will find a function `verifyDependencies()` which you can use to verify that all dependencies installed correctly.
 
@@ -171,6 +178,14 @@ When the package is completed, you can view the `CohortDiagnostics` output in a 
 # CohortDiagnostics::launchDiagnosticsExplorer(file.path(outputFolder, "diagnostics", "target"))
 ````
 
+If it looks good, you can upload the results to the OHDSI server:
+```
+# For uploading the results. You should have received the key file from the study coordinator, input the correct path here:
+keyFileName <- "[key location: e.g. ~/.ssh/study-data-site-pioneer]"
+userName <- "study-data-site-pioneer" # do not change this, it is linked to the key you have
+uploadDiagnosticsResults(outputFolder, keyFileName, userName)
+```
+
 5. Once you have run `CohortDiagnostics` you are encouraged to reach out to the study leads to review your outputs. 
 
 6. You can now run the characterization package. This step is designed to take advantage of incremental building. This means if the job fails, the R package will start back up where it left off. This package has been designed to be computationally efficient. Package runtime will vary based on your infrastructure but it should be significantly faster than your prior CohortDiagnostic run.
@@ -223,14 +238,7 @@ As a data owner, you will want to inspect these files for adherence to the minCe
 Once you have checked results, you can use the following code to send:
 ````
 # For uploading the results. You should have received the key file from the study coordinator:
-#keyFileName <- "[location where you are storing: e.g. ~/keys/study-data-site-pioneer]"
-userName <- "study-data-site-pioneer" # do not change this, it is linked to the key you have
-
-# Upload results to OHDSI SFTP server:
-OhdsiSharing::sftpUploadFile(privateKeyFileName = keyFileName,
-                             userName = userName,
-                             remoteFolder = "[your db name]",
-                             fileName = "[location where you stored your export: e.g. home/studyresults/MyResults.zip])
+#keyFileName <- "[key location: e.g. ~/.ssh/study-data-site-pioneer]"
+#userName <- "study-data-site-pioneer" # do not change this, it is linked to the key you have
+uploadStudyResults(outputFolder, keyFileName, userName)
 ````
-
-Please notify Susan Evans Axelsson via Teams when you have dropped results in the folder.
