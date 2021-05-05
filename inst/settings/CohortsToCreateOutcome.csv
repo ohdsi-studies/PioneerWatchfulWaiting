@@ -1,4 +1,4 @@
-name,atlasName,atlasId,cohortId,createTimeToEvent
+name,atlasName,atlasId,cohortId,createKMPlot
 Death,[PIONEER O1] Death,46,46,TRUE
 RP (Radical Prostatectomy),NOT FINALIZED [PIONEER O10] RadioTherapy,149,149,FALSE
 RP (Radical Prostatectomy),[PIONEER ON3] Prostatectomy,151,151,FALSE

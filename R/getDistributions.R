@@ -1,11 +1,22 @@
 #' @export
 getAtEventDistribution <- function(connection, cohortDatabaseSchema, cdmDatabaseSchema, cohortTable,
-                                          targetIds, databaseId, packageName, sqlFileName){
+                                          targetIds, outcomeId, databaseId, packageName, analysisName){
   targetIds <- paste(targetIds, collapse = ', ')
-  pathToSql <- system.file("sql", "sql_server", sqlFileName, package = packageName)
+  if(length(outcomeId) == 0){
+    sqlFileName <- paste(analysisName, 'sql', sep='.')
+  }
+  else{
+    sqlFileName <- paste('TimeToOutcome', 'sql', sep='.')
+  }
+  analysisName <- substring(SqlRender::camelCaseToTitleCase(analysisName), 2)
+  pathToSql <- system.file("sql", "sql_server", "quartiles", sqlFileName, package = packageName)
+  pathToAggregSql <- system.file("sql", "sql_server", "quartiles", 'QuartilesAggregation.sql', package = packageName)
   sql <- readChar(pathToSql, file.info(pathToSql)$size)
+  sqlAggreg <- readChar(pathToAggregSql, file.info(pathToAggregSql)$size)
+  sql <- paste0(sql, sqlAggreg)
   sql <- SqlRender::render(sql, cohort_database_schema = cohortDatabaseSchema, cdm_database_schema = cdmDatabaseSchema,
-                               cohort_table = cohortTable, target_ids = targetIds)
+                           cohort_table = cohortTable, target_ids = targetIds, analysis_name = analysisName, 
+                           outcome_id = outcomeId, warnOnMissingParameters = FALSE)
   sql <- SqlRender::translate(sql, targetDialect = connection@dbms)
   
   data <- DatabaseConnector::querySql(connection, sql, snakeCaseToCamelCase = T)
