@@ -171,7 +171,7 @@
     },
     {
       "id": 1,
-      "name": "[PIONEER] pN1",
+      "name": "[PIONEER] cN1",
       "expression": {
         "items": [
           {
@@ -221,7 +221,7 @@
     },
     {
       "id": 10,
-      "name": "[PIONEER] T3, T4",
+      "name": "[PIONEER] cT3, cT4",
       "expression": {
         "items": [
           {
@@ -384,6 +384,23 @@
             "isExcluded": false,
             "includeDescendants": true,
             "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4073010,
+              "CONCEPT_NAME": "Open biopsy of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "176268002",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            },
+            "isExcluded": true,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
@@ -514,60 +531,6 @@
           {
             "Criteria": {
               "Measurement": {
-                "CodesetId": 10,
-                "MeasurementTypeExclude": false
-              }
-            },
-            "StartWindow": {
-              "Start": {
-                "Days": 30,
-                "Coeff": -1
-              },
-              "End": {
-                "Days": 30,
-                "Coeff": 1
-              },
-              "UseIndexEnd": false,
-              "UseEventEnd": false
-            },
-            "RestrictVisit": false,
-            "IgnoreObservationPeriod": false,
-            "Occurrence": {
-              "Type": 2,
-              "Count": 1,
-              "IsDistinct": false
-            }
-          },
-          {
-            "Criteria": {
-              "Measurement": {
-                "CodesetId": 1,
-                "MeasurementTypeExclude": false
-              }
-            },
-            "StartWindow": {
-              "Start": {
-                "Days": 30,
-                "Coeff": -1
-              },
-              "End": {
-                "Days": 30,
-                "Coeff": 1
-              },
-              "UseIndexEnd": false,
-              "UseEventEnd": false
-            },
-            "RestrictVisit": false,
-            "IgnoreObservationPeriod": false,
-            "Occurrence": {
-              "Type": 2,
-              "Count": 1,
-              "IsDistinct": false
-            }
-          },
-          {
-            "Criteria": {
-              "Measurement": {
                 "CodesetId": 9,
                 "MeasurementTypeExclude": false
               }
@@ -594,7 +557,69 @@
           }
         ],
         "DemographicCriteriaList": [],
-        "Groups": []
+        "Groups": [
+          {
+            "Type": "ANY",
+            "CriteriaList": [
+              {
+                "Criteria": {
+                  "Measurement": {
+                    "CodesetId": 10,
+                    "MeasurementTypeExclude": false
+                  }
+                },
+                "StartWindow": {
+                  "Start": {
+                    "Days": 30,
+                    "Coeff": -1
+                  },
+                  "End": {
+                    "Days": 30,
+                    "Coeff": 1
+                  },
+                  "UseIndexEnd": false,
+                  "UseEventEnd": false
+                },
+                "RestrictVisit": false,
+                "IgnoreObservationPeriod": false,
+                "Occurrence": {
+                  "Type": 2,
+                  "Count": 1,
+                  "IsDistinct": false
+                }
+              },
+              {
+                "Criteria": {
+                  "Measurement": {
+                    "CodesetId": 1,
+                    "MeasurementTypeExclude": false
+                  }
+                },
+                "StartWindow": {
+                  "Start": {
+                    "Days": 30,
+                    "Coeff": -1
+                  },
+                  "End": {
+                    "Days": 30,
+                    "Coeff": 1
+                  },
+                  "UseIndexEnd": false,
+                  "UseEventEnd": false
+                },
+                "RestrictVisit": false,
+                "IgnoreObservationPeriod": false,
+                "Occurrence": {
+                  "Type": 2,
+                  "Count": 1,
+                  "IsDistinct": false
+                }
+              }
+            ],
+            "DemographicCriteriaList": [],
+            "Groups": []
+          }
+        ]
       }
     }
   ],

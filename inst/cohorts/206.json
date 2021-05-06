@@ -7,6 +7,12 @@
           "CodesetId": 0,
           "VisitTypeExclude": false
         }
+      },
+      {
+        "Observation": {
+          "CodesetId": 0,
+          "ObservationTypeExclude": false
+        }
       }
     ],
     "ObservationWindow": {
@@ -52,6 +58,23 @@
               "DOMAIN_ID": "Visit",
               "VOCABULARY_ID": "Visit",
               "CONCEPT_CLASS_ID": "Visit"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 8715,
+              "CONCEPT_NAME": "Hospital admission",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "32485007",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
             },
             "isExcluded": false,
             "includeDescendants": true,

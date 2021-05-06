@@ -300,6 +300,23 @@
             "isExcluded": false,
             "includeDescendants": true,
             "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4073010,
+              "CONCEPT_NAME": "Open biopsy of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "176268002",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            },
+            "isExcluded": true,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
@@ -334,7 +351,38 @@
                 "Coeff": -1
               },
               "End": {
-                "Days": 7,
+                "Days": 30,
+                "Coeff": 1
+              },
+              "UseIndexEnd": false,
+              "UseEventEnd": false
+            },
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1,
+              "IsDistinct": false
+            }
+          },
+          {
+            "Criteria": {
+              "Observation": {
+                "CodesetId": 1,
+                "ObservationTypeExclude": false,
+                "ValueAsNumber": {
+                  "Value": 20,
+                  "Op": "gt"
+                }
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 30,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 30,
                 "Coeff": 1
               },
               "UseIndexEnd": false,

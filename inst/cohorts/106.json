@@ -145,7 +145,7 @@
               "CONCEPT_CLASS_ID": "Qualifier Value"
             },
             "isExcluded": false,
-            "includeDescendants": false,
+            "includeDescendants": true,
             "includeMapped": false
           },
           {
@@ -517,23 +517,6 @@
               "DOMAIN_ID": "Procedure",
               "VOCABULARY_ID": "CPT4",
               "CONCEPT_CLASS_ID": "CPT4 Hierarchy"
-            },
-            "isExcluded": false,
-            "includeDescendants": true,
-            "includeMapped": false
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 4029715,
-              "CONCEPT_NAME": "Radiation oncology AND/OR radiotherapy",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "108290001",
-              "DOMAIN_ID": "Procedure",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Procedure"
             },
             "isExcluded": false,
             "includeDescendants": true,
@@ -2040,6 +2023,23 @@
             "isExcluded": true,
             "includeDescendants": true,
             "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 432851,
+              "CONCEPT_NAME": "Secondary malignant neoplastic disease",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "128462008",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
@@ -3463,38 +3463,11 @@
       }
     },
     {
-      "name": "Intermediate-grade attributes, high-grade attributes, or M1",
+      "name": "Intermediate-grade attributes or high-grade attributes",
       "description": "\n",
       "expression": {
         "Type": "ANY",
-        "CriteriaList": [
-          {
-            "Criteria": {
-              "Measurement": {
-                "CodesetId": 19,
-                "MeasurementTypeExclude": false
-              }
-            },
-            "StartWindow": {
-              "Start": {
-                "Coeff": -1
-              },
-              "End": {
-                "Days": 30,
-                "Coeff": 1
-              },
-              "UseIndexEnd": false,
-              "UseEventEnd": false
-            },
-            "RestrictVisit": false,
-            "IgnoreObservationPeriod": false,
-            "Occurrence": {
-              "Type": 2,
-              "Count": 1,
-              "IsDistinct": false
-            }
-          }
-        ],
+        "CriteriaList": [],
         "DemographicCriteriaList": [],
         "Groups": [
           {
@@ -3517,7 +3490,38 @@
                     "Coeff": -1
                   },
                   "End": {
-                    "Days": 7,
+                    "Days": 30,
+                    "Coeff": 1
+                  },
+                  "UseIndexEnd": false,
+                  "UseEventEnd": false
+                },
+                "RestrictVisit": false,
+                "IgnoreObservationPeriod": false,
+                "Occurrence": {
+                  "Type": 2,
+                  "Count": 1,
+                  "IsDistinct": false
+                }
+              },
+              {
+                "Criteria": {
+                  "Observation": {
+                    "CodesetId": 18,
+                    "ObservationTypeExclude": false,
+                    "ValueAsNumber": {
+                      "Value": 10,
+                      "Op": "gt"
+                    }
+                  }
+                },
+                "StartWindow": {
+                  "Start": {
+                    "Days": 30,
+                    "Coeff": -1
+                  },
+                  "End": {
+                    "Days": 30,
                     "Coeff": 1
                   },
                   "UseIndexEnd": false,
@@ -3544,7 +3548,7 @@
                     "Coeff": -1
                   },
                   "End": {
-                    "Days": 7,
+                    "Days": 30,
                     "Coeff": 1
                   },
                   "UseIndexEnd": false,
@@ -3577,7 +3581,7 @@
                         "Coeff": -1
                       },
                       "End": {
-                        "Days": 7,
+                        "Days": 30,
                         "Coeff": 1
                       },
                       "UseIndexEnd": false,
@@ -3654,7 +3658,7 @@
                         "Coeff": -1
                       },
                       "End": {
-                        "Days": 7,
+                        "Days": 30,
                         "Coeff": 1
                       },
                       "UseIndexEnd": false,

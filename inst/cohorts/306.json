@@ -146,7 +146,7 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": false,
-            "includeDescendants": false,
+            "includeDescendants": true,
             "includeMapped": false
           },
           {
@@ -162,8 +162,8 @@
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "isExcluded": false,
-            "includeDescendants": false,
+            "isExcluded": true,
+            "includeDescendants": true,
             "includeMapped": false
           }
         ]
@@ -349,6 +349,23 @@
               "CONCEPT_CLASS_ID": "Procedure"
             },
             "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4073010,
+              "CONCEPT_NAME": "Open biopsy of prostate",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "176268002",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            },
+            "isExcluded": true,
             "includeDescendants": true,
             "includeMapped": false
           }

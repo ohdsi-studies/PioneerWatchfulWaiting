@@ -256,7 +256,7 @@
               "CONCEPT_CLASS_ID": "Qualifier Value"
             },
             "isExcluded": false,
-            "includeDescendants": false,
+            "includeDescendants": true,
             "includeMapped": false
           },
           {
@@ -628,23 +628,6 @@
               "DOMAIN_ID": "Procedure",
               "VOCABULARY_ID": "CPT4",
               "CONCEPT_CLASS_ID": "CPT4 Hierarchy"
-            },
-            "isExcluded": false,
-            "includeDescendants": true,
-            "includeMapped": false
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 4029715,
-              "CONCEPT_NAME": "Radiation oncology AND/OR radiotherapy",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "108290001",
-              "DOMAIN_ID": "Procedure",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Procedure"
             },
             "isExcluded": false,
             "includeDescendants": true,
@@ -2033,6 +2016,23 @@
             "isExcluded": true,
             "includeDescendants": true,
             "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4170288,
+              "CONCEPT_NAME": "Male castration",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "275234001",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
@@ -2144,6 +2144,23 @@
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
               "CONCEPT_CODE": "254651007",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 432851,
+              "CONCEPT_NAME": "Secondary malignant neoplastic disease",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "128462008",
               "DOMAIN_ID": "Condition",
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Clinical Finding"
@@ -2555,7 +2572,7 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": false,
-            "includeDescendants": false,
+            "includeDescendants": true,
             "includeMapped": false
           },
           {

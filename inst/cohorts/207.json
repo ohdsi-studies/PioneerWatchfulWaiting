@@ -39,6 +39,23 @@
             "isExcluded": false,
             "includeDescendants": true,
             "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4176269,
+              "CONCEPT_NAME": "Emergency room admission",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "50849002",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }

@@ -70,11 +70,11 @@ UNION  select c.concept_id
 ) I
 LEFT JOIN
 (
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4112752,4111921,4163261)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4112752,4111921,4163261,432851)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (4112752,4111921,4163261)
+  and ca.ancestor_concept_id in (4112752,4111921,4163261,432851)
   and c.invalid_reason is null
 
 ) E ON I.concept_id = E.concept_id

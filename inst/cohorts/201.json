@@ -349,7 +349,7 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": false,
-            "includeDescendants": false,
+            "includeDescendants": true,
             "includeMapped": false
           },
           {

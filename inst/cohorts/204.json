@@ -214,7 +214,7 @@
               "CONCEPT_CLASS_ID": "Qualifier Value"
             },
             "isExcluded": false,
-            "includeDescendants": false,
+            "includeDescendants": true,
             "includeMapped": false
           },
           {
@@ -586,23 +586,6 @@
               "DOMAIN_ID": "Procedure",
               "VOCABULARY_ID": "CPT4",
               "CONCEPT_CLASS_ID": "CPT4 Hierarchy"
-            },
-            "isExcluded": false,
-            "includeDescendants": true,
-            "includeMapped": false
-          },
-          {
-            "concept": {
-              "CONCEPT_ID": 4029715,
-              "CONCEPT_NAME": "Radiation oncology AND/OR radiotherapy",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "CONCEPT_CODE": "108290001",
-              "DOMAIN_ID": "Procedure",
-              "VOCABULARY_ID": "SNOMED",
-              "CONCEPT_CLASS_ID": "Procedure"
             },
             "isExcluded": false,
             "includeDescendants": true,
@@ -1250,7 +1233,7 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": false,
-            "includeDescendants": false,
+            "includeDescendants": true,
             "includeMapped": false
           },
           {

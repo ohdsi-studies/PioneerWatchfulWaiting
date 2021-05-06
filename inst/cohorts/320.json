@@ -7,6 +7,18 @@
           "CodesetId": 0,
           "MeasurementTypeExclude": false
         }
+      },
+      {
+        "ConditionOccurrence": {
+          "CodesetId": 0,
+          "ConditionTypeExclude": false
+        }
+      },
+      {
+        "Observation": {
+          "CodesetId": 0,
+          "ObservationTypeExclude": false
+        }
       }
     ],
     "ObservationWindow": {
