@@ -1,0 +1,471 @@
+{
+  "cdmVersionRange": ">=5.0.0",
+  "PrimaryCriteria": {
+    "CriteriaList": [
+      {
+        "VisitOccurrence": {
+          "VisitTypeExclude": false
+        }
+      }
+    ],
+    "ObservationWindow": {
+      "PriorDays": 0,
+      "PostDays": 0
+    },
+    "PrimaryCriteriaLimit": {
+      "Type": "All"
+    }
+  },
+  "AdditionalCriteria": {
+    "Type": "ANY",
+    "CriteriaList": [
+      {
+        "Criteria": {
+          "ProcedureOccurrence": {
+            "CodesetId": 0,
+            "ProcedureTypeExclude": false
+          }
+        },
+        "StartWindow": {
+          "Start": {
+            "Coeff": -1
+          },
+          "End": {
+            "Coeff": 1
+          },
+          "UseIndexEnd": false,
+          "UseEventEnd": false
+        },
+        "RestrictVisit": true,
+        "IgnoreObservationPeriod": false,
+        "Occurrence": {
+          "Type": 2,
+          "Count": 1,
+          "IsDistinct": false
+        }
+      },
+      {
+        "Criteria": {
+          "Observation": {
+            "CodesetId": 0,
+            "ObservationTypeExclude": false
+          }
+        },
+        "StartWindow": {
+          "Start": {
+            "Coeff": -1
+          },
+          "End": {
+            "Coeff": 1
+          },
+          "UseIndexEnd": false,
+          "UseEventEnd": false
+        },
+        "RestrictVisit": true,
+        "IgnoreObservationPeriod": false,
+        "Occurrence": {
+          "Type": 2,
+          "Count": 1,
+          "IsDistinct": false
+        }
+      },
+      {
+        "Criteria": {
+          "ConditionOccurrence": {
+            "ConditionTypeExclude": false,
+            "ProviderSpecialty": [
+              {
+                "CONCEPT_ID": 38004502,
+                "CONCEPT_NAME": "Hematology/Oncology",
+                "STANDARD_CONCEPT": null,
+                "STANDARD_CONCEPT_CAPTION": "Unknown",
+                "INVALID_REASON": null,
+                "INVALID_REASON_CAPTION": "Unknown",
+                "CONCEPT_CODE": "83",
+                "DOMAIN_ID": "Provider",
+                "VOCABULARY_ID": "Medicare Specialty",
+                "CONCEPT_CLASS_ID": null
+              },
+              {
+                "CONCEPT_ID": 38004507,
+                "CONCEPT_NAME": "Medical Oncology",
+                "STANDARD_CONCEPT": null,
+                "STANDARD_CONCEPT_CAPTION": "Unknown",
+                "INVALID_REASON": null,
+                "INVALID_REASON_CAPTION": "Unknown",
+                "CONCEPT_CODE": "90",
+                "DOMAIN_ID": "Provider",
+                "VOCABULARY_ID": "Medicare Specialty",
+                "CONCEPT_CLASS_ID": null
+              },
+              {
+                "CONCEPT_ID": 38004508,
+                "CONCEPT_NAME": "Surgical Oncology",
+                "STANDARD_CONCEPT": null,
+                "STANDARD_CONCEPT_CAPTION": "Unknown",
+                "INVALID_REASON": null,
+                "INVALID_REASON_CAPTION": "Unknown",
+                "CONCEPT_CODE": "91",
+                "DOMAIN_ID": "Provider",
+                "VOCABULARY_ID": "Medicare Specialty",
+                "CONCEPT_CLASS_ID": null
+              },
+              {
+                "CONCEPT_ID": 38004509,
+                "CONCEPT_NAME": "Radiation Oncology",
+                "STANDARD_CONCEPT": null,
+                "STANDARD_CONCEPT_CAPTION": "Unknown",
+                "INVALID_REASON": null,
+                "INVALID_REASON_CAPTION": "Unknown",
+                "CONCEPT_CODE": "92",
+                "DOMAIN_ID": "Provider",
+                "VOCABULARY_ID": "Medicare Specialty",
+                "CONCEPT_CLASS_ID": null
+              },
+              {
+                "CONCEPT_ID": 38004513,
+                "CONCEPT_NAME": "Gynecology/Oncology",
+                "STANDARD_CONCEPT": null,
+                "STANDARD_CONCEPT_CAPTION": "Unknown",
+                "INVALID_REASON": null,
+                "INVALID_REASON_CAPTION": "Unknown",
+                "CONCEPT_CODE": "98",
+                "DOMAIN_ID": "Provider",
+                "VOCABULARY_ID": "Medicare Specialty",
+                "CONCEPT_CLASS_ID": null
+              },
+              {
+                "CONCEPT_ID": 45756764,
+                "CONCEPT_NAME": "Complex General Surgical Oncology",
+                "STANDARD_CONCEPT": null,
+                "STANDARD_CONCEPT_CAPTION": "Unknown",
+                "INVALID_REASON": null,
+                "INVALID_REASON_CAPTION": "Unknown",
+                "CONCEPT_CODE": "OMOP4821978",
+                "DOMAIN_ID": "Provider",
+                "VOCABULARY_ID": "ABMS",
+                "CONCEPT_CLASS_ID": null
+              }
+            ]
+          }
+        },
+        "StartWindow": {
+          "Start": {
+            "Coeff": -1
+          },
+          "End": {
+            "Coeff": 1
+          },
+          "UseIndexEnd": false,
+          "UseEventEnd": false
+        },
+        "RestrictVisit": true,
+        "IgnoreObservationPeriod": false,
+        "Occurrence": {
+          "Type": 2,
+          "Count": 1,
+          "IsDistinct": false
+        }
+      },
+      {
+        "Criteria": {
+          "ProcedureOccurrence": {
+            "ProcedureTypeExclude": false,
+            "ProviderSpecialty": [
+              {
+                "CONCEPT_ID": 38004502,
+                "CONCEPT_NAME": "Hematology/Oncology",
+                "STANDARD_CONCEPT": null,
+                "STANDARD_CONCEPT_CAPTION": "Unknown",
+                "INVALID_REASON": null,
+                "INVALID_REASON_CAPTION": "Unknown",
+                "CONCEPT_CODE": "83",
+                "DOMAIN_ID": "Provider",
+                "VOCABULARY_ID": "Medicare Specialty",
+                "CONCEPT_CLASS_ID": null
+              },
+              {
+                "CONCEPT_ID": 38004507,
+                "CONCEPT_NAME": "Medical Oncology",
+                "STANDARD_CONCEPT": null,
+                "STANDARD_CONCEPT_CAPTION": "Unknown",
+                "INVALID_REASON": null,
+                "INVALID_REASON_CAPTION": "Unknown",
+                "CONCEPT_CODE": "90",
+                "DOMAIN_ID": "Provider",
+                "VOCABULARY_ID": "Medicare Specialty",
+                "CONCEPT_CLASS_ID": null
+              },
+              {
+                "CONCEPT_ID": 38004508,
+                "CONCEPT_NAME": "Surgical Oncology",
+                "STANDARD_CONCEPT": null,
+                "STANDARD_CONCEPT_CAPTION": "Unknown",
+                "INVALID_REASON": null,
+                "INVALID_REASON_CAPTION": "Unknown",
+                "CONCEPT_CODE": "91",
+                "DOMAIN_ID": "Provider",
+                "VOCABULARY_ID": "Medicare Specialty",
+                "CONCEPT_CLASS_ID": null
+              },
+              {
+                "CONCEPT_ID": 38004509,
+                "CONCEPT_NAME": "Radiation Oncology",
+                "STANDARD_CONCEPT": null,
+                "STANDARD_CONCEPT_CAPTION": "Unknown",
+                "INVALID_REASON": null,
+                "INVALID_REASON_CAPTION": "Unknown",
+                "CONCEPT_CODE": "92",
+                "DOMAIN_ID": "Provider",
+                "VOCABULARY_ID": "Medicare Specialty",
+                "CONCEPT_CLASS_ID": null
+              },
+              {
+                "CONCEPT_ID": 38004513,
+                "CONCEPT_NAME": "Gynecology/Oncology",
+                "STANDARD_CONCEPT": null,
+                "STANDARD_CONCEPT_CAPTION": "Unknown",
+                "INVALID_REASON": null,
+                "INVALID_REASON_CAPTION": "Unknown",
+                "CONCEPT_CODE": "98",
+                "DOMAIN_ID": "Provider",
+                "VOCABULARY_ID": "Medicare Specialty",
+                "CONCEPT_CLASS_ID": null
+              },
+              {
+                "CONCEPT_ID": 45756764,
+                "CONCEPT_NAME": "Complex General Surgical Oncology",
+                "STANDARD_CONCEPT": null,
+                "STANDARD_CONCEPT_CAPTION": "Unknown",
+                "INVALID_REASON": null,
+                "INVALID_REASON_CAPTION": "Unknown",
+                "CONCEPT_CODE": "OMOP4821978",
+                "DOMAIN_ID": "Provider",
+                "VOCABULARY_ID": "ABMS",
+                "CONCEPT_CLASS_ID": null
+              }
+            ]
+          }
+        },
+        "StartWindow": {
+          "Start": {
+            "Coeff": -1
+          },
+          "End": {
+            "Coeff": 1
+          },
+          "UseIndexEnd": false,
+          "UseEventEnd": false
+        },
+        "RestrictVisit": true,
+        "IgnoreObservationPeriod": false,
+        "Occurrence": {
+          "Type": 2,
+          "Count": 1,
+          "IsDistinct": false
+        }
+      }
+    ],
+    "DemographicCriteriaList": [],
+    "Groups": []
+  },
+  "ConceptSets": [
+    {
+      "id": 0,
+      "name": "[PIONEER] Oncological Visit Associated Codes",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_ID": 4273629,
+              "CONCEPT_NAME": "Chemotherapy",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "367336001",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 45756764,
+              "CONCEPT_NAME": "Complex General Surgical Oncology",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "OMOP4821978",
+              "DOMAIN_ID": "Provider",
+              "VOCABULARY_ID": "ABMS",
+              "CONCEPT_CLASS_ID": "Physician Specialty"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 38004513,
+              "CONCEPT_NAME": "Gynecology/Oncology",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "98",
+              "DOMAIN_ID": "Provider",
+              "VOCABULARY_ID": "Medicare Specialty",
+              "CONCEPT_CLASS_ID": "Physician Specialty"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 38004502,
+              "CONCEPT_NAME": "Hematology/Oncology",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "83",
+              "DOMAIN_ID": "Provider",
+              "VOCABULARY_ID": "Medicare Specialty",
+              "CONCEPT_CLASS_ID": "Physician Specialty"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 38004507,
+              "CONCEPT_NAME": "Medical Oncology",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "90",
+              "DOMAIN_ID": "Provider",
+              "VOCABULARY_ID": "Medicare Specialty",
+              "CONCEPT_CLASS_ID": "Physician Specialty"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 44814024,
+              "CONCEPT_NAME": "Medical oncology service",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "892571000000101",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Qualifier Value"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 38004509,
+              "CONCEPT_NAME": "Radiation Oncology",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "92",
+              "DOMAIN_ID": "Provider",
+              "VOCABULARY_ID": "Medicare Specialty",
+              "CONCEPT_CLASS_ID": "Physician Specialty"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4029715,
+              "CONCEPT_NAME": "Radiation oncology AND/OR radiotherapy",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "108290001",
+              "DOMAIN_ID": "Procedure",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Procedure"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 4083427,
+              "CONCEPT_NAME": "Seen in oncology clinic",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "185270007",
+              "DOMAIN_ID": "Observation",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 38004508,
+              "CONCEPT_NAME": "Surgical Oncology",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "91",
+              "DOMAIN_ID": "Provider",
+              "VOCABULARY_ID": "Medicare Specialty",
+              "CONCEPT_CLASS_ID": "Physician Specialty"
+            },
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
+          }
+        ]
+      }
+    }
+  ],
+  "QualifiedLimit": {
+    "Type": "All"
+  },
+  "ExpressionLimit": {
+    "Type": "All"
+  },
+  "InclusionRules": [],
+  "EndStrategy": {
+    "DateOffset": {
+      "DateField": "EndDate",
+      "Offset": 0
+    }
+  },
+  "CensoringCriteria": [],
+  "CollapseSettings": {
+    "CollapseType": "ERA",
+    "EraPad": 0
+  },
+  "CensorWindow": {}
+}
