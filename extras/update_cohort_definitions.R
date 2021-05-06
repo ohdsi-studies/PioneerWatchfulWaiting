@@ -8,7 +8,9 @@ library(ROhdsiWebApi)
 
 # Pull in Cohort Definitions from Atlas -----------------------------------
 baseUrl="https://pioneer-atlas.thehyve.net/WebAPI"
-ROhdsiWebApi::setAuthHeader(baseUrl,"Bearer ey...") # get this token from an active ATLAS web session
+# get this token from an active ATLAS web session
+ROhdsiWebApi::setAuthHeader(baseUrl,"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXhpbUB0aGVoeXZlLm5sIiwiZXhwIjoxNjIwMzM5NjIyfQ.WtMp0-VGf5h7Yl_6R_TMdQYG15wKz7y5kpe30INrmMN_JLr8fKsvKCTRZEcgWfifegUSqZ2cLG0VkRyJGHkoqQ")
+
 
 for (cohortType in c("Target", "Outcome", "Strata")) {
   ROhdsiWebApi::insertCohortDefinitionSetInPackage(
@@ -29,7 +31,8 @@ for (cohortType in c("Target", "Outcome", "Strata")) {
 #find . -iname '*.json' -type f -exec sed -i.orig 's/" : /": /g' {} +
 #rm -r *.orig
 
-
+json_cohorts_path <- 'inst/cohorts'
+settingsPath <- "inst/settings"
 # Create the list of combinations of T, TwS, TwoS for the combinations of strata ----------------------------
 
 # The Atlas Name is used as the name. The 'name' column (containing same id as cohortId) is ignored.
@@ -87,3 +90,4 @@ readr::write_csv(shinyCohortXref, file.path("inst/shiny/PioneerWatchfulWaitingEx
 # Write out the final targetStrataXRef
 targetStrataXRef <- targetStrataXRef[,c("targetId","strataId","cohortId","cohortType","name")]
 readr::write_csv(targetStrataXRef, file.path(settingsPath, "targetStrataXref.csv"))
+
