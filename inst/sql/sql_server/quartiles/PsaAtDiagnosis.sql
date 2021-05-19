@@ -1,7 +1,7 @@
 WITH tab       AS (
                   SELECT cohort.cohort_definition_id, cohort.subject_id, m.measurement_id, value_as_number,
                          cohort_start_date, m.measurement_date
-                  FROM pioneer_sp_stg cohort
+                  FROM @cohort_database_schema.@cohort_table cohort
                   JOIN @cdm_database_schema.measurement m
                       ON cohort.subject_id = m.person_id
                           AND m.measurement_concept_id IN (44793131, 37392634, 3039443, 3013603, 3005013,
