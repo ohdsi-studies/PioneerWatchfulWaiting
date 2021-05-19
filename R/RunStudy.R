@@ -188,7 +188,6 @@ runStudy <- function(connectionDetails = NULL,
 
 
   KMOutcomesIds <- KMOutcomes$cohortId[KMOutcomes$name %in% c('Death', 'Symptomatic progression')]
-  # combinedOutcomeId <- 999999
   combinedOutcomeId <- max(allStudyCohorts$cohortId) + 1
   timeToCombinedEvent <- generateCombinedSurvival(connection, cohortDatabaseSchema, cohortTable = cohortStagingTable,
                                                   targetIds = targetIds, outcomeIds = KMOutcomesIds,

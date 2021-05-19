@@ -27,8 +27,8 @@ generateSurvival <- function(connection, cohortDatabaseSchema, cohortTable, targ
       
       surv_info <- survminer::surv_summary(surv_info)
 
-      data.frame(targetId = targetId, outcomeId = outcomeId, time = surv_info$time,
-                 surv = surv_info$surv, n.censor = surv_info$n.censor,
+      data.frame(targetId = targetId, outcomeId = outcomeId, time = surv_info$time, surv = surv_info$surv, 
+                 n.censor = surv_info$n.censor, n.event = surv_info$n.event, n.risk = surv_info$n.risk,
                  lower = surv_info$lower, upper = surv_info$upper, databaseId = databaseId)
       
       
@@ -64,8 +64,8 @@ generateCombinedSurvival <- function(connection, cohortDatabaseSchema, cohortTab
     
     surv_info <- survminer::surv_summary(surv_info)
     
-    data.frame(targetId = targetId, outcomeId = combinedOutcomeId, time = surv_info$time,
-               surv = surv_info$surv, n.censor = surv_info$n.censor,
+    data.frame(targetId = targetId, outcomeId = combinedOutcomeId, time = surv_info$time, surv = surv_info$surv, 
+               n.censor = surv_info$n.censor, n.event = surv_info$n.event, n.risk = surv_info$n.risk,
                lower = surv_info$lower, upper = surv_info$upper, databaseId = databaseId)
   })
 }
