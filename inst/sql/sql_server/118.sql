@@ -171,11 +171,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 10))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 10))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -191,11 +191,11 @@ from
   FROM @cdm_database_schema.OBSERVATION o
 JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 10))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 10))
-) C
+}) C
 
 
 -- End Observation Criteria
@@ -211,11 +211,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 11))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -231,11 +231,11 @@ from
   FROM @cdm_database_schema.DRUG_EXPOSURE de
 JOIN #Codesets codesets on ((de.drug_concept_id = codesets.concept_id and codesets.codeset_id = 11))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-) C
+}) C
 
 
 -- End Drug Exposure Criteria
@@ -251,11 +251,11 @@ from
   FROM @cdm_database_schema.OBSERVATION o
 JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 11))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-) C
+}) C
 
 
 -- End Observation Criteria
@@ -271,11 +271,11 @@ from
   FROM @cdm_database_schema.DEVICE_EXPOSURE de
 JOIN #Codesets codesets on ((de.device_concept_id = codesets.concept_id and codesets.codeset_id = 11))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-) C
+}) C
 
 
 -- End Device Exposure Criteria
@@ -292,11 +292,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 16))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 16))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -319,11 +319,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 16))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 16))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -346,11 +346,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 16))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 16))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -397,11 +397,11 @@ from
   FROM @cdm_database_schema.OBSERVATION o
 JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 8))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 8))
-) C
+}) C
 
 
 -- End Observation Criteria
@@ -417,11 +417,11 @@ from
   FROM @cdm_database_schema.DEVICE_EXPOSURE de
 JOIN #Codesets codesets on ((de.device_concept_id = codesets.concept_id and codesets.codeset_id = 8))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 8))
-) C
+}) C
 
 
 
@@ -438,11 +438,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 8))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 8))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -818,11 +818,11 @@ from
   FROM @cdm_database_schema.DRUG_EXPOSURE de
 JOIN #Codesets codesets on ((de.drug_concept_id = codesets.concept_id and codesets.codeset_id = 11))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-) C
+}) C
 
 
 -- End Drug Exposure Criteria
@@ -865,11 +865,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 11))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -912,11 +912,11 @@ from
   FROM @cdm_database_schema.OBSERVATION o
 JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 11))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-) C
+}) C
 
 
 -- End Observation Criteria
@@ -959,11 +959,11 @@ from
   FROM @cdm_database_schema.DEVICE_EXPOSURE de
 JOIN #Codesets codesets on ((de.device_concept_id = codesets.concept_id and codesets.codeset_id = 11))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-) C
+}) C
 
 
 
@@ -1007,11 +1007,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 10))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 10))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -1054,11 +1054,11 @@ from
   FROM @cdm_database_schema.OBSERVATION o
 JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 10))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 10))
-) C
+}) C
 
 
 -- End Observation Criteria
@@ -1102,11 +1102,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 16))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 16))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -1129,11 +1129,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 16))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 16))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -1156,11 +1156,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 16))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 16))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -1180,11 +1180,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 15))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 15))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -1239,11 +1239,11 @@ from
   FROM @cdm_database_schema.OBSERVATION o
 JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 8))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 8))
-) C
+}) C
 
 
 -- End Observation Criteria
@@ -1286,11 +1286,11 @@ from
   FROM @cdm_database_schema.DEVICE_EXPOSURE de
 JOIN #Codesets codesets on ((de.device_concept_id = codesets.concept_id and codesets.codeset_id = 8))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 8))
-) C
+}) C
 
 
 -- End Device Exposure Criteria
@@ -1333,11 +1333,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 8))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 8))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -1411,11 +1411,11 @@ from
   FROM @cdm_database_schema.DRUG_EXPOSURE de
 JOIN #Codesets codesets on ((de.drug_concept_id = codesets.concept_id and codesets.codeset_id = 14))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 14))
-) C
+}) C
 
 
 -- End Drug Exposure Criteria
@@ -1458,11 +1458,11 @@ from
   FROM @cdm_database_schema.OBSERVATION o
 JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 14))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 14))
-) C
+}) C
 
 
 -- End Observation Criteria
@@ -1505,11 +1505,11 @@ from
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 14))
 --adding episode
-  union all
+{@episodetable} ? {  union all
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 14))
-) C
+}) C
 
 
 -- End Procedure Occurrence Criteria

@@ -371,7 +371,8 @@ instantiateCohortSet <- function(connectionDetails = NULL,
                                  results_database_schema.cohort_inclusion_result = "#cohort_inc_result",
                                  results_database_schema.cohort_inclusion_stats = "#cohort_inc_stats",
                                  results_database_schema.cohort_summary_stats = "#cohort_summary_stats",
-                                 warnOnMissingParameters = FALSE)
+                                 warnOnMissingParameters = FALSE,
+                                 episodetable = FALSE)
       } else {
         sql <- SqlRender::render(sql,
                                  cdm_database_schema = cdmDatabaseSchema,
@@ -379,7 +380,8 @@ instantiateCohortSet <- function(connectionDetails = NULL,
                                  target_database_schema = cohortDatabaseSchema,
                                  target_cohort_table = cohortTable,
                                  target_cohort_id = cohorts$cohortId[i],
-                                 warnOnMissingParameters = FALSE)
+                                 warnOnMissingParameters = FALSE,
+                                 episodetable = FALSE)
       }
       sql <- SqlRender::translate(sql,
                                   targetDialect = connectionDetails$dbms,
