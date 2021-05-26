@@ -182,13 +182,13 @@ runStudy <- function(connectionDetails = NULL,
   targetIds <- setdiff(targetIds, featureCohortIds)
   targetIds <- setdiff(targetIds, strataCohortIds)
   KMOutcomes <- getFeatures()
-  KMOutcomesIds <- KMOutcomes$cohortId[KMOutcomes$createKMPlot == TRUE]
+  # KMOutcomesIds <- KMOutcomes$cohortId[KMOutcomes$createKMPlot == TRUE]
+  KMOutcomesIds <- KMOutcomes$cohortId
   timeToEvent <- generateSurvival(connection, cohortDatabaseSchema, cohortTable = cohortStagingTable,
                                   targetIds = targetIds, outcomeIds = KMOutcomesIds, databaseId = databaseId, packageName = getThisPackageName())
 
 
   KMOutcomesIds <- KMOutcomes$cohortId[KMOutcomes$name %in% c('Death', 'Symptomatic progression')]
-  # combinedOutcomeId <- 999999
   combinedOutcomeId <- max(allStudyCohorts$cohortId) + 1
   timeToCombinedEvent <- generateCombinedSurvival(connection, cohortDatabaseSchema, cohortTable = cohortStagingTable,
                                                   targetIds = targetIds, outcomeIds = KMOutcomesIds,

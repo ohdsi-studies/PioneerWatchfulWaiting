@@ -173,7 +173,7 @@ database <- database[order(database$databaseId),]
 ids <- unique(cohortTimeToEvent$outcomeId)
 names <- unique(cohortStagingCount$name[cohortStagingCount$cohortId %in% ids])
 if(length(cohortStagingCount$name[cohortStagingCount$cohortId == max(ids)]) == 0){
-  names <- c(names, 'Symptomatic progression free survival')
+  names <- c(names, 'Symptomatic progr. free surv.')
 }
 
 KMIds <- data.frame(id = ids,
