@@ -1,16 +1,24 @@
+# This file just contains some example maintenance code and shouldn't be run as is
+
+# ROhdsiWebApi version to install:
+# remotes::install_github("ohdsi/ROhdsiWebApi",ref="develop")
+
+baseUrl="https://pioneer-atlas.thehyve.net/WebAPI"
+ROhdsiWebApi::setAuthHeader(baseUrl,"Bearer ey...") # get this token from an active ATLAS web session
+ROhdsiWebApi::insertCohortDefinitionInPackage(cohortId = 142, baseUrl = baseUrl)
+
+
+# Alternatively, once you have obtained a token (see Authenticate.R), you can use a global config:
+# set_config(token = token)
+# and then retrieve the cohort definition JSONs directly from WebAPI
+
 getCohortDefinitionExpression <- function(definitionId, baseUrl) {
   url <- paste(baseUrl, "cohortdefinition", definitionId, sep = "/")
   json <- httr::GET(url)
   httr::content(json)
 }
 
-cohortPath <- "E:/Covid19Characterization/testCohorts"
+cohortPath <- "./inst/cohorts"
 
-cdT <- getCohortDefinitionExpression(definitionId = 5902, baseUrl = Sys.getenv("baseUrl"))
-write(cdT$expression, file = file.path(cohortPath, "influenza.json"))
-
-cdStrata <- getCohortDefinitionExpression(definitionId = 5903, baseUrl = Sys.getenv("baseUrl"))
-write(cdStrata$expression, file = file.path(cohortPath, "strata.json"))
-
-cdOutcomes <- getCohortDefinitionExpression(definitionId = 5900, baseUrl = Sys.getenv("baseUrl"))
-write(cdOutcomes$expression, file = file.path(cohortPath, "outcomes.json"))
+cohort <- getCohortDefinitionExpression(definitionId = 141, baseUrl = Sys.getenv("baseUrl"))
+write(cohort$expression, file = file.path(cohortPath, "cohortname.json"))

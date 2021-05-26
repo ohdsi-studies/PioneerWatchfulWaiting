@@ -2,3 +2,5 @@
 ^renv\.lock$
 ^IntraVitrealCx\.Rproj$
 ^\.Rproj\.user$
+^\.httr-oauth$
+^codemeta\.json$

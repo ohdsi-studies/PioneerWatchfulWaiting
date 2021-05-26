@@ -15,7 +15,7 @@
 # limitations under the License.
 
 rootFTPFolder <- function() {
-  return("/PIONEER/")
+  return("/Task4/")
 }
 
 #' @export
@@ -43,9 +43,9 @@ uploadStudyResults <- function(outputFolder, privateKeyFileName, userName) {
 uploadResults <- function(outputFolder, privateKeyFileName, userName, remoteFolder) {
   fileName <- list.files(outputFolder, "^Results_.*.zip$", full.names = TRUE)
   if (length(fileName) == 0) {
-    stop("Could find results file in folder. Did you run (and complete) execute?") 
+    stop("Could not find results file in folder. Did you run (and complete) execute?") 
   }
-  if (length(fileName) == 0) {
+  if (length(fileName) > 1) {
     stop("Multiple results files found. Don't know which one to upload") 
   }
   OhdsiSharing::sftpUploadFile(privateKeyFileName = privateKeyFileName, 

@@ -42,6 +42,7 @@ getCohortsToCreate <- function(cohortGroups = getCohortGroups()) {
   cohorts <- data.frame()
   for(i in 1:nrow(cohortGroups)) {
     c <- readr::read_csv(system.file(cohortGroups$fileName[i], package = packageName, mustWork = TRUE), col_types = readr::cols())
+    c <- c[c('name', 'atlasName', 'atlasId', 'cohortId')]
     c$cohortType <- cohortGroups$cohortGroup[i]
     cohorts <- rbind(cohorts, c)
   }
@@ -77,7 +78,7 @@ getAllStudyCohortsWithDetails <- function() {
   colNames <- c("cohortId", "cohortName", "targetCohortId", "targetCohortName", "strataCohortId", "strataCohortName", "cohortType")
   # Format - cohortsToCreate
   cohortsToCreate$targetCohortId <- cohortsToCreate$cohortId
-  cohortsToCreate$targetCohortName <- cohortsToCreate$name
+  cohortsToCreate$targetCohortName <- cohortsToCreate$atlasName
   cohortsToCreate$strataCohortId <- 0
   cohortsToCreate$strataCohortName <- "All"
   cohortsToCreate <- dplyr::rename(cohortsToCreate, cohortName = "name")

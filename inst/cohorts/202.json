@@ -1,9 +1,11 @@
 {
-  "ConceptSets": [],
+  "cdmVersionRange": ">=5.0.0",
   "PrimaryCriteria": {
     "CriteriaList": [
       {
-        "Death": {}
+        "Death": {
+          "DeathTypeExclude": false
+        }
       }
     ],
     "ObservationWindow": {
@@ -14,6 +16,7 @@
       "Type": "First"
     }
   },
+  "ConceptSets": [],
   "QualifiedLimit": {
     "Type": "First"
   },
@@ -26,6 +29,5 @@
     "CollapseType": "ERA",
     "EraPad": 0
   },
-  "CensorWindow": {},
-  "cdmVersionRange": ">=5.0.0"
+  "CensorWindow": {}
 }

@@ -114,7 +114,6 @@ if (dataStorage == "database") {
   }  
 }
 
-
 if (exists("covariate")) {
   covariate <- unique(covariate)
   covariate$windowId <- as.numeric(substr(covariate$covariateId, nchar(covariate$covariateId), nchar(covariate$covariateId)))
@@ -127,11 +126,12 @@ domain <- rbind(domain,data.frame(name = "Cohort", covariateAnalysisId = c(10000
 domain <- rbind(domain,data.frame(name = "Demographics", covariateAnalysisId = c(1:99)))
 domain <- rbind(domain,data.frame(name = "Drug", covariateAnalysisId = c(412)))
 domain <- rbind(domain,data.frame(name = "Condition", covariateAnalysisId = c(212)))
+domain <- rbind(domain,data.frame(name = 'Procedure', covariateAnalysisId = c(712)))
 domain$name <- as.character(domain$name)
 domainName <- "All"
 
-# This must match the featureTimeWindow.csv from the Charybdis study
-timeWindow <- data.frame(windowId=c(1:4), name=c("-365d to -1d", "-30d to -1d", "index", "index to 30d"))
+# This must match the featureTimeWindow.csv from the Pioneer study
+timeWindow <- data.frame(windowId=c(1:3), name=c("index to 365", "366d to 730d", "731d+"))
 timeWindow$name <- as.character(timeWindow$name)
 
 cohortXref <- readr::read_csv("./cohortXref.csv", col_types = readr::cols())
@@ -167,3 +167,15 @@ dbTermsOfUse <- readr::read_csv("./databaseTermsOfUse.csv", col_types = readr::c
 colnames(dbTermsOfUse) <- SqlRender::snakeCaseToCamelCase(colnames(dbTermsOfUse))
 database <- dplyr::left_join(database, dbTermsOfUse, by="databaseId")
 database <- database[order(database$databaseId),]
+
+
+# Add Time to Event names and ids
+ids <- unique(cohortTimeToEvent$outcomeId)
+names <- unique(cohortStagingCount$name[cohortStagingCount$cohortId %in% ids])
+if(length(cohortStagingCount$name[cohortStagingCount$cohortId == max(ids)]) == 0){
+  names <- c(names, 'Symptomatic progression free survival')
+}
+
+KMIds <- data.frame(id = ids,
+                    name = names)
+

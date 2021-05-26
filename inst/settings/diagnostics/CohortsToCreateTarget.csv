@@ -1,19 +1,21 @@
 name,atlasName,atlasId,cohortId
-101,[PIONEER T1] new PCa,101,101
-102,[PIONEER T1a] new PCa,102,102
-103,[PIONEER T2] new PCa actively treated,103,103
-104,[PIONEER T2a] new PCa actively treated,104,104
-105,[PIONEER T3.1] new high_intermediate risk PCa conservative management,105,105
-106,[PIONEER T3.1a] new high_intermediate risk PCa conservative management,106,106
-107,[PIONEER T3.2] new low-risk PCa conservative management (WW),107,107
-108,[PIONEER T3.2a] new low-risk PCa conservative management (WW),108,108
-109,[PIONEER T3.3] new low risk PCa conservative management (AS),109,109
-110,[PIONEER T3.3a] new low risk PCa conservative management (AS),110,110
-111,[PIONEER T3] new PCa conservative management,111,111
-112,[PIONEER T3a] new PCa conservative management,112,112
-113,[PIONEER T4.1] Delayed Curative Management,113,113
-114,[PIONEER T4.1a] Delayed Curative Management,114,114
-115,[PIONEER T4.2] Delayed Palliative Management,115,115
-116,[PIONEER T4.2a] Delayed Palliative Management,116,116
-117,[PIONEER T4] new PCa treatment post conservative management,117,117
-118,[PIONEER T4a] new PCa treatment post conservative management,118,118
+101,[PIONEER T1] Newly diagnosed Pca ,47,101
+103,[PIONEER T2] PCa treated right away,49,103
+111,[PIONEER T3] PCa under conservative management,137,111
+117,[PIONEER T4] PCa treated after conservative management ,143,117
+105,[PIONEER T3.1] PCa high/intermediate risk conservative management,138,105
+107,[PIONEER T3.2] PCa low risk grade conservative management and no intense monitoring,139,107
+109,[PIONEER T3.3] PCa low risk grade conservative management and intense monitoring,140,109
+113,[PIONEER T4.1] Delayed Curative Management,144,113
+115,[PIONEER T4.2] Delayed Palliative Management,145,115
+102,[PIONEER T1a] Newly diagnosed Pca_broad,141,102
+104,[PIONEER T2a] PCa treated right away_broad,142,104
+112,[PIONEER T3a] PCa under conservative management_broad,125,112
+118,[PIONEER T4a] PCa treated after conservative management_broad,129,118
+106,[PIONEER T3.1a] PCa high/intermediate risk conservative managemetn_broad,126,106
+108,[PIONEER T3.2a] PCa low risk grade conservative management and no intense monitoring_broad,127,108
+110,[PIONEER T3.3a] PCa low risk grade conservative management and intense monitoring_broad,128,110
+114,[PIONEER T4.1a] Delayed Curative Management_broad,131,114
+116,[PIONEER T4.2a] Delayed Palliative Management_broad,132,116
+119,[PIONEER T5] Symptom post conservative management ,168,119
+120,[PIONEER T5a] Symptom post conservative management_broad,167,120

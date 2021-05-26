@@ -1,4 +1,28 @@
 {
+  "cdmVersionRange": ">=5.0.0",
+  "PrimaryCriteria": {
+    "CriteriaList": [
+      {
+        "ConditionOccurrence": {
+          "CodesetId": 3,
+          "ConditionTypeExclude": false
+        }
+      },
+      {
+        "Observation": {
+          "CodesetId": 3,
+          "ObservationTypeExclude": false
+        }
+      }
+    ],
+    "ObservationWindow": {
+      "PriorDays": 0,
+      "PostDays": 0
+    },
+    "PrimaryCriteriaLimit": {
+      "Type": "First"
+    }
+  },
   "ConceptSets": [
     {
       "id": 3,
@@ -19,7 +43,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -34,7 +59,9 @@
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -50,7 +77,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -65,7 +93,9 @@
               "VOCABULARY_ID": "SNOMED",
               "CONCEPT_CLASS_ID": "Context-dependent"
             },
-            "includeDescendants": true
+            "isExcluded": false,
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -81,7 +111,8 @@
               "CONCEPT_CLASS_ID": "Context-dependent"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -97,7 +128,8 @@
               "CONCEPT_CLASS_ID": "Clinical Finding"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
           },
           {
             "concept": {
@@ -113,33 +145,30 @@
               "CONCEPT_CLASS_ID": "Context-dependent"
             },
             "isExcluded": true,
-            "includeDescendants": true
+            "includeDescendants": true,
+            "includeMapped": false
+          },
+          {
+            "concept": {
+              "CONCEPT_ID": 432851,
+              "CONCEPT_NAME": "Secondary malignant neoplastic disease",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "CONCEPT_CODE": "128462008",
+              "DOMAIN_ID": "Condition",
+              "VOCABULARY_ID": "SNOMED",
+              "CONCEPT_CLASS_ID": "Clinical Finding"
+            },
+            "isExcluded": true,
+            "includeDescendants": true,
+            "includeMapped": false
           }
         ]
       }
     }
   ],
-  "PrimaryCriteria": {
-    "CriteriaList": [
-      {
-        "ConditionOccurrence": {
-          "CodesetId": 3
-        }
-      },
-      {
-        "Observation": {
-          "CodesetId": 3
-        }
-      }
-    ],
-    "ObservationWindow": {
-      "PriorDays": 0,
-      "PostDays": 0
-    },
-    "PrimaryCriteriaLimit": {
-      "Type": "First"
-    }
-  },
   "QualifiedLimit": {
     "Type": "First"
   },
@@ -152,6 +181,5 @@
     "CollapseType": "ERA",
     "EraPad": 0
   },
-  "CensorWindow": {},
-  "cdmVersionRange": ">=5.0.0"
+  "CensorWindow": {}
 }

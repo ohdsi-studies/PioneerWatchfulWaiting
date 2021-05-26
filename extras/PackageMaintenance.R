@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+settingsPath <- "inst/settings"
+=======
 # # Copyright 2020 Observational Health Data Sciences and Informatics
 # #
 # # This file is part of PioneerWatchfulWaiting
@@ -185,17 +188,8 @@ for (i in 1:length(nameToIdMapping)){
 
 
 
+>>>>>>> master
 cohortGroups <- readr::read_csv("inst/settings/CohortGroups.csv", col_types=readr::cols())
-# for (i in 1:nrow(cohortGroups)) {
-#   ParallelLogger::logInfo("* Importing cohorts in group: ", cohortGroups$cohortGroup[i], " *")
-#   insertCohortDefinitionSetInPackage(fileName = file.path("inst/", cohortGroups$fileName[i]),
-#                                                    baseUrl = Sys.getenv("baseUrl"),
-#                                                    insertTableSql = FALSE,
-#                                                    insertCohortCreationR = FALSE,
-#                                                    generateStats = FALSE,
-#                                                    packageName = "PioneerWatchfulWaiting")
-# }
-# unlink("inst/cohorts/InclusionRules.csv")
 
 # Create the corresponding diagnostic file 
 for (i in 1:nrow(cohortGroups)) {
@@ -215,6 +209,9 @@ targetCohorts <- read.csv(file.path(settingsPath, "CohortsToCreateTarget.csv"))
 bulkStrata <- read.csv(file.path(settingsPath, "BulkStrata.csv"))
 atlasCohortStrata <- read.csv(file.path(settingsPath, "CohortsToCreateStrata.csv"))
 outcomeCohorts <- read.csv(file.path(settingsPath, "CohortsToCreateOutcome.csv"))
+
+# Get a list of strata IDs for which there's no need to create "without" strata
+exclusion <- atlasCohortStrata$cohortId[atlasCohortStrata$createInverse == FALSE]
 
 
 # Ensure all of the IDs are unique
@@ -265,6 +262,7 @@ tWithS$name <- paste(tWithS$targetName, tWithS$strataName)
 tWithoutS$cohortId <- tWithoutS$cohortId + 2
 tWithoutS$cohortType <- "TwoS"
 tWithoutS$name <- paste(tWithoutS$targetName, tWithoutS$strataInverseName)
+tWithoutS <- tWithoutS[!(tWithoutS$strataId) %in% exclusion, ]
 targetStrataXRef <- rbind(tWithS, tWithoutS)
 
 # For shiny, construct a data frame to provide details on the original cohort names
