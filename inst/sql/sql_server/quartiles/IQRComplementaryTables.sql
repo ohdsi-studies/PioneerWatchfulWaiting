@@ -288,6 +288,6 @@ SELECT 0 AS diag_category_id,
 FROM @cohort_database_schema.subject_age
 WHERE cohort_definition_id IN (
                               SELECT DISTINCT cohort_definition_id
-                              FROM charlson_map
+                              FROM @cohort_database_schema.charlson_map
                               );
 
