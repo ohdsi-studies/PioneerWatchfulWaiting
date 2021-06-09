@@ -495,7 +495,7 @@ loadCohortsFromPackage <- function(cohortIds) {
     cohorts <- cohorts[cohorts$cohortId %in% cohortIds, ]
   }
   if ("atlasName" %in% colnames(cohorts)) {
-    cohorts <- dplyr::rename(cohorts, cohortName = "name", cohortFullName = "name")
+    cohorts <- dplyr::rename(cohorts, cohortName = "atlasName", cohortFullName = "atlasName")
   } else {
     cohorts <- dplyr::rename(cohorts, cohortName = "name", cohortFullName = "fullName")
   }
@@ -520,7 +520,7 @@ loadCohortsForExportFromPackage <- function(cohortIds) {
   cohorts <- getCohortsToCreate()
   cohorts$atlasId <- NULL
   if ("atlasName" %in% colnames(cohorts)) {
-    cohorts <- dplyr::rename(cohorts, cohortName = "name", cohortFullName = "atlasName")
+    cohorts <- dplyr::rename(cohorts, cohortName = "atlasName", cohortFullName = "atlasName")
   } else {
     cohorts <- dplyr::rename(cohorts, cohortName = "name", cohortFullName = "fullName")
   }

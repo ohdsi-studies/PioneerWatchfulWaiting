@@ -1,6 +1,6 @@
-﻿cohortId, name, atlasID, circeDef
-101, [PIONEER T1] Newly diagnosed Pca, 47, TRUE
-103, [PIONEER T2] PCa treated right away, 49, TRUE
+cohortId, name, atlasID, circeDef
+101,[PIONEER T1] Newly diagnosed Pca, 47, TRUE
+103,[PIONEER T2] PCa treated right away, 49, TRUE
 111,[PIONEER T3] PCa under conservative management,137,TRUE
 117,[PIONEER T4] PCa treated after conservative management ,143,TRUE
 105,[PIONEER T3.1] PCa high/intermediate risk conservative management,138,TRUE
@@ -45,14 +45,14 @@
 317,[PIONEER S17] Grade 4 (GS 8),70,TRUE
 318,[PIONEER S18] Grade 5 (GS 9-10),71,TRUE
 319,[PIONEER S19] Family history of Prostate cancer or history of family history of germline mutations,72,TRUE
-320,[PIONEER S20] Mutation (germline or somatic) in BRCA2, BRCA1, ATM, MLH1, MSH1, MSH2, MSH6, CHEK2, RAD51B and PALB2 ,83,TRUE
+320,"[PIONEER S20] Mutation (germline or somatic) in BRCA2, BRCA1, ATM, MLH1, MSH1, MSH2, MSH6, CHEK2, RAD51B and PALB2 ",83,TRUE
 321,[PIONEER S21] Age at diagnosis <55,111,TRUE
 322,[PIONEER S22] Age at diagnosis 55-80,110,TRUE
 323,[PIONEER S23] Age at diagnosis >80,109,TRUE
 324,[PIONEER S24] Charlson CCI=0,120,TRUE
 325,[PIONEER S25] Charlson CCI=1,121,TRUE
 326,[PIONEER S26] Charlson CCI>=2,122,TRUE
-327,[PIONEER S27] Any malignancy, except malignant neoplasm of skin,81,TRUE
+327,"[PIONEER S27] Any malignancy, except malignant neoplasm of skin",81,TRUE
 334,[PIONEER S28] Performance status ECOG=0,164,TRUE
 335,[PIONEER S29] Performance status ECOG=1,165,TRUE
 336,[PIONEER S30] Performance status ECOG=2+,166,TRUE
