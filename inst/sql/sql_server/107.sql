@@ -475,7 +475,7 @@ SELECT 1 as index_id, p.person_id, p.event_id
 FROM #qualified_events P
 LEFT JOIN
 (
--- Begin Observation Criteria
+  -- Begin Observation Criteria
 select C.person_id, C.observation_id as event_id, C.observation_date as start_date, c.END_DATE,
        C.observation_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.observation_date as sort_date
@@ -565,7 +565,7 @@ SELECT 4 as index_id, p.person_id, p.event_id
 FROM #qualified_events P
 LEFT JOIN
 (
--- Begin Observation Criteria
+  -- Begin Observation Criteria
 select C.person_id, C.observation_id as event_id, C.observation_date as start_date, c.END_DATE,
        C.observation_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.observation_date as sort_date
@@ -627,7 +627,7 @@ FROM #qualified_events P
 LEFT JOIN
 (
   select PE.person_id, PE.event_id, PE.start_date, PE.end_date, PE.target_concept_id, PE.visit_occurrence_id, PE.sort_date FROM (
-  -- Begin Procedure Occurrence Criteria
+-- Begin Procedure Occurrence Criteria
 select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, C.END_DATE,
        C.procedure_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.procedure_date as sort_date
@@ -654,7 +654,7 @@ FROM
 (
   select E.person_id, E.event_id 
   FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (  -- Begin Procedure Occurrence Criteria
+FROM (-- Begin Procedure Occurrence Criteria
 select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, C.END_DATE,
        C.procedure_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.procedure_date as sort_date
@@ -681,7 +681,7 @@ JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id
     -- Begin Correlated Criteria
 SELECT 0 as index_id, p.person_id, p.event_id
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (  -- Begin Procedure Occurrence Criteria
+FROM (-- Begin Procedure Occurrence Criteria
 select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, C.END_DATE,
        C.procedure_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.procedure_date as sort_date
@@ -772,7 +772,7 @@ SELECT 8 as index_id, p.person_id, p.event_id
 FROM #qualified_events P
 LEFT JOIN
 (
--- Begin Observation Criteria
+  -- Begin Observation Criteria
 select C.person_id, C.observation_id as event_id, C.observation_date as start_date, c.END_DATE,
        C.observation_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.observation_date as sort_date
@@ -803,7 +803,7 @@ FROM #qualified_events P
 LEFT JOIN
 (
   -- Begin Device Exposure Criteria
-  -- Begin Device Exposure Criteria
+								   
 select C.person_id, C.device_exposure_id as event_id, C.device_exposure_start_date as start_date, C.device_exposure_end_date as end_date,
        C.device_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.device_exposure_start_date as sort_date
@@ -887,7 +887,7 @@ SELECT 1 as index_id, p.person_id, p.event_id
 FROM #qualified_events P
 LEFT JOIN
 (
--- Begin Observation Criteria
+  -- Begin Observation Criteria
 select C.person_id, C.observation_id as event_id, C.observation_date as start_date, c.END_DATE,
        C.observation_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.observation_date as sort_date
@@ -1349,6 +1349,81 @@ HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
 ) Results
 ;
 
+select 9 as inclusion_rule_id, person_id, event_id
+INTO #Inclusion_9
+FROM 
+(
+  select pe.person_id, pe.event_id
+  FROM #qualified_events pe
+  
+JOIN (
+-- Begin Criteria Group
+select 0 as index_id, person_id, event_id
+FROM
+(
+  select E.person_id, E.event_id 
+  FROM #qualified_events E
+  INNER JOIN
+  (
+    -- Begin Correlated Criteria
+SELECT 0 as index_id, p.person_id, p.event_id
+FROM #qualified_events P
+LEFT JOIN
+(
+  -- Begin Death Criteria
+select C.person_id, C.person_id as event_id, C.death_date as start_date, DATEADD(d,1,C.death_date) as end_date,
+       coalesce(C.cause_concept_id,0) as TARGET_CONCEPT_ID, CAST(NULL as bigint) as visit_occurrence_id,
+       C.death_date as sort_date
+from 
+(
+  select d.*
+  FROM @cdm_database_schema.DEATH d
+
+) C
+
+
+-- End Death Criteria
+
+
+) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= DATEADD(day,548,P.START_DATE)
+GROUP BY p.person_id, p.event_id
+HAVING COUNT(A.TARGET_CONCEPT_ID) = 0
+-- End Correlated Criteria
+
+UNION ALL
+-- Begin Correlated Criteria
+SELECT 1 as index_id, p.person_id, p.event_id
+FROM #qualified_events P
+LEFT JOIN
+(
+  -- Begin Observation Period Criteria
+select C.person_id, C.observation_period_id as event_id, C.observation_period_start_date as start_date, C.observation_period_end_date as end_date,
+       C.period_type_concept_id as TARGET_CONCEPT_ID, CAST(NULL as bigint) as visit_occurrence_id,
+       C.observation_period_start_date as sort_date
+
+from 
+(
+        select op.*, row_number() over (PARTITION BY op.person_id ORDER BY op.observation_period_start_date) as ordinal
+        FROM @cdm_database_schema.OBSERVATION_PERIOD op
+) C
+
+
+-- End Observation Period Criteria
+
+) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.END_DATE >= DATEADD(day,0,P.START_DATE) AND A.END_DATE <= DATEADD(day,548,P.START_DATE)
+GROUP BY p.person_id, p.event_id
+HAVING COUNT(A.TARGET_CONCEPT_ID) = 0
+-- End Correlated Criteria
+
+  ) CQ on E.person_id = CQ.person_id and E.event_id = CQ.event_id
+  GROUP BY E.person_id, E.event_id
+  HAVING COUNT(index_id) = 2
+) G
+-- End Criteria Group
+) AC on AC.person_id = pe.person_id AND AC.event_id = pe.event_id
+) Results
+;
+
 SELECT inclusion_rule_id, person_id, event_id
 INTO #inclusion_events
 FROM (select inclusion_rule_id, person_id, event_id from #Inclusion_0
@@ -1367,7 +1442,9 @@ select inclusion_rule_id, person_id, event_id from #Inclusion_6
 UNION ALL
 select inclusion_rule_id, person_id, event_id from #Inclusion_7
 UNION ALL
-select inclusion_rule_id, person_id, event_id from #Inclusion_8) I;
+select inclusion_rule_id, person_id, event_id from #Inclusion_8
+UNION ALL
+select inclusion_rule_id, person_id, event_id from #Inclusion_9) I;
 TRUNCATE TABLE #Inclusion_0;
 DROP TABLE #Inclusion_0;
 
@@ -1395,6 +1472,9 @@ DROP TABLE #Inclusion_7;
 TRUNCATE TABLE #Inclusion_8;
 DROP TABLE #Inclusion_8;
 
+TRUNCATE TABLE #Inclusion_9;
+DROP TABLE #Inclusion_9;
+
 
 with cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date, op_end_date, ordinal) as
 (
@@ -1408,7 +1488,7 @@ with cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date,
   ) MG -- matching groups
 
   -- the matching group with all bits set ( POWER(2,# of inclusion rules) - 1 = inclusion_rule_mask
-  WHERE (MG.inclusion_rule_mask = POWER(cast(2 as bigint),9)-1)
+  WHERE (MG.inclusion_rule_mask = POWER(cast(2 as bigint),10)-1)
 
 )
 select event_id, person_id, start_date, end_date, op_start_date, op_end_date
@@ -1540,7 +1620,7 @@ group by person_id, end_date
 
 DELETE FROM @target_database_schema.@target_cohort_table where cohort_definition_id = @target_cohort_id;
 INSERT INTO @target_database_schema.@target_cohort_table (cohort_definition_id, subject_id, cohort_start_date, cohort_end_date)
-select @target_cohort_id as cohort_definition_id, person_id, start_date, end_date 
+select @target_cohort_id as cohort_definition_id, person_id,DATEADD(day,548,start_date) as start_date, end_date 
 FROM #final_cohort CO
 ;
 
