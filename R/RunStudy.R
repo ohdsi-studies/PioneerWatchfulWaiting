@@ -495,9 +495,11 @@ loadCohortsFromPackage <- function(cohortIds) {
     cohorts <- cohorts[cohorts$cohortId %in% cohortIds, ]
   }
   if ("atlasName" %in% colnames(cohorts)) {
-    cohorts <- dplyr::rename(cohorts, cohortName = "atlasName", cohortFullName = "atlasName")
+    cohorts <- cohorts %>% 
+      dplyr::mutate(cohortName = atlasName, cohortFullName = atlasName) %>%
+      dplyr::select(-atlasName, -name)
   } else {
-    cohorts <- dplyr::rename(cohorts, cohortName = "name", cohortFullName = "fullName")
+    cohorts <- cohorts %>% dplyr::rename(cohortName = name, cohortFullName = fullName)
   }
   
   getSql <- function(name) {
@@ -520,18 +522,20 @@ loadCohortsForExportFromPackage <- function(cohortIds) {
   cohorts <- getCohortsToCreate()
   cohorts$atlasId <- NULL
   if ("atlasName" %in% colnames(cohorts)) {
-    cohorts <- dplyr::rename(cohorts, cohortName = "atlasName", cohortFullName = "atlasName")
+    cohorts <- cohorts %>% 
+      dplyr::mutate(cohortName = atlasName, cohortFullName = atlasName) %>%
+      dplyr::select(-atlasName, -name)
   } else {
-    cohorts <- dplyr::rename(cohorts, cohortName = "name", cohortFullName = "fullName")
+    cohorts <- cohorts %>% dplyr::rename(cohortName = name, cohortFullName = fullName)
   }
   
   # Get the stratified cohorts for the study
   # and join to the cohorts to create to get the names
-  targetStrataXref <- getTargetStrataXref()
-  targetStrataXref <- dplyr::rename(targetStrataXref, cohortName = "name")
-  targetStrataXref$cohortFullName <- targetStrataXref$cohortName
-  targetStrataXref$targetId <- NULL
-  targetStrataXref$strataId <- NULL
+  targetStrataXref <- getTargetStrataXref() %>% 
+    dplyr::rename(cohortName = name) %>%
+    dplyr::mutate(cohortFullName = cohortName,
+                  targetId = NULL,
+                  startaId = NULL)
   
   cols <- names(cohorts)
   cohorts <- rbind(cohorts, targetStrataXref[cols])
