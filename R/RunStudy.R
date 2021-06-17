@@ -490,13 +490,15 @@ formatCovariateValues <- function(data, counts, minCellCount, databaseId) {
 loadCohortsFromPackage <- function(cohortIds) {
   packageName = getThisPackageName()
   cohorts <- getCohortsToCreate()
-  cohorts$atlasId <- NULL
+  cohorts <- cohorts %>%  dplyr::mutate(atlasId = NULL)
   if (!is.null(cohortIds)) {
     cohorts <- cohorts[cohorts$cohortId %in% cohortIds, ]
   }
   if ("atlasName" %in% colnames(cohorts)) {
+    # Remove PIONEER cohort identifier (3.g. [PIONEER O2])
     cohorts <- cohorts %>% 
-      dplyr::mutate(cohortName = atlasName, cohortFullName = atlasName) %>%
+      dplyr::mutate(cohortName = trimws(gsub("(\\[.+?\\])", "", atlasName)),
+                    cohortFullName = atlasName) %>%
       dplyr::select(-atlasName, -name)
   } else {
     cohorts <- cohorts %>% dplyr::rename(cohortName = name, cohortFullName = fullName)
@@ -520,10 +522,13 @@ loadCohortsFromPackage <- function(cohortIds) {
 loadCohortsForExportFromPackage <- function(cohortIds) {
   packageName = getThisPackageName()
   cohorts <- getCohortsToCreate()
-  cohorts$atlasId <- NULL
+  cohorts <- cohorts %>%  dplyr::mutate(atlasId = NULL)
   if ("atlasName" %in% colnames(cohorts)) {
+    # Remove PIONEER cohort identifier (3.g. [PIONEER O2])
+    # Remove atlasName and name from object to prevent clashes when combining with stratXref
     cohorts <- cohorts %>% 
-      dplyr::mutate(cohortName = atlasName, cohortFullName = atlasName) %>%
+      dplyr::mutate(cohortName = trimws(gsub("(\\[.+?\\])", "", atlasName)),
+                    cohortFullName = atlasName) %>%
       dplyr::select(-atlasName, -name)
   } else {
     cohorts <- cohorts %>% dplyr::rename(cohortName = name, cohortFullName = fullName)
@@ -531,11 +536,12 @@ loadCohortsForExportFromPackage <- function(cohortIds) {
   
   # Get the stratified cohorts for the study
   # and join to the cohorts to create to get the names
-  targetStrataXref <- getTargetStrataXref() %>% 
+  targetStrataXref <- getTargetStrataXref() 
+  targetStrataXref <- targetStrataXref %>% 
     dplyr::rename(cohortName = name) %>%
     dplyr::mutate(cohortFullName = cohortName,
                   targetId = NULL,
-                  startaId = NULL)
+                  strataId = NULL)
   
   cols <- names(cohorts)
   cohorts <- rbind(cohorts, targetStrataXref[cols])
