@@ -463,12 +463,12 @@ FROM #qualified_events P
 LEFT JOIN
 (
   -- Begin Procedure Occurrence Criteria
-select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, C.END_DATE,
+select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, DATEADD(d,1,C.procedure_date) as END_DATE,
        C.procedure_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.procedure_date as sort_date
 from 
 (
-  select po.person_id, po.procedure_occurrence_id, po.procedure_date,DATEADD(d,1,po.procedure_date) as END_DATE, po.procedure_concept_id, po.visit_occurrence_id 
+  select po.* 
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 14))
 ) C
@@ -929,47 +929,12 @@ from
 (
   select d.*
   FROM @cdm_database_schema.DEATH d
-																									
-				
-							  
-																														  
-									  
-																											  
-	
 
 ) C
 
 							 
 
 -- End Death Criteria
-								
-									 
-						  
-
-		 
-							
-											 
-						
-		 
- 
-							 
-																							   
-																			
-									  
-	 
- 
-																																						 
-										 
-																										  
-				
-							  
-																														  
-									  
-																											  
-	
-
-
-						   
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= DATEADD(day,180,P.START_DATE)
 GROUP BY p.person_id, p.event_id
@@ -983,7 +948,6 @@ FROM #qualified_events P
 LEFT JOIN
 (
   -- Begin Observation Period Criteria
-										
 select C.person_id, C.observation_period_id as event_id, C.observation_period_start_date as start_date, C.observation_period_end_date as end_date,
        C.period_type_concept_id as TARGET_CONCEPT_ID, CAST(NULL as bigint) as visit_occurrence_id,
        C.observation_period_start_date as sort_date
@@ -992,12 +956,6 @@ from
 (
         select op.*, row_number() over (PARTITION BY op.person_id ORDER BY op.observation_period_start_date) as ordinal
         FROM @cdm_database_schema.OBSERVATION_PERIOD op
-																										 
-				
-							  
-																														  
-									  
-																											  
 ) C
 
 

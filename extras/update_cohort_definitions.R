@@ -9,7 +9,7 @@ library(ROhdsiWebApi)
 # Pull in Cohort Definitions from Atlas -----------------------------------
 baseUrl="https://pioneer-atlas.thehyve.net/WebAPI"
 # get this token from an active ATLAS web session
-ROhdsiWebApi::setAuthHeader(baseUrl,"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXhpbUB0aGVoeXZlLm5sIiwiZXhwIjoxNjIwMzM5NjIyfQ.WtMp0-VGf5h7Yl_6R_TMdQYG15wKz7y5kpe30INrmMN_JLr8fKsvKCTRZEcgWfifegUSqZ2cLG0VkRyJGHkoqQ")
+ROhdsiWebApi::setAuthHeader(baseUrl,"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXhpbUB0aGVoeXZlLm5sIiwiZXhwIjoxNjI0MDYxMjIxfQ.FMd335QxAuVNKJl9zdMEHE_0sZk1UVRnjQF68wpxvmEzkMzw0ozxtMClH0wVuOXElRbKC-m3qT-9won4aU9eeQ")
 
 
 for (cohortType in c("Target", "Outcome", "Strata")) {
