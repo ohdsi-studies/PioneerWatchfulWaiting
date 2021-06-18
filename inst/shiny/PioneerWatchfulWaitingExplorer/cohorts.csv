@@ -26,9 +26,6 @@ cohortId, name, atlasID, circeDef
 205,[PIONEER O5] Palliative treatment ,74,TRUE
 206,[PIONEER O6] Hospitalization,87,TRUE
 207,[PIONEER O7] ED visit,90,TRUE
-208,[PIONEER O10] RP (Radical Prostatectomy),,
-209,[PIONEER ON2] ADT,,
-210,[PIONEER O12] RP (Radical Prostatectomy),,
 301,[PIONEER S1] EAU High Risk,52,TRUE
 302,[PIONEER S2] EAU Low Risk,53,TRUE
 303,[PIONEER S3] EAU Intermediate Risk,54,TRUE
@@ -48,14 +45,14 @@ cohortId, name, atlasID, circeDef
 317,[PIONEER S17] Grade 4 (GS 8),70,TRUE
 318,[PIONEER S18] Grade 5 (GS 9-10),71,TRUE
 319,[PIONEER S19] Family history of Prostate cancer or history of family history of germline mutations,72,TRUE
-320,"[PIONEER S20] Mutation (germline or somatic) in BRCA2, BRCA1, ATM, MLH1, MSH1, MSH2, MSH6, CHEK2, RAD51B and PALB2 ",83,TRUE
+"320,""[PIONEER S20] Mutation (germline or somatic) in BRCA2, BRCA1, ATM, MLH1, MSH1, MSH2, MSH6, CHEK2, RAD51B and PALB2 "",83,TRUE"
 321,[PIONEER S21] Age at diagnosis <55,111,TRUE
 322,[PIONEER S22] Age at diagnosis 55-80,110,TRUE
 323,[PIONEER S23] Age at diagnosis >80,109,TRUE
 324,[PIONEER S24] Charlson CCI=0,120,TRUE
 325,[PIONEER S25] Charlson CCI=1,121,TRUE
 326,[PIONEER S26] Charlson CCI>=2,122,TRUE
-327,"[PIONEER S27] Any malignancy, except malignant neoplasm of skin",81,TRUE
+"327,""[PIONEER S27] Any malignancy, except malignant neoplasm of skin"",81,TRUE"
 334,[PIONEER S28] Performance status ECOG=0,164,TRUE
 335,[PIONEER S29] Performance status ECOG=1,165,TRUE
 336,[PIONEER S30] Performance status ECOG=2+,166,TRUE
