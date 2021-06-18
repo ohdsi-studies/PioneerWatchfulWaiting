@@ -58,13 +58,14 @@ formatFeatureProportions <- function(data) {
                                                                data$windowType,
                                                                data$featureName)
     data$analysisId <- 10000
+    return(data)
   } else {
     # Add empty columns
     data <- data.frame(data, matrix(nrow = 0, ncol = 2))
-    data <- tibble(data) %>%
-      rename(covariateName=X1, analysisId=X2)
+    data <- tibble::tibble(data) %>%
+      dplyr::rename(covariateName=X1, analysisId=X2)
+    return(as.data.frame(data))
   }
-  return(data)
 }
 
 createFeatureCovariateName <- function(windowStart, windowEnd, windowType, featureName) {
