@@ -751,6 +751,12 @@ from
   select o.* 
   FROM @cdm_database_schema.OBSERVATION o
 JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 14))
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 14))
+}
 ) C
 
 
