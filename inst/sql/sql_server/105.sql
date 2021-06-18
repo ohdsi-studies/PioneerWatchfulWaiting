@@ -941,7 +941,12 @@ from
   select m.* 
   FROM @cdm_database_schema.MEASUREMENT m
 JOIN #Codesets codesets on ((m.measurement_concept_id = codesets.concept_id and codesets.codeset_id = 22))
-) C
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 22))
+}) C
 
 WHERE C.value_as_concept_id in (36662565,36662476,36662300,36662543)
 -- End Measurement Criteria
