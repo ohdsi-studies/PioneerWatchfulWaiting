@@ -723,7 +723,7 @@ select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as s
        C.procedure_date as sort_date
 from 
 (
-  select po.* 
+  select po.person_id, po.procedure_occurrence_id, po.procedure_date,DATEADD(d,1,po.procedure_date) as END_DATE, po.procedure_concept_id, po.visit_occurrence_id
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 10))
 --adding episode
