@@ -1272,6 +1272,81 @@ HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
 ) Results
 ;
 
+select 9 as inclusion_rule_id, person_id, event_id
+INTO #Inclusion_9
+FROM 
+(
+  select pe.person_id, pe.event_id
+  FROM #qualified_events pe
+  
+JOIN (
+-- Begin Criteria Group
+select 0 as index_id, person_id, event_id
+FROM
+(
+  select E.person_id, E.event_id 
+  FROM #qualified_events E
+  INNER JOIN
+  (
+    -- Begin Correlated Criteria
+SELECT 0 as index_id, p.person_id, p.event_id
+FROM #qualified_events P
+LEFT JOIN
+(
+  -- Begin Death Criteria
+select C.person_id, C.person_id as event_id, C.death_date as start_date, DATEADD(d,1,C.death_date) as end_date,
+       coalesce(C.cause_concept_id,0) as TARGET_CONCEPT_ID, CAST(NULL as bigint) as visit_occurrence_id,
+       C.death_date as sort_date
+from 
+(
+  select d.*
+  FROM @cdm_database_schema.DEATH d
+
+) C
+
+
+-- End Death Criteria
+
+
+) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= DATEADD(day,548,P.START_DATE)
+GROUP BY p.person_id, p.event_id
+HAVING COUNT(A.TARGET_CONCEPT_ID) = 0
+-- End Correlated Criteria
+
+UNION ALL
+-- Begin Correlated Criteria
+SELECT 1 as index_id, p.person_id, p.event_id
+FROM #qualified_events P
+LEFT JOIN
+(
+  -- Begin Observation Period Criteria
+select C.person_id, C.observation_period_id as event_id, C.observation_period_start_date as start_date, C.observation_period_end_date as end_date,
+       C.period_type_concept_id as TARGET_CONCEPT_ID, CAST(NULL as bigint) as visit_occurrence_id,
+       C.observation_period_start_date as sort_date
+
+from 
+(
+        select op.*, row_number() over (PARTITION BY op.person_id ORDER BY op.observation_period_start_date) as ordinal
+        FROM @cdm_database_schema.OBSERVATION_PERIOD op
+) C
+
+
+-- End Observation Period Criteria
+
+) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.END_DATE >= DATEADD(day,0,P.START_DATE) AND A.END_DATE <= DATEADD(day,548,P.START_DATE)
+GROUP BY p.person_id, p.event_id
+HAVING COUNT(A.TARGET_CONCEPT_ID) = 0
+-- End Correlated Criteria
+
+  ) CQ on E.person_id = CQ.person_id and E.event_id = CQ.event_id
+  GROUP BY E.person_id, E.event_id
+  HAVING COUNT(index_id) = 2
+) G
+-- End Criteria Group
+) AC on AC.person_id = pe.person_id AND AC.event_id = pe.event_id
+) Results
+;
+
 SELECT inclusion_rule_id, person_id, event_id
 INTO #inclusion_events
 FROM (select inclusion_rule_id, person_id, event_id from #Inclusion_0
@@ -1290,7 +1365,9 @@ select inclusion_rule_id, person_id, event_id from #Inclusion_6
 UNION ALL
 select inclusion_rule_id, person_id, event_id from #Inclusion_7
 UNION ALL
-select inclusion_rule_id, person_id, event_id from #Inclusion_8) I;
+select inclusion_rule_id, person_id, event_id from #Inclusion_8
+UNION ALL
+select inclusion_rule_id, person_id, event_id from #Inclusion_9) I;
 TRUNCATE TABLE #Inclusion_0;
 DROP TABLE #Inclusion_0;
 
@@ -1318,6 +1395,9 @@ DROP TABLE #Inclusion_7;
 TRUNCATE TABLE #Inclusion_8;
 DROP TABLE #Inclusion_8;
 
+TRUNCATE TABLE #Inclusion_9;
+DROP TABLE #Inclusion_9;
+
 
 with cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date, op_end_date, ordinal) as
 (
@@ -1331,7 +1411,7 @@ with cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date,
   ) MG -- matching groups
 
   -- the matching group with all bits set ( POWER(2,# of inclusion rules) - 1 = inclusion_rule_mask
-  WHERE (MG.inclusion_rule_mask = POWER(cast(2 as bigint),9)-1)
+  WHERE (MG.inclusion_rule_mask = POWER(cast(2 as bigint),10)-1)
 
 )
 select event_id, person_id, start_date, end_date, op_start_date, op_end_date
