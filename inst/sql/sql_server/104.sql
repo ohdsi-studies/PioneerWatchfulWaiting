@@ -695,7 +695,7 @@ JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and 
   select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
   from @cdm_database_schema.episode ep
 JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-}) 
+}) C
 
 
 -- End Observation Criteria
@@ -1229,7 +1229,7 @@ cteEnds (person_id, start_date, end_date) AS
 (
 	SELECT
 		 c.person_id
-		, c.start_date
+		, c.start_date
 		, MIN(e.end_date) AS end_date
 	FROM #cohort_rows c
 	JOIN cteEndDates e ON c.person_id = e.person_id AND e.end_date >= c.start_date
