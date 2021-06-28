@@ -114,8 +114,8 @@ runCohortDiagnostics <- function(connectionDetails = NULL,
 bundleDiagnosticsResults <- function(diagnosticOutputFolder, databaseId) {
  
   # Prepare additional metadata files
-  codemetar::write_codemeta(pkg = find.package(getThisPackageName()), 
-                            path = file.path(diagnosticOutputFolder, "codemeta.json"))
+  # codemetar::write_codemeta(pkg = find.package(getThisPackageName()), 
+  #                          path = file.path(diagnosticOutputFolder, "codemeta.json"))
   
   # Write metadata, log, and diagnostics results files to single ZIP file
   date <- format(Sys.time(), "%Y%m%dT%H%M%S")
