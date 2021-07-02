@@ -2754,6 +2754,97 @@
       }
     },
     {
+      "name": "no ADT and other hormonal PCA trt",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "DrugExposure": {
+                "CodesetId": 14,
+                "DrugTypeExclude": false
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 1,
+                "Coeff": -1
+              },
+              "UseIndexEnd": false,
+              "UseEventEnd": false
+            },
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
+            }
+          },
+          {
+            "Criteria": {
+              "Observation": {
+                "CodesetId": 14,
+                "ObservationTypeExclude": false
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 1,
+                "Coeff": -1
+              },
+              "UseIndexEnd": false,
+              "UseEventEnd": false
+            },
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
+            }
+          },
+          {
+            "Criteria": {
+              "ProcedureOccurrence": {
+                "CodesetId": 14,
+                "ProcedureTypeExclude": false
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 1,
+                "Coeff": 1
+              },
+              "UseIndexEnd": false,
+              "UseEventEnd": false
+            },
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    },
+    {
       "name": "No treatment 6 months post index",
       "expression": {
         "Type": "ALL",
@@ -3067,82 +3158,51 @@
       }
     },
     {
-      "name": "no ADT and other hormonal PCA trt",
+      "name": "no death or no loss to f_up in the first 6 months",
       "expression": {
         "Type": "ALL",
         "CriteriaList": [
           {
             "Criteria": {
-              "DrugExposure": {
-                "CodesetId": 14,
-                "DrugTypeExclude": false
+              "Death": {
+                "DeathTypeExclude": false
               }
             },
             "StartWindow": {
               "Start": {
-                "Days": 365,
-                "Coeff": -1
+                "Days": 0,
+                "Coeff": 1
               },
               "End": {
-                "Days": 1,
-                "Coeff": -1
-              },
-              "UseIndexEnd": false,
-              "UseEventEnd": false
-            },
-            "RestrictVisit": false,
-            "IgnoreObservationPeriod": false,
-            "Occurrence": {
-              "Type": 0,
-              "Count": 0,
-              "IsDistinct": false
-            }
-          },
-          {
-            "Criteria": {
-              "Observation": {
-                "CodesetId": 14,
-                "ObservationTypeExclude": false
-              }
-            },
-            "StartWindow": {
-              "Start": {
-                "Days": 365,
-                "Coeff": -1
-              },
-              "End": {
-                "Days": 1,
-                "Coeff": -1
-              },
-              "UseIndexEnd": false,
-              "UseEventEnd": false
-            },
-            "RestrictVisit": false,
-            "IgnoreObservationPeriod": false,
-            "Occurrence": {
-              "Type": 0,
-              "Count": 0,
-              "IsDistinct": false
-            }
-          },
-          {
-            "Criteria": {
-              "ProcedureOccurrence": {
-                "CodesetId": 14,
-                "ProcedureTypeExclude": false
-              }
-            },
-            "StartWindow": {
-              "Start": {
-                "Days": 365,
-                "Coeff": -1
-              },
-              "End": {
-                "Days": 1,
+                "Days": 180,
                 "Coeff": 1
               },
               "UseIndexEnd": false,
               "UseEventEnd": false
+            },
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
+            }
+          },
+          {
+            "Criteria": {
+              "ObservationPeriod": {}
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 180,
+                "Coeff": 1
+              },
+              "UseIndexEnd": false,
+              "UseEventEnd": true
             },
             "RestrictVisit": false,
             "IgnoreObservationPeriod": false,

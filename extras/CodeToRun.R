@@ -161,7 +161,7 @@ runCohortDiagnostics(connectionDetails = connectionDetails,
 
 # Optionally, preMerge the data for shiny App. Replace "target" with
 # one of these options: "target", "outcome", "strata"
-# preMergeDiagnosticsFiles(file.path(outputFolder, "diagnostics", "strata"))
+# CohortDiagnostics::preMergeDiagnosticsFiles(file.path(outputFolder, "diagnostics", "strata"))
 # Use the next command to review cohort diagnostics and replace "target" with
 # one of these options: "target", "outcome", "strata"
 # CohortDiagnostics::launchDiagnosticsExplorer(file.path(outputFolder, "diagnostics", "target"))

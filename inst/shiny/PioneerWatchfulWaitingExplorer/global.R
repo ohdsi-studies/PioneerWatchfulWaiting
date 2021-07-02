@@ -116,6 +116,24 @@ if (dataStorage == "database") {
 
 if (exists("covariate")) {
   covariate <- unique(covariate)
+  covNameWithId <- grepl(': \\d\\d\\d$', covariate$covariateName)
+  if (any(covNameWithId)) {
+    # Temporary quick fix to replace cohortId with atlasName
+    cohorts <- readr::read_csv("./cohorts.csv", col_types = readr::cols())
+    newCovariateName <- sapply(covariate$covariateName[covNameWithId],
+                       function(x) {
+                         cohortId <- substr(x, nchar(x)-2, nchar(x))
+                         cohort <- cohorts[cohorts$cohortId==cohortId,]
+                         if (nrow(cohort) > 0) {
+                           return(paste0(substr(x, 1, nchar(x)-3), cohort$name))
+                         } else {
+                           # cohortId not found, return original
+                           return(x)
+                         }
+                       }
+   )
+   covariate$covariateName[covNameWithId] <- newCovariateName
+  }
   covariate$windowId <- as.numeric(substr(covariate$covariateId, nchar(covariate$covariateId), nchar(covariate$covariateId)))
 }
 
@@ -173,7 +191,7 @@ database <- database[order(database$databaseId),]
 ids <- unique(cohortTimeToEvent$outcomeId)
 names <- unique(cohortStagingCount$name[cohortStagingCount$cohortId %in% ids])
 if(length(cohortStagingCount$name[cohortStagingCount$cohortId == max(ids)]) == 0){
-  names <- c(names, 'Symptomatic progression free survival')
+  names <- c(names, 'Symptomatic progr. free surv.')
 }
 
 KMIds <- data.frame(id = ids,

@@ -3,6 +3,10 @@ library(shinydashboard)
 library(DT)
 library(htmltools)
 source("PlotsAndTables.R")
+source("utilities.R")
+source("survplot_core.R")
+source("ggsurvtable.R")
+
 
 truncateStringDef <- function(columns, maxChars) {
   list(
@@ -309,12 +313,12 @@ shinyServer(function(input, output, session) {
                                                                databaseId == input$databasesTimeToEvent)
     
     accumulatedData <- data.frame(time = c(), surv = c(), n.censor = c(), 
-                                  upper = c(), lower = c())
+                                  n.event = c(), upper = c(), lower = c())
     for(plotName in input$KMPlot){
       oId <- KMIds$id[KMIds$name == plotName]
       data <- targetIdTimeToEventData %>% dplyr::filter(outcomeId == oId)
       if (length(data) > 0){
-        data <- as.data.frame(data[, c('time', 'surv', 'n.censor', 'upper', 'lower')])
+        data <- as.data.frame(data[, c('time', 'surv', 'n.risk',  'n.censor', 'n.event', 'upper', 'lower')])
         data$strata <- plotName
       }
       else{
@@ -323,13 +327,14 @@ shinyServer(function(input, output, session) {
       accumulatedData <- rbind(accumulatedData, data)
     }
     
-
-    plot <- survminer::ggsurvplot_df(accumulatedData,
-                  conf.int = TRUE,
-                  legend.title = 'Event',
-                  ylim = c(min(accumulatedData$lower), 1),
-                  ggtheme = ggplot2::theme_bw(),
+    plot <- ggsurvplot_core(accumulatedData,
+                            risk.table = "nrisk_cumcensor",
+                            conf.int = TRUE,
+                            legend.title = 'Event',
+                            ylim = c(min(accumulatedData$lower), 1),
+                            ggtheme = ggplot2::theme_bw()
                   )
+
     return(plot)
   })
   

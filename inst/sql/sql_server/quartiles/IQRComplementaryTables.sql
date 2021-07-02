@@ -231,7 +231,7 @@ SELECT DISTINCT @cohort_database_schema.charlson_scoring.diag_category_id,
                 cohort_definition_id,
                 cohort.subject_id,
                 cohort.cohort_start_date
-FROM pioneer_sp cohort
+FROM @cohort_database_schema.@cohort_table cohort
 INNER JOIN @cdm_database_schema.condition_era condition_era
     ON cohort.subject_id = condition_era.person_id
 INNER JOIN @cohort_database_schema.charlson_concepts
@@ -288,6 +288,6 @@ SELECT 0 AS diag_category_id,
 FROM @cohort_database_schema.subject_age
 WHERE cohort_definition_id IN (
                               SELECT DISTINCT cohort_definition_id
-                              FROM charlson_map
+                              FROM @cohort_database_schema.charlson_map
                               );
 

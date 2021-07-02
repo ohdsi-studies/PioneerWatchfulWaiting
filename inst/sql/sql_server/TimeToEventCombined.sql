@@ -5,7 +5,7 @@ SELECT t.subject_id,
 FROM @cohort_database_schema.@cohort_table t
 LEFT JOIN (
 		SELECT subject_id, min(cohort_start_date) AS cohort_start_date
-		FROM pioneer_sp_stg
+		FROM @cohort_database_schema.@cohort_table
 		WHERE cohort_definition_id IN (@outcome_ids)
 		GROUP BY subject_id
 		) o

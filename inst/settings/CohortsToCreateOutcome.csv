@@ -1,8 +1,8 @@
-name,atlasName,atlasId,cohortId,createKMPlot
-Death,[PIONEER O1] Death,46,202,TRUE
-Symptomatic progression,[PIONEER O2] Symptomatic progression,45,201,TRUE
-Treatment initiation,[PIONEER O3] Treatment Initiation,61,203,TRUE
-Curative treatment,[PIONEER O4] Curative Treatment Initiation,73,204,TRUE
-Palliative treatment,[PIONEER O5] Palliative Treatment Initiation,74,205,TRUE
-Hospitalization,[PIONEER O6] Hospitalization,87,206,FALSE
-ER visit,[PIONEER O7] ER Visit,90,207,FALSE
+name,atlasName,atlasId,cohortId
+Death,[PIONEER O1] Death,46,202
+Symptomatic progression,[PIONEER O2] Symptomatic progression,45,201
+Treatment initiation,[PIONEER O3] Treatment Initiation,61,203
+Curative treatment,[PIONEER O4] Curative Treatment Initiation,73,204
+Palliative treatment,[PIONEER O5] Palliative Treatment Initiation,74,205
+Hospitalization,[PIONEER O6] Hospitalization,87,206
+ER visit,[PIONEER O7] ER Visit,90,207
