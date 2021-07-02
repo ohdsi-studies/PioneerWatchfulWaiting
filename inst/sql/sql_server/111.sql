@@ -468,7 +468,7 @@ select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as s
        C.procedure_date as sort_date
 from 
 (
-  select po.* 
+  select po.person_id, po.procedure_occurrence_id, po.procedure_date,DATEADD(d,1,po.procedure_date) as END_DATE, po.procedure_concept_id, po.visit_occurrence_id 
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 14))
 ) C
@@ -520,6 +520,11 @@ from
   select po.* 
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 10))
+				
+							  
+																														  
+									  
+																											  
 ) C
 
 
@@ -537,15 +542,20 @@ FROM #qualified_events P
 LEFT JOIN
 (
   -- Begin Observation Criteria
-select C.person_id, C.observation_id as event_id, C.observation_date as start_date, DATEADD(d,1,C.observation_date) as END_DATE,
+select C.person_id, C.observation_id as event_id, C.observation_date as start_date, c.END_DATE,
        C.observation_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.observation_date as sort_date
 from 
 (
-  select o.* 
+  select o.person_id, o.observation_id, o.observation_date, DATEADD(d,1,o.observation_date) as END_DATE, o.observation_concept_id, o.visit_occurrence_id 
   FROM @cdm_database_schema.OBSERVATION o
 JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 10))
-) C
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 10))
+}) C
 
 
 -- End Observation Criteria
@@ -562,15 +572,20 @@ FROM #qualified_events P
 LEFT JOIN
 (
   -- Begin Procedure Occurrence Criteria
-select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, DATEADD(d,1,C.procedure_date) as END_DATE,
+select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, C.END_DATE,
        C.procedure_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.procedure_date as sort_date
 from 
 (
-  select po.* 
+  select po.person_id, po.procedure_occurrence_id, po.procedure_date,DATEADD(d,1,po.procedure_date) as END_DATE, po.procedure_concept_id, po.visit_occurrence_id 
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-) C
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -588,14 +603,19 @@ LEFT JOIN
 (
   -- Begin Drug Exposure Criteria
 select C.person_id, C.drug_exposure_id as event_id, C.drug_exposure_start_date as start_date,
-       COALESCE(C.drug_exposure_end_date, DATEADD(day, 1, C.drug_exposure_start_date)) as end_date, C.drug_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
+       C.end_date, C.drug_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.drug_exposure_start_date as sort_date
 from 
 (
-  select de.* 
+  select de.person_id, de.drug_exposure_id, de.drug_exposure_start_date, COALESCE(de.drug_exposure_end_date, DATEADD(day, 1, de.drug_exposure_start_date)) as end_date, de.drug_concept_id, de.visit_occurrence_id 
   FROM @cdm_database_schema.DRUG_EXPOSURE de
 JOIN #Codesets codesets on ((de.drug_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-) C
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
+}) C
 
 
 -- End Drug Exposure Criteria
@@ -612,15 +632,20 @@ FROM #qualified_events P
 LEFT JOIN
 (
   -- Begin Observation Criteria
-select C.person_id, C.observation_id as event_id, C.observation_date as start_date, DATEADD(d,1,C.observation_date) as END_DATE,
+select C.person_id, C.observation_id as event_id, C.observation_date as start_date, c.END_DATE,
        C.observation_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.observation_date as sort_date
 from 
 (
-  select o.* 
+  select o.person_id, o.observation_id, o.observation_date, DATEADD(d,1,o.observation_date) as END_DATE, o.observation_concept_id, o.visit_occurrence_id 
   FROM @cdm_database_schema.OBSERVATION o
 JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-) C
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
+}) C
 
 
 -- End Observation Criteria
@@ -642,10 +667,15 @@ select C.person_id, C.device_exposure_id as event_id, C.device_exposure_start_da
        C.device_exposure_start_date as sort_date
 from 
 (
-  select de.* 
+  select de.person_id, de.device_exposure_id, de.device_exposure_start_date, de.device_exposure_end_date, de.device_concept_id, de.visit_occurrence_id
   FROM @cdm_database_schema.DEVICE_EXPOSURE de
 JOIN #Codesets codesets on ((de.device_concept_id = codesets.concept_id and codesets.codeset_id = 11))
-) C
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 11))
+}) C
 
 
 -- End Device Exposure Criteria
@@ -663,15 +693,20 @@ LEFT JOIN
 (
   select PE.person_id, PE.event_id, PE.start_date, PE.end_date, PE.target_concept_id, PE.visit_occurrence_id, PE.sort_date FROM (
 -- Begin Procedure Occurrence Criteria
-select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, DATEADD(d,1,C.procedure_date) as END_DATE,
+select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, C.END_DATE,
        C.procedure_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.procedure_date as sort_date
 from 
 (
-  select po.* 
+  select po.person_id, po.procedure_occurrence_id, po.procedure_date,DATEADD(d,1,po.procedure_date) as END_DATE, po.procedure_concept_id, po.visit_occurrence_id 
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 15))
-) C
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 15))
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -685,15 +720,20 @@ FROM
   select E.person_id, E.event_id 
   FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
 FROM (-- Begin Procedure Occurrence Criteria
-select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, DATEADD(d,1,C.procedure_date) as END_DATE,
+select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, C.END_DATE,
        C.procedure_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.procedure_date as sort_date
 from 
 (
-  select po.* 
+  select po.person_id, po.procedure_occurrence_id, po.procedure_date,DATEADD(d,1,po.procedure_date) as END_DATE, po.procedure_concept_id, po.visit_occurrence_id 
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 15))
-) C
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 15))
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -707,15 +747,20 @@ JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id
 SELECT 0 as index_id, p.person_id, p.event_id
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
 FROM (-- Begin Procedure Occurrence Criteria
-select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, DATEADD(d,1,C.procedure_date) as END_DATE,
+select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, C.END_DATE,
        C.procedure_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.procedure_date as sort_date
 from 
 (
-  select po.* 
+  select po.person_id, po.procedure_occurrence_id, po.procedure_date,DATEADD(d,1,po.procedure_date) as END_DATE, po.procedure_concept_id, po.visit_occurrence_id 
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 15))
-) C
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 15))
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -763,15 +808,20 @@ FROM #qualified_events P
 LEFT JOIN
 (
   -- Begin Procedure Occurrence Criteria
-select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, DATEADD(d,1,C.procedure_date) as END_DATE,
+select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, C.END_DATE,
        C.procedure_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.procedure_date as sort_date
 from 
 (
-  select po.* 
+  select po.person_id, po.procedure_occurrence_id, po.procedure_date,DATEADD(d,1,po.procedure_date) as END_DATE, po.procedure_concept_id, po.visit_occurrence_id 
   FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
 JOIN #Codesets codesets on ((po.procedure_concept_id = codesets.concept_id and codesets.codeset_id = 8))
-) C
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 8))
+}) C
 
 
 -- End Procedure Occurrence Criteria
@@ -787,16 +837,21 @@ SELECT 8 as index_id, p.person_id, p.event_id
 FROM #qualified_events P
 LEFT JOIN
 (
-  -- Begin Observation Criteria
-select C.person_id, C.observation_id as event_id, C.observation_date as start_date, DATEADD(d,1,C.observation_date) as END_DATE,
+-- Begin Observation Criteria
+select C.person_id, C.observation_id as event_id, C.observation_date as start_date, c.END_DATE,
        C.observation_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.observation_date as sort_date
 from 
 (
-  select o.* 
+  select o.person_id, o.observation_id, o.observation_date, DATEADD(d,1,o.observation_date) as END_DATE, o.observation_concept_id, o.visit_occurrence_id 
   FROM @cdm_database_schema.OBSERVATION o
 JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 8))
-) C
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 8))
+}) C
 
 
 -- End Observation Criteria
@@ -818,10 +873,15 @@ select C.person_id, C.device_exposure_id as event_id, C.device_exposure_start_da
        C.device_exposure_start_date as sort_date
 from 
 (
-  select de.* 
+  select de.person_id, de.device_exposure_id, de.device_exposure_start_date, de.device_exposure_end_date, de.device_concept_id, de.visit_occurrence_id
   FROM @cdm_database_schema.DEVICE_EXPOSURE de
 JOIN #Codesets codesets on ((de.device_concept_id = codesets.concept_id and codesets.codeset_id = 8))
-) C
+--adding episode
+{@episodetable} ? {  union all
+  select ep.person_id, ep.episode_id, ep.episode_start_datetime, ep.episode_end_datetime,ep.episode_object_concept_id,null
+  from @cdm_database_schema.episode ep
+JOIN #Codesets codesets on ((ep.episode_object_concept_id = codesets.concept_id and codesets.codeset_id = 8))
+}) C
 
 
 -- End Device Exposure Criteria
@@ -869,12 +929,9 @@ from
 (
   select d.*
   FROM @cdm_database_schema.DEATH d
-
 ) C
 
-
 -- End Death Criteria
-
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= DATEADD(day,180,P.START_DATE)
 GROUP BY p.person_id, p.event_id
@@ -888,6 +945,7 @@ FROM #qualified_events P
 LEFT JOIN
 (
   -- Begin Observation Period Criteria
+
 select C.person_id, C.observation_period_id as event_id, C.observation_period_start_date as start_date, C.observation_period_end_date as end_date,
        C.period_type_concept_id as TARGET_CONCEPT_ID, CAST(NULL as bigint) as visit_occurrence_id,
        C.observation_period_start_date as sort_date
@@ -1091,7 +1149,7 @@ group by person_id, end_date
 
 DELETE FROM @target_database_schema.@target_cohort_table where cohort_definition_id = @target_cohort_id;
 INSERT INTO @target_database_schema.@target_cohort_table (cohort_definition_id, subject_id, cohort_start_date, cohort_end_date)
-select @target_cohort_id as cohort_definition_id, person_id, start_date, end_date 
+select @target_cohort_id as cohort_definition_id, person_id,DATEADD(day,180,start_date) as start_date, end_date 
 FROM #final_cohort CO
 ;
 
