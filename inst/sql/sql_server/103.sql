@@ -480,6 +480,7 @@ HAVING COUNT(A.TARGET_CONCEPT_ID) = 0
 ) Results
 ;
 
+
 select 4 as inclusion_rule_id, person_id, event_id
 INTO #Inclusion_4
 FROM 
@@ -919,47 +920,8 @@ from
 (
   select d.*
   FROM @cdm_database_schema.DEATH d
-																									
-				
-							  
-																														  
-									  
-																											  
-	
-
 ) C
-
-							 
-
 -- End Death Criteria
-								
-									 
-						  
-
-		 
-							
-											 
-						
-		 
- 
-							 
-																							   
-																			
-									  
-	 
- 
-																																						 
-										 
-																										  
-				
-							  
-																														  
-									  
-																											  
-	
-
-
-						   
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= DATEADD(day,180,P.START_DATE)
 GROUP BY p.person_id, p.event_id
@@ -981,12 +943,6 @@ from
 (
         select op.*, row_number() over (PARTITION BY op.person_id ORDER BY op.observation_period_start_date) as ordinal
         FROM @cdm_database_schema.OBSERVATION_PERIOD op
-																										 
-				
-							  
-																														  
-									  
-																											  
 ) C
 
 

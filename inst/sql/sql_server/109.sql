@@ -1011,7 +1011,8 @@ HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
 -- End Correlated Criteria
 
 UNION ALL
--- Begin Correlated Criteria
+-- Begin Criteria Group
+
 SELECT 1 as index_id, p.person_id, p.event_id
 FROM #qualified_events P
 INNER JOIN
