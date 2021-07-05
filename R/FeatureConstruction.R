@@ -52,12 +52,20 @@ formatFeatureProportions <- function(data) {
   names(data)[names(data) == 'cohortDefinitionId'] <- 'cohortId'
   
   data$covariateId <- data$featureCohortDefinitionId * 1000 + data$windowId
-  data$covariateName <- createFeatureCovariateName(data$windowStart, 
-                                                             data$windowEnd,
-                                                             data$windowType,
-                                                             data$featureName)
-  data$analysisId <- 10000
-  return(data)
+  if (nrow(data) != 0) {
+    data$covariateName <- createFeatureCovariateName(data$windowStart, 
+                                                               data$windowEnd,
+                                                               data$windowType,
+                                                               data$featureName)
+    data$analysisId <- 10000
+    return(data)
+  } else {
+    # Add empty columns
+    data <- data.frame(data, matrix(nrow = 0, ncol = 2))
+    data <- tibble::tibble(data) %>%
+      dplyr::rename(covariateName=X1, analysisId=X2)
+    return(as.data.frame(data))
+  }
 }
 
 createFeatureCovariateName <- function(windowStart, windowEnd, windowType, featureName) {

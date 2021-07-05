@@ -3755,6 +3755,66 @@
         "DemographicCriteriaList": [],
         "Groups": []
       }
+    },
+    {
+      "name": "no death or no loss to f_up in the first 18 months",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "Death": {
+                "DeathTypeExclude": false
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 548,
+                "Coeff": 1
+              },
+              "UseIndexEnd": false,
+              "UseEventEnd": false
+            },
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
+            }
+          },
+          {
+            "Criteria": {
+              "ObservationPeriod": {}
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 548,
+                "Coeff": 1
+              },
+              "UseIndexEnd": false,
+              "UseEventEnd": true
+            },
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
     }
   ],
   "CensoringCriteria": [

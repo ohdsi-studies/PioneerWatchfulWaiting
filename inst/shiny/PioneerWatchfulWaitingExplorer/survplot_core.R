@@ -90,7 +90,7 @@ ggsurvplot_core <- function(fit, data = NULL, d = NULL, fun = NULL,
   # Main survival curves
   #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   p <- survminer::ggsurvplot_df(d, fun = fun,
-                     color = color, palette = palette, linetype = linetype,
+                     color = color, palette = cb_palette, linetype = linetype,
                      break.x.by = break.x.by, break.time.by = break.time.by, break.y.by = break.y.by,
                      surv.scale = surv.scale, xscale = xscale,
                      conf.int = conf.int, conf.int.fill = conf.int.fill, conf.int.style = conf.int.style,
@@ -106,7 +106,7 @@ ggsurvplot_core <- function(fit, data = NULL, d = NULL, fun = NULL,
   
   # The main plot parameters, will be used to plot survival tables
   pms <- attr(p, "parameters")
-  color <- surv.color <- pms$color
+  color <- surv.color <- pms$color <-cb_palette
 
 
   res <- list(plot = p)

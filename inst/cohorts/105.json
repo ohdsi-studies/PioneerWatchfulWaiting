@@ -2996,6 +2996,316 @@
       }
     },
     {
+      "name": "no ADT and other hormonal PCA trt",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "DrugExposure": {
+                "CodesetId": 14,
+                "DrugTypeExclude": false
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 1,
+                "Coeff": -1
+              },
+              "UseIndexEnd": false,
+              "UseEventEnd": false
+            },
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
+            }
+          },
+          {
+            "Criteria": {
+              "Observation": {
+                "CodesetId": 14,
+                "ObservationTypeExclude": false
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 1,
+                "Coeff": -1
+              },
+              "UseIndexEnd": false,
+              "UseEventEnd": false
+            },
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
+            }
+          },
+          {
+            "Criteria": {
+              "ProcedureOccurrence": {
+                "CodesetId": 14,
+                "ProcedureTypeExclude": false
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 1,
+                "Coeff": 1
+              },
+              "UseIndexEnd": false,
+              "UseEventEnd": false
+            },
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    },
+    {
+      "name": "Intermediate-grade attributes or high-grade attributes",
+      "description": "\n",
+      "expression": {
+        "Type": "ANY",
+        "CriteriaList": [],
+        "DemographicCriteriaList": [],
+        "Groups": [
+          {
+            "Type": "ANY",
+            "CriteriaList": [
+              {
+                "Criteria": {
+                  "Measurement": {
+                    "CodesetId": 18,
+                    "MeasurementTypeExclude": false,
+                    "ValueAsNumber": {
+                      "Value": 10,
+                      "Op": "gt"
+                    }
+                  }
+                },
+                "StartWindow": {
+                  "Start": {
+                    "Days": 30,
+                    "Coeff": -1
+                  },
+                  "End": {
+                    "Days": 30,
+                    "Coeff": 1
+                  },
+                  "UseIndexEnd": false,
+                  "UseEventEnd": false
+                },
+                "RestrictVisit": false,
+                "IgnoreObservationPeriod": false,
+                "Occurrence": {
+                  "Type": 2,
+                  "Count": 1,
+                  "IsDistinct": false
+                }
+              },
+              {
+                "Criteria": {
+                  "Observation": {
+                    "CodesetId": 18,
+                    "ObservationTypeExclude": false,
+                    "ValueAsNumber": {
+                      "Value": 10,
+                      "Op": "gt"
+                    }
+                  }
+                },
+                "StartWindow": {
+                  "Start": {
+                    "Days": 30,
+                    "Coeff": -1
+                  },
+                  "End": {
+                    "Days": 30,
+                    "Coeff": 1
+                  },
+                  "UseIndexEnd": false,
+                  "UseEventEnd": false
+                },
+                "RestrictVisit": false,
+                "IgnoreObservationPeriod": false,
+                "Occurrence": {
+                  "Type": 2,
+                  "Count": 1,
+                  "IsDistinct": false
+                }
+              },
+              {
+                "Criteria": {
+                  "Measurement": {
+                    "CodesetId": 20,
+                    "MeasurementTypeExclude": false
+                  }
+                },
+                "StartWindow": {
+                  "Start": {
+                    "Days": 30,
+                    "Coeff": -1
+                  },
+                  "End": {
+                    "Days": 30,
+                    "Coeff": 1
+                  },
+                  "UseIndexEnd": false,
+                  "UseEventEnd": false
+                },
+                "RestrictVisit": false,
+                "IgnoreObservationPeriod": false,
+                "Occurrence": {
+                  "Type": 2,
+                  "Count": 1,
+                  "IsDistinct": false
+                }
+              }
+            ],
+            "DemographicCriteriaList": [],
+            "Groups": [
+              {
+                "Type": "ANY",
+                "CriteriaList": [
+                  {
+                    "Criteria": {
+                      "Measurement": {
+                        "CodesetId": 21,
+                        "MeasurementTypeExclude": false
+                      }
+                    },
+                    "StartWindow": {
+                      "Start": {
+                        "Days": 30,
+                        "Coeff": -1
+                      },
+                      "End": {
+                        "Days": 30,
+                        "Coeff": 1
+                      },
+                      "UseIndexEnd": false,
+                      "UseEventEnd": false
+                    },
+                    "RestrictVisit": false,
+                    "IgnoreObservationPeriod": false,
+                    "Occurrence": {
+                      "Type": 2,
+                      "Count": 1,
+                      "IsDistinct": false
+                    }
+                  },
+                  {
+                    "Criteria": {
+                      "Measurement": {
+                        "CodesetId": 22,
+                        "MeasurementTypeExclude": false,
+                        "ValueAsConcept": [
+                          {
+                            "CONCEPT_ID": 36662565,
+                            "CONCEPT_NAME": "ISUP Grade (Grade Group) 2 (Gleason score 3+4=7)",
+                            "STANDARD_CONCEPT": null,
+                            "STANDARD_CONCEPT_CAPTION": "Unknown",
+                            "INVALID_REASON": null,
+                            "INVALID_REASON_CAPTION": "Unknown",
+                            "CONCEPT_CODE": "LA30795-1",
+                            "DOMAIN_ID": "Meas Value",
+                            "VOCABULARY_ID": "LOINC",
+                            "CONCEPT_CLASS_ID": null
+                          },
+                          {
+                            "CONCEPT_ID": 36662476,
+                            "CONCEPT_NAME": "ISUP Grade (Grade Group) 3 (Gleason score 4+3=7)",
+                            "STANDARD_CONCEPT": null,
+                            "STANDARD_CONCEPT_CAPTION": "Unknown",
+                            "INVALID_REASON": null,
+                            "INVALID_REASON_CAPTION": "Unknown",
+                            "CONCEPT_CODE": "LA30796-9",
+                            "DOMAIN_ID": "Meas Value",
+                            "VOCABULARY_ID": "LOINC",
+                            "CONCEPT_CLASS_ID": null
+                          },
+                          {
+                            "CONCEPT_ID": 36662300,
+                            "CONCEPT_NAME": "ISUP Grade (Grade Group) 4 (Gleason score 8)",
+                            "STANDARD_CONCEPT": null,
+                            "STANDARD_CONCEPT_CAPTION": "Unknown",
+                            "INVALID_REASON": null,
+                            "INVALID_REASON_CAPTION": "Unknown",
+                            "CONCEPT_CODE": "LA30797-7",
+                            "DOMAIN_ID": "Meas Value",
+                            "VOCABULARY_ID": "LOINC",
+                            "CONCEPT_CLASS_ID": null
+                          },
+                          {
+                            "CONCEPT_ID": 36662543,
+                            "CONCEPT_NAME": "ISUP Grade (Group Group) 5 (Gleason score 9-10)",
+                            "STANDARD_CONCEPT": null,
+                            "STANDARD_CONCEPT_CAPTION": "Unknown",
+                            "INVALID_REASON": null,
+                            "INVALID_REASON_CAPTION": "Unknown",
+                            "CONCEPT_CODE": "LA30798-5",
+                            "DOMAIN_ID": "Meas Value",
+                            "VOCABULARY_ID": "LOINC",
+                            "CONCEPT_CLASS_ID": null
+                          }
+                        ]
+                      }
+                    },
+                    "StartWindow": {
+                      "Start": {
+                        "Days": 30,
+                        "Coeff": -1
+                      },
+                      "End": {
+                        "Days": 30,
+                        "Coeff": 1
+                      },
+                      "UseIndexEnd": false,
+                      "UseEventEnd": false
+                    },
+                    "RestrictVisit": false,
+                    "IgnoreObservationPeriod": false,
+                    "Occurrence": {
+                      "Type": 2,
+                      "Count": 1,
+                      "IsDistinct": false
+                    }
+                  }
+                ],
+                "DemographicCriteriaList": [],
+                "Groups": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "name": "No treatment 6 months post index",
       "expression": {
         "Type": "ALL",
@@ -3310,78 +3620,23 @@
       }
     },
     {
-      "name": "no ADT and other hormonal PCA trt",
+      "name": "no death or no loss to f_up in the first 6 months",
       "expression": {
         "Type": "ALL",
         "CriteriaList": [
           {
             "Criteria": {
-              "DrugExposure": {
-                "CodesetId": 14,
-                "DrugTypeExclude": false
+              "Death": {
+                "DeathTypeExclude": false
               }
             },
             "StartWindow": {
               "Start": {
-                "Days": 365,
-                "Coeff": -1
+                "Days": 0,
+                "Coeff": 1
               },
               "End": {
-                "Days": 1,
-                "Coeff": -1
-              },
-              "UseIndexEnd": false,
-              "UseEventEnd": false
-            },
-            "RestrictVisit": false,
-            "IgnoreObservationPeriod": false,
-            "Occurrence": {
-              "Type": 0,
-              "Count": 0,
-              "IsDistinct": false
-            }
-          },
-          {
-            "Criteria": {
-              "Observation": {
-                "CodesetId": 14,
-                "ObservationTypeExclude": false
-              }
-            },
-            "StartWindow": {
-              "Start": {
-                "Days": 365,
-                "Coeff": -1
-              },
-              "End": {
-                "Days": 1,
-                "Coeff": -1
-              },
-              "UseIndexEnd": false,
-              "UseEventEnd": false
-            },
-            "RestrictVisit": false,
-            "IgnoreObservationPeriod": false,
-            "Occurrence": {
-              "Type": 0,
-              "Count": 0,
-              "IsDistinct": false
-            }
-          },
-          {
-            "Criteria": {
-              "ProcedureOccurrence": {
-                "CodesetId": 14,
-                "ProcedureTypeExclude": false
-              }
-            },
-            "StartWindow": {
-              "Start": {
-                "Days": 365,
-                "Coeff": -1
-              },
-              "End": {
-                "Days": 1,
+                "Days": 180,
                 "Coeff": 1
               },
               "UseIndexEnd": false,
@@ -3394,229 +3649,34 @@
               "Count": 0,
               "IsDistinct": false
             }
+          },
+          {
+            "Criteria": {
+              "ObservationPeriod": {}
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Days": 180,
+                "Coeff": 1
+              },
+              "UseIndexEnd": false,
+              "UseEventEnd": true
+            },
+            "RestrictVisit": false,
+            "IgnoreObservationPeriod": false,
+            "Occurrence": {
+              "Type": 0,
+              "Count": 0,
+              "IsDistinct": false
+            }
           }
         ],
         "DemographicCriteriaList": [],
         "Groups": []
-      }
-    },
-    {
-      "name": "Intermediate-grade attributes or high-grade attributes",
-      "description": "\n",
-      "expression": {
-        "Type": "ANY",
-        "CriteriaList": [],
-        "DemographicCriteriaList": [],
-        "Groups": [
-          {
-            "Type": "ANY",
-            "CriteriaList": [
-              {
-                "Criteria": {
-                  "Measurement": {
-                    "CodesetId": 18,
-                    "MeasurementTypeExclude": false,
-                    "ValueAsNumber": {
-                      "Value": 10,
-                      "Op": "gt"
-                    }
-                  }
-                },
-                "StartWindow": {
-                  "Start": {
-                    "Days": 30,
-                    "Coeff": -1
-                  },
-                  "End": {
-                    "Days": 30,
-                    "Coeff": 1
-                  },
-                  "UseIndexEnd": false,
-                  "UseEventEnd": false
-                },
-                "RestrictVisit": false,
-                "IgnoreObservationPeriod": false,
-                "Occurrence": {
-                  "Type": 2,
-                  "Count": 1,
-                  "IsDistinct": false
-                }
-              },
-              {
-                "Criteria": {
-                  "Observation": {
-                    "CodesetId": 18,
-                    "ObservationTypeExclude": false,
-                    "ValueAsNumber": {
-                      "Value": 10,
-                      "Op": "gt"
-                    }
-                  }
-                },
-                "StartWindow": {
-                  "Start": {
-                    "Days": 30,
-                    "Coeff": -1
-                  },
-                  "End": {
-                    "Days": 30,
-                    "Coeff": 1
-                  },
-                  "UseIndexEnd": false,
-                  "UseEventEnd": false
-                },
-                "RestrictVisit": false,
-                "IgnoreObservationPeriod": false,
-                "Occurrence": {
-                  "Type": 2,
-                  "Count": 1,
-                  "IsDistinct": false
-                }
-              },
-              {
-                "Criteria": {
-                  "Measurement": {
-                    "CodesetId": 20,
-                    "MeasurementTypeExclude": false
-                  }
-                },
-                "StartWindow": {
-                  "Start": {
-                    "Days": 30,
-                    "Coeff": -1
-                  },
-                  "End": {
-                    "Days": 30,
-                    "Coeff": 1
-                  },
-                  "UseIndexEnd": false,
-                  "UseEventEnd": false
-                },
-                "RestrictVisit": false,
-                "IgnoreObservationPeriod": false,
-                "Occurrence": {
-                  "Type": 2,
-                  "Count": 1,
-                  "IsDistinct": false
-                }
-              }
-            ],
-            "DemographicCriteriaList": [],
-            "Groups": [
-              {
-                "Type": "ANY",
-                "CriteriaList": [
-                  {
-                    "Criteria": {
-                      "Measurement": {
-                        "CodesetId": 21,
-                        "MeasurementTypeExclude": false
-                      }
-                    },
-                    "StartWindow": {
-                      "Start": {
-                        "Days": 30,
-                        "Coeff": -1
-                      },
-                      "End": {
-                        "Days": 30,
-                        "Coeff": 1
-                      },
-                      "UseIndexEnd": false,
-                      "UseEventEnd": false
-                    },
-                    "RestrictVisit": false,
-                    "IgnoreObservationPeriod": false,
-                    "Occurrence": {
-                      "Type": 2,
-                      "Count": 1,
-                      "IsDistinct": false
-                    }
-                  },
-                  {
-                    "Criteria": {
-                      "Measurement": {
-                        "CodesetId": 22,
-                        "MeasurementTypeExclude": false,
-                        "ValueAsConcept": [
-                          {
-                            "CONCEPT_ID": 36662565,
-                            "CONCEPT_NAME": "ISUP Grade (Grade Group) 2 (Gleason score 3+4=7)",
-                            "STANDARD_CONCEPT": null,
-                            "STANDARD_CONCEPT_CAPTION": "Unknown",
-                            "INVALID_REASON": null,
-                            "INVALID_REASON_CAPTION": "Unknown",
-                            "CONCEPT_CODE": "LA30795-1",
-                            "DOMAIN_ID": "Meas Value",
-                            "VOCABULARY_ID": "LOINC",
-                            "CONCEPT_CLASS_ID": null
-                          },
-                          {
-                            "CONCEPT_ID": 36662476,
-                            "CONCEPT_NAME": "ISUP Grade (Grade Group) 3 (Gleason score 4+3=7)",
-                            "STANDARD_CONCEPT": null,
-                            "STANDARD_CONCEPT_CAPTION": "Unknown",
-                            "INVALID_REASON": null,
-                            "INVALID_REASON_CAPTION": "Unknown",
-                            "CONCEPT_CODE": "LA30796-9",
-                            "DOMAIN_ID": "Meas Value",
-                            "VOCABULARY_ID": "LOINC",
-                            "CONCEPT_CLASS_ID": null
-                          },
-                          {
-                            "CONCEPT_ID": 36662300,
-                            "CONCEPT_NAME": "ISUP Grade (Grade Group) 4 (Gleason score 8)",
-                            "STANDARD_CONCEPT": null,
-                            "STANDARD_CONCEPT_CAPTION": "Unknown",
-                            "INVALID_REASON": null,
-                            "INVALID_REASON_CAPTION": "Unknown",
-                            "CONCEPT_CODE": "LA30797-7",
-                            "DOMAIN_ID": "Meas Value",
-                            "VOCABULARY_ID": "LOINC",
-                            "CONCEPT_CLASS_ID": null
-                          },
-                          {
-                            "CONCEPT_ID": 36662543,
-                            "CONCEPT_NAME": "ISUP Grade (Group Group) 5 (Gleason score 9-10)",
-                            "STANDARD_CONCEPT": null,
-                            "STANDARD_CONCEPT_CAPTION": "Unknown",
-                            "INVALID_REASON": null,
-                            "INVALID_REASON_CAPTION": "Unknown",
-                            "CONCEPT_CODE": "LA30798-5",
-                            "DOMAIN_ID": "Meas Value",
-                            "VOCABULARY_ID": "LOINC",
-                            "CONCEPT_CLASS_ID": null
-                          }
-                        ]
-                      }
-                    },
-                    "StartWindow": {
-                      "Start": {
-                        "Days": 30,
-                        "Coeff": -1
-                      },
-                      "End": {
-                        "Days": 30,
-                        "Coeff": 1
-                      },
-                      "UseIndexEnd": false,
-                      "UseEventEnd": false
-                    },
-                    "RestrictVisit": false,
-                    "IgnoreObservationPeriod": false,
-                    "Occurrence": {
-                      "Type": 2,
-                      "Count": 1,
-                      "IsDistinct": false
-                    }
-                  }
-                ],
-                "DemographicCriteriaList": [],
-                "Groups": []
-              }
-            ]
-          }
-        ]
       }
     }
   ],

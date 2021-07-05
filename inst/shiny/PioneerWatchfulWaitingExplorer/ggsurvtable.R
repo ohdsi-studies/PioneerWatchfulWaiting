@@ -1,7 +1,8 @@
+cb_palette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 ggsurvtable_custom <- function (fit, data = NULL, survtable = c("cumevents",  "cumcensor", "risk.table"),
                          risk.table.type = c("absolute", "percentage", "abs_pct", "nrisk_cumcensor", "nrisk_cumevents"),
                          title = NULL, risk.table.title = NULL, cumevents.title = title, cumcensor.title = title,
-                         color = "black", palette = NULL, break.time.by = NULL,  xlim = NULL,
+                         color = "black", palette = cb_palette, break.time.by = NULL,  xlim = NULL,
                          xscale = 1, xlab = "Time", ylab = "Strata",
                          xlog = FALSE, legend = "top",
                          legend.title = "Strata", legend.labs = NULL,
@@ -44,7 +45,7 @@ ggsurvtable_custom <- function (fit, data = NULL, survtable = c("cumevents",  "c
   
   opts <- list(
     survsummary = survsummary, times = times,
-    survtable = survtable, risk.table.type = risk.table.type,  color = color, palette = palette,
+    survtable = survtable, risk.table.type = risk.table.type,  color = color, palette = cb_palette,
     xlim = xlim, xscale = xscale,
     title = title, xlab = xlab, ylab = ylab, xlog = xlog,
     legend = legend, legend.title = legend.title, legend.labs = legend.labs,
@@ -96,7 +97,7 @@ ggsurvtable_custom <- function (fit, data = NULL, survtable = c("cumevents",  "c
 # Helper function to plot a specific survival table
 .plot_survtable <- function (survsummary, times, survtable = c("cumevents", "risk.table", "cumcensor"),
                              risk.table.type = c("absolute", "percentage", "abs_pct", "nrisk_cumcensor", "nrisk_cumevents"),
-                             color = "black", palette = NULL, xlim = NULL,
+                             color = "black", palette = cb_palette, xlim = NULL,
                              xscale = 1,
                              title = NULL, xlab = "Time", ylab = "Strata",
                              xlog = FALSE, legend = "top",
