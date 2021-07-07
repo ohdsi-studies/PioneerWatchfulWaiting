@@ -10,13 +10,13 @@
   "codeRepository": "https://github.com/ohdsi-studies/PioneerWatchfulWaiting",
   "issueTracker": "https://github.com/ohdsi-studies/PioneerWatchfulWaiting/issues",
   "license": "https://spdx.org/licenses/Apache-2.0",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.0.4 (2021-02-15)",
+  "runtimePlatform": "R version 4.1.0 (2021-05-18)",
   "author": [
     {
       "@type": "Person",
@@ -113,13 +113,14 @@
       "@type": "SoftwareApplication",
       "identifier": "CohortDiagnostics",
       "name": "CohortDiagnostics",
-      "version": ">= 1.2.2",
+      "version": ">= 2.0.0",
       "sameAs": "https://github.com/OHDSI/CohortDiagnostics"
     },
     {
       "@type": "SoftwareApplication",
       "identifier": "FeatureExtraction",
       "name": "FeatureExtraction",
+      "version": ">= 3.1.0",
       "sameAs": "https://github.com/OHDSI/FeatureExtraction"
     },
     {
@@ -263,6 +264,18 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "survminer",
+      "name": "survminer",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=survminer"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "codemetar",
       "name": "codemetar",
       "provider": {
@@ -287,6 +300,6 @@
     }
   ],
   "readme": "https://github.com/ohdsi-studies/PioneerWatchfulWaiting/blob/master/README.md",
-  "fileSize": "256466.552KB",
+  "fileSize": "0KB",
   "isPartOf": "https://ohdsi.org"
 }
