@@ -1010,7 +1010,6 @@ GROUP BY p.person_id, p.event_id
 HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
 -- End Correlated Criteria
 
-
 UNION ALL
 -- Begin Criteria Group
 
