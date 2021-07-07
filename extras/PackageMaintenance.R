@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-settingsPath <- "inst/settings"
-=======
 # # Copyright 2020 Observational Health Data Sciences and Informatics
 # #
 # # This file is part of PioneerWatchfulWaiting
@@ -185,10 +182,6 @@ for (i in 1:length(nameToIdMapping)){
 }
 
 
-
-
-
->>>>>>> master
 cohortGroups <- readr::read_csv("inst/settings/CohortGroups.csv", col_types=readr::cols())
 
 # Create the corresponding diagnostic file 
