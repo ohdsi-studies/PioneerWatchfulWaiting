@@ -170,11 +170,11 @@ summarize drug groups
 
 ****************/
 IF OBJECT_ID('tempdb..#groups', 'U') IS NOT NULL
-DROP TABLE # GROUPS;
+DROP TABLE #GROUPS;
 
 SELECT DISTINCT descendant_concept_id,
                 ancestor_concept_id
-INTO # GROUPS
+INTO #GROUPS
 FROM @cdm_database_schema.concept_ancestor
     INNER JOIN @cdm_database_schema.concept
 ON ancestor_concept_id = concept_id
@@ -211,7 +211,7 @@ FROM (
     INNER JOIN #cohort_subset xref ON cohort.cohort_definition_id = xref.cohort_id
     INNER JOIN @cdm_database_schema.drug_era de
     ON cohort.subject_id = de.person_id
-    INNER JOIN # GROUPS g1
+    INNER JOIN #GROUPS g1
     ON de.drug_concept_id = g1.descendant_concept_id
     WHERE de.drug_era_start_date <= DATEADD(DAY, cohort.window_end, cohort.cohort_start_date)
     AND de.drug_era_end_date >= DATEADD(DAY, cohort.window_start, cohort.cohort_start_date)
@@ -257,11 +257,11 @@ LEFT JOIN @cdm_database_schema.concept
 
  ***************/
 IF OBJECT_ID('tempdb..#groups', 'U') IS NOT NULL
-DROP TABLE # GROUPS;
+DROP TABLE #GROUPS;
 
 SELECT DISTINCT descendant_concept_id,
                 ancestor_concept_id
-INTO # GROUPS
+INTO #GROUPS
 FROM @cdm_database_schema.concept_ancestor
     INNER JOIN (
     SELECT concept_id
@@ -299,7 +299,7 @@ FROM (
     ON cohort.cohort_definition_id = xref.cohort_id
     INNER JOIN @cdm_database_schema.procedure_occurrence po
     ON cohort.subject_id = po.person_id
-    INNER JOIN # GROUPS g1
+    INNER JOIN #GROUPS g1
     ON po.procedure_concept_id = g1.descendant_concept_id
     WHERE po.procedure_date <= DATEADD(DAY, cohort.window_end, cohort.cohort_start_date)
     AND po.procedure_date >= DATEADD(DAY, cohort.window_start, cohort.cohort_start_date)
@@ -340,11 +340,11 @@ summarize condition groups
 
 ****************/
 IF OBJECT_ID('tempdb..#groups', 'U') IS NOT NULL
-DROP TABLE # GROUPS;
+DROP TABLE #GROUPS;
 
 SELECT DISTINCT descendant_concept_id,
                 ancestor_concept_id
-INTO # GROUPS
+INTO #GROUPS
 FROM @cdm_database_schema.concept_ancestor
     INNER JOIN (
     SELECT concept_id
@@ -395,7 +395,7 @@ FROM (
     INNER JOIN #cohort_subset xref ON cohort.cohort_definition_id = xref.cohort_id
     INNER JOIN @cdm_database_schema.condition_era ce
     ON cohort.subject_id = ce.person_id
-    INNER JOIN # GROUPS g1
+    INNER JOIN #GROUPS g1
     ON ce.condition_concept_id = g1.descendant_concept_id
     WHERE ce.condition_era_start_date <= DATEADD(DAY, cohort.window_end, cohort.cohort_start_date)
     AND ce.condition_era_end_date >= DATEADD(DAY, cohort.window_start, cohort.cohort_start_date)
@@ -470,8 +470,8 @@ DROP TABLE #age_group;
 TRUNCATE TABLE #gender;
 DROP TABLE #gender;
 
-TRUNCATE TABLE # GROUPS;
-DROP TABLE # GROUPS;
+TRUNCATE TABLE #GROUPS;
+DROP TABLE #GROUPS;
 
 TRUNCATE TABLE #dg_covariate_table;
 DROP TABLE #dg_covariate_table;
