@@ -12,7 +12,7 @@ Long term outcomes of prostate cancer patients undergoing non-interventional man
 - Tags: **cancer**
 - Study lead: **Giorgio Gandaglia**
 - Study lead forums tag: please refer to **[keesvanbochove](https://forums.ohdsi.org/u/keesvanbochove)**
-- Study start date: **09-Mar-2021**
+- Study start date: **March 9, 2021**
 - Study end date: **-**
 - Protocol: **[RQ2_OHDSI_FINAL.pdf](https://github.com/ohdsi-studies/PioneerWatchfulWaiting/blob/master/extras/Protocol_RQ2_OHDSI_FINAL.pdf)**
 - Publications: **-**
