@@ -1,27 +1,27 @@
 name,atlasName,atlasId,cohortId
-101,[PIONEER T1] Newly diagnosed Pca ,47,101
+101,[PIONEER T1] Newly diagnosed PCa,47,101
 103,[PIONEER T2] PCa treated right away,49,103
 111,[PIONEER T3] PCa under conservative management,137,111
-117,[PIONEER T4] PCa treated after conservative management ,143,117
+117,[PIONEER T4] PCa treated after conservative management,143,117
 105,[PIONEER T3.1] PCa high/intermediate risk conservative management,138,105
 107,[PIONEER T3.2] PCa low risk grade conservative management and no intense monitoring,139,107
 109,[PIONEER T3.3] PCa low risk grade conservative management and intense monitoring,140,109
 113,[PIONEER T4.1] Delayed Curative Management,144,113
 115,[PIONEER T4.2] Delayed Palliative Management,145,115
-102,[PIONEER T1a] Newly diagnosed Pca_broad,141,102
-104,[PIONEER T2a] PCa treated right away_broad,142,104
-112,[PIONEER T3a] PCa under conservative management_broad,125,112
-118,[PIONEER T4a] PCa treated after conservative management_broad,129,118
-106,[PIONEER T3.1a] PCa high/intermediate risk conservative managemetn_broad,126,106
-108,[PIONEER T3.2a] PCa low risk grade conservative management and no intense monitoring_broad,127,108
-110,[PIONEER T3.3a] PCa low risk grade conservative management and intense monitoring_broad,128,110
-114,[PIONEER T4.1a] Delayed Curative Management_broad,131,114
-116,[PIONEER T4.2a] Delayed Palliative Management_broad,132,116
-119,[PIONEER T5] Symptom post conservative management ,168,119
-120,[PIONEER T5a] Symptom post conservative management_broad,167,120
-334,[PIONEER T3a sen1] new PCa conservative management ,182,334
-335,[PIONEER T3a sen2] new PCa conservative management ,173,335
-336,[PIONEER T3a sen3] new PCa conservative management ,174,336
-337,[PIONEER T3a sen4] new PCa conservative management ,175,337
-338,[PIONEER T3a sen5] new PCa conservative management ,176,338
+102,[PIONEER T1a] Newly diagnosed PCa broad,141,102
+104,[PIONEER T2a] PCa treated right away broad,142,104
+112,[PIONEER T3a] PCa under conservative management broad,125,112
+118,[PIONEER T4a] PCa treated after conservative management broad,129,118
+106,[PIONEER T3.1a] PCa high/intermediate risk conservative management broad,126,106
+108,[PIONEER T3.2a] PCa low risk grade conservative management and no intense monitoring broad,127,108
+110,[PIONEER T3.3a] PCa low risk grade conservative management and intense monitoring broad,128,110
+114,[PIONEER T4.1a] Delayed Curative Management broad,131,114
+116,[PIONEER T4.2a] Delayed Palliative Management broad,132,116
+119,[PIONEER T5] Symptom post conservative management,168,119
+120,[PIONEER T5a] Symptom post conservative management broad,167,120
+121,[PIONEER T3a sen1] new PCa conservative management sensitivity_1,182,121
+122,[PIONEER T3a sen2] new PCa conservative management sensitivity_2,173,122
+123,[PIONEER T3a sen3] new PCa conservative management sensitivity_3,174,123
+124,[PIONEER T3a sen4] new PCa conservative management sensitivity_4,175,124
+125,[PIONEER T3a sen5] new PCa conservative management sensitivity_5,176,125
 

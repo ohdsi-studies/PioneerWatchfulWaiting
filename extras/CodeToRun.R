@@ -45,7 +45,7 @@
 #
 # 
 # *******************************************************
-# SECTION 1: Make sure to install all dependencies (not needed if already done) -------------------------------
+# SECTION 1: Install the package and its dependencies (not needed if already done) -------------
 # *******************************************************
 # 
 # Prevents errors due to packages being built for other R versions: 
@@ -54,12 +54,14 @@ Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = TRUE)
 # First, it probably is best to make sure you are up-to-date on all existing packages.
 # Important: This code is best run in R, not RStudio, as RStudio may have some libraries
 # (like 'rlang') in use.
-#update.packages(ask = "graphics")
+update.packages(ask = "graphics")
 
 # When asked to update packages, select '1' ('update all') (could be multiple times)
 # When asked whether to install from source, select 'No' (could be multiple times)
-#install.packages("devtools")
-#devtools::install_github("ohdsi-studies/PioneerWatchfulWaiting")
+install.packages("devtools")
+devtools::install_github("ohdsi-studies/PioneerWatchfulWaiting")
+
+# If this runs correctly, it should have installed the package and its dependencies, and you can proceed to section 2.
 
 # You can use the following function to verify installed packages against the declared dependencies in Renv.lock
 # Note: this function depends on packages bslib and httpuv
@@ -77,7 +79,7 @@ verifyDependencies <- function() {
                                                        expected$Package[idx],
                                                        observedVersions[idx],
                                                        expectedVersions[idx]))
-    message <- paste(c("Mismatch between required and installed package versions. Did you forget to run renv::restore()?",
+    message <- paste(c("Mismatch between required and installed package versions.",
                        lines),
                      collapse = "\n")
     stop(message)
@@ -90,8 +92,11 @@ verifyDependencies <- function() {
 # Run this command to verify, it assumes that renv.lock is in the current working directory and requires renv
 verifyDependencies()
 
+# If you run into problems with package dependencies, you can download the package and use renv to create an isolated environment with all dependencies.
+# However, this will re-download all dependencies into a renv/library folder. See the renv package documentation for more information.
+
 # *******************************************************
-# SECTION 2: Running the package -------------------------------------------------------------------------------
+# SECTION 2: Running the package ---------------------------------------------------------------
 # *******************************************************
 library(PioneerWatchfulWaiting)
 

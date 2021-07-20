@@ -31,8 +31,9 @@ for (cohortType in c("Target", "Outcome", "Strata")) {
 #find . -iname '*.json' -type f -exec sed -i.orig 's/" : /": /g' {} +
 #rm -r *.orig
 
-json_cohorts_path <- 'inst/cohorts'
+json_cohorts_path <- "inst/cohorts"
 settingsPath <- "inst/settings"
+shinyPath <- "inst/shiny/PioneerWatchfulWaitingExplorer"
 # Create the list of combinations of T, TwS, TwoS for the combinations of strata ----------------------------
 
 # The Atlas Name is used as the name. The 'name' column (containing same id as cohortId) is ignored.
@@ -85,9 +86,15 @@ inverseStrata$strataName <- inverseStrata$strataInverseName
 shinyCohortXref <- rbind(targetCohortsForShiny[,xrefColumnNames], 
                          inverseStrata[,xrefColumnNames],
                          targetStrataXRef[targetStrataXRef$cohortType == "TwS",xrefColumnNames])
-readr::write_csv(shinyCohortXref, file.path("inst/shiny/PioneerWatchfulWaitingExplorer", "cohortXref.csv"))
+readr::write_csv(shinyCohortXref, file.path(shinyPath, "cohortXref.csv"))
 
 # Write out the final targetStrataXRef
 targetStrataXRef <- targetStrataXRef[,c("targetId","strataId","cohortId","cohortType","name")]
 readr::write_csv(targetStrataXRef, file.path(settingsPath, "targetStrataXref.csv"))
 
+#Write out Shiny cohorts.csv
+cohorts <- rbind(targetCohorts,outcomeCohorts,atlasCohortStrata)
+cohorts <- cohorts[,c("cohortId","atlasName","atlasId")]
+cohorts <- cbind(cohorts,TRUE)
+names(cohorts) <- c("cohortId","name","atlasId","circeDef")
+readr::write_csv(cohorts, file.path(shinyPath, "cohorts.csv"))
