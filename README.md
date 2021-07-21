@@ -1,7 +1,7 @@
 Long term outcomes of prostate cancer patients undergoing non-interventional management
 =============
 
-[![Study Status: Started](https://img.shields.io/badge/Study%20Status-Started-blue.svg)](https://ohdsi.github.io/TheBookOfOhdsi/StudySteps.html)
+[![Study Status: Started](https://img.shields.io/badge/Study%20Status-Design%20Finalized-brightgreen.svg)](https://ohdsi.github.io/TheBookOfOhdsi/StudySteps.html)
 
 [![fair-software.eu](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F-green)](https://fair-software.eu)
 
@@ -12,10 +12,10 @@ Long term outcomes of prostate cancer patients undergoing non-interventional man
 - Tags: **cancer**
 - Study lead: **Giorgio Gandaglia**
 - Study lead forums tag: please refer to **[keesvanbochove](https://forums.ohdsi.org/u/keesvanbochove)**
-- Study start date: **09-Mar-2021**
+- Study start date: **March 9, 2021**
 - Study end date: **-**
-- Protocol: **[RQ2_OHDSI_FINAL.pdf](extras/Protocol_RQ2_OHDSI_FINAL.pdf)**
-- Publications: **-**
+- Protocol: **[RQ2_OHDSI_FINAL.pdf](https://github.com/ohdsi-studies/PioneerWatchfulWaiting/blob/master/extras/Protocol_RQ2_OHDSI_FINAL.pdf)**
+- Publications: **https://doi.org/10.21203/rs.3.pex-1468/v1**
 - Diagnostics explorer: **[Shiny App: Cohort diagnostics](https://data.ohdsi.org/PioneerWatchfulWaitingDiag/)**
 - Results explorer: **[Shiny App: Characterization Study](https://data.ohdsi.org/PioneerWatchfulWaiting/)**
 

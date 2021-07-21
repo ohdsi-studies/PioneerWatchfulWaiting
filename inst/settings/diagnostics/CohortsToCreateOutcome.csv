@@ -1,8 +1,8 @@
 name,atlasName,atlasId,cohortId
 202,[PIONEER O1] Death,46,202
-201,[PIONEER O2] Symptomatic progression ,45,201
+201,[PIONEER O2] Symptomatic progression,45,201
 203,[PIONEER O3] Treatment initiation,61,203
 204,[PIONEER O4] Curative treatment,73,204
-205,[PIONEER O5] Palliative treatment ,74,205
+205,[PIONEER O5] Palliative treatment,74,205
 206,[PIONEER O6] Hospitalization,87,206
-207,[PIONEER O7 ] ED visit,90,207
+207,[PIONEER O7] ED visit,90,207

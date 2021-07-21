@@ -19,3 +19,8 @@ name,atlasName,atlasId,cohortId
 116,[PIONEER T4.2a] Delayed Palliative Management_broad,132,116
 119,[PIONEER T5] Symptom post conservative management ,168,119
 120,[PIONEER T5a] Symptom post conservative management_broad,167,120
+121,[PIONEER T3a sen1] new PCa conservative management sensitivity_1,182,121
+122,[PIONEER T3a sen2] new PCa conservative management sensitivity_2,173,122
+123,[PIONEER T3a sen3] new PCa conservative management sensitivity_3,174,123
+124,[PIONEER T3a sen4] new PCa conservative management sensitivity_4,175,124
+125,[PIONEER T3a sen5] new PCa conservative management sensitivity_5,176,125

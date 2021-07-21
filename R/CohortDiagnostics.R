@@ -113,14 +113,10 @@ runCohortDiagnostics <- function(connectionDetails = NULL,
 #' @export
 bundleDiagnosticsResults <- function(diagnosticOutputFolder, databaseId) {
  
-  # Prepare additional metadata files
-  # codemetar::write_codemeta(pkg = find.package(getThisPackageName()), 
-  #                          path = file.path(diagnosticOutputFolder, "codemeta.json"))
-  
   # Write metadata, log, and diagnostics results files to single ZIP file
   date <- format(Sys.time(), "%Y%m%dT%H%M%S")
   zipName <- file.path(diagnosticOutputFolder, paste0("Results_diagnostics_", databaseId, "_", date, ".zip")) 
-  files <- list.files(diagnosticOutputFolder, "^Results_.*.zip$|codemeta.json|cohortDiagnosticsLog.txt", full.names = TRUE, recursive = TRUE)
+  files <- list.files(diagnosticOutputFolder, "^Results_.*.zip$|cohortDiagnosticsLog.txt", full.names = TRUE, recursive = TRUE)
   oldWd <- setwd(diagnosticOutputFolder)
   on.exit(setwd(oldWd), add = TRUE)
   DatabaseConnector::createZipFile(zipFile = zipName, files = files)
