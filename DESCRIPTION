@@ -16,7 +16,7 @@ Description: Describe the baseline demographic, clinical characteristics, treatm
 Depends:
   DatabaseConnector (>= 2.2.0)
 Imports:
-  CohortDiagnostics (>= 2.0.0),
+  CohortDiagnostics (>= 2.1.0),
   FeatureExtraction (>= 3.1.0),
   ParallelLogger,
   OhdsiSharing (>= 0.2.1),
