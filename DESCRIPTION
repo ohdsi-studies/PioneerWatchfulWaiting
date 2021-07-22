@@ -1,7 +1,7 @@
 Package: PioneerWatchfulWaiting
 Type: Package
 Title: PIONEER / EHDEN / OHDSI prostate cancer study
-Version: 0.4.2.1
+Version: 0.4.2.2
 Author: Anthony G. Sena, Artem Gorbachev, Kees van Bochove
 Authors@R: c(
     person("Anthony G.", "Sena", email = "asena5@its.jnj.com", role = c("aut")),
