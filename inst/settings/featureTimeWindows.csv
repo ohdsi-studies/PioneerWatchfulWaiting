@@ -1,4 +1,5 @@
 windowId,windowStart,windowEnd,windowType
-1,0,365,overlap
-2,366,730,start
-3,731,999999,start
+1,-365,0,overlap
+2,0,365,overlap
+3,366,730,start
+4,731,999999,start
