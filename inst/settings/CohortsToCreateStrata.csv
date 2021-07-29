@@ -18,14 +18,14 @@ name,atlasName,atlasId,cohortId
 317,[PIONEER S17] Grade 4 (GS 8),70,317
 318,[PIONEER S18] Grade 5 (GS 9-10),71,318
 319,[PIONEER S19] Family history of Prostate cancer or history of family history of germline mutations,72,319
-320,"[PIONEER S20] Mutation (germline or somatic) in BRCA2, BRCA1, ATM, MLH1, MSH1, MSH2, MSH6, CHEK2, RAD51B and PALB2 ",83,320
+320,[PIONEER S20] Mutation (germline or somatic) in oncogenes,83,320
 321,[PIONEER S21] Age at diagnosis <55,111,321
 322,[PIONEER S22] Age at diagnosis 55-80,110,322
 323,[PIONEER S23] Age at diagnosis >80,109,323
 324,[PIONEER S24] Charlson CCI=0,120,324
 325,[PIONEER S25] Charlson CCI=1,121,325
 326,[PIONEER S26] Charlson CCI>=2,122,326
-327,"[PIONEER S27] Any malignancy, except malignant neoplasm of skin",81,327
+327,[PIONEER S27] Any malignancy except malignant neoplasm of skin,81,327
 334,[PIONEER S28] Performance status ECOG=0,164,334
 335,[PIONEER S29] Performance status ECOG=1,165,335
 336,[PIONEER S30] Performance status ECOG=2+,166,336
