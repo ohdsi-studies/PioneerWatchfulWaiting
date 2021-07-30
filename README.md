@@ -118,7 +118,7 @@ Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = TRUE)
 # When asked to update packages, select '1' ('update all') (could be multiple times)
 # When asked whether to install from source, select 'No' (could be multiple times)
 #install.packages("devtools")
-#devtools::install_github("ohdsi-studies/PioneerWatchfulWaiting", ref="v0.4.0")
+#devtools::install_github("ohdsi-studies/PioneerWatchfulWaiting", ref="v0.4.3")
 ````
 In [`CodeToRun.R`](extras/CodeToRun.R) you will find a function `verifyDependencies()` which you can use to verify that all dependencies installed correctly.
 
