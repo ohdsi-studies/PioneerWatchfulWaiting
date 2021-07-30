@@ -5,17 +5,15 @@ SELECT tab.cohort_definition_id,
        tab.person_id,
        tab.cohort_start_date,
        DATEDIFF(year, DATEFROMPARTS(tab.year_of_birth, tab.month_of_birth, tab.day_of_birth),
-                cohort_start_date) AS age
+                tab.cohort_start_date) AS age
 FROM (
-     SELECT cohort_definition_id, person_id, cohort_start_date, year_of_birth, month_of_birth, day_of_birth
+     SELECT c.cohort_definition_id, p.person_id, c.cohort_start_date, p.year_of_birth, p.month_of_birth, p.day_of_birth
      FROM @cohort_database_schema.@cohort_table c
      JOIN @cdm_database_schema.person p
          ON p.person_id = c.subject_id
      WHERE c.cohort_definition_id IN (@target_ids)
      ) tab
 ;
-
-
 
 -- Charlson analysis
 DROP TABLE IF EXISTS @cohort_database_schema.charlson_concepts;
