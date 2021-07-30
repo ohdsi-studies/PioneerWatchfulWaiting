@@ -26,6 +26,7 @@ Imports:
   digest,
   readr,
   dplyr,
+  data.table,
   ggplot2,
   tibble,
   magrittr,

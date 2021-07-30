@@ -380,7 +380,7 @@ runStudy <- function(connectionDetails = NULL,
   ParallelLogger::logInfo("********************************************************************************************")
   # Ensure that the covariate_value.csv is free of any duplicative values. This can happen after more than
   # one run of the package.
-  cv <- readr::read_csv(file.path(exportFolder, "covariate_value.csv"), col_types = readr::cols())
+  cv <- data.table::fread_csv(file.path(exportFolder, "covariate_value.csv"), col_types = readr::cols())
   cv <- unique(cv)
   writeToCsv(cv, file.path(exportFolder, "covariate_value.csv"), incremental = FALSE)
   
@@ -461,7 +461,7 @@ formatCovariates <- function(data) {
   # Drop covariates with mean = 0 after rounding to 4 digits:
   if (nrow(data) > 0) {
     data <- data[round(data$mean, 4) != 0, ]
-    covariates <- unique(data[, c("covariateId", "covariateName", "analysisId")])
+    covariates <- unique(data.table::setDT(data[, c("covariateId", "covariateName", "analysisId")]))
     colnames(covariates)[[3]] <- "covariateAnalysisId"
   } else {
     covariates <- list("covariateId" = "", "covariateName" = "", "covariateAnalysisId" = "")
