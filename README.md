@@ -58,7 +58,7 @@ If you finish running a study package and upload results to the SFTP, please pos
 
 ## Package Requirements
 - A database in [Common Data Model version 5](https://github.com/OHDSI/CommonDataModel) in one of these platforms: SQL Server, Oracle, PostgreSQL, IBM Netezza, Apache Impala, Amazon RedShift, or Microsoft APS.
-- R version 3.5.0 or newer
+- R version 4.0.0 or newer (3.5.0 or newer should also work, but then you will need a [backport](https://github.com/thehyve/CohortDiagnostics/tree/backport21_r3) of CohortDiagnostics)
 - On Windows: [RTools](http://cran.r-project.org/bin/windows/Rtools/)
 - [Java](http://java.com)
 - Suggested: 25 GB of free disk space
