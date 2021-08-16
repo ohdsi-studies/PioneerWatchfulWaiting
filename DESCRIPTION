@@ -1,7 +1,7 @@
 Package: PioneerWatchfulWaiting
 Type: Package
 Title: PIONEER / EHDEN / OHDSI prostate cancer study
-Version: 0.4.3
+Version: 0.4.3.1
 Author: Anthony G. Sena, Artem Gorbachev, Kees van Bochove
 Authors@R: c(
     person("Anthony G.", "Sena", email = "asena5@its.jnj.com", role = c("aut")),
@@ -31,11 +31,11 @@ Imports:
   tibble,
   magrittr,
   survival,
-  survminer,
-  codemetar,
-  renv
+  survminer
 Suggests:
+  codemeta,
   knitr,
+  renv,
   rmarkdown
 Remotes:
   OHDSI/CohortDiagnostics,
