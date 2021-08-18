@@ -464,7 +464,7 @@ formatCovariates <- function(data) {
     covariates <- unique(data.table::setDT(data[, c("covariateId", "covariateName", "analysisId")]))
     colnames(covariates)[[3]] <- "covariateAnalysisId"
   } else {
-    covariates <- list("covariateId" = "", "covariateName" = "", "covariateAnalysisId" = "")
+    covariates <- data.table::data.table("covariateId" = integer(), "covariateName" = character(), "covariateAnalysisId" = integer())
   }
   return(covariates)
 }
