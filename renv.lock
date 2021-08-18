@@ -371,13 +371,6 @@
       "Repository": "CRAN",
       "Hash": "ce1e04e9826e3885571a2681d03e1ae3"
     },
-    "codemetar": {
-      "Package": "codemetar",
-      "Version": "0.3.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "a3010dd73655a487d2459341581f3ec7"
-    },
     "colorspace": {
       "Package": "colorspace",
       "Version": "2.0-2",
