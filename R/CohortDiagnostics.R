@@ -115,7 +115,7 @@ bundleDiagnosticsResults <- function(diagnosticOutputFolder, databaseId) {
  
   # Write metadata, log, and diagnostics results files to single ZIP file
   date <- format(Sys.time(), "%Y%m%dT%H%M%S")
-  zipName <- file.path(diagnosticOutputFolder, paste0("Results_diagnostics_", databaseId, "_", date, ".zip")) 
+  zipName <- file.path(diagnosticOutputFolder, paste0("Results_diagnostics_v", getThisPackageVersion(), "_", databaseId, "_", date, ".zip")) 
   files <- list.files(diagnosticOutputFolder, "^Results_.*.zip$|cohortDiagnosticsLog.txt", full.names = TRUE, recursive = TRUE)
   oldWd <- setwd(diagnosticOutputFolder)
   on.exit(setwd(oldWd), add = TRUE)

@@ -93,6 +93,10 @@ getAllStudyCohortsWithDetails <- function() {
   return(allCohorts)
 }
 
+getThisPackageVersion <- function() { 
+  return(packageVersion(getThisPackageName()))
+}
+
 getThisPackageName <- function() {
   return("PioneerWatchfulWaiting")
 }
