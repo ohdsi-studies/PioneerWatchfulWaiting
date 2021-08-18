@@ -380,7 +380,7 @@ runStudy <- function(connectionDetails = NULL,
   ParallelLogger::logInfo("********************************************************************************************")
   # Ensure that the covariate_value.csv is free of any duplicative values. This can happen after more than
   # one run of the package.
-  cv <- data.table::fread_csv(file.path(exportFolder, "covariate_value.csv"), col_types = readr::cols())
+  cv <- data.table::fread(file.path(exportFolder, "covariate_value.csv"))
   cv <- unique(cv)
   writeToCsv(cv, file.path(exportFolder, "covariate_value.csv"), incremental = FALSE)
   
