@@ -7,7 +7,9 @@ SELECT tab.cohort_definition_id,
        DATEDIFF(year, DATEFROMPARTS(tab.year_of_birth, tab.month_of_birth, tab.day_of_birth),
                 tab.cohort_start_date) AS age
 FROM (
-     SELECT c.cohort_definition_id, p.person_id, c.cohort_start_date, p.year_of_birth, p.month_of_birth, p.day_of_birth
+     SELECT c.cohort_definition_id, p.person_id, c.cohort_start_date, p.year_of_birth,
+               CASE WHEN ISNUMERIC(p.month_of_birth) = 1 THEN p.month_of_birth ELSE 1 END AS month_of_birth,
+               CASE WHEN ISNUMERIC(p.day_of_birth) = 1 THEN p.day_of_birth ELSE 1 END AS day_of_birth
      FROM @cohort_database_schema.@cohort_table c
      JOIN @cdm_database_schema.person p
          ON p.person_id = c.subject_id
