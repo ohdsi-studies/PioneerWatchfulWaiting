@@ -164,6 +164,7 @@ runCohortDiagnostics(connectionDetails = connectionDetails,
                      databaseDescription = databaseDescription,
                      minCellCount = minCellCount)
 
+# The following 2 commands will allow you to inspect the cohort diagnostics results locally, in case you want to do this.
 # Optionally, preMerge the data for shiny App. Replace "target" with
 # one of these options: "target", "outcome", "strata"
 # CohortDiagnostics::preMergeDiagnosticsFiles(file.path(outputFolder, "diagnostics", "strata"))
