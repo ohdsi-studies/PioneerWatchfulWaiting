@@ -1,7 +1,11 @@
-DROP TABLE IF EXISTS @cohort_database_schema.subject_age;
+IF OBJECT_ID('@cohort_database_schema.subject_age', 'U') IS NOT NULL
+   DROP TABLE @cohort_database_schema.subject_age;
 
-DROP TABLE IF EXISTS @cohort_database_schema.charlson_concepts;
+IF OBJECT_ID('@cohort_database_schema.charlson_concepts', 'U') IS NOT NULL
+   DROP TABLE @cohort_database_schema.charlson_concepts;
 
-DROP TABLE IF EXISTS @cohort_database_schema.charlson_scoring;
+IF OBJECT_ID('@cohort_database_schema.charlson_scoring', 'U') IS NOT NULL
+   DROP TABLE @cohort_database_schema.charlson_scoring;
 
-DROP TABLE IF EXISTS @cohort_database_schema.charlson_map;
+IF OBJECT_ID('@cohort_database_schema.charlson_map', 'U') IS NOT NULL
+   DROP TABLE @cohort_database_schema.charlson_map;
