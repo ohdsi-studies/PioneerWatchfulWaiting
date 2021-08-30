@@ -1,5 +1,6 @@
 -- create subject age table
-DROP TABLE IF EXISTS @cohort_database_schema.subject_age;
+IF OBJECT_ID('@cohort_database_schema.subject_age', 'U') IS NOT NULL
+   DROP TABLE @cohort_database_schema.subject_age;
 CREATE TABLE @cohort_database_schema.subject_age AS
 SELECT tab.cohort_definition_id,
        tab.person_id,
@@ -18,14 +19,16 @@ FROM (
 ;
 
 -- Charlson analysis
-DROP TABLE IF EXISTS @cohort_database_schema.charlson_concepts;
+IF OBJECT_ID('@cohort_database_schema.charlson_concepts', 'U') IS NOT NULL
+   DROP TABLE @cohort_database_schema.charlson_concepts;
 CREATE TABLE @cohort_database_schema.charlson_concepts
 (
     diag_category_id INT,
     concept_id       INT
 );
 
-DROP TABLE IF EXISTS @cohort_database_schema.charlson_scoring;
+IF OBJECT_ID('@cohort_database_schema.charlson_scoring', 'U') IS NOT NULL
+   DROP TABLE @cohort_database_schema.charlson_scoring;
 CREATE TABLE @cohort_database_schema.charlson_scoring
 (
     diag_category_id   INT,
@@ -224,7 +227,8 @@ WHERE ancestor_concept_id IN (439727);
 
 
 
-DROP TABLE IF EXISTS @cohort_database_schema.charlson_map;
+IF OBJECT_ID('@cohort_database_schema.charlson_map', 'U') IS NOT NULL
+   DROP TABLE @cohort_database_schema.charlson_map;
 CREATE TABLE @cohort_database_schema.charlson_map AS
 SELECT DISTINCT @cohort_database_schema.charlson_scoring.diag_category_id,
                 @cohort_database_schema.charlson_scoring.weight,
