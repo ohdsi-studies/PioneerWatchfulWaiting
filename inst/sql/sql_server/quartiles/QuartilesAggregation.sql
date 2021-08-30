@@ -21,8 +21,8 @@
                              END
                              ) OVER (PARTITION BY cohort_definition_id) AS median,
                          AVG(CASE
-                                 WHEN row_number >= (CEIL(total / 2.0) + (FLOOR(total / 2.0) / 2.0))
-                                     AND row_number <= (CEIL(total / 2.0) + (FLOOR(total / 2.0) / 2.0) + 1)
+                                 WHEN row_number >= (CEILING(total / 2.0) + (FLOOR(total / 2.0) / 2.0))
+                                     AND row_number <= (CEILING(total / 2.0) + (FLOOR(total / 2.0) / 2.0) + 1)
                                      THEN value / 1.0
                              END
                              ) OVER (PARTITION BY cohort_definition_id) AS q3
