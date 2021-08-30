@@ -37,4 +37,4 @@ SELECT cohort_definition_id,
        MAX(value) AS maximum,
        '@analysis_name' AS analysis_name
 FROM quartiles
-GROUP BY 1;
+GROUP BY cohort_definition_id;
