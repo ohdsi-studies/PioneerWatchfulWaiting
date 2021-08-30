@@ -247,30 +247,36 @@ WHERE condition_era_start_date <= cohort.cohort_start_date;
 
 -- Update weights to avoid double counts of mild/severe course of the disease
 -- Diabetes
-UPDATE @cohort_database_schema.charlson_map t1
-SET weight = 0
-FROM @cohort_database_schema.charlson_map t2
-WHERE t1.subject_id = t2.subject_id
-  AND t1.cohort_definition_id = t2.cohort_definition_id
-  AND t1.diag_category_id = 10
+UPDATE t1
+SET t1.weight = 0
+FROM @cohort_database_schema.charlson_map t1
+  INNER JOIN @cohort_database_schema.charlson_map t2 ON
+    t1.subject_id = t2.subject_id
+    AND t1.cohort_definition_id = t2.cohort_definition_id
+WHERE
+  t1.diag_category_id = 10
   AND t2.diag_category_id = 11;
 
 -- Liver disease
-UPDATE @cohort_database_schema.charlson_map t1
-SET weight = 0
-FROM @cohort_database_schema.charlson_map t2
-WHERE t1.subject_id = t2.subject_id
-  AND t1.cohort_definition_id = t2.cohort_definition_id
-  AND t1.diag_category_id = 9
+UPDATE t1
+SET t1.weight = 0
+FROM @cohort_database_schema.charlson_map t1
+  INNER JOIN @cohort_database_schema.charlson_map t2 ON
+    t1.subject_id = t2.subject_id
+    AND t1.cohort_definition_id = t2.cohort_definition_id
+WHERE
+  t1.diag_category_id = 9
   AND t2.diag_category_id = 15;
 
 -- Malignancy
-UPDATE @cohort_database_schema.charlson_map t1
-SET weight = 0
-FROM @cohort_database_schema.charlson_map t2
-WHERE t1.subject_id = t2.subject_id
-  AND t1.cohort_definition_id = t2.cohort_definition_id
-  AND t1.diag_category_id = 14
+UPDATE t1
+SET t1.weight = 0
+FROM @cohort_database_schema.charlson_map t1
+  INNER JOIN @cohort_database_schema.charlson_map t2 ON
+    t1.subject_id = t2.subject_id
+    AND t1.cohort_definition_id = t2.cohort_definition_id
+WHERE
+  t1.diag_category_id = 14
   AND t2.diag_category_id = 16;
 
 -- Add age criteria
