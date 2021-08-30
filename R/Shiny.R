@@ -54,7 +54,7 @@ preMergeResultsFiles <- function(dataFolder) {
     # print(file)
     tableName <- gsub(".csv$", "", file)
     camelCaseName <- SqlRender::snakeCaseToCamelCase(tableName)
-    data <- readr::read_csv(file.path(folder, file), col_types = readr::cols(), guess_max = 1e7, locale = readr::locale(encoding = "UTF-8"))
+    data <- data.table::fread(file.path(folder, file))
     colnames(data) <- SqlRender::snakeCaseToCamelCase(colnames(data))
     
     if (!overwrite && exists(camelCaseName, envir = .GlobalEnv)) {
@@ -63,7 +63,8 @@ preMergeResultsFiles <- function(dataFolder) {
         if (nrow(data) > 0) {
           if (all(colnames(existingData) %in% colnames(data)) &&
               all(colnames(data) %in% colnames(existingData))) {
-            data <- data[, colnames(existingData)]
+            existingCols <- colnames(existingData)
+            data <- data[, ..existingCols]
           } else {
             stop("Table columns do no match previously seen columns. Columns in ", 
                  file, 
