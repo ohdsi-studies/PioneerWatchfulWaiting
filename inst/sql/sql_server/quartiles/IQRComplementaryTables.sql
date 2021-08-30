@@ -1,12 +1,12 @@
 -- create subject age table
 IF OBJECT_ID('@cohort_database_schema.subject_age', 'U') IS NOT NULL
    DROP TABLE @cohort_database_schema.subject_age;
-CREATE TABLE @cohort_database_schema.subject_age AS
 SELECT tab.cohort_definition_id,
        tab.person_id,
        tab.cohort_start_date,
        DATEDIFF(year, DATEFROMPARTS(tab.year_of_birth, tab.month_of_birth, tab.day_of_birth),
                 tab.cohort_start_date) AS age
+INTO @cohort_database_schema.subject_age
 FROM (
      SELECT c.cohort_definition_id, p.person_id, c.cohort_start_date, p.year_of_birth,
                CASE WHEN ISNUMERIC(p.month_of_birth) = 1 THEN p.month_of_birth ELSE 1 END AS month_of_birth,
@@ -229,12 +229,12 @@ WHERE ancestor_concept_id IN (439727);
 
 IF OBJECT_ID('@cohort_database_schema.charlson_map', 'U') IS NOT NULL
    DROP TABLE @cohort_database_schema.charlson_map;
-CREATE TABLE @cohort_database_schema.charlson_map AS
 SELECT DISTINCT @cohort_database_schema.charlson_scoring.diag_category_id,
                 @cohort_database_schema.charlson_scoring.weight,
                 cohort_definition_id,
                 cohort.subject_id,
                 cohort.cohort_start_date
+INTO @cohort_database_schema.charlson_map
 FROM @cohort_database_schema.@cohort_table cohort
 INNER JOIN @cdm_database_schema.condition_era condition_era
     ON cohort.subject_id = condition_era.person_id
