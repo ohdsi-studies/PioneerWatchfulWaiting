@@ -247,36 +247,36 @@ WHERE condition_era_start_date <= cohort.cohort_start_date;
 
 -- Update weights to avoid double counts of mild/severe course of the disease
 -- Diabetes
-UPDATE t1
-SET t1.weight = 0
-FROM @cohort_database_schema.charlson_map t1
+UPDATE @cohort_database_schema.charlson_map
+SET @cohort_database_schema.charlson_map.weight = 0
+FROM @cohort_database_schema.charlson_map
   INNER JOIN @cohort_database_schema.charlson_map t2 ON
-    t1.subject_id = t2.subject_id
-    AND t1.cohort_definition_id = t2.cohort_definition_id
+    @cohort_database_schema.charlson_map.subject_id = t2.subject_id
+    AND @cohort_database_schema.charlson_map.cohort_definition_id = t2.cohort_definition_id
 WHERE
-  t1.diag_category_id = 10
+  @cohort_database_schema.charlson_map.diag_category_id = 10
   AND t2.diag_category_id = 11;
 
 -- Liver disease
-UPDATE t1
-SET t1.weight = 0
-FROM @cohort_database_schema.charlson_map t1
+UPDATE @cohort_database_schema.charlson_map
+SET @cohort_database_schema.charlson_map.weight = 0
+FROM @cohort_database_schema.charlson_map
   INNER JOIN @cohort_database_schema.charlson_map t2 ON
-    t1.subject_id = t2.subject_id
-    AND t1.cohort_definition_id = t2.cohort_definition_id
+    @cohort_database_schema.charlson_map.subject_id = t2.subject_id
+    AND @cohort_database_schema.charlson_map.cohort_definition_id = t2.cohort_definition_id
 WHERE
-  t1.diag_category_id = 9
+  @cohort_database_schema.charlson_map.diag_category_id = 9
   AND t2.diag_category_id = 15;
 
 -- Malignancy
-UPDATE t1
-SET t1.weight = 0
-FROM @cohort_database_schema.charlson_map t1
+UPDATE @cohort_database_schema.charlson_map
+SET @cohort_database_schema.charlson_map.weight = 0
+FROM @cohort_database_schema.charlson_map
   INNER JOIN @cohort_database_schema.charlson_map t2 ON
-    t1.subject_id = t2.subject_id
-    AND t1.cohort_definition_id = t2.cohort_definition_id
+    @cohort_database_schema.charlson_map.subject_id = t2.subject_id
+    AND @cohort_database_schema.charlson_map.cohort_definition_id = t2.cohort_definition_id
 WHERE
-  t1.diag_category_id = 14
+  @cohort_database_schema.charlson_map.diag_category_id = 14
   AND t2.diag_category_id = 16;
 
 -- Add age criteria
