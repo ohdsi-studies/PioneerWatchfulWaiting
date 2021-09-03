@@ -1,11 +1,12 @@
 -- create subject age table
-DROP TABLE IF EXISTS @cohort_database_schema.subject_age;
-CREATE TABLE @cohort_database_schema.subject_age AS
+IF OBJECT_ID('@cohort_database_schema.subject_age', 'U') IS NOT NULL
+   DROP TABLE @cohort_database_schema.subject_age;
 SELECT tab.cohort_definition_id,
        tab.person_id,
        tab.cohort_start_date,
        DATEDIFF(year, DATEFROMPARTS(tab.year_of_birth, tab.month_of_birth, tab.day_of_birth),
                 tab.cohort_start_date) AS age
+INTO @cohort_database_schema.subject_age
 FROM (
      SELECT c.cohort_definition_id, p.person_id, c.cohort_start_date, p.year_of_birth,
                CASE WHEN ISNUMERIC(p.month_of_birth) = 1 THEN p.month_of_birth ELSE 1 END AS month_of_birth,
@@ -18,14 +19,16 @@ FROM (
 ;
 
 -- Charlson analysis
-DROP TABLE IF EXISTS @cohort_database_schema.charlson_concepts;
+IF OBJECT_ID('@cohort_database_schema.charlson_concepts', 'U') IS NOT NULL
+   DROP TABLE @cohort_database_schema.charlson_concepts;
 CREATE TABLE @cohort_database_schema.charlson_concepts
 (
     diag_category_id INT,
     concept_id       INT
 );
 
-DROP TABLE IF EXISTS @cohort_database_schema.charlson_scoring;
+IF OBJECT_ID('@cohort_database_schema.charlson_scoring', 'U') IS NOT NULL
+   DROP TABLE @cohort_database_schema.charlson_scoring;
 CREATE TABLE @cohort_database_schema.charlson_scoring
 (
     diag_category_id   INT,
@@ -224,13 +227,14 @@ WHERE ancestor_concept_id IN (439727);
 
 
 
-DROP TABLE IF EXISTS @cohort_database_schema.charlson_map;
-CREATE TABLE @cohort_database_schema.charlson_map AS
+IF OBJECT_ID('@cohort_database_schema.charlson_map', 'U') IS NOT NULL
+   DROP TABLE @cohort_database_schema.charlson_map;
 SELECT DISTINCT @cohort_database_schema.charlson_scoring.diag_category_id,
                 @cohort_database_schema.charlson_scoring.weight,
                 cohort_definition_id,
                 cohort.subject_id,
                 cohort.cohort_start_date
+INTO @cohort_database_schema.charlson_map
 FROM @cohort_database_schema.@cohort_table cohort
 INNER JOIN @cdm_database_schema.condition_era condition_era
     ON cohort.subject_id = condition_era.person_id
@@ -243,31 +247,67 @@ WHERE condition_era_start_date <= cohort.cohort_start_date;
 
 -- Update weights to avoid double counts of mild/severe course of the disease
 -- Diabetes
-UPDATE @cohort_database_schema.charlson_map t1
+UPDATE @cohort_database_schema.charlson_map
 SET weight = 0
-FROM @cohort_database_schema.charlson_map t2
-WHERE t1.subject_id = t2.subject_id
-  AND t1.cohort_definition_id = t2.cohort_definition_id
-  AND t1.diag_category_id = 10
-  AND t2.diag_category_id = 11;
+FROM (
+  SELECT
+    t1.subject_id AS sub_id
+  , t1.cohort_definition_id AS coh_id
+  , t1.diag_category_id AS d1
+  , t2.diag_category_id AS d2
+  FROM @cohort_database_schema.charlson_map t1
+  INNER JOIN @cohort_database_schema.charlson_map t2 ON
+    t1.subject_id = t2.subject_id
+    AND t1.cohort_definition_id = t2.cohort_definition_id
+) x
+WHERE
+  subject_id = x.sub_id
+  AND cohort_definition_id = x.coh_id
+  AND charlson_map.diag_category_id = 10
+  AND x.d1 = 10
+  AND x.d2 = 11;
 
 -- Liver disease
-UPDATE @cohort_database_schema.charlson_map t1
+UPDATE @cohort_database_schema.charlson_map
 SET weight = 0
-FROM @cohort_database_schema.charlson_map t2
-WHERE t1.subject_id = t2.subject_id
-  AND t1.cohort_definition_id = t2.cohort_definition_id
-  AND t1.diag_category_id = 9
-  AND t2.diag_category_id = 15;
+FROM (
+  SELECT
+    t1.subject_id AS sub_id
+  , t1.cohort_definition_id AS coh_id
+  , t1.diag_category_id AS d1
+  , t2.diag_category_id AS d2
+  FROM @cohort_database_schema.charlson_map t1
+  INNER JOIN @cohort_database_schema.charlson_map t2 ON
+    t1.subject_id = t2.subject_id
+    AND t1.cohort_definition_id = t2.cohort_definition_id
+) x
+WHERE
+  subject_id = x.sub_id
+  AND cohort_definition_id = x.coh_id
+  AND charlson_map.diag_category_id = 9
+  AND x.d1 = 9
+  AND x.d2 = 15;
 
 -- Malignancy
-UPDATE @cohort_database_schema.charlson_map t1
+UPDATE @cohort_database_schema.charlson_map
 SET weight = 0
-FROM @cohort_database_schema.charlson_map t2
-WHERE t1.subject_id = t2.subject_id
-  AND t1.cohort_definition_id = t2.cohort_definition_id
-  AND t1.diag_category_id = 14
-  AND t2.diag_category_id = 16;
+FROM (
+  SELECT
+    t1.subject_id AS sub_id
+  , t1.cohort_definition_id AS coh_id
+  , t1.diag_category_id AS d1
+  , t2.diag_category_id AS d2
+  FROM @cohort_database_schema.charlson_map t1
+  INNER JOIN @cohort_database_schema.charlson_map t2 ON
+    t1.subject_id = t2.subject_id
+    AND t1.cohort_definition_id = t2.cohort_definition_id
+) x
+WHERE
+  subject_id = x.sub_id
+  AND cohort_definition_id = x.coh_id
+  AND charlson_map.diag_category_id = 14
+  AND x.d1 = 14
+  AND x.d2 = 16;
 
 -- Add age criteria
 INSERT INTO @cohort_database_schema.charlson_map
