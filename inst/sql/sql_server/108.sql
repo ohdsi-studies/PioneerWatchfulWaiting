@@ -1124,9 +1124,7 @@ from
 (
   select m.* 
   FROM @cdm_database_schema.MEASUREMENT m
-																										  
-   
-
+	JOIN #Codesets codesets on ((m.measurement_concept_id = codesets.concept_id and codesets.codeset_id = 15))
 ) C
 
 WHERE C.value_as_number < 10.0000
@@ -1151,7 +1149,7 @@ from
 (
   select o.* 
   FROM @cdm_database_schema.OBSERVATION o
-
+  JOIN #Codesets codesets on ((o.observation_concept_id = codesets.concept_id and codesets.codeset_id = 15))
 ) C
 
 WHERE C.value_as_number < 10.0000

@@ -3476,6 +3476,7 @@
               {
                 "Criteria": {
                   "Measurement": {
+                    "CodesetId": 15,
                     "MeasurementTypeExclude": false,
                     "ValueAsNumber": {
                       "Value": 10,
@@ -3506,6 +3507,7 @@
               {
                 "Criteria": {
                   "Observation": {
+                    "CodesetId": 15,
                     "ObservationTypeExclude": false,
                     "ValueAsNumber": {
                       "Value": 10,
