@@ -286,7 +286,7 @@ WHERE
   AND cohort_definition_id = x.coh_id
   AND charlson_map.diag_category_id = 9
   AND x.d1 = 9
-  AND x.d2 = 15;
+  AND x.d2 = 17;
 
 -- Malignancy
 UPDATE @cohort_database_schema.charlson_map
@@ -307,7 +307,7 @@ WHERE
   AND cohort_definition_id = x.coh_id
   AND charlson_map.diag_category_id = 14
   AND x.d1 = 14
-  AND x.d2 = 16;
+  AND x.d2 = 18;
 
 -- Add age criteria
 INSERT INTO @cohort_database_schema.charlson_map
