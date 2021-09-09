@@ -16,7 +16,7 @@ runStudy <- function(connectionDetails = NULL,
                      databaseDescription = "",
                      useBulkCharacterization = FALSE,
                      minCellCount = 5,
-                     incremental = TRUE,
+                     incremental = FALSE,
                      incrementalFolder = file.path(exportFolder, "RecordKeeping")) {
   
   start <- Sys.time()
