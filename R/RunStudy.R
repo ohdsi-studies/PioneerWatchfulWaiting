@@ -260,7 +260,7 @@ runStudy <- function(connectionDetails = NULL,
   writeToCsv(counts, file.path(exportFolder, "cohort_count.csv"), incremental = incremental, cohortId = counts$cohortId)
   
   # Read in the cohort counts
-  counts <- data.table::fread(file.path(exportFolder, "cohort_count.csv"))
+  counts <- readr::read_csv(file.path(exportFolder, "cohort_count.csv"), col_types = readr::cols())
   colnames(counts) <- SqlRender::snakeCaseToCamelCase(colnames(counts))
   
   # Export the cohorts from the study
@@ -411,9 +411,9 @@ exportResults <- function(exportFolder, databaseId, cohortIdsToExcludeFromResult
     # Censor out the cohorts based on the IDs passed in
     for(i in 1:length(filesWithCohortIds)) {
       fileName <- file.path(tempFolder, filesWithCohortIds[i])
-      fileContents <- data.table::fread(fileName)
+      fileContents <- readr::read_csv(fileName, col_types = readr::cols())
       fileContents <- fileContents[!(fileContents$cohort_id %in% cohortIdsToExcludeFromResultsExport),]
-      data.table::fwrite(fileContents, fileName)
+      readr::write_csv(fileContents, fileName)
     }
     
     # Zip the results and copy to the main export folder
@@ -591,7 +591,7 @@ writeToCsv <- function(data, fileName, incremental = FALSE, ...) {
     params$fileName = fileName
     do.call(saveIncremental, params)
   } else {
-    data.table::fwrite(data, fileName)
+    readr::write_csv(data, fileName)
   }
 }
 
@@ -672,7 +672,7 @@ recordTasksDone <- function(..., checksum, recordKeepingFile, incremental = TRUE
     return()
   }
   if (file.exists(recordKeepingFile)) {
-    recordKeeping <- data.table::fread(recordKeepingFile)
+    recordKeeping <-  readr::read_csv(recordKeepingFile, col_types = readr::cols())
     idx <- getKeyIndex(list(...), recordKeeping)
     if (length(idx) > 0) {
       recordKeeping <- recordKeeping[-idx, ]
@@ -684,7 +684,7 @@ recordTasksDone <- function(..., checksum, recordKeepingFile, incremental = TRUE
   newRow$checksum <- checksum
   newRow$timeStamp <-  Sys.time()
   recordKeeping <- dplyr::bind_rows(recordKeeping, newRow)
-  data.table::fwrite(recordKeeping, recordKeepingFile)
+  readr::write_csv(recordKeeping, recordKeepingFile)
 }
 
 saveIncremental <- function(data, fileName, ...) {
@@ -692,12 +692,12 @@ saveIncremental <- function(data, fileName, ...) {
     return()
   }
   if (file.exists(fileName)) {
-    previousData <- data.table::fread(fileName)
+    previousData <- readr::read_csv(fileName, col_types = readr::cols())
     idx <- getKeyIndex(list(...), previousData)
     if (length(idx) > 0) {
       previousData <- previousData[-idx, ] 
     }
     data <- dplyr::bind_rows(previousData, data)
   } 
-  data.table::fwrite(data, fileName)
+  readr::write_csv(data, fileName)
 }
