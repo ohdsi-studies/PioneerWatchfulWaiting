@@ -17,7 +17,8 @@ runStudy <- function(connectionDetails = NULL,
                      useBulkCharacterization = FALSE,
                      minCellCount = 5,
                      incremental = FALSE,
-                     incrementalFolder = file.path(exportFolder, "RecordKeeping")) {
+                     incrementalFolder = file.path(exportFolder, "RecordKeeping"),
+                     minimumSubjectCountForCharacterization = 140) {
   
   start <- Sys.time()
   
@@ -275,7 +276,7 @@ runStudy <- function(connectionDetails = NULL,
   if (nrow(featureProportions) > 0) {
     featureProportions$databaseId <- databaseId
     featureProportions <- enforceMinCellValue(featureProportions, "featureCount", minCellCount)
-    featureProportions <- featureProportions[featureProportions$totalCount >= getMinimumSubjectCountForCharacterization(), ]
+    featureProportions <- featureProportions[featureProportions$totalCount >= minimumSubjectCountForCharacterization, ]
   }
   features <- formatCovariates(featureProportions)
   writeToCsv(features, file.path(exportFolder, "covariate.csv"), incremental = incremental, covariateId = features$covariateId)
@@ -307,7 +308,7 @@ runStudy <- function(connectionDetails = NULL,
   
   # Subset the cohorts to the target/strata for running feature extraction
   # that are >= 140 per protocol to improve efficency
-  featureExtractionCohorts <-  loadCohortsForExportWithChecksumFromPackage(counts[counts$cohortSubjects >= getMinimumSubjectCountForCharacterization(), c("cohortId")]$cohortId)
+  featureExtractionCohorts <-  loadCohortsForExportWithChecksumFromPackage(counts[counts$cohortSubjects >= minimumSubjectCountForCharacterization, c("cohortId")]$cohortId)
   # Bulk approach ----------------------
   if (useBulkCharacterization) {
     ParallelLogger::logInfo("********************************************************************************************")
@@ -435,12 +436,6 @@ zipResults <- function(exportFolder, databaseId) {
   on.exit(setwd(oldWd), add = TRUE)
   DatabaseConnector::createZipFile(zipFile = zipName, files = files)
   return(zipName)
-}
-
-# Per protocol, we will only characterize cohorts with
-# >= 140 subjects to improve efficency
-getMinimumSubjectCountForCharacterization <- function() {
-  return(140)
 }
 
 getVocabularyInfo <- function(connection, cdmDatabaseSchema, oracleTempSchema) {
