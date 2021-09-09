@@ -17,8 +17,8 @@ Grade 2 (GS 3+4),[PIONEER S15] Grade 2 (GS 3+4),68,315
 Grade 3 (GS 4+3),[PIONEER S16] Grade 3 (GS 4+3),69,316
 Grade 4 (GS 8),[PIONEER S17] Grade 4 (GS 8),70,317
 Grade 5 (GS 9-10),[PIONEER S18] Grade 5 (GS 9-10),71,318
-Family history of Prostate cancer or history of family history of germline mutations,[PIONEER S19] Family history of Prostate cancer or history of family history of germline mutations,72,319
-Mutation (germline or somatic) in oncogenes,[PIONEER S20] Mutation (germline or somatic) in oncogenes,83,320
+Family history of Prostate cancer or germline mutations,[PIONEER S19] Family history of Prostate cancer or history of family history of germline mutations,72,319
+Mutation in oncogenes,[PIONEER S20] Mutation (germline or somatic) in oncogenes,83,320
 Age at diagnosis <55,[PIONEER S21] Age at diagnosis <55,111,321
 Age at diagnosis 55-80,[PIONEER S22] Age at diagnosis 55-80,110,322
 Age at diagnosis >80,[PIONEER S23] Age at diagnosis >80,109,323
@@ -36,4 +36,4 @@ Hypertension,[PIONEER S34] Hypertension,155,331
 Obesity,[PIONEER S35] Obesity,156,332
 VTE,[PIONEER S36] VTE,157,333
 Anxiety,[PIONEER S37] Anxiety,158,337
-Prevalent Asthma or Chronic obstructive pulmonary disease (COPD),[PIONEER S38] Prevalent Asthma or Chronic obstructive pulmonary disease (COPD),159,338
+Prevalent Asthma or COPD,[PIONEER S38] Prevalent Asthma or Chronic obstructive pulmonary disease (COPD),159,338
