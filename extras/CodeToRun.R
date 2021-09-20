@@ -147,7 +147,7 @@ cohortIdsToExcludeFromExecution <- c()
 cohortIdsToExcludeFromResultsExport <- NULL
 
 # For uploading the results. You should have received the key file from the study coordinator, input the correct path here:
-keyFileName <- "your-home-folder-here/.ssh/study-data-site-pioneer"
+keyFileName <- "study-data-site-pioneer"
 userName <- "study-data-site-pioneer"
 
 # Run cohort diagnostics -----------------------------------

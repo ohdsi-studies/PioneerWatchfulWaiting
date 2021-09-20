@@ -51,3 +51,6 @@ inst_real
 
 # Error reports
 errorReportSql.txt
+
+# Docker environment files
+.env
