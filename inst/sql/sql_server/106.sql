@@ -228,7 +228,7 @@ FROM
   FROM 
   (
   -- Begin Condition Occurrence Criteria
-SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,180,C.condition_start_date)) as end_date,
+SELECT C.person_id, C.condition_occurrence_id as event_id, DATEADD(day,180,C.condition_start_date) as start_date, COALESCE(C.condition_end_date, DATEADD(day,180,C.condition_start_date)) as end_date,
        C.CONDITION_CONCEPT_ID as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.condition_start_date as sort_date
 FROM 
@@ -250,7 +250,7 @@ WHERE P.ordinal = 1
 -- End Primary Events
 
 )
-SELECT event_id, person_id, DATEADD(day,180,start_date) as start_date, end_date, op_start_date, op_end_date, visit_occurrence_id
+SELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id
 INTO #qualified_events
 FROM 
 (
