@@ -200,7 +200,7 @@ FROM
   FROM 
   (
   -- Begin Condition Occurrence Criteria
-SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
+SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,365,C.condition_start_date)) as end_date,
        C.CONDITION_CONCEPT_ID as TARGET_CONCEPT_ID, C.visit_occurrence_id,
        C.condition_start_date as sort_date
 FROM 
@@ -222,7 +222,7 @@ WHERE P.ordinal = 1
 -- End Primary Events
 
 )
-SELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id
+SELECT event_id, person_id, DATEADD(day,365,start_date) as start_date, end_date, op_start_date, op_end_date, visit_occurrence_id
 INTO #qualified_events
 FROM 
 (
@@ -1201,7 +1201,7 @@ group by person_id, end_date
 
 DELETE FROM @target_database_schema.@target_cohort_table where cohort_definition_id = @target_cohort_id;
 INSERT INTO @target_database_schema.@target_cohort_table (cohort_definition_id, subject_id, cohort_start_date, cohort_end_date)
-select @target_cohort_id as cohort_definition_id, person_id, DATEADD(day,365,start_date) as start_date, end_date 
+select @target_cohort_id as cohort_definition_id, person_id, start_date, end_date 
 FROM #final_cohort CO
 ;
 
