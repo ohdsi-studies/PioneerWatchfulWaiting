@@ -1,4 +1,5 @@
 #' @export
+#' @import data.table
 runStudy <- function(connectionDetails = NULL,
                      connection = NULL,
                      cdmDatabaseSchema,
