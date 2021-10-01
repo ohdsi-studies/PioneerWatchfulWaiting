@@ -1,6 +1,7 @@
 library(shiny)
 library(pool)
 library(DatabaseConnector)
+library(data.table)
 source("DataPulls.R")
 
 connPool <- NULL # Will be initialized if using a DB
@@ -138,18 +139,18 @@ if (exists("covariate")) {
 }
 
 # Setup filters
-domain <- data.frame()
-domain <- rbind(domain,data.frame(name = "All", covariateAnalysisId = c(1:10000)))
-domain <- rbind(domain,data.frame(name = "Cohort", covariateAnalysisId = c(10000)))
-domain <- rbind(domain,data.frame(name = "Demographics", covariateAnalysisId = c(1:99)))
-domain <- rbind(domain,data.frame(name = "Drug", covariateAnalysisId = c(412)))
-domain <- rbind(domain,data.frame(name = "Condition", covariateAnalysisId = c(212)))
-domain <- rbind(domain,data.frame(name = 'Procedure', covariateAnalysisId = c(712)))
+domain <- data.table()
+domain <- rbind(domain,data.table(name = "All", covariateAnalysisId = c(1:10000)))
+domain <- rbind(domain,data.table(name = "Cohort", covariateAnalysisId = c(10000)))
+domain <- rbind(domain,data.table(name = "Demographics", covariateAnalysisId = c(1:99)))
+domain <- rbind(domain,data.table(name = "Drug", covariateAnalysisId = c(412)))
+domain <- rbind(domain,data.table(name = "Condition", covariateAnalysisId = c(212)))
+domain <- rbind(domain,data.table(name = 'Procedure', covariateAnalysisId = c(712)))
 domain$name <- as.character(domain$name)
 domainName <- "All"
 
 # This must match the featureTimeWindow.csv from the Pioneer study
-timeWindow <- data.frame(windowId=c(1:4), name=c("-365 to index", "index to 365", "366d to 730d", "731d+"))
+timeWindow <- data.table(windowId=c(1:4), name=c("-365 to index", "index to 365", "366d to 730d", "731d+"))
 timeWindow$name <- as.character(timeWindow$name)
 
 cohortXref <- data.table::fread("./cohortXref.csv")
@@ -199,5 +200,8 @@ names <- sapply(ids,function(id){ cohortStagingCount$name[cohortStagingCount$coh
 #  names <- c(names, 'Symptomatic progr. free surv.')
 #}
 
-KMIds <- data.frame(id = ids,
+KMIds <- data.table(id = ids,
                     name = names)
+
+#Filter out NA value in name which leads to problems with computations and plotting
+KMIds <- KMIds[!is.na(KMIds$name)]
