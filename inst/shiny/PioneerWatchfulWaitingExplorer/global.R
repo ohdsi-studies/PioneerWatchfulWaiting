@@ -188,12 +188,16 @@ database <- database[order(database$databaseId),]
 
 
 # Add Time to Event names and ids
+
+# Gather unique outcome ids in time to event table
 ids <- unique(cohortTimeToEvent$outcomeId)
-names <- unique(cohortStagingCount$name[cohortStagingCount$cohortId %in% ids])
-if(length(cohortStagingCount$name[cohortStagingCount$cohortId == max(ids)]) == 0){
-  names <- c(names, 'Symptomatic progr. free surv.')
-}
+# Find corresponding cohort names
+names <- sapply(ids,function(id){ cohortStagingCount$name[cohortStagingCount$cohortId == id ][1]})
+
+# hack/fix which I don't understand
+#if(length(cohortStagingCount$name[cohortStagingCount$cohortId == max(ids)]) == 0){
+#  names <- c(names, 'Symptomatic progr. free surv.')
+#}
 
 KMIds <- data.frame(id = ids,
                     name = names)
-print(KMIds)
