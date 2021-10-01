@@ -42,7 +42,7 @@ getCohortsToCreate <- function(cohortGroups = getCohortGroups()) {
   cohorts <- data.frame()
   for(i in 1:nrow(cohortGroups)) {
     c <- data.table::fread(system.file(cohortGroups$fileName[i], package = packageName, mustWork = TRUE))
-    c <- c[c('name', 'atlasName', 'atlasId', 'cohortId')]
+    c <- c[,c('name', 'atlasName', 'atlasId', 'cohortId')]
     c$cohortType <- cohortGroups$cohortGroup[i]
     cohorts <- rbind(cohorts, c)
   }
