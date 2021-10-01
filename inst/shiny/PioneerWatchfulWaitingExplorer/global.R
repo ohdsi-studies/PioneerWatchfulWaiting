@@ -72,7 +72,7 @@ if (dataStorage == "database") {
       # print(file)
       tableName <- gsub(".csv$", "", file)
       camelCaseName <- SqlRender::snakeCaseToCamelCase(tableName)
-      data <- readr::read_csv(file.path(folder, file), col_types = readr::cols(), guess_max = 1e7, locale = readr::locale(encoding = "UTF-8"))
+      data <- data.table::fread(file.path(folder, file))
       colnames(data) <- SqlRender::snakeCaseToCamelCase(colnames(data))
       
       if (!overwrite && exists(camelCaseName, envir = .GlobalEnv)) {
@@ -152,7 +152,7 @@ domainName <- "All"
 timeWindow <- data.frame(windowId=c(1:4), name=c("-365 to index", "index to 365", "366d to 730d", "731d+"))
 timeWindow$name <- as.character(timeWindow$name)
 
-cohortXref <- readr::read_csv("./cohortXref.csv", col_types = readr::cols())
+cohortXref <- data.table::fread("./cohortXref.csv")
 targetCohort <- cohortXref[,c("targetId","targetName")]
 targetCohort <- unique(targetCohort)
 targetCohort <- targetCohort[order(targetCohort$targetName),]
@@ -177,7 +177,7 @@ strataName <- cohortXref[cohortXref$cohortId == initCharCohortId,c("strataName")
 comparatorName <- cohortXref[cohortXref$cohortId == initCharCompareCohortId,c("targetName")][1]
 comparatorStrataName <- cohortXref[cohortXref$cohortId == initCharCompareCohortId,c("strataName")][1]
 
-cohortInfo <- readr::read_csv("./cohorts.csv", col_types = readr::cols())
+cohortInfo <- data.table::fread("./cohorts.csv")
 cohortInfo <- cohortInfo[order(cohortInfo$name),]
 
 # Read in the database terms of use
@@ -196,4 +196,4 @@ if(length(cohortStagingCount$name[cohortStagingCount$cohortId == max(ids)]) == 0
 
 KMIds <- data.frame(id = ids,
                     name = names)
-
+print(KMIds)
