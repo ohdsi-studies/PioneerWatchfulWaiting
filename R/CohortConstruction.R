@@ -202,7 +202,7 @@ getInclusionStatisticsFromFiles <- function(cohortId,
   
   fetchStats <- function(file) {
     ParallelLogger::logDebug("- Fetching data from ", file)
-    stats <- readr::read_csv(file, col_types = readr::cols())
+    stats <- data.table::fread(file)
     stats <- stats[stats$cohortDefinitionId == cohortId, ]
     return(stats)
   }
@@ -459,7 +459,7 @@ saveAndDropTempInclusionStatsTables <- function(connection,
     if (incremental) {
       saveIncremental(data, fullFileName, cohortDefinitionId = cohortIds)
     } else {
-      readr::write_csv(data, fullFileName)
+      data.table::fread(data, fullFileName)
     }
   }
   fetchStats("#cohort_inclusion", "cohortInclusion.csv")

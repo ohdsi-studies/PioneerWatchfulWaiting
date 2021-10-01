@@ -7,7 +7,7 @@
   "codeRepository": "https://github.com/ohdsi-studies/PioneerWatchfulWaiting",
   "issueTracker": "https://github.com/ohdsi-studies/PioneerWatchfulWaiting/issues",
   "license": "https://spdx.org/licenses/Apache-2.0",
-  "version": "0.4.3.2",
+  "version": "0.4.4",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -309,5 +309,5 @@
     "SystemRequirements": null
   },
   "isPartOf": "https://ohdsi.org",
-  "fileSize": "39823.066KB"
+  "fileSize": "1877409.878KB"
 }

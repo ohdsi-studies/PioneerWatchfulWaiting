@@ -41,7 +41,7 @@ getCohortsToCreate <- function(cohortGroups = getCohortGroups()) {
   packageName <- getThisPackageName()
   cohorts <- data.frame()
   for(i in 1:nrow(cohortGroups)) {
-    c <- readr::read_csv(system.file(cohortGroups$fileName[i], package = packageName, mustWork = TRUE), col_types = readr::cols())
+    c <- data.table::fread(system.file(cohortGroups$fileName[i], package = packageName, mustWork = TRUE))
     c <- c[c('name', 'atlasName', 'atlasId', 'cohortId')]
     c$cohortType <- cohortGroups$cohortGroup[i]
     cohorts <- rbind(cohorts, c)
@@ -104,7 +104,7 @@ getThisPackageName <- function() {
 readCsv <- function(resourceFile) {
   packageName <- getThisPackageName()
   pathToCsv <- system.file(resourceFile, package = packageName, mustWork = TRUE)
-  fileContents <- readr::read_csv(pathToCsv, col_types = readr::cols())
+  fileContents <- data.table::fread(pathToCsv)
   return(fileContents)
 }
 

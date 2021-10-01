@@ -23,6 +23,7 @@ generateSurvival <- function(connection, cohortDatabaseSchema, cohortTable, targ
                       id = dplyr::row_number()) %>%
         dplyr::select(id, timeToEvent, event)
       
+      # TODO: Change to Cyclops
       surv_info <- survival::survfit(survival::Surv(timeToEvent, event) ~ 1, data = km_proc)
       
       surv_info <- survminer::surv_summary(surv_info)
