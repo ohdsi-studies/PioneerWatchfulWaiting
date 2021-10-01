@@ -354,7 +354,6 @@ shinyServer(function(input, output, session) {
   
   
   getMetricsTable <- reactive ({
-    browser()
     target_id <- cohortCount[cohortCount$databaseId %in% input$databasesMetricsDistribution 
                              & cohortCount$cohortId %in% cohortIdMetricsDistribution(), ][[1]]
     metricsTable <- metricsDistribution %>% dplyr::filter(cohortDefinitionId == target_id, 

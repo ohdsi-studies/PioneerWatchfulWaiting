@@ -225,7 +225,7 @@ runStudy <- function(connectionDetails = NULL,
   for(analysis in DistribAnalyses){
     outcome <- gsub("TimeTo", "", analysis)
     outcome <- substring(SqlRender::camelCaseToTitleCase(outcome), 2)
-    outcomeId <- outcomes[tolower(outcomes$name) == tolower(outcome), "cohortId"]
+    outcomeId <- outcomes[tolower(outcomes$name) == tolower(outcome), "cohortId"][[1]]
     
     if (length(outcomeId) == 0 & analysis %in% outcomeBasedAnalyses){
       next
@@ -537,7 +537,7 @@ loadCohortsForExportFromPackage <- function(cohortIds) {
                   strataId = NULL)
   
   cols <- names(cohorts)
-  cohorts <- rbind(cohorts, targetStrataXref[cols])
+  cohorts <- rbind(cohorts, targetStrataXref[,..cols])
   
   if (!is.null(cohortIds)) {
     cohorts <- cohorts[cohorts$cohortId %in% cohortIds, ]

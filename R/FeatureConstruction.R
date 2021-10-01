@@ -107,9 +107,9 @@ featureWindowsTempTableSql <- function(connection, featureWindows, oracleTempSch
 getAllFeatures <- function() {
   colNames <- c("name", "cohortId") # Use this to subset to the columns of interest
   cohortBasedStrata <- getCohortBasedStrata()
-  cohortBasedStrata <- cohortBasedStrata[, match(colNames, names(cohortBasedStrata))]
+  cohortBasedStrata <- cohortBasedStrata[, ..colNames]
   cohortBasedFeatures <- getFeatures()
-  cohortBasedFeatures <- cohortBasedFeatures[, match(colNames, names(cohortBasedFeatures))]
+  cohortBasedFeatures <- cohortBasedFeatures[, ..colNames]
   features <- rbind(cohortBasedStrata, cohortBasedFeatures)
   return(features)  
 }

@@ -52,10 +52,10 @@ getCohortsToCreate <- function(cohortGroups = getCohortGroups()) {
 getAllStrata <- function() {
   colNames <- c("name", "cohortId", "generationScript") # Use this to subset to the columns of interest
   bulkStrata <- getBulkStrata()
-  bulkStrata <- bulkStrata[, match(colNames, names(bulkStrata))]
+  bulkStrata <- bulkStrata[, ..colNames]
   atlasCohortStrata <- getCohortBasedStrata()
   atlasCohortStrata$generationScript <- paste0(atlasCohortStrata$cohortId, ".sql")
-  atlasCohortStrata <- atlasCohortStrata[, match(colNames, names(atlasCohortStrata))]
+  atlasCohortStrata <- atlasCohortStrata[, ..colNames]
   strata <- rbind(bulkStrata, atlasCohortStrata)
   return(strata)  
 }
@@ -64,8 +64,8 @@ getAllStudyCohorts <- function() {
   cohortsToCreate <- getCohortsToCreate()
   targetStrataXref <- getTargetStrataXref()
   colNames <- c("name", "cohortId")
-  cohortsToCreate <- cohortsToCreate[, match(colNames, names(cohortsToCreate))]
-  targetStrataXref <- targetStrataXref[, match(colNames, names(targetStrataXref))]
+  cohortsToCreate <- cohortsToCreate[, ..colNames]
+  targetStrataXref <- targetStrataXref[, ..colNames]
   allCohorts <- rbind(cohortsToCreate, targetStrataXref)
   return(allCohorts)
 }
@@ -82,12 +82,12 @@ getAllStudyCohortsWithDetails <- function() {
   cohortsToCreate$strataCohortId <- 0
   cohortsToCreate$strataCohortName <- "All"
   cohortsToCreate <- dplyr::rename(cohortsToCreate, cohortName = "name")
-  cohortsToCreate <- cohortsToCreate[, match(colNames, names(cohortsToCreate))]
+  cohortsToCreate <- cohortsToCreate[, ..colNames]
   # Format - targetStrataXref
   stratifiedCohorts <- dplyr::inner_join(targetStrataXref, cohortsToCreate[,c("targetCohortId", "targetCohortName")], by = c("targetId" = "targetCohortId"))
   stratifiedCohorts <- dplyr::inner_join(stratifiedCohorts, allStrata[,c("cohortId", "name")], by=c("strataId" = "cohortId"))
   stratifiedCohorts <- dplyr::rename(stratifiedCohorts, targetCohortId="targetId",strataCohortId="strataId",cohortName="name.x",strataCohortName="name.y")
-  stratifiedCohorts <- stratifiedCohorts[,match(colNames, names(stratifiedCohorts))]
+  stratifiedCohorts <- stratifiedCohorts[,..colNames]
   # Bind
   allCohorts <- rbind(cohortsToCreate, stratifiedCohorts)
   return(allCohorts)
