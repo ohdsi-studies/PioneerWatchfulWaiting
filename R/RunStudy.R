@@ -219,12 +219,12 @@ runStudy <- function(connectionDetails = NULL,
   DistribAnalyses <- c('AgeAtDiagnosis', 'YearOfDiagnosis', 'CharlsonAtDiagnosis', 'PsaAtDiagnosis', outcomeBasedAnalyses)
   outcomes <- getFeatures()
   
-  metricsDistribution <- data.frame()
+  metricsDistribution <- data.table()
   
   for(analysis in DistribAnalyses){
     outcome <- gsub("TimeTo", "", analysis)
     outcome <- substring(SqlRender::camelCaseToTitleCase(outcome), 2)
-    outcomeId <- outcomes[tolower(outcomes$name) == tolower(outcome), "cohortId"][[1]]
+    outcomeId <- outcomes[tolower(outcomes$name) == tolower(outcome), "cohortId"]
     
     if (length(outcomeId) == 0 & analysis %in% outcomeBasedAnalyses){
       next
