@@ -219,7 +219,7 @@ runStudy <- function(connectionDetails = NULL,
   DistribAnalyses <- c('AgeAtDiagnosis', 'YearOfDiagnosis', 'CharlsonAtDiagnosis', 'PsaAtDiagnosis', outcomeBasedAnalyses)
   outcomes <- getFeatures()
   
-  metricsDistribution <- data.table()
+  metricsDistribution <- data.table::data.table()
   
   for(analysis in DistribAnalyses){
     outcome <- gsub("TimeTo", "", analysis)
