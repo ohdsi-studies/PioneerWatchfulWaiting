@@ -305,10 +305,10 @@ shinyServer(function(input, output, session) {
                              cohortCount$cohortId %in% cohortIdTimeToEvent(), ][[1]]
     target_id_entries_num <- sum(cohortCount[cohortCount$cohortId == target_id, "cohortEntries"])
     
-    # if (length(target_id) == 0 | target_id_entries_num <= 100 | is.null(input$KMPlot)){
-    #   plot <- ggplot2::ggplot()
-    #   return(plot)
-    # }
+    if (length(target_id) == 0 | target_id_entries_num <= 100 | is.null(input$KMPlot)){
+      plot <- ggplot2::ggplot()
+      return(plot)
+    }
     
     targetIdTimeToEventData <- cohortTimeToEvent %>% dplyr::filter(targetId == target_id,
                                                                databaseId == input$databasesTimeToEvent)
@@ -328,13 +328,13 @@ shinyServer(function(input, output, session) {
       accumulatedData <- rbind(accumulatedData, data)
     }
 
-    color_map <- c("#000000")
-    names(color_map) <- c("Myplot")
+    color_map <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+    names(color_map) <- KMIds$name
    
     plot <- ggsurvplot_core(accumulatedData,
                             risk.table = "nrisk_cumcensor",
                             palette = color_map,
-                            legend.labs = c("Myplot"),
+                            legend.labs = input$KMPlot,
                             cmap = color_map,
                             conf.int = TRUE,
                             legend.title = 'Event',

@@ -135,7 +135,7 @@ if (exists("covariate")) {
    )
    covariate$covariateName[covNameWithId] <- newCovariateName
   }
-  covariate$windowId <- as.numeric(substr(covariate$covariateId, nchar(covariate$covariateId), nchar(covariate$covariateId)))
+  covariate$windowId <- covariate$covariateId %% 10
 }
 
 # Setup filters
