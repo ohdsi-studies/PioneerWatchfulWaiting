@@ -485,7 +485,7 @@ shinyServer(function(input, output, session) {
   getCharacterizationTable <- reactive({
     data <- getCovariateDataSubset(cohortId(), input$databases)
     covariateFiltered <- getFilteredCovariates()
-    table <- merge(covariateFiltered, data)
+    table <- merge.data.table(as.data.table(covariateFiltered), as.data.table(data))
     table$cohortName <- targetCohortName()
     return(table[,c("cohortId","cohortName","covariateId","covariateName","covariateAnalysisId","windowId","databaseId","mean")])
   })
@@ -504,7 +504,7 @@ shinyServer(function(input, output, session) {
       for (i in 2:nrow(databaseIdsWithCounts)) {
         temp <- data[data$databaseId == databaseIdsWithCounts$databaseId[i], ..columnsToInclude]
         colnames(temp)[meanColumnIndex] <- paste(colnames(temp)[meanColumnIndex], databaseIdsWithCounts$databaseId[i], sep = "_")
-        table <- merge(table, temp, all = TRUE)
+        table <- merge.data.table(table, temp, by = columnsToInclude[-length(columnsToInclude)], all = TRUE)
       }
     }
     table <- table[order(table$covariateName), ]
@@ -782,6 +782,6 @@ shinyServer(function(input, output, session) {
 
   # Helper functions ------
   getFilteredCovariates <- function() {
-    return(covariate[covariate$windowId %in% windowId() & covariate$covariateAnalysisId %in% covariateAnalysisId(),c("covariateId","covariateName","covariateAnalysisId","windowId")])
+    return(covariate[covariate$windowId %in% bit64::as.integer64(windowId()$windowId) & covariate$covariateAnalysisId %in% covariateAnalysisId()$covariateAnalysisId,c("covariateId","covariateName","covariateAnalysisId","windowId")])
   }
 })
