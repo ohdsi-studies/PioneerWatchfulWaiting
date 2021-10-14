@@ -782,6 +782,6 @@ shinyServer(function(input, output, session) {
 
   # Helper functions ------
   getFilteredCovariates <- function() {
-    return(covariate[covariate$windowId %in% windowId()$windowId & covariate$covariateAnalysisId %in% covariateAnalysisId()$covariateAnalysisId,c("covariateId","covariateName","covariateAnalysisId","windowId")])
+    return(covariate[covariate$windowId %in% bit64::as.integer64(windowId()$windowId) & covariate$covariateAnalysisId %in% covariateAnalysisId()$covariateAnalysisId,c("covariateId","covariateName","covariateAnalysisId","windowId")])
   }
 })
