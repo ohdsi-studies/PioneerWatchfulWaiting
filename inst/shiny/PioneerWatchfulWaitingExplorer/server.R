@@ -305,10 +305,10 @@ shinyServer(function(input, output, session) {
                              cohortCount$cohortId %in% cohortIdTimeToEvent(), ][[1]]
     target_id_entries_num <- sum(cohortCount[cohortCount$cohortId == target_id, "cohortEntries"])
     
-    if (length(target_id) == 0 | target_id_entries_num <= 100 | is.null(input$KMPlot)){
-      plot <- ggplot2::ggplot()
-      return(plot)
-    }
+    # if (length(target_id) == 0 | target_id_entries_num <= 100 | is.null(input$KMPlot)){
+    #   plot <- ggplot2::ggplot()
+    #   return(plot)
+    # }
     
     targetIdTimeToEventData <- cohortTimeToEvent %>% dplyr::filter(targetId == target_id,
                                                                databaseId == input$databasesTimeToEvent)
@@ -328,13 +328,13 @@ shinyServer(function(input, output, session) {
       accumulatedData <- rbind(accumulatedData, data)
     }
 
-    color_map <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-    names(color_map) <- KMIds$name
+    color_map <- c("#000000")
+    names(color_map) <- c("Myplot")
    
     plot <- ggsurvplot_core(accumulatedData,
                             risk.table = "nrisk_cumcensor",
                             palette = color_map,
-                            legend.labs = input$KMPlot,
+                            legend.labs = c("Myplot"),
                             cmap = color_map,
                             conf.int = TRUE,
                             legend.title = 'Event',
@@ -485,7 +485,7 @@ shinyServer(function(input, output, session) {
   getCharacterizationTable <- reactive({
     data <- getCovariateDataSubset(cohortId(), input$databases)
     covariateFiltered <- getFilteredCovariates()
-    table <- merge(covariateFiltered, data)
+    table <- merge.data.table(as.data.table(covariateFiltered), as.data.table(data))
     table$cohortName <- targetCohortName()
     return(table[,c("cohortId","cohortName","covariateId","covariateName","covariateAnalysisId","windowId","databaseId","mean")])
   })
@@ -504,7 +504,7 @@ shinyServer(function(input, output, session) {
       for (i in 2:nrow(databaseIdsWithCounts)) {
         temp <- data[data$databaseId == databaseIdsWithCounts$databaseId[i], ..columnsToInclude]
         colnames(temp)[meanColumnIndex] <- paste(colnames(temp)[meanColumnIndex], databaseIdsWithCounts$databaseId[i], sep = "_")
-        table <- merge(table, temp, all = TRUE)
+        table <- merge.data.table(table, temp, by = columnsToInclude[-length(columnsToInclude)], all = TRUE)
       }
     }
     table <- table[order(table$covariateName), ]
@@ -782,6 +782,6 @@ shinyServer(function(input, output, session) {
 
   # Helper functions ------
   getFilteredCovariates <- function() {
-    return(covariate[covariate$windowId %in% windowId() & covariate$covariateAnalysisId %in% covariateAnalysisId(),c("covariateId","covariateName","covariateAnalysisId","windowId")])
+    return(covariate[covariate$windowId %in% windowId()$windowId & covariate$covariateAnalysisId %in% covariateAnalysisId()$covariateAnalysisId,c("covariateId","covariateName","covariateAnalysisId","windowId")])
   }
 })
