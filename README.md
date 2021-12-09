@@ -15,7 +15,7 @@ Long term outcomes of prostate cancer patients undergoing non-interventional man
 - Study start date: **March 9, 2021**
 - Study end date: **-**
 - Protocol: **[RQ2_OHDSI_FINAL.pdf](https://github.com/ohdsi-studies/PioneerWatchfulWaiting/blob/master/extras/Protocol_RQ2_OHDSI_FINAL.pdf)**
-- Publications: **https://doi.org/10.21203/rs.3.pex-1468/v1**
+- Publications: **[Published research protocol](https://doi.org/10.21203/rs.3.pex-1468/v1)**
 - Diagnostics explorer: **[Shiny App: Cohort diagnostics](https://data.ohdsi.org/PioneerWatchfulWaitingDiag/)**
 - Results explorer: **[Shiny App: Characterization Study](https://data.ohdsi.org/PioneerWatchfulWaiting/)**
 
