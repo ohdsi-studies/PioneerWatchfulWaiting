@@ -1,0 +1,27 @@
+"cohortName","cohortId","webApiCohortId"
+"[PIONEER T3a] new PCa conservative management",31,31
+"[PIONEER O7] ER Visit (1)",27,27
+"[PIONEER O6] Hospitalization (2)",28,28
+"[PIONEER O2] Symptomatic progression (1)",29,29
+"[PIONEER O3] Treatment Initiation (1)",30,30
+"[PIONEER S14] Grade 1 (GS 2-6)",6,6
+"[PIONEER S15] Grade 2 (GS 7 (3+4))",7,7
+"[PIONEER S16] Grade 3 (GS 7 (4+3))",8,8
+"[PIONEER S17] Grade 4 (GS 8)",9,9
+"[PIONEER S18] Grade 5 (GS 9-10)",10,10
+"[PIONEER S8] PSA10",11,11
+"[PIONEER S9] PSA 10-20",12,12
+"[PIONEER S7] PSA20",13,13
+"[PIONEER S21] Age below 55",14,14
+"[PIONEER S22] Age 55-80",15,15
+"[PIONEER S23] Age above 80",16,16
+"[PIONEER S24] Charlson Comorbidity Index (cut off 0)",17,17
+"[PIONEER S25] Charlson Comorbidity Index (cut off 1)",18,18
+"[PIONEER S26] Charlson Comorbidity Index (cut off 2)",19,19
+"[PIONEER S10] Stage T1",20,20
+"[PIONEER S11] Stage T2",21,21
+"[PIONEER S12] Stage T3 or T4",22,22
+"[PIONEER S19] Family History of PCa",23,23
+"[PIONEER S32] Stroke (ischemic or hemorrhagic) events",24,24
+"[PIONEER S33] Prevalent Type 2 Diabetes Mellitus",25,25
+"[PIONEER S4] Metastatic Dx Extent",26,26

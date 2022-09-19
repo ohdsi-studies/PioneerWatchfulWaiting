@@ -1,0 +1,42 @@
+---
+output: html_document
+---
+
+```{r, echo=FALSE, results='asis'}
+
+ind <- which(unlist(lapply(jsonSettings$cohortDefinitions, function(x) x$id)) == jsonSettings$analyses[[i]]$targetId)
+target <- jsonSettings$cohortDefinitions[[ind]]
+
+ind <- which(unlist(lapply(jsonSettings$cohortDefinitions, function(x) x$id)) == jsonSettings$analyses[[i]]$outcomeId)
+outcome <- jsonSettings$cohortDefinitions[[ind]]
+
+populationSettings <- jsonSettings$analyses[[i]]$populationSettings
+covariateSettings <- jsonSettings$analyses[[i]]$covariateSettings
+featureEngineeringSettings <- jsonSettings$analyses[[i]]$featureEngineeringSettings
+preprocessSettings <- jsonSettings$analyses[[i]]$preprocessSettings
+modelSettings <- jsonSettings$analyses[[i]]$modelSettings
+sampleSettings <- jsonSettings$analyses[[i]]$sampleSettings
+restrictPlpDataSettings <- jsonSettings$analyses[[i]]$restrictPlpDataSettings
+ 
+```
+
+
+
+```{r echo=FALSE, results='asis'}
+cat('\n## Model Design', i, '\n')
+```
+
+```{r, child = "plp-participants.Rmd"}
+```
+
+```{r, child = "plp-predictors.Rmd"}
+```
+
+```{r, child = "plp-outcome.Rmd"}
+```
+
+```{r, child = "plp-analysis.Rmd"}
+```
+
+```{r, child = if(params$include_diagnostic) "plp-diagnostics.Rmd"}
+```
