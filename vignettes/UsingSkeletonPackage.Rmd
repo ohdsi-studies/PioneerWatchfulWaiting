@@ -1,0 +1,178 @@
+---
+title: "Using the package skeleton for patient-level prediction studies"
+author: "Jenna M. Reps"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    number_sections: yes
+    toc: yes
+  html_document:
+    number_sections: yes
+    toc: yes
+vignette: >
+  %\VignetteIndexEntry{Using the package skeleton for patient-level prediction studies}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+library(PatientLevelPrediction)
+knitr::opts_chunk$set(
+  cache=FALSE,
+  comment = "#>",
+  error = FALSE,
+  tidy = FALSE)
+```
+# Introduction
+
+This vignette describes how one can use the package skeleton for patient-level prediction studies to create one's own study package. This skeleton is aimed at patient-level prediction studies using the `PatientLevelPrediction` package. The resulting package can be used to execute the study at any site that has access to an observational database in the Common Data Model. It will perform the following steps:
+
+1. Instantiate all cohorts needed for the study in a study-specific cohort table. 
+2. The main analysis will be executed using the `PatientLevelPrediction` package, which involves development and internal validation of prediction models.
+3. The prediction models can be exported into a network study package ready to share for external validation.
+
+The package skeleton currently implements an examplar study, predicting various outcomes in multiple target populations. If desired (as a test), one can run the package as is. 
+
+## Open the project in Rstudio
+Make sure to have RStudio installed.  Then open the R project downloaded from ATLAS by decompressing the downloaded folder and clicking on the <SkeletonPredictionStudy>.Rproj file (where <SkeletonPredictionStudy> is replaced by the study name you specified in ATLAS).  This should open an RStudio session.
+
+
+## Running the package
+
+To run the study, open the extras/CodeToRun.R R script (the file called `CodeToRun.R` in the `extras` folder).  This folder specifies the R variables you need to define (e.g., outputFolder and database connection settings). See the R help system for details:
+
+```{r eval=FALSE}
+library(SkeletonpredictionStudy)
+?execute
+```
+
+By default all the options are set to F for the execute fuction:
+```{r eval=FALSE}
+execute(
+  databaseDetails = databaseDetails,
+  outputFolder = './results', 
+  createProtocol = F,
+  createCohorts = F,
+  runDiagnostic = F,
+  viewDiagnostic = F,
+  runAnalyses = F,
+  createValidationPackage = F,
+  analysesToValidate = 1,
+  packageResults = F,
+  minCellCount= 5,
+  logSettings = logSettings,
+  sampleSize = NULL
+)
+```
+
+If you run the above nothing will happen as each option is false.  See the table below for information about each of the inputs.
+
+```{r tableInputs, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+tabl <- "   
+| Input | Description | Example |
+| --------------| -------------------------------| ---------------- |
+| databaseDetails | The details to connected to your OMOP CDM database - use PatientLevelPrediction package's createDatabaseDetails() | createDatataseDetails() |
+| outputFolder | The location where the results of the study will be saved | 'C:/amazingResults'|
+| createProtocol | TRUE or FALSE indicating whether to create a word document with a template protocol based on your study settings (saved to the outputFolder location) | TRUE |
+| createCohorts | TRUE or FALSE indicating whether to create the target population and outcome cohorts for the study | TRUE |
+| runDiagnostic | TRUE or FALSE indicating whether to run a diagnostic into the prediction - this can identify potential issues with the settings or prediction (Note: requires study cohorts are already created) | TRUE |
+| viewDiagnostic | TRUE or FALSE if runDiagnostic completed sucessfully then this opens a shiny viewer to explore the results | TRUE |
+| runAnalyses | TRUE or FALSE indicating whether to run the study analysis - developing and internally validating the models | TRUE |
+| createValidationPackage | TRUE or FALSE indicating whether to create another R package that can be run to validate any model developed in the original study.  You can specifiy the models that you want to validate using the input analysesToValidate. The new R package that validates your models will be in the outputFolder location with the suffix 'Validation' | TRUE |
+| analysesToValidate | integer or vector of integers specifying the anaysis ids of the models you want to validate.  The example shows how to get Analysis_1 and Analysis_3 models validated. | c(1,3) |
+| packageResults | TRUE or FALSE indicating whether to remove sensitive counts (determined by the minCellCount input) or sensitive information from the results and creates a zipped file with results that are safe to share (saved to the outputFolder location).  Note: This requires running the study successfully first.  | TRUE |
+| minCellCount | integer that determines the minimum result count required when sharing the results. Any result table cells with counts < minCellCount are replaced with -1 to prevent identification issues with rare diseases | 10 |
+| logSettings | The settings defining the logging - use PatientLevelPrediction createLogSettings | createLogSettings() |
+| sampleSize | NULL means use all the target population, if an integer than sample that number of patients from the target population for the study | NULL |
+
+"
+cat(tabl) # output the table in a format good for HTML/PDF/docx conversion
+```
+
+
+
+To create a study protocol set:
+```{r eval=FALSE}
+    createProtocol = T
+```
+
+This uses the settings you specified in ATLAS to generate a protocol for the study.
+
+To create the target and outcome cohorts (cohorts are created into cohortDatabaseSchema.cohortTable specified by databaseDetails)
+```{r eval=FALSE}
+    createCohorts = T
+```
+
+To run and view the study diagnostic (results are saved into the 'diagnostic' folder in outputFolder), run the code:
+```{r eval=FALSE}
+    runDiagnostic = T
+    viewDiagnostic = T
+    minCellCount = 0
+```
+
+
+To develop and internally validate the models run the code:
+```{r eval=FALSE}
+    runAnalyses = T
+```
+
+To package the results ready for sharing with others you can set:    
+```{r eval=FALSE}
+    packageResults = T
+```
+
+To create a new R package that can be used to externally validate the models you developed set (this will fail if you have not run the study first to create models):
+```{r eval=FALSE}
+    createValidationPackage = T  
+    #analysesToValidate = 1
+```
+If you do not set analysesToValidate then all the developed models will be transproted into the validation R package.  To restrict to Analysis 1 and 5 models set: `analysesToValidate = c(1,5)`.  The validation package will be found in your outputFolder directory with the same name as your prediction package but with Validation appended (e.g., outputFolder/<SkeletonPredictionStudy>Validation).  You can add this valdiation package directory to the studyProtocol on the OHDSI github to share the model with other collaborators. 
+
+Once you run the study you can view the results via a local shiny app by running:
+```{r eval=FALSE}
+    viewMultiplePlp(outputFolder) 
+```
+
+
+## Results
+After running the study you will find the resulls in the specified `outputFolder` directory. The `outputFolder` directory will contain:
+
+```{r tableSavedResult, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+tabl <- "   
+| Name | Description | Type | Access |
+| ----------| -----------------------| ------|--------------------------|
+| folder with the prefix 'PlpData_' | saved plpData objects | Folder | use plpData <- PatientLevelPrediction::loadPlpData('folder location') |
+| folder with the prefix 'Analysis_' | contains the saved plpResults for each model developed based on the study design and the corresponding log | Folder | To load result i use plpResult <- PatientLevelPrediction::loadPlpResult(file.path(outputFolder, 'Analysis_i', 'plpResult')) |
+| folder 'Validation' | initially an empty folder but if you put the results of any study validating your models in here with the correct stucture then the shiny app and journal document creators will automatically include the validation results | Folder | -  |
+| CohortCounts.csv | the sizes of each cohort | csv | read.csv(file.path(outputFolder, 'CohortCounts.csv' )) |
+| settings.csv | the study design settings - this can be used to determine what each analysis was running | csv | read.csv(file.path(outputFolder, 'settings.csv' )) |
+| log.txt, plplog.txt| random log files that are redundant | txt | - |
+"
+cat(tabl) # output the table in a format good for HTML/PDF/docx conversion
+```
+
+The plpResult objects are a list with the class 'runPlp' containing:
+
+```{r tablePlpResult, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+tabl <- "  
+| Object | Description | Edited by packageResult |
+| ----------------- | --------------------------------------| -------------|
+| `executionSummary` | Information about the R version, PatientLevelPrediction version and execution platform info | No | 
+| `model` | The trained model | No | 
+| `analysisRef` | Used to store a unique reference for the study | No | 
+| `covariateSummary` | A dataframe with summary information about how often the covariates occured for those with and without the outcome | Yes - minCellCounts censored | 
+| `performanceEvaluation$ evaluationStatistics` | Performance metrics and sizes | No | 
+| `performanceEvaluation$ thresholdSummary` | Operating characteristcs @ 100 thresholds | Yes | 
+| `performanceEvaluation$ demographicSummary` | Calibration per age group | Yes | 
+| `performanceEvaluation$ calibrationSummary` | Calibration at risk score deciles | Yes | 
+| `performanceEvaluation$ predictionDistribution` | Distribution of risk score for those with and without the outcome | Yes | 
+"
+cat(tabl) # output the table in a format good for HTML/PDF/docx conversion
+```
+
+
+## extras/PackageMaintenance.R
+This file contains other useful code to be used only by the package developer (you), such as code to generate the package manual, and code to insert cohort definitions into the package. All statements in this file assume the current working directory is set to the root of the package.
+
+
+
