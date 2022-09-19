@@ -1,0 +1,8 @@
+pandoc: 2.7.2
+pkgdown: 1.5.0.9000
+pkgdown_sha: 2254f318a4c1cb12419e27155cce74307bd844ea
+articles:
+  AddingCohortCovariates: AddingCohortCovariates.html
+  UsingSkeletonPackage: UsingSkeletonPackage.html
+last_built: 2020-03-30T17:19Z
+

@@ -1,54 +1,35 @@
-Package: PioneerWatchfulWaiting
+Package: PIONEER_clinician_driven_model
 Type: Package
-Title: PIONEER / EHDEN / OHDSI prostate cancer study
-Version: 0.4.4
-Author: Anthony G. Sena, Artem Gorbachev, Kees van Bochove
-Authors@R: c(
-    person("Anthony G.", "Sena", email = "asena5@its.jnj.com", role = c("aut")),
-    person("Artem", "Gorbachev", email = "artem.gorbachev@odysseusinc.com", role = c("aut")),
-    person("Kees", "van Bochove", email = "kees@thehyve.nl", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-8589-0609")),
-    person("Bertrand", "De Meulder", role = c("aut")),
-    person("IMI2 PIONEER", role=c("fnd")),
-    person("IMI2 EHDEN", role=c("fnd")),
-    person("Observational Health Data Science and Informatics", role = c("cph"))
-  )
-Description: Describe the baseline demographic, clinical characteristics, treatments and outcomes of interest among individuals with PCa.
+Title: A Skeleton for Prediction Development Studies that use the PatientLevelPrediction Framework
+Version: 1.0.6
+Author: Jenna Reps [aut, cre]
+Maintainer: Jenna M Reps <reps@ohdsi.org>
+Description: A skeleton package to be used as a starting point when implementing patient-level prediction development studies.
 Depends:
-  DatabaseConnector (>= 2.2.0),
-  data.table
+    R(>= 3.6.0)
 Imports:
-  CohortDiagnostics (>= 2.1.0),
-  FeatureExtraction (>= 3.1.0),
-  ParallelLogger,
-  OhdsiSharing (>= 0.2.1),
-  SqlRender,
-  ff,
-  magrittr,
-  digest,
-  readr,
-  dplyr,
-  data.table,
-  ggplot2,
-  tibble,
-  magrittr,
-  survival,
-  survminer
+    CohortGenerator (>= 0.3.0),
+    DatabaseConnector (>= 5.0.0),
+    dplyr,
+    jsonlite,
+    knitr,
+    OhdsiSharing,
+    PatientLevelPrediction (>= 5.0.2),
+    ParallelLogger,
+    rlang,
+    rmarkdown,
+    shiny,
+    utils
 Suggests:
-  codemeta,
-  knitr,
-  renv,
-  rmarkdown
+    CirceR,
+    devtools,
+    Hydra
 Remotes:
-  OHDSI/CohortDiagnostics,
-  OHDSI/FeatureExtraction,
-  OHDSI/ParallelLogger,
-  OHDSI/SqlRender,
-  OHDSI/OhdsiSharing
+    ohdsi/CirceR,
+    ohdsi/CohortGenerator@from_package,
+    ohdsi/Hydra,
+    ohdsi/OhdsiSharing,
+    ohdsi/PatientLevelPrediction@issue242
 License: Apache License 2.0
-VignetteBuilder: knitr
-URL: https://github.com/ohdsi-studies/PioneerWatchfulWaiting
-BugReports: https://github.com/ohdsi-studies/PioneerWatchfulWaiting/issues
-Encoding: UTF-8
-LazyData: TRUE
 RoxygenNote: 7.1.1
-X-schema.org-isPartOf: https://ohdsi.org
+SkeletonNote: 1.0.0

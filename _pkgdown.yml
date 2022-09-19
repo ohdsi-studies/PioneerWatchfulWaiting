@@ -1,0 +1,45 @@
+template:
+  params:
+    bootswatch: cosmo
+    
+home:
+  links:
+  - text: Ask a question
+    href: http://forums.ohdsi.org
+    
+navbar:
+  structure:
+    left:
+    - home
+    - intro
+    - reference
+    - tutorial
+    - news
+    right: github
+  components:
+    home:
+      icon: fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    intro:
+      text: Get started
+      href: articles/UsingSkeletonPackage.html
+    news:
+      text: Changelog
+      href: news/index.html
+    tutorial:
+      text: Tutorial
+      href: https://www.ohdsi.org/past-events/patient-level-prediction/
+    github:
+      icon: fa-github fa-lg
+      href: https://github.com/OHDSI/SkeletonPredictionStudy
+
+reference:
+  - title: "Running the study"
+    desc: >
+      Function to run the study
+    contents:
+      - execute
+  
